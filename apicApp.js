@@ -1,11 +1,9 @@
 var restReqeust = require('./modules/apicTicket');
-let uri = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket";
-let method = "POST";
-let body = {
+let s = new restRequest('GET','https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket',{
   "username":"devnetuser",
   "password":"Cisco123!"
-};
-restReqeust.POST(uri,method,body).then(function(httpReturn){
+})
+restReqeust.POST().then(function(httpReturn){
   console.log(httpReturn);
 })
 
