@@ -1,8 +1,7 @@
 var restReqeust = require('./modules/apicTicket');
 
-restReqeust.POST().then(function(harp){
-  console.log("THIS STUFF SUCKS",harp);
+restReqeust.POST().then(function(httpReturn){
+  console.log(HttpReturn);
 })
 
 //console.log(test) // REST POST
-
