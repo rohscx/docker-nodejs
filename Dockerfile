@@ -33,7 +33,7 @@ RUN apt-get clean \
 
 
 # Install Nodejs on Ubuntu systems
-RUN curl -sL https://deb.nodesource.com/setup_7.x  \
+RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - \
 && apt-get install -y nodejs \
 
 
