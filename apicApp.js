@@ -12,4 +12,4 @@ restReqeust.POST(method,uri,body).then(function(httpReturn){
 })
 
 
-console.log(multiply(2,5)); // REST POST
+console.log(restReqeust.multiply(2,5)); // REST POST
