@@ -4,23 +4,23 @@ var formData = require('form-data');
 module.exports = class rest {
 
   POST(){
-    var formData = {
-      // Pass a simple key-value pair
-      username: 'devnetuser',
-      password: 'Cisco123',
-       options: {
-         contentType: 'application/json'
-       }
-    };
-    request.post({url:'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket', formData: formData}, function optionalCallback(err, httpResponse, body) {
-      if (err) {
-        return console.error('upload failed:', err);
-      }
-      console.log('Upload successful!  Server responded with:', body);
-    });
-    return (
-      {anotherTestResponse: "Cats on everything from API REst POST"}
-    )
+    const options = {  
+    method: 'POST',
+    uri: 'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket',
+    body: {
+      "username":"devnetuser",
+      "password":"Cisco123!"
+    },
+    json: true 
+      // JSON stringifies the body automatically
+  }
+  request(options)  
+  .then(function (response) {
+    // Handle the response
+  })
+  .catch(function (err) {
+    // Deal with the error
+  })
   }
 
   GET(){
