@@ -7,12 +7,18 @@ module.exports = class rest {
     var formData = {
       // Pass a simple key-value pair
       username: 'devnetuser',
-      password: 'Cisco123'
+      password: 'Cisco123',
+      custom_file: {
+      options: {
+      contentType: 'application/json'
+    }
+  }
     };
     request.post({url:'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket', formData: formData}, function optionalCallback(err, httpResponse, body) {
       if (err) {
         return console.error('upload failed:', err);
       }
+      console.log(formData);
       console.log('Upload successful!  Server responded with:', body);
     });
     return (
