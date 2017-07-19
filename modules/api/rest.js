@@ -4,7 +4,8 @@ var formData = require('form-data');
 module.exports = class rest {
 
   POST(){
-    const options = {  
+    return new Promise(function(resolve, reject) {
+        const options = {  
     method: 'POST',
     uri: 'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket',
     body: {
@@ -16,15 +17,13 @@ module.exports = class rest {
   }
   request(options)  
   .then(function (response) {
-    console.log(response);
-    callback(null, response);
-    return new Promise(function(resolve,reject){
-    resolve(response)
-    })
+  console.log(function)
   })
   .catch(function (err) {
     // Deal with the error
   })
+      resolve("cats")
+    })
   }
 
   GET(){
