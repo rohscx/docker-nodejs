@@ -16,8 +16,9 @@ module.exports = class rest {
   }
   request(options)  
   .then(function (response) {
-    //console.log(response);
+    console.log(response);
     callback(null, response);
+    return response;
   })
   .catch(function (err) {
     // Deal with the error
