@@ -1,7 +1,7 @@
 var rest = require('./api/rest');
 module.exports = () => {
-  var newRest = rest.POST;
-  var newRest2 = rest.GET;
+  var newRest = rest.POST();
+  var newRest2 = rest.GET();
   var output = newRest;
   var output2 = newRest2;
   return (
