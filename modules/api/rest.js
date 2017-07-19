@@ -4,6 +4,7 @@ var formData = require('form-data');
 
 
 module.exports = class rest {
+  {"tad":"da"}
   POST(){
     var formData = {
       // Pass a simple key-value pair
