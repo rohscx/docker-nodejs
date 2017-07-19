@@ -6,6 +6,6 @@ module.exports = () => {
     {testResponse: "Cats on everything from Apic Ticket",
       gostface: output
     }
-    var test = newRest.anotherTestResponse
+    test
   );
 }
