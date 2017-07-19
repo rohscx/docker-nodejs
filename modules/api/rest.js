@@ -1,6 +1,6 @@
 var HTTP = require('HTTP');
 module.exports = () => {
-  makeRequest(type, url, options) {
+  var makeRequest = (type, url, options) => {
     try {
       const result = HTTP.call(type, url, options);
       // console.log(result); // debug
