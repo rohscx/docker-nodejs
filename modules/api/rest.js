@@ -1,8 +1,8 @@
 var request = require('request');
 var formData = require('form-data');
 
-module.exports = () => {
-var formData = {
+module.exports.httpRequest= () => {
+    var formData = {
   // Pass a simple key-value pair 
   username: 'devnetuser',
   password: 'Cisco123'
