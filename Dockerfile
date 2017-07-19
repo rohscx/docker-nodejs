@@ -34,10 +34,15 @@ RUN apt-get clean \
 && locale-gen en_US.UTF-8
 
 
+# Fix Nodejs on Ubuntu systems
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+
+
 # Run Entrypoint script
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 RUN chmod 755 /docker-entrypoint.sh
+
 
 # Add Meteor user
 RUN adduser --disabled-password --gecos "" node_dev
