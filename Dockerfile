@@ -24,7 +24,7 @@ RUN apt-get update \
 && apt-get install -qy curl \
  locales \
  git \
- npm \
+ apt-utils\
  build-essential \
  vim
 RUN apt-get clean \
@@ -32,10 +32,9 @@ RUN apt-get clean \
 && locale-gen en_US.UTF-8
 
 
-# Fix Nodejs on Ubuntu systems
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - \
+# Install Nodejs on Ubuntu systems
+RUN curl -sL https://deb.nodesource.com/setup_7.x  \
 && apt-get install -y nodejs \
-&& ln -s /usr/bin/nodejs /usr/bin/node
 
 
 # Run Entrypoint script
