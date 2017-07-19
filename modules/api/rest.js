@@ -16,6 +16,7 @@ module.exports = class rest {
   }
   request(options)  
   .then(function (response) {
+    console.log(response);
     return response;
   })
   .catch(function (err) {
