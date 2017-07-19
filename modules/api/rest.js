@@ -18,6 +18,7 @@ module.exports = class rest {
   .then(function (response) {
     console.log(response);
     callback(null, response);
+    resolve(response);
     return response;
   })
   .catch(function (err) {
