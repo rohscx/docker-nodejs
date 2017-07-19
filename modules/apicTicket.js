@@ -1,4 +1,4 @@
-var Calculator  = require('./api/rest');
+var calculator  = require('./api/rest');
 module.exports = () => {
   return (
     {
