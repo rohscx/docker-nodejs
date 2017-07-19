@@ -1,5 +1,5 @@
 var request = require('request');
-var form-data = require('form-data');
+var formData = require('form-data');
 
 module.exports = () => {
 var formData = {
