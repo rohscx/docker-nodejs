@@ -18,7 +18,6 @@ module.exports = class rest {
       if (err) {
         return console.error('upload failed:', err);
       }
-      console.log(formData);
       console.log('Upload successful!  Server responded with:', body);
     });
     return (
