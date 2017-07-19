@@ -1,4 +1,5 @@
 var httpRequest = require("http-request")
+var http = require("http")
 module.exports = () => {
 // multipart/form-data request built with form-data (3rd party module)
 // you have to use the http export of FormData
