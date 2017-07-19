@@ -1,6 +1,6 @@
 var rest = require('./api/rest');
 module.exports = () => {
-  var newRest = rest();
+  var newRest = rest.httpRequest();
   var output = newRest.anotherTestResponse;
   return (
     {
