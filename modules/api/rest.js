@@ -17,12 +17,12 @@ module.exports = class rest {
   }
   request(options)  
   .then(function (response) {
-  //console.log(response)
+  resolve(response);
   })
   .catch(function (err) {
     // Deal with the error
   })
-      resolve("cats")
+      //resolve("cats")
     })
   }
 
