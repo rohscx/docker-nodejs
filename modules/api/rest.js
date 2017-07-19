@@ -1,7 +1,7 @@
 var request = require('request');
 var formData = require('form-data');
 
-module.exports.httpRequest= () => {
+module.exports.httpPost= () => {
     var formData = {
   // Pass a simple key-value pair 
   username: 'devnetuser',
@@ -15,5 +15,11 @@ request.post({url:'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket', f
 });
   return (
     {anotherTestResponse: "Cats on everything from API REst"}
+  );
+}
+
+module.exports.httpGET= () => {
+  return (
+    {anotherTestResponse2: "Cats on everything from API REst"}
   );
 }
