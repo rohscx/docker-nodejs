@@ -1,10 +1,17 @@
 var request = require('request');
+var form-data = require('form-data');
+
 module.exports = () => {
-var request = require('request');
-request('http://www.google.com', function (error, response, body) {
-  console.log('error:', error); // Print the error if one occurred 
-  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received 
-  console.log('body:', body); // Print the HTML for the Google homepage. 
+var formData = {
+  // Pass a simple key-value pair 
+  username: 'devnetuser',
+  password: 'Cisco123'
+};
+request.post({url:'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket', formData: formData}, function optionalCallback(err, httpResponse, body) {
+  if (err) {
+    return console.error('upload failed:', err);
+  }
+  console.log('Upload successful!  Server responded with:', body);
 });
   return (
     {anotherTestResponse: "Cats on everything from API REst"}
