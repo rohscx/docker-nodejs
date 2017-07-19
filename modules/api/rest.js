@@ -14,12 +14,12 @@ request.post({url:'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket', f
   console.log('Upload successful!  Server responded with:', body);
 });
   return (
-    {anotherTestResponse: "Cats on everything from API REst"}
+    {anotherTestResponse: "Cats on everything from API REst POST"}
   );
 }
 
 module.exports.httpGET= () => {
   return (
-    {anotherTestResponse2: "Cats on everything from API REst"}
+    {anotherTestResponse: "Cats on everything from API REst GET"}
   );
 }
