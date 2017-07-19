@@ -1,3 +1,10 @@
 var restReqeust = require('./modules/apicTicket');
-
-console.log(restReqeust.POST()) // REST POST
+var test = restReqeust.POST()
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (err) {
+    // Deal with the error
+  })
+  
+console.log(test) // REST POST
