@@ -4,7 +4,9 @@ module.exports = () => {
   var output = newRest.anotherTestResponse;
   console.log(output);
   return (
-    {testResponse: "Cats on everything from Apic Ticket"}
-    {test:"TEST"}
+    {
+      testResponse: "Cats on everything from Apic Ticket",
+      test:"test"
+    }
   );
 }
