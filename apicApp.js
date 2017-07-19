@@ -1,6 +1,6 @@
 var restReqeust = require('./modules/apicTicket');
 
-restReqeust.POST().then(function(httpReturn){
+restReqeust.p.then(function(httpReturn){
   console.log(httpReturn);
 })
 
