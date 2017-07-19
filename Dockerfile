@@ -39,11 +39,11 @@ ENTRYPOINT [ "/docker-entrypoint.sh" ]
 RUN chmod 755 /docker-entrypoint.sh
 
 # Add Meteor user
-RUN adduser --disabled-password --gecos "" nodeDev
-USER nodeDev
+RUN adduser --disabled-password --gecos "" nodedev
+USER nodedev
 RUN cd ~/ \
 && mkdir nodeProjects
-WORKDIR /home/nodeDev/nodeProjects
+WORKDIR /home/nodedev/nodeProjects
 
 # Run bash
 CMD [ "-s" ]
