@@ -18,7 +18,9 @@ module.exports = class rest {
   .then(function (response) {
     console.log(response);
     callback(null, response);
-    resolve(response);
+    return new Promise(function(resolve,reject){
+    resolve(response)
+    })
   })
   .catch(function (err) {
     // Deal with the error
