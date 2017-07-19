@@ -18,7 +18,7 @@ request.post({url:'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket', f
   );
 }
 
-module.exports.httpGET= () => {
+module.exports.httpGet= () => {
   return (
     {anotherTestResponse: "Cats on everything from API REst GET"}
   );
