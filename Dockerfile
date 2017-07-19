@@ -33,10 +33,6 @@ RUN apt-get clean \
 && locale-gen en_US.UTF-8
 
 
-# Install Meteor.js
- RUN curl https://install.meteor.com/ | sh
-
-
 # Run Entrypoint script
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
