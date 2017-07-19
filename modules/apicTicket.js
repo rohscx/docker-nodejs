@@ -1,9 +1,9 @@
-var Calculator  = require('./api/rest');
+var Rest = require('./api/rest');
 
-class AdvancedCalculator extends Calculator {
+class restReqeust extends Rest {
   multiply(a,b) { return a * b }
   divide(a,b) { return a / b }
 }
 
 
-module.exports = new AdvancedCalculator()
+module.exports = new restReqeust()
