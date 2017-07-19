@@ -1,0 +1,23 @@
+{
+  "name": "docker-nodejs",
+  "version": "1.0.0",
+  "description": "A NodeJS environment for scripting",
+  "main": "apicApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohscx/docker-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohscx/docker-nodejs/issues"
+  },
+  "homepage": "https://github.com/rohscx/docker-nodejs#readme",
+  "dependencies": {
+    "http": "0.0.0"
+  }
+}
