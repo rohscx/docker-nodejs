@@ -24,7 +24,6 @@ RUN apt-get update \
 && apt-get install -qy curl \
  locales \
  git \
- nodejs \
  npm \
  build-essential \
  vim
@@ -34,7 +33,9 @@ RUN apt-get clean \
 
 
 # Fix Nodejs on Ubuntu systems
-RUN ln -s /usr/bin/nodejs /usr/bin/node
+RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash - \
+&& sudo apt-get install -y nodejs \
+&& ln -s /usr/bin/nodejs /usr/bin/node
 
 
 # Run Entrypoint script
