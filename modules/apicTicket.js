@@ -5,5 +5,6 @@ module.exports = () => {
   console.log(output);
   return (
     {testResponse: "Cats on everything from Apic Ticket"}
+    {test:"TEST"}
   );
 }
