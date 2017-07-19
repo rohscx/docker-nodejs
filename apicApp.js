@@ -7,7 +7,7 @@ let body = {
   "username":"devnetuser",
   "password":"Cisco123!"
 };
-restReqeust.POST(method,uri,body).then(function(httpReturn){
+restReqeust.Test(method,uri,body).then(function(httpReturn){
   console.log(httpReturn);
 })
 
