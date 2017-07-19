@@ -1,6 +1,4 @@
-var apicTicket = require('./modules/apicTicket');
+var calculator = require('./modules/apicTicket');
 
-var newTicket = apicTicket();
-
-console.log(newTicket.testResponse);
-console.log(newTicket.test);
+console.log(calculator.add(2,2)) // prints 4
+console.log(calculator.multiply(3,3)) // prints 9
