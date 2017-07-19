@@ -3,4 +3,5 @@ var apicTicket = require('./modules/apicTicket');
 var newTicket = apicTicket();
 
 console.log(newTicket.testResponse);
-console.log(output);
+console.log(newTicket.output);
+console.log(newTicket.ghostface);
