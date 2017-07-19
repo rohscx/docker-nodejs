@@ -1,3 +1,4 @@
 var apicTicket = require('./modules/apicTicket');
 
-console.log(apicTicket.crank);
+let newTicket = apicTicket();
+console.log(newTicket);
