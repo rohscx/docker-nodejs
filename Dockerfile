@@ -26,7 +26,8 @@ RUN apt-get update \
  git \
  apt-utils\
  build-essential \
- vim
+ vim \
+ npm
 RUN apt-get clean \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 && locale-gen en_US.UTF-8
@@ -35,7 +36,6 @@ RUN apt-get clean \
 # Install Nodejs on Ubuntu systems
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
 RUN apt-get install -y nodejs 
-RUN apt-get install -y npm
 
 
 # Run Entrypoint script
