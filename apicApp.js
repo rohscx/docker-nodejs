@@ -1,4 +1,4 @@
 var apicTicket = require('./modules/apicTicket');
 
-let newTicket = apicTicket();
+var newTicket = apicTicket();
 console.log(newTicket);
