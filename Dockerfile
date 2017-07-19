@@ -27,7 +27,8 @@ RUN apt-get update \
  nodejs \
  npm \
  build-essential \
- vim
+ vim \
+ node-gyp
 RUN apt-get clean \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 && locale-gen en_US.UTF-8
