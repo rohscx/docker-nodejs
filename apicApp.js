@@ -1,7 +1,13 @@
 var restReqeust = require('./modules/apicTicket');
-var test = restReqeust.POST(function (err, data) {
-  if (err) return console.error(err)
-  console.log(data)
-});
+
+async function main() {
+  var quote = await restReqeust.POST();
+  console.log(quote);
+}
+
   
 //console.log(test) // REST POST
+
+
+main();
+console.log('Ron once said,');
