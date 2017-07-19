@@ -36,16 +36,17 @@ RUN apt-get clean \
  RUN curl https://install.meteor.com/ | sh
 
 
-# Add Meteor user
-RUN adduser --disabled-password --gecos "" meteor
-
-
 # Run Entrypoint script
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 RUN chmod 755 /docker-entrypoint.sh
 
-WORKDIR ~/
+# Add Meteor user
+RUN adduser --disabled-password --gecos "" node
+USER meteor
+RUN cd ~/ \
+&& mkdir nodeProjects
+WORKDIR ~/nodeProjects
 
 # Run bash
 CMD [ "-s" ]
