@@ -35,7 +35,8 @@ RUN apt-get clean \
 
 # Install Nodejs on Ubuntu systems
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
-RUN apt-get install -y nodejs 
+RUN apt-get install -y nodejs
+RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 
 # Run Entrypoint script
