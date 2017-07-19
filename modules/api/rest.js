@@ -1,8 +1,11 @@
 var request = require('request');
 var formData = require('form-data');
 
-module.exports.httpPOST= () => {
-    var formData = {
+
+
+module.exports = class Rest {
+  POST() { 
+          var formData = {
   // Pass a simple key-value pair 
   username: 'devnetuser',
   password: 'Cisco123'
@@ -13,13 +16,15 @@ request.post({url:'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket', f
   }
   console.log('Upload successful!  Server responded with:', body);
 });
-  return (
-    {anotherTestResponse: "Cats on everything from API REst POST"}
-  );
+      return a + b 
+  }
+  substract(a,b) { return a - b }
 }
 
-module.exports.httpGET= () => {
-  return (
+    GET() {
+        return (
     {anotherTestResponse: "Cats on everything from API REst GET"}
   );
+    }
+
 }
