@@ -6,7 +6,7 @@ module.exports = class rest {
   POST(){
     return new Promise(function(resolve, reject) {
       const options = {
-        method: 'POST',
+        method: 'GET',
         uri: 'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket',
         body: {
           "username":"devnetuser",
