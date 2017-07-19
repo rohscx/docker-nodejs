@@ -7,7 +7,10 @@ module.exports = class rest {
     var formData = {
       // Pass a simple key-value pair
       username: 'devnetuser',
-      password: 'Cisco123'
+      password: 'Cisco123',
+       options: {
+         contentType: 'application/json'
+       }
     };
     request.post({url:'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket', formData: formData}, function optionalCallback(err, httpResponse, body) {
       if (err) {
