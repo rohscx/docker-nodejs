@@ -3,7 +3,7 @@ var formData = require('form-data');
 
 
 
-module.exports = class Rest {
+module.exports = class rest {
   POST(){
     var formData = {
       // Pass a simple key-value pair
