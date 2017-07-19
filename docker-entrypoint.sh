@@ -16,7 +16,7 @@ NODE_PROJECT_APP=/home/meteor/meteor-app
 NODE_PROJECT_CD="cd ~/meteor-app"
 NODE_PROJECT_GIT_PULL="git pull"
 NODE_PROJECT_START="meteor --settings settings.json debug > logs/stdout.log 2> logs/stderr.log"
-NODE_FAKEOUT=~/tuoekaf 
+NODE_FAKEOUT=~/tuoekaf
 
 
 # Error codes
@@ -36,7 +36,7 @@ usage() {
 
 initConfig() {
   if [ ! "$(ls --ignore .keys --ignore .authoritative --ignore .recursive --ignore -A ${NODE_FAKEOUT})"  ]; then
-    echo "Great Job"
+    git clone https://github.com/rohscx/docker-nodejs.git
   else
     echo "Node configuration already initialized........."
   fi
