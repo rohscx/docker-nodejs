@@ -1,16 +1,25 @@
-var HTTP = require('HTTP');
+var httpRequest = require("http-request")
 module.exports = () => {
-  var makeRequest = (type, url, options) => {
-    try {
-      const result = HTTP.call(type, url, options);
-      // console.log(result); // debug
-      return result;
-    } catch (e) {
-      // Got a network error, timeout, or HTTP error in the 400 or 500 range.
-      console.log(e) // debug
-      return e;
-    }
-  }
+// multipart/form-data request built with form-data (3rd party module)
+// you have to use the http export of FormData
+// the instanceof operator fails otherwise
+// implementing a manual check is not very elegant
+var form = new http.FormData();
+
+form.append('username', 'devnetuser');
+form.append('password', 'Cisco123');
+
+http.post({
+	url: 'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket',
+	reqBody: form
+}, function (err, res) {
+	if (err) {
+		console.error(err);
+		return;
+	}
+	
+	console.log(res.code, res.headers, res.buffer.toString());
+});
   return (
     {anotherTestResponse: "Cats on everything from API REst"}
   );
