@@ -13,7 +13,7 @@ module.exports = {
     console.log()
   },
   readFile: () =>{
-    return fs.readfileSync("../serverData/ipList.csv").toString();
+    return fs.readFileSync("../serverData/ipList.csv").toString();
   }
 
 }
