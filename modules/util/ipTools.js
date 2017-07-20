@@ -25,8 +25,7 @@ module.exports = {
         if (i == 4) {
           console.log(i);
         }
-      })
-    })
+      }})
     console.log(newData);
   }
 
