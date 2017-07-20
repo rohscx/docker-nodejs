@@ -49,5 +49,5 @@ apicTicket.httpRequest()
   })
   // Catches any errors from the HTTP Rest Request
   .catch((httpReject) =>{
-    console.log(httpReject));
+    console.log(httpReject);
   })
