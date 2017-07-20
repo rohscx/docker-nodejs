@@ -28,7 +28,7 @@ module.exports = {
           console.log(octants[i]);
           if (octants[i] == 230) {
             expandBy = 10;
-            expandScope = 230 + expandBy;
+            expandScope = octants[i] + expandBy;
             createScope = octants[0]+"."+octants[1]+"."+octants[2]+"."+expandScope;
             newRange = data+"-"+createScope;
             console.log(createScope);
