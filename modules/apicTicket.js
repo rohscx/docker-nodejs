@@ -35,8 +35,8 @@ class apicTicket extends rest {
   }
 
   ticketData(ticket) {
-    let ticket = newTicket;
-    return newTicket;
+    let this.ticket = this.newTicket;
+    return this.newTicket;
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
