@@ -38,6 +38,7 @@ module.exports = {
         }
       }})
     console.log(newData);
+    console.log(ipRange)
   }
 
 }
