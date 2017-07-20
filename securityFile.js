@@ -6,7 +6,8 @@ module.exports = {
       uri:"f"
     }
   },
-  public:{apcicEM:{
+  public:{
+    apicEM:{
       uName:"devnetuser",
       uPass:"Cisco123!",
       uri:"https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket"
