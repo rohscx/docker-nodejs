@@ -17,6 +17,10 @@ module.exports = {
   },
   formatData: (data) =>{
     let newData = data.split("\n");
+    let fixup = newData.map((data) =>{
+      let octants = data.split(".");
+      console.log(octants);
+    })
     console.log(newData);
   }
 
