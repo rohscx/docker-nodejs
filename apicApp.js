@@ -8,8 +8,8 @@ apicTicket.httpRequest()
   .then((httpReturn) =>{
     console.log(httpReturn);
     apicTicket.setTicketData(httpReturn.response);
-    apicDevices.setHeaders();
-    return apicDevices.httpRequest(apicTicket.getTicketData())
+    apicDevices.setHeaders(apicTicket.getTicketData());
+    return apicDevices.httpRequest();
   }).then((httpReturn) =>{
 
   })
