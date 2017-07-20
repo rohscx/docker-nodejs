@@ -2,7 +2,7 @@ const apicTicket = require('./modules/apicTicket');
 
 apicTicket.debug()
 
-apicTicket.post().then((httpReturn)=>{
+apicTicket.httpRequest().then((httpReturn)=>{
   console.log(httpReturn);
 })
 

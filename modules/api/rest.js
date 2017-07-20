@@ -9,7 +9,7 @@ module.exports = class rest {
     this.body = body;
   }
 
-  post(){
+  httpRequest(){
     return new Promise((resolve, reject) =>{
       const options = {
         method: this.method,
@@ -20,14 +20,11 @@ module.exports = class rest {
       }
       request(options)
         .then((response) =>{
-          console.log(response)
           resolve(response);
         })
         .catch((err) =>{
           // Deal with the error
-          console.log(err);
         })
-        //resolve("cats")
       })
     }
 
