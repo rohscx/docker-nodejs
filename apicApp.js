@@ -14,7 +14,7 @@ apicTicket.httpRequest()
   })
   .then((devicesReturn) =>{
     console.log(devicesReturn);
-    apicConfig.setHeaders(apicTicket.getTicketData();
+    apicConfig.setHeaders(apicTicket.getTicketData());
     apicConfig.setDeviceId("4af8bf34-295f-46f4-97b7-0a2d2ea4cf22");
     apicConfig.setUri();
     return apicConfig.httpRequest();
