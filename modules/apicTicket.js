@@ -32,7 +32,7 @@ const body = publicApicEm.body;
 class apicTicket extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
-    let this.ticket = "";
+    this.ticket = "";
   }
 
   setTicketData(ticket) {
