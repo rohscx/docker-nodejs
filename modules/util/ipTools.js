@@ -21,7 +21,7 @@ module.exports = {
       let octants = data.split(".");
       console.log(octants);
       console.log(octants.length);
-      for (i < octants.length i++) {
+      for (i = 0 ; i < octants.length; i++) {
         if (i == 4) {
           console.log(i);
         }
