@@ -11,7 +11,7 @@ apicTicket.httpRequest()
     apicDevices.setHeaders(apicTicket.getTicketData());
     return apicDevices.httpRequest();
   }).then((httpReturn) =>{
-
+    console.log(httpReturn);
   })
   .catch((httpReject) =>{
     console.log(JSON.stringify(httpReject));
