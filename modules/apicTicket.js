@@ -32,8 +32,8 @@ class apicTicket extends rest {
   multiply(a,b) { return a * b }
 
   divde(a,b) { return a / b }
-  
-  debug() {console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"body: "+this.body)}
+
+  debug() {console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"body: "+this.body.toString())}
 }
 
 //let test = new apicTicket(method,uri,body);
