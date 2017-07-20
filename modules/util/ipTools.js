@@ -20,6 +20,7 @@ module.exports = {
     let fixup = newData.map((data) =>{
       let octants = data.split(".");
       console.log(octants);
+      console.log(octants.count());
     })
     console.log(newData);
   }
