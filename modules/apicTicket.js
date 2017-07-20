@@ -8,7 +8,7 @@ const privateApicEm = {
     "username": securityFile.private.apicEM.uName,
     "password": securityFile.private.apicEM.uPass
   },
-  uri: securityFile.private.apicEm.uri
+  uri: securityFile.private.apicEM.uri
 };
 
 // Public Cisco ApicEM resource on the INTERnet
