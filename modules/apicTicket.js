@@ -27,11 +27,12 @@ const body = publicApicEm.body;
 
 console.log(method," ",uri," ",body)
 class requestApicTicket extends rest {
-constructor (method,uri,body){
-  super(method,uri,body)
-}
+  constructor (method,uri,body){
+    super(method,uri,body)
+  }
   multiply(a,b) { return a * b }
   divde(a,b) { return a / b }
+  logOptions() {console.log(this.method," ",this.uri," ",this.body)}
 }
 
 
