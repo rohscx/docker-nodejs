@@ -30,7 +30,7 @@ module.exports = {
             expandBy = 10;
             expandScope = 230 + expandBy;
             createScope = octants[0]+"."+octants[1]+"."+octants[2]+"."+expandScope;
-            newRange = newData+"-"+createScope;
+            newRange = data+"-"+createScope;
             console.log(createScope);
             console.log(newRange);
             ipRange.push(newRange);
