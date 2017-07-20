@@ -20,7 +20,6 @@ const publicApicEm = {
   uri: securityFile.public.apicEM.uri
 };
 
-
 const method = 'POST';
 const uri = publicApicEm.uri;
 const body = publicApicEm.body;
@@ -29,13 +28,18 @@ class apicTicket extends rest {
   constructor (method,uri,body){
     super(method,uri,body)
   }
-  multiply(a,b) { return a * b }
+  multiply(a,b) {
+    return a * b
+  }
 
-  divde(a,b) { return a / b }
+  divde(a,b) {
+    return a / b
+  }
 
-  debug() {console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"body: "+JSON.stringify(this.body))}
+  // Adds a Debugs for the contest of the Ticket POST HTTP request
+  debug() {
+    console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"body: "+JSON.stringify(this.body))
+  }
 }
-
-//let test = new apicTicket(method,uri,body);
 
 module.exports = new apicTicket(method,uri,body)
