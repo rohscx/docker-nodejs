@@ -5,7 +5,7 @@ const securityFile = require('../securityFile')
 // Private Cisco ApicEM resource on the INTRAnet
 const privateApicEm = {
   body:{
-    "username": securityFile.private.ApicEM.uName,
+    "username": securityFile.private.apicEM.uName,
     "password": securityFile.private.apicEM.uPass
   },
   uri: securityFile.private.apicEm.uri
@@ -14,8 +14,8 @@ const privateApicEm = {
 // Public Cisco ApicEM resource on the INTERnet
 const publicApicEm = {
   body:{
-    "username": publicApicEm.body.username,
-    "password": publicApicEm.body.password
+    "username": securityFile.public.apicEM.uName,
+    "password": securityFile.public.apicEM.uPass
   },
   uri: securityFile.public.apicEM.uri
 };
