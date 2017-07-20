@@ -9,8 +9,7 @@ module.exports = class rest {
     this.body = body;
   }
 
-  POST(){
-    console.log(this.method," ",this.uri," ",this.body)
+  post(){
     return new Promise((resolve, reject) =>{
       const options = {
         method: this.method,
@@ -32,7 +31,7 @@ module.exports = class rest {
       })
     }
 
-  GET(){
+  get(){
     return (
       {anotherTestResponse: "Cats on everything from API REst GET"}
     )
