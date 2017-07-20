@@ -32,11 +32,17 @@ const body = publicApicEm.body;
 class apicTicket extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
+    let this.ticket = "";
   }
 
-  ticketData(ticket) {
+  setTicketData(ticket) {
     const  newTicket = ticket;
+    this.ticket = newTicket.serviceTicket;
     return newTicket;
+  }
+
+  getTicketData(){
+    return this.ticket;
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request

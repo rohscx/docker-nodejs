@@ -1,19 +1,22 @@
 const rest = require('./api/rest');
 const securityFile = require('../securityFile')
 
-let apicHeaders = {
-    "content-type": "application/json",
-    "x-auth-token": "ST-13797-m7mGlriJybmgzMXXhLkH-cas",
-  };
 
 const method = 'GET';
 const uri = securityFile.public.apicEM.uri+"/network-device";
-const headers = apicHeaders;
+const headers = "";
 const body = "";
 
 class apicDevices extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
+  }
+
+  setHeaders(ticket){
+    this.headers = {
+        "content-type": "application/json",
+        "x-auth-token": ticket,
+      };
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
