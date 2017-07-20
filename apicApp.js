@@ -7,7 +7,7 @@ const ipTools = require('./modules/util/ipTools');
 let test =  ipTools.readFile();
 
 console.log(test);
-ipTools.formData(test);
+ipTools.formatData(test);
 
 /*
 // Apic Ticket debug
