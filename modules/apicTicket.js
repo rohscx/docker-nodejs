@@ -35,5 +35,6 @@ class apicTicket extends rest {
   debug() {console.log(this.method," ",this.uri," ",this.body)}
 }
 
+//let test = new apicTicket(method,uri,body);
 
-module.exports = new apicTicket()
+module.exports = new apicTicket(method,uri,body)
