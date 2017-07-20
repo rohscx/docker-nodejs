@@ -32,7 +32,7 @@ apicTicket.httpRequest()
     console.log(reachabilityReturn);
   })
   .catch((httpReject) =>{
-    console.log(JSON.stringify(httpReject));
+    console.log(httpReject));
   })
 
 
