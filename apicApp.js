@@ -21,7 +21,7 @@ apicTicket.httpRequest()
   })
   .then((configReturn) =>{
     console.log(JSON.stringify(configReturn));
-    console.log(configReturn.toString())
+    console.log(configReturn.response.toString())
   })
   .catch((httpReject) =>{
     console.log(JSON.stringify(httpReject));
