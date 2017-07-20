@@ -11,9 +11,8 @@ module.exports = {
   writeFile: () =>{
     fs.writeFileSync("../serverData/ipList.csv", "Test,Test");
     console.log()
-  }
-
-  readFile () =>{
+  },
+  readFile: () =>{
     return fs.readfileSync("../serverData/ipList.csv").toString();
   }
 
