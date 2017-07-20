@@ -33,7 +33,7 @@ class apicTicket extends rest {
 
   divde(a,b) { return a / b }
 
-  debug() {console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"body: "+JSON.stringify(this.body)}
+  debug() {console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"body: "+JSON.stringify(this.body))}
 }
 
 //let test = new apicTicket(method,uri,body);
