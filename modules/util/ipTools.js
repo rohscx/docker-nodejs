@@ -14,6 +14,10 @@ module.exports = {
   },
   readFile: () =>{
     return fs.readFileSync("/home/node_dev/nodeProjects/docker-nodejs/serverData/ipList.csv").toString();
+  },
+  formatData: (data) =>{
+    let newData = data.split();
+    console.log(newData);
   }
 
 }
