@@ -20,12 +20,18 @@ module.exports = {
     let newData = data.split("\n");
     let fixup = newData.map((data) =>{
       let octants = data.split(".");
+      // debug
+      /*
       console.log(octants);
       console.log(octants.length);
       console.log(octants[3]);
+      */
       for (i = 0 ; i < octants.length; i++) {
         if (i == 3) {
+          // debug
+          /*
           console.log(octants[i]);
+          */
           if (octants[i] == 230) {
             incrementBy = expandBy;
             // Converts string value to int and add the values
@@ -33,15 +39,20 @@ module.exports = {
             // Creates
             createIP = octants[0]+"."+octants[1]+"."+octants[2]+"."+newOctant;
             newRange = data+"-"+createIP;
+            // debug
+            /*
             console.log(createIP);
             console.log(newRange);
+            */
             ipRange.push(newRange);
           }
         }
       }})
-    console.log(newData);
-    console.log(ipRange)
-    return ipRange;
+      // debug
+      /*
+      console.log(newData);
+      console.log(ipRange)
+      */
+      return ipRange;
   }
-
 }
