@@ -1,5 +1,5 @@
 const rest = require('./api/rest');
-const securityFile = require('./secuirtyFile')
+const securityFile = require('../secuirtyFile')
 
 
 // Private Cisco ApicEM resource on the INTRAnet
