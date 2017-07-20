@@ -15,7 +15,7 @@ module.exports = class rest {
       const options = {
         method: this.method,
         uri: this.uri,
-        headers: this.headers
+        headers: this.headers,
         body: this.body,
         json: true
       // JSON stringifies the body automatically
