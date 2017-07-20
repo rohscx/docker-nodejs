@@ -3,7 +3,7 @@ const securityFile = require('./secuirtyFile')
 
 
 // Private Cisco ApicEM resource on the INTRAnet
-const privateApicEm{
+const privateApicEm = {
   body:{
     "username":private.apicEm.uName,
     "password":private.apicEm.uPass
@@ -12,7 +12,7 @@ const privateApicEm{
 };
 
 // Public Cisco ApicEM resource on the INTERnet
-const publicApicEm{
+const publicApicEm = {
   body:{
     "username":public.apicEm.uName,
     "password":public.apicEm.uPass
