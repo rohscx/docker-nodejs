@@ -16,6 +16,7 @@ module.exports = {
     return fs.readFileSync("/home/node_dev/nodeProjects/docker-nodejs/serverData/ipList.csv").toString();
   },
   formatData: (data) =>{
+    ipRange = []
     let newData = data.split("\n");
     let fixup = newData.map((data) =>{
       let octants = data.split(".");
@@ -27,9 +28,12 @@ module.exports = {
           console.log(octants[i]);
           if (octants[i] == 230) {
             expandBy = 10;
-            expandRange = 230 + expandBy;
-            createRange = octants[0]+"."+octants[1]+"."+octants[2]+"."+expandRange;
-            console.log(createRange);
+            expandScope = 230 + expandBy;
+            createScope = octants[0]+"."+octants[1]+"."+octants[2]+"."+expandScope;
+            newRange = newData+"-"+createScope;
+            console.log(createScope);
+            console.log(newRange);
+            ipRange.push(newRange);
           }
         }
       }})
