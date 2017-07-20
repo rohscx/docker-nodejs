@@ -13,7 +13,7 @@ apicTicket.httpRequest()
 
   })
   .catch((httpReject) =>{
-    console.log(JSON.stringify(httpReject);
+    console.log(JSON.stringify(httpReject));
   })
 
 
