@@ -5,6 +5,6 @@ requestApicTicket.POST().then((httpReturn)=>{
   console.log(httpReturn);
 })
 */
-logOptions()
+requestApicTicket.logOptions()
 
 //console.log(test) // REST POST
