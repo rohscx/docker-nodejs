@@ -7,7 +7,7 @@ let apicHeaders = {
   };
 
 const method = 'GET';
-const uri = publicApicEm.uri+"/network-device";
+const uri = securityFile.public.apicEM.uri+"/network-device";
 const headers = apicHeaders;
 const body = "";
 
