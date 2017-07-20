@@ -25,6 +25,12 @@ module.exports = {
       for (i = 0 ; i < octants.length; i++) {
         if (i == 3) {
           console.log(octants[i]);
+          if (octants[i] == 230) {
+            expandBy = 10;
+            expandRange = 230 + expandBy;
+            createRange = octants[0]+"."+octants[1]+"."+octants[2]+"."+expandRange;
+            console.log(createRange);
+          }
         }
       }})
     console.log(newData);
