@@ -2,10 +2,15 @@ const apicTicket = require('./modules/apicTicket');
 const apicDevices = require('./modules/apicDevices');
 const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
+const ipTools = require('./modules/util/ipTools');
 
+let test =  ipTools.readFile();
+
+console.log(test);
+
+/*
 // Apic Ticket debug
 apicTicket.debug()
-
 apicTicket.httpRequest()
   .then((ticketReturn) =>{
     console.log(ticketReturn);
@@ -34,7 +39,4 @@ apicTicket.httpRequest()
   .catch((httpReject) =>{
     console.log(httpReject));
   })
-
-
-
-//console.log(test) // REST POST
+*/
