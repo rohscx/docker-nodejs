@@ -1,6 +1,7 @@
 const apicTicket = require('./modules/apicTicket');
 const apicDevices = require('./modules/apicDevices');
 const apicConfig = require('./modules/apicConfig');
+const apicReachability = require('./modules/apicReachability');
 
 // Apic Ticket debug
 apicTicket.debug()
@@ -20,8 +21,15 @@ apicTicket.httpRequest()
     return apicConfig.httpRequest();
   })
   .then((configReturn) =>{
+    // prints out stringified JSON
     console.log(JSON.stringify(configReturn));
+    // prints out pretty string
     console.log(configReturn.response.toString())
+    apicReachability.setHeaders(apicTicket.getTicketData());
+    return apicReachability.httpRequest();
+  })
+  .then((reachabilityReturn) =>{
+    console.log(reachabilityReturn);
   })
   .catch((httpReject) =>{
     console.log(JSON.stringify(httpReject));
