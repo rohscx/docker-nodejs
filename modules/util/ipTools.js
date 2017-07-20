@@ -27,11 +27,13 @@ module.exports = {
         if (i == 3) {
           console.log(octants[i]);
           if (octants[i] == 230) {
-            expandBy = 10;
-            expandScope = Number(octants[i]) + expandBy;
-            createScope = octants[0]+"."+octants[1]+"."+octants[2]+"."+expandScope;
-            newRange = data+"-"+createScope;
-            console.log(createScope);
+            incrementBy = 10;
+            // Converts string value to int and add the values
+            newOctant = Number(octants[i]) + incrementBy;
+            // Creates
+            createIP = octants[0]+"."+octants[1]+"."+octants[2]+"."+newOctant;
+            newRange = data+"-"+createIP;
+            console.log(createIP);
             console.log(newRange);
             ipRange.push(newRange);
           }
