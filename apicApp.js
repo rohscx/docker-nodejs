@@ -6,7 +6,7 @@ apicTicket.POST().then((httpReturn)=>{
 })
 */
 
-//getTicket = new apicTicket;
-getTicket.debug()
+let getTicket = new apicTicket;
+apicTicket.debug()
 
 //console.log(test) // REST POST
