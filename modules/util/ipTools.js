@@ -15,7 +15,7 @@ module.exports = {
   readFile: () =>{
     return fs.readFileSync("/home/node_dev/nodeProjects/docker-nodejs/serverData/ipList.csv").toString();
   },
-  formatData: (data) =>{
+  formatData: (data, expandBy) =>{
     ipRange = []
     let newData = data.split("\n");
     let fixup = newData.map((data) =>{
@@ -27,7 +27,7 @@ module.exports = {
         if (i == 3) {
           console.log(octants[i]);
           if (octants[i] == 230) {
-            incrementBy = 10;
+            incrementBy = expandBy;
             // Converts string value to int and add the values
             newOctant = Number(octants[i]) + incrementBy;
             // Creates
