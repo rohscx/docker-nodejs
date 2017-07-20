@@ -1,25 +1,28 @@
-var request = require('request-promise') ;
-var formData = require('form-data');
+const request = require('request-promise') ;
+const formData = require('form-data');
 
+//
 module.exports = class rest {
+  constructor (method,uri,body){
+    this.method = method;
+    this.uri = uri;
+    this.body = body;
+  }
 
   POST(){
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) =>{
       const options = {
-        method: 'POST',
-        uri: 'https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket',
-        body: {
-          "username":"devnetuser",
-          "password":"Cisco123!"
-        },
+        method: this.method,
+        uri: this.uri,
+        body: this.body,
         json: true
       // JSON stringifies the body automatically
       }
       request(options)
-        .then(function (response) {
+        .then((response) =>{
           resolve(response);
         })
-        .catch(function (err) {
+        .catch((err) =>{
           // Deal with the error
         })
         //resolve("cats")

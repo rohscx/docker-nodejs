@@ -2,12 +2,14 @@ module.exports = {
   private:{
     apicEM:{
       uName:"",
-      uPass:""
+      uPass:"",
+      uri:""
     }
   },
   public:{apcicEM:{
-      uName:"",
-      uPass:""
+      uName:"devnetuser",
+      uPass:"Cisco123!",
+      uri:"https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket"
     }
   }
-}
+};
