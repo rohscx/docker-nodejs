@@ -1,7 +1,7 @@
 const rest = require('./api/rest');
 const securityFile = require('../securityFile')
 
-/*
+
 // Private Cisco ApicEM resource on the INTRAnet
 const privateApicEm = {
   body:{
@@ -12,13 +12,10 @@ const privateApicEm = {
 };
 
 // Public Cisco ApicEM resource on the INTERnet
-*/
-
-console.log(securityFile.private);
 const publicApicEm = {
   body:{
-    "username": securityFile.public.apicEM.uName,
-    "password": securityFile.public.apicEM.uPass
+    "username": publicApicEm.body.username,
+    "password": publicApicEm.body.password
   },
   uri: securityFile.public.apicEM.uri
 };
