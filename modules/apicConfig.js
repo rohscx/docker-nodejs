@@ -18,6 +18,7 @@ class apicConfig extends rest {
         "content-type": "application/json",
         "x-auth-token": ticket,
       };
+  }
 
   setDeviceId(deviceId){
     this.deviceId = "/"+deviceId;
