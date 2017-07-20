@@ -35,7 +35,7 @@ class apicTicket extends rest {
   }
 
   ticketData(ticket) {
-    const ticket = newTicket;
+    const  newTicket = ticket;
     return newTicket;
   }
 
