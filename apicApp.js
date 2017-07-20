@@ -5,13 +5,14 @@ const apicDevices = require('./modules/apicDevices');
 apicTicket.debug()
 
 apicTicket.httpRequest()
-  .then((httpReturn) =>{
-    console.log(httpReturn);
-    apicTicket.setTicketData(httpReturn.response);
+  .then((ticketReturn) =>{
+    console.log(ticketReturn);
+    apicTicket.setTicketData(ticketReturn.response);
     apicDevices.setHeaders(apicTicket.getTicketData());
     return apicDevices.httpRequest();
-  }).then((httpReturn) =>{
-    console.log(httpReturn);
+  })
+  .then((devicesReturn) =>{
+    console.log(devicesReturn);
   })
   .catch((httpReject) =>{
     console.log(JSON.stringify(httpReject));
