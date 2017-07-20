@@ -8,7 +8,7 @@ apicTicket.httpRequest()
   .then((httpReturn) =>{
     console.log(httpReturn);
     apicTicket.ticketData(httpReturn.response);
-    return apicDevices()
+    return apicDevices.httpRequest()
   }).then((httpReturn) =>{
 
   })
