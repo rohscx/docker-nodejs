@@ -1,10 +1,12 @@
-const requestApicTicket = require('./modules/apicTicket');
+const apicTicket = require('./modules/apicTicket');
 
 /*
-requestApicTicket.POST().then((httpReturn)=>{
+apicTicket.POST().then((httpReturn)=>{
   console.log(httpReturn);
 })
 */
-requestApicTicket.logOptions()
+
+getTicket = new apicTicket;
+getTicket.debug()
 
 //console.log(test) // REST POST
