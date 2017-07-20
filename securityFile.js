@@ -1,9 +1,9 @@
 module.exports = {
   private:{
     apicEM:{
-      uName:"",
-      uPass:"",
-      uri:""
+      uName:"s",
+      uPass:"d",
+      uri:"f"
     }
   },
   public:{apcicEM:{
