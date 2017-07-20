@@ -3,9 +3,10 @@ const formData = require('form-data');
 
 //
 module.exports = class rest {
-  constructor (method,uri,body){
+  constructor (method,uri,headers,body){
     this.method = method;
     this.uri = uri;
+    this.headers = headers;
     this.body = body;
   }
 
@@ -14,6 +15,7 @@ module.exports = class rest {
       const options = {
         method: this.method,
         uri: this.uri,
+        headers: this.headers
         body: this.body,
         json: true
       // JSON stringifies the body automatically
@@ -24,6 +26,7 @@ module.exports = class rest {
         })
         .catch((err) =>{
           // Deal with the error
+          reject(err);
         })
       })
     }
