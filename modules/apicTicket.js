@@ -25,9 +25,9 @@ const method = 'POST';
 const uri = publicApicEm.uri;
 const body = publicApicEm.body;
 
-console.log(ethod," ",uri," ",body)
+console.log(method," ",uri," ",body)
 class requestApicTicket extends rest {
-constructor(method,uri,body){
+constructor (method,uri,body){
   super(method,uri,body)
 }
   multiply(a,b) { return a * b }
