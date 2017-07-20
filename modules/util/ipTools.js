@@ -22,7 +22,7 @@ module.exports = {
       console.log(octants);
       console.log(octants.length);
       for (i = 0 ; i < octants.length; i++) {
-        if (i == 4) {
+        if (octants[i] == 3) {
           console.log(octants[i]);
         }
       }})
