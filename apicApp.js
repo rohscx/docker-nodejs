@@ -7,7 +7,8 @@ const ipTools = require('./modules/util/ipTools');
 let test =  ipTools.readFile();
 
 console.log(test);
-ipTools.formatData(test,10);
+ipRangeArray = ipTools.formatData(test,10);
+console.log(ipRangeArray);
 
 /*
 // Apic Ticket debug

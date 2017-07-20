@@ -41,6 +41,7 @@ module.exports = {
       }})
     console.log(newData);
     console.log(ipRange)
+    return ipRange;
   }
 
 }
