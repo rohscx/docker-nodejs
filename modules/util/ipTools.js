@@ -9,11 +9,11 @@ const path = require('path');
 module.exports = {
 
   writeFile: () =>{
-    fs.writeFileSync("../serverData/ipList.csv", "Test,Test");
+    fs.writeFileSync("../../serverData/ipList.csv", "Test,Test");
     console.log()
   },
   readFile: () =>{
-    return fs.readFileSync("../serverData/ipList.csv").toString();
+    return fs.readFileSync("../../serverData/ipList.csv").toString();
   }
 
 }
