@@ -1,11 +1,11 @@
 const apicTicket = require('./modules/apicTicket');
 
-/*
-apicTicket.POST().then((httpReturn)=>{
+apicTicket.debug()
+
+apicTicket.post().then((httpReturn)=>{
   console.log(httpReturn);
 })
-*/
 
-apicTicket.debug()
+
 
 //console.log(test) // REST POST
