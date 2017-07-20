@@ -4,10 +4,8 @@ const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
 const ipTools = require('./modules/util/ipTools');
 
-let test =  ipTools.readFile();
-
-console.log(test);
-ipRangeArray = ipTools.formatData(test,10);
+let ipList =  ipTools.readFile();
+ipRangeArray = ipTools.formatData(ipList,10);
 console.log(ipRangeArray);
 
 /*
