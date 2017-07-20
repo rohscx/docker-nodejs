@@ -3,7 +3,7 @@ const securityFile = require('../securityFile')
 
 
 const method = 'GET';
-const uri = securityFile.public.apicEM.uri+"/apicReachability";
+const uri = securityFile.public.apicEM.uri+"/reachability-info";
 const headers = "";
 const body = "";
 
