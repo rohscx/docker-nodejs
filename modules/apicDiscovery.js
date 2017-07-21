@@ -35,13 +35,27 @@ class apicDiscovery extends rest {
   }
 
   setDiscoveryList (ipList,name){
+    let ipRangeHold ={
+      jobName: "",
+      ipRange: ""
+    };
     ipList.map((data) =>{
-      let newName = name+ipList.indexOf(data)
-      let newIpList = [{
-        jobName: newName,
-        ipRange: data
-      }];
-      this.discoveryList.push(newIpList);
+      if (ipList.indexOf(data) % 7 == 0) {
+        if (ipList.indexOf(data) == 0) {
+          ipRangeHold.ipRange += data+",";
+        } else {
+          let newIpList = ipRangeHold;
+          ipRangeHold ={
+            jobName: "",
+            ipRange: ""
+          };
+          ipRangeHold.jobName = name+ipList.indexOf(data)
+          ipRangeHold.ipRange += data;
+          this.discoveryList.push(newIpList);
+        }
+      } else {
+        ipRangeHold.ipRange += data+","
+      }
     })
   }
 
