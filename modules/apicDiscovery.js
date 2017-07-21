@@ -82,6 +82,8 @@ class apicDiscovery extends rest {
   setDiscoveryTickets (discovery) {
     let newDiscoveryTickets = [discovery];
     this.discoveryTickets.push(newDiscoveryTickets)
+    console.log("New Discovry  ",newDiscoveryTickets);
+    console.log("This discovery   ",this.discoveryTickets);
   }
 
   getDiscoveryTickets () {
