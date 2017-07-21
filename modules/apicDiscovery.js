@@ -55,7 +55,8 @@ class apicDiscovery extends rest {
         }
       } else {
         ipRangeHold.ipRange += data+",";
-        console.log(ipList.length);
+        console.log(ipList.length, ipList.indexOf(data));
+
       }
     })
   }
