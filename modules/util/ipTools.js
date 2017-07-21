@@ -49,7 +49,7 @@ module.exports = {
             ipRange.push(newRange);
           }
         } else {
-          badData.push(octants);
+          badData.push(data);
         }
       }})
       // debug
