@@ -12,11 +12,16 @@ class ipTools extends fileSystem {
     this.ipRange = "";
   }
 
+  getIpRange (){
+    return this.ipRange;
+  }
+
   formatData (expandBy) {
     let ipRange = [];
     let badData = [];
     let skipped = [];
     let newData = this.inputFile.split("\n");
+    let i = 0;
     let fixup = newData.map((data) =>{
       let octants = data.split(".");
       // debug
@@ -25,7 +30,7 @@ class ipTools extends fileSystem {
       console.log(octants.length);
       console.log(octants[3]);
       */
-      for (let i = 0 ; i < octants.length; i++) {
+      for (i = 0 ; i < octants.length; i++) {
         // side effect is that this standardises the data to proper IP's only..
         if (i == 3) {
           // debug
