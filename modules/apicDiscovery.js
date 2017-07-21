@@ -56,7 +56,7 @@ class apicDiscovery extends rest {
         }
       } else {
         ipRangeHold.ipRange += data+",";
-        console.log(ipList.length, ipList.indexOf(data));
+        console.log(ipListlength, ipList.indexOf(data));
         if (ipListlength == ipList.indexOf(data)) {
           ipRangeHold.jobName = name+ipList.indexOf(data);
           let newIpList = [ ipRangeHold ];
