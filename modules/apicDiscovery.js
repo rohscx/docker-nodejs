@@ -6,14 +6,14 @@ const method = 'POST';
 const uri = "";
 const headers = "";
 const body = {
-  "snmpVersion": "v2",
-  "ipAddressList": "string",
-  "discoveryType": "multi range",
-  "retry": 2,
-  "name": "string",
+  "name": "",
   "reDiscovery": true,
+  "retry": 2,
+  "discoveryType": "multi range",
+  "snmpVersion": "v2",
+  "ipAddressList": "",
   "timeout": 2
-};
+}
 
 class apicDiscovery extends rest {
   constructor (method,uri,headers,body){
