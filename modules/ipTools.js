@@ -12,11 +12,11 @@ class ipTools extends fileSystem {
     this.ipRange = "";
   }
 
-  formatData (data, expandBy) {
+  formatData (expandBy) {
     let ipRange = [];
     let badData = [];
     let skipped = [];
-    let newData = data.split("\n");
+    let newData = this.inputFile.split("\n");
     let fixup = newData.map((data) =>{
       let octants = data.split(".");
       // debug
