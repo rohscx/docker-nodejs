@@ -32,14 +32,14 @@ apicTicket.httpRequest()
     console.log(ticketReturn);
     apicTicket.setTicketData(ticketReturn.response);
     apicDevices.setHeaders(apicTicket.getTicketData());
-    apicDevices.setUriBase(apcTicket.getUriBase());
+    apicDevices.setUriBase(apicTicket.getUriBase());
     // Uses ticket to pull device list
     return apicDevices.httpRequest();
   })
   .then((devicesReturn) =>{
     console.log(devicesReturn);
     apicConfig.setHeaders(apicTicket.getTicketData());
-    apicConfig.setUriBase(apcTicket.getUriBase());
+    apicConfig.setUriBase(apicTicket.getUriBase());
     apicConfig.setDeviceId("4af8bf34-295f-46f4-97b7-0a2d2ea4cf22");
     apicConfig.setUri();
     // Uses ticket to pull a single device config
@@ -51,7 +51,7 @@ apicTicket.httpRequest()
     // prints out pretty string
     console.log(configReturn.response.toString())
     apicReachability.setHeaders(apicTicket.getTicketData());
-    apicReachability.setUriBase(apcTicket.getUriBase());
+    apicReachability.setUriBase(apicTicket.getUriBase());
     // Uses ticket to pull device reachablidy information
     return apicReachability.httpRequest();
   })
