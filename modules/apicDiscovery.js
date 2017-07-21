@@ -36,7 +36,7 @@ class apicDiscovery extends rest {
   }
 
   setUriBase (uriBase){
-    newUri = uri+"/discovery"
+    const newUri = uri+"/discovery"
     this.uri = newUri;
   }
 

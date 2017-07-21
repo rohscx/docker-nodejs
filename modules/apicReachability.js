@@ -20,7 +20,7 @@ class apicReachability extends rest {
   }
 
   setUriBase (uriBase){
-    newUri = uri+"/reachability-info"
+    const newUri = uri+"/reachability-info"
     this.uri = newUri;
   }
 
