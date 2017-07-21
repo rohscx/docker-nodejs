@@ -17,7 +17,7 @@ module.exports = class fileSystem {
   }
 
   setFile (fileName){
-    newFileName = "/"+fileName
+    let newFileName = "/"+fileName
     this.inputFile = newFileName;
   }
 
