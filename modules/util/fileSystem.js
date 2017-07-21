@@ -23,7 +23,7 @@ module.exports = class fileSystem {
 
   readFile (){
 
-    let filename = this.dataPath+this.inputFile;
+    let filename = "/home/node_dev/nodeProjects/docker-nodejs/serverData/ipList.csv";
     fs.readFileAsync = function(filename) {
     return new Promise(function(resolve, reject) {
         fs.readFile(filename, function(err, data){
