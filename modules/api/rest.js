@@ -16,7 +16,7 @@ module.exports = class rest {
       const options = {
         method: this.method,
         uri: this.uri,
-        rejectunauthorized: this.rejectCert,
+        rejectUnauthorized: this.rejectCert,
         headers: this.headers,
         body: this.body,
         json: true
