@@ -84,3 +84,5 @@ class ipTools extends fileSystem {
     console.log("inputFile: "+this.inputFile,'\n',"outputFile: "+outputFile.uri,'\n')
   }
 }
+
+module.exports = new ipTools(data, expandBy)
