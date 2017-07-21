@@ -21,6 +21,7 @@ class apicDiscovery extends rest {
     super(method,uri,rejectCert,headers,body)
     this.discoveryList = [];
     this.uriBase = "";
+    this.discoveryTickets[];
   }
 
   setHeaders (ticket){
@@ -75,6 +76,15 @@ class apicDiscovery extends rest {
 
   getDiscoveryList () {
     return this.discoveryList;
+  }
+
+  setDiscoveryTickets (discovery) {
+    let newDiscoveryTickets = [discovery];
+    this.discoveryTickets.push(newDiscoveryTickets)
+  }
+
+  getDiscoveryTickets () {
+    return this.discoveryTickets;
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request

@@ -35,19 +35,19 @@ apicTicket.httpRequest()
     console.log(apicDiscovery.getDiscoveryList())
     let discoveryList = apicDiscovery.getDiscoveryList();
     discoveryList.map((data) =>{
-      let type = "POST";
+      let type = "multi range";
       console.log(data);
       console.log(data[0].jobName);
       console.log(data[0].ipRange);
       apicDiscovery.setBody(data[0].jobName,type,data[0].ipRange);
       apicDiscovery.debug();
-      // Uses ticket to pull device list
-      //return apicDiscovery.httpRequest();
+      Uses ticket to pull device list
+      return apicDiscovery.httpRequest()
+      .then((discoveryReturn) =>{
+        console.log(discoveryReturn);
+        apicDiscovery.setDiscoveryTickets(discoveryReturn);
+      })
     })
-  })
-  .then((discoveryReturn) =>{
-    console.log(discoveryReturn);
-
   })
   // Catches any errors from the HTTP Rest Request
   .catch((httpReject) =>{
