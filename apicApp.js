@@ -46,13 +46,14 @@ apicTicket.httpRequest()
         return apicDiscovery.httpRequest()
         .then((discoveryReturn) =>{
           apicDiscovery.setDiscoveryTickets(discoveryReturn);
+          console.log(discoveryList.indexOf(data));
           resolve(apicDiscovery.getDiscoveryTickets());
         })
       })
-      .then((apicDiscovery) =>{
-        console.log(apicDiscovery);
-        console.log("asdfasdfasdfasdfasfasdfasdfasdasdfadsfasdfasdfadsfasdfdsafadsfasdfadfafasfsadfasdf")
-      })
+    })
+    .then((apicDiscovery) =>{
+      console.log(apicDiscovery);
+      console.log("asdfasdfasdfasdfasfasdfasdfasdasdfadsfasdfasdfadsfasdfdsafadsfasdfadfafasfsadfasdf")
     })
   })
   // Catches any errors from the HTTP Rest Request
