@@ -46,8 +46,8 @@ apicTicket.httpRequest()
       .then((discoveryReturn) =>{
         apicDiscovery.setDiscoveryTickets(discoveryReturn);
       })
-      apicDiscovery.getDiscoveryList(); 
     })
+    apicDiscovery.getDiscoveryList(); 
   })
   // Catches any errors from the HTTP Rest Request
   .catch((httpReject) =>{
