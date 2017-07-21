@@ -12,7 +12,7 @@ class ipTools extends fileSystem {
     this.ipRange = "";
   }
 
-  formatData (data, expandBy) =>{
+  formatData (data, expandBy) {
     let ipRange = [];
     let badData = [];
     let skipped = [];
