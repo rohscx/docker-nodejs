@@ -48,9 +48,7 @@ apicTicket.httpRequest()
           apicDiscovery.setDiscoveryTickets(discoveryReturn);
         })
       })
-      .then((response) =>{
-        console.log("WHERE IS THIS");
-      })
+        resolve(response);
     })
     .then((devicesReturn) =>{
       console.log(apicDiscovery.getDiscoveryTickets());
