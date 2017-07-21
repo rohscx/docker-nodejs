@@ -25,7 +25,7 @@ class ipTools extends fileSystem {
       console.log(octants.length);
       console.log(octants[3]);
       */
-      for (i = 0 ; i < octants.length; i++) {
+      for (let i = 0 ; i < octants.length; i++) {
         // side effect is that this standardises the data to proper IP's only..
         if (i == 3) {
           // debug
