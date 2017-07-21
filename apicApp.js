@@ -34,8 +34,8 @@ apicTicket.httpRequest()
     apicDiscovery.setUriBase(apicTicket.getUriBase());
     temp.map((data) =>{
       console.log(data);
-      console.log(data.jobName);
-      console.log(data.ipRange);
+      console.log(data[0].jobName);
+      console.log(data[0].ipRange);
     })
     apicDiscovery.setBody(name,type,ipList);
     // Uses ticket to pull device list
