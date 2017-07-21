@@ -48,10 +48,10 @@ apicTicket.httpRequest()
           apicDiscovery.setDiscoveryTickets(discoveryReturn);
         })
       })
-        resolve(response);
+        resolve(apicDiscovery.getDiscoveryTickets());
     })
-    .then((devicesReturn) =>{
-      console.log(apicDiscovery.getDiscoveryTickets());
+    .then((apicDiscovery) =>{
+      console.log(apicDiscovery);
       console.log("asdfasdfasdfasdfasfasdfasdfasdasdfadsfasdfasdfadsfasdfdsafadsfasdfadfafasfsadfasdf")
     })
   })
