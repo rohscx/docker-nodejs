@@ -8,8 +8,9 @@ const path = require('path');
 
 module.exports = {
 
-  writeFile: () =>{
-    fs.writeFileSync("/home/node_dev/nodeProjects/docker-nodejs/serverData/ipList.csv", "Test,Test");
+  writeFile: (fileName) =>{
+    let newFile = fileName+".csv";
+    fs.writeFileSync("/home/node_dev/nodeProjects/docker-nodejs/serverData/ipList.csv", newFile);
     console.log()
   },
   readFile: () =>{
