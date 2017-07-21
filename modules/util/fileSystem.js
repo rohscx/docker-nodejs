@@ -16,11 +16,11 @@ module.exports = class fileSystem {
     this.fileData ="";
   }
 
-  setFile (fileName) =>{
+  setFile (fileName){
     this.inputFile = fileName;
   }
 
-  readFile () =>{
+  readFile (){
     this.inputFile = return new Promise((resolve, reject) =>{
       let data = fs.readFileSync(this.dataPath+this.inputFile).toString();
       .then((data) =>{
@@ -35,7 +35,7 @@ module.exports = class fileSystem {
     })
   }
 
-  writeFile (fileName) =>{
+  writeFile (fileName){
     let newFile = fileName+this.saveExtension;
     fs.writeFileSync(this.dataPath, inputFile);
   }
