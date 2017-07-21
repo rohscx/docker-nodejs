@@ -23,14 +23,16 @@ module.exports = class fileSystem {
 
   readFile (){
     return new Promise((resolve, reject) =>{
-      return fs.readFileSync(this.dataPath+this.inputFile, (data, err) => {
+      fs.readFileSync(this.dataPath+this.inputFile, (data, err) => {
         if (err) {
           console.log("errr  ",err);
           reject(err)
         } else {
           console.log("datata:  ",data);
           resolve(data)
-        }})})
+        }
+      })
+    })
   }
 
   writeFile (fileName){
