@@ -38,7 +38,7 @@ class apicDiscovery extends rest {
     this.body.ipAddressList = ipList;
   }
 
-  setNewBody (){
+  setNewReqest (){
     this.body = ""
     this.method = "GET"
   }
