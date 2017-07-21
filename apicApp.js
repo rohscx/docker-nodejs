@@ -46,10 +46,10 @@ apicTicket.httpRequest()
         return apicDiscovery.httpRequest()
         .then((discoveryReturn) =>{
           apicDiscovery.setDiscoveryTickets(discoveryReturn);
+          // normalizes indexOf to work with .length
           let indexPosition = discoveryList.indexOf(data) + 1;
           let dataLength = discoveryList.length;
-          console.log(indexPosition);
-          console.log(dataLength);
+          // Verifies all array items have been processed before resolving promise
           if (indexPosition == dataLength) {
               resolve(apicDiscovery.getDiscoveryTickets());
           }
