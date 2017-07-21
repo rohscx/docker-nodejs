@@ -48,7 +48,11 @@ module.exports = {
             console.log(newRange);
             */
             ipRange.push(newRange);
+            // Checks for IP address outside of the normal range
+          } else if (octants[i] <= 229 || octants[i] >= 241) {
+            newRange = data+"-"+data
           } else {
+            // Just in case catch the rest
             skipped.push(data);
           }
         } else if (octants.length <= 3 || octants.length >= 5) {
