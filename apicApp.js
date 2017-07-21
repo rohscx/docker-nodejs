@@ -4,9 +4,10 @@ const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
 const ipTools = require('./modules/util/ipTools');
 
-/* These can be broken up into speperate .js files to accomplish goals
+/* These can be broken up into speperate .js files to accomplish a task
    ultimately some user interaction front end should be build, but this is a
    quick ad dirty....
+   Note to self 240 characters can hold about 8 ip RANGES. <-- Batch Maximum!!
 */
 
 

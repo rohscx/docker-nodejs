@@ -16,7 +16,8 @@ module.exports = {
     return fs.readFileSync("/home/node_dev/nodeProjects/docker-nodejs/serverData/ipList.csv").toString();
   },
   formatData: (data, expandBy) =>{
-    ipRange = []
+    ipRange = [];
+    badData = [];
     let newData = data.split("\n");
     let fixup = newData.map((data) =>{
       let octants = data.split(".");
@@ -27,6 +28,7 @@ module.exports = {
       console.log(octants[3]);
       */
       for (i = 0 ; i < octants.length; i++) {
+        // side effect is that this standardises the data to proper IP's only..
         if (i == 3) {
           // debug
           /*
@@ -46,6 +48,8 @@ module.exports = {
             */
             ipRange.push(newRange);
           }
+        } else {
+          badData.push(octants);
         }
       }})
       // debug
@@ -53,6 +57,7 @@ module.exports = {
       console.log(newData);
       console.log(ipRange)
       */
+      console.log("These appear to be formated incorrectly: ",badData):
       return ipRange;
   }
 }
