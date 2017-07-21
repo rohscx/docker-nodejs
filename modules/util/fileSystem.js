@@ -24,7 +24,9 @@ module.exports = class fileSystem {
   readFile (){
     return new Promise((resolve, reject) =>{
       console.log(fs.readFileSync(this.dataPath+this.inputFile).toString());
-      fs.readFileSync(this.dataPath+this.inputFile).toString()
+      () => {
+        return fs.readFileSync(this.dataPath+this.inputFile).toString()
+      }
       .then((data) =>{
         data = this.fileData;
         resolve(apicDiscovery.getDiscoveryTickets());
