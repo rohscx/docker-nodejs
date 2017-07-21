@@ -22,7 +22,9 @@ module.exports = class fileSystem {
   }
 
   readFile (){
-    fs.readFileAsync = function(this.dataPath+this.inputFile) {
+
+    let filename = this.dataPath+this.inputFile;
+    fs.readFileAsync = function(filename) {
     return new Promise(function(resolve, reject) {
         fs.readFile(filename, function(err, data){
             if (err)
