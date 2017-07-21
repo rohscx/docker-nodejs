@@ -50,7 +50,7 @@ module.exports = {
             */
             ipRange.push(newRange);
             // Checks for IP address outside of the normal range
-          } else if (octants[i] <= 229 || octants[i] >= 241) {
+          } else if (octants[i] <= 229 + expandBy || octants[i] >= 241 + expandBy) {
             newRange = data+"-"+data
             ipRange.push(newRange);
           } else {

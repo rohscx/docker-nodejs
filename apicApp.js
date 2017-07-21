@@ -15,7 +15,7 @@ const ipTools = require('./modules/util/ipTools');
 
 // Reads the value of a properly formated CSV file, processes it, and stores it.
 let ipList =  ipTools.readFile();
-ipRangeArray = ipTools.formatData(ipList,10);
+ipRangeArray = ipTools.formatData(ipList,20);
 console.log(ipRangeArray);
 
 // Uses IP list to generate array with IP range and Job name objects
