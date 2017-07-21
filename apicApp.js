@@ -34,23 +34,26 @@ apicTicket.httpRequest()
     apicDiscovery.setDiscoveryList(ipRangeArray,"JOBTEST__NAME_");
     console.log(apicDiscovery.getDiscoveryList())
     let discoveryList = apicDiscovery.getDiscoveryList();
-    discoveryList.map((data) =>{
-      let type = "multi range";
-      console.log(data);
-      console.log(data[0].jobName);
-      console.log(data[0].ipRange);
-      apicDiscovery.setBody(data[0].jobName,type,data[0].ipRange);
-      apicDiscovery.debug();
-      //Uses ticket to pull device list
-      return apicDiscovery.httpRequest()
-      .then((discoveryReturn) =>{
-        apicDiscovery.setDiscoveryTickets(discoveryReturn);
+    return new Promise((resolve, reject) =>{
+      discoveryList.map((data) =>{
+        let type = "multi range";
+        console.log(data);
+        console.log(data[0].jobName);
+        console.log(data[0].ipRange);
+        apicDiscovery.setBody(data[0].jobName,type,data[0].ipRange);
+        apicDiscovery.debug();
+        //Uses ticket to pull device list
+        return apicDiscovery.httpRequest()
+        .then((discoveryReturn) =>{
+          apicDiscovery.setDiscoveryTickets(discoveryReturn);
+        })
       })
+      resolve(response)
     })
-  })
-  .then((devicesReturn) =>{
-    console.log(apicDiscovery.getDiscoveryTickets());
-    console.log("asdfasdfasdfasdfasfasdfasdfasdasdfadsfasdfasdfadsfasdfdsafadsfasdfadfafasfsadfasdf")
+    .then((devicesReturn) =>{
+      console.log(apicDiscovery.getDiscoveryTickets());
+      console.log("asdfasdfasdfasdfasfasdfasdfasdasdfadsfasdfasdfadsfasdfdsafadsfasdfadfafasfsadfasdf")
+    })
   })
   // Catches any errors from the HTTP Rest Request
   .catch((httpReject) =>{
