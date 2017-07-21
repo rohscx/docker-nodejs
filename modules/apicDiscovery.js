@@ -37,10 +37,10 @@ class apicDiscovery extends rest {
   setDiscoveryList (ipList,name){
     ipList.map((data) =>{
       let newName = name+ipList.indexOf(data)
-      let newIpList = {
+      let newIpList = [{
         jobName: newName,
         ipRange: data
-      };
+      }];
       this.discoveryList.push(newIpList);
     })
   }

@@ -18,7 +18,7 @@ let ipList =  ipTools.readFile();
 ipRangeArray = ipTools.formatData(ipList,10);
 console.log(ipRangeArray);
 
-
+// Uses IP list to generate array with IP range and Job name objects
 apicDiscovery.setDiscoveryList(ipRangeArray,"JOBTEST__NAME_");
 console.log(apicDiscovery.getDiscoveryList())
 
