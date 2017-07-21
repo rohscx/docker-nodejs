@@ -49,7 +49,7 @@ module.exports = {
             */
             ipRange.push(newRange);
           } else {
-            skipped = data;
+            skipped.push(data);
           }
         } else if (octants.length <= 3 || octants.length >= 5) {
           badData.push(data);
