@@ -44,8 +44,8 @@ apicTicket.httpRequest()
       //Uses ticket to pull device list
       return apicDiscovery.httpRequest()
       .then((discoveryReturn) =>{
-        console.log(discoveryReturn);
         apicDiscovery.setDiscoveryTickets(discoveryReturn);
+        apicDiscovery.getDiscoveryTickets(discoveryReturn);  
       })
     })
   })
