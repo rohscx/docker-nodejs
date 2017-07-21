@@ -56,7 +56,7 @@ module.exports = {
             skipped.push(data);
           }
         } else if (octants.length <= 3 || octants.length >= 5) {
-          badData.push(data);
+          badData.push(data+" <- index -("+newData.indexOf(data)+")");
         }
       }})
       // debug
