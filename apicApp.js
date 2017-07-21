@@ -23,7 +23,7 @@ apicDiscovery.setDiscoveryList(ipRangeArray,"JOBTEST__NAME_");
 console.log(apicDiscovery.getDiscoveryList())
 
 
-/*
+
 // Gets an ApicEM Ticket
 // Apic Ticket debug
 apicTicket.debug()
@@ -59,4 +59,3 @@ apicTicket.httpRequest()
   .catch((httpReject) =>{
     console.log(httpReject);
   })
-*/
