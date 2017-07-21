@@ -16,8 +16,9 @@ module.exports = {
     return fs.readFileSync("/home/node_dev/nodeProjects/docker-nodejs/serverData/ipList.csv").toString();
   },
   formatData: (data, expandBy) =>{
-    ipRange = [];
-    badData = [];
+    let ipRange = [];
+    let badData = [];
+    let skipped = [];
     let newData = data.split("\n");
     let fixup = newData.map((data) =>{
       let octants = data.split(".");
@@ -47,6 +48,8 @@ module.exports = {
             console.log(newRange);
             */
             ipRange.push(newRange);
+          } else {
+            skipped = data;
           }
         } else if (octants.length <= 3 || octants.length >= 5) {
           badData.push(data);
@@ -59,9 +62,14 @@ module.exports = {
       */
       // If data Does not match the length requirement it is considered bad data!
       if (badData.length != 0) {
-        console.log("These appear to be formated incorrectly  ===>>  ",badData,"  <<===");
+        console.log("badData  ===>>  ",badData,"  <<===");
       } else {
-        console.log("DataSet appears to be clean!!!");
+        console.log("No badData. DataSet appears to be clean!!!");
+      }
+      if (skipped.length != 0) {
+        console.log("skipped  ===>>  ",skipped,"  <<===");
+      } else {
+        console.log("Nothing skipped. DataSet appears to be clean!!!");
       }
       return ipRange;
   }
