@@ -63,9 +63,9 @@ apicTicket.httpRequest()
         apicDiscovery.setUri(data[0].response.url);
         apicDiscovery.setNewReqest();
         return apicDiscovery.httpRequest()
-      })
-      .then((status) =>{
-        console.log(status);
+        .then((status) =>{
+          console.log(status);
+        })
       })
     })
   })
