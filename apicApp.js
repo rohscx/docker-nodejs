@@ -47,6 +47,8 @@ apicTicket.httpRequest()
         apicDiscovery.setDiscoveryTickets(discoveryReturn);
       })
     })
+    console.log(apicDiscovery.getDiscoveryTickets());
+
     console.log("asdfasdfasdfasdfasfasdfasdfasdasdfadsfasdfasdfadsfasdfdsafadsfasdfadfafasfsadfasdf")
   })
   // Catches any errors from the HTTP Rest Request

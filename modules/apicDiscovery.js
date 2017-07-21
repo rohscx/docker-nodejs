@@ -85,7 +85,6 @@ class apicDiscovery extends rest {
   }
 
   getDiscoveryTickets () {
-    console.log("*************************")
     return this.discoveryTickets;
   }
 
