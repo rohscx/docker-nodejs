@@ -24,6 +24,27 @@ console.log(apicDiscovery.getDiscoveryList())
 
 
 
+apicTicket.debug()
+apicTicket.httpRequest()
+  .then((ticketReturn) =>{
+    console.log(ticketReturn);
+    apicTicket.setTicketData(ticketReturn.response);
+    apicDiscovery.setHeaders(apicTicket.getTicketData());
+    apicDiscovery.setUriBase(apicTicket.getUriBase());
+    // Uses ticket to pull device list
+    return apicDiscovery.httpRequest();
+  })
+  .then((discoveryReturn) =>{
+    console.log(discoveryReturn);
+
+  })
+  // Catches any errors from the HTTP Rest Request
+  .catch((httpReject) =>{
+    console.log(httpReject);
+  })
+
+
+/*
 // Gets an ApicEM Ticket
 // Apic Ticket debug
 apicTicket.debug()
@@ -62,3 +83,4 @@ apicTicket.httpRequest()
   .catch((httpReject) =>{
     console.log(httpReject);
   })
+*/
