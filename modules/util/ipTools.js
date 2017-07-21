@@ -48,7 +48,7 @@ module.exports = {
             */
             ipRange.push(newRange);
           }
-        } else {
+        } else if (octants.length <= 3 || octants.length >= 5) {
           badData.push(data);
         }
       }})
