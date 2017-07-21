@@ -11,34 +11,21 @@ module.exports = class fileSystem {
   constructor (inputFile,outputFile){
     this.inputFile = "/"+inputFile;
     this.saveExtension = ".csv";
-    this.outputFile = outputFile;
+    this.outputFile = outPut;
     this.dataPath = "/home/node_dev/nodeProjects/docker-nodejs/serverData";
     this.fileData ="";
   }
 
-  setFile (fileName){
-    let newFileName = "/"+fileName
-    this.inputFile = newFileName;
+  setFile (fileName) =>{
+    this.inputFile = fileName;
   }
 
   readFile (){
-
-    let filename = "/home/node_dev/nodeProjects/docker-nodejs/serverData/ipList.csv";
-    fs.readFileAsync = function(filename) {
-    return new Promise(function(resolve, reject) {
-        fs.readFile(filename, function(err, data){
-            if (err)
-                reject(err);
-            else
-            console.log(data);
-                resolve(data);
-        });
-    });
-};
-
+    this.inputFile = fs.readFileSync(this.dataPath+this.inputFile).toString();
+    this.fileData = this.inputFile;
   }
 
-  writeFile (fileName){
+  writeFile (fileName) =>{
     let newFile = fileName+this.saveExtension;
     fs.writeFileSync(this.dataPath, inputFile);
   }
