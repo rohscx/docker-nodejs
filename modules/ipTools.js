@@ -85,4 +85,4 @@ class ipTools extends fileSystem {
   }
 }
 
-module.exports = new ipTools(data, expandBy)
+module.exports = new ipTools(inputFile,outputFile)
