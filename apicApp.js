@@ -2,7 +2,9 @@ const apicTicket = require('./modules/apicTicket');
 const apicDevices = require('./modules/apicDevices');
 const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
+const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/util/ipTools');
+
 
 /* These can be broken up into speperate .js files to accomplish a task
    ultimately some user interaction front end should be build, but this is a
@@ -17,6 +19,10 @@ ipRangeArray = ipTools.formatData(ipList,10);
 console.log(ipRangeArray);
 
 
+apicDiscovery.setDiscoveryList(ipRangeArray,"JOBTEST__NAME_")
+
+
+/*
 // Gets an ApicEM Ticket
 // Apic Ticket debug
 apicTicket.debug()
@@ -52,3 +58,4 @@ apicTicket.httpRequest()
   .catch((httpReject) =>{
     console.log(httpReject);
   })
+*/
