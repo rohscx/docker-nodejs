@@ -57,7 +57,11 @@ module.exports = {
       console.log(newData);
       console.log(ipRange)
       */
-      console.log("These appear to be formated incorrectly: ",badData);
+      if (badData.length != 0) {
+        console.log("These appear to be formated incorrectly===>>  ",badData,+"<<===");
+      } else {
+        console.log("DataSet appears to be clean!!!");
+      }
       return ipRange;
   }
 }
