@@ -26,10 +26,10 @@ module.exports = class fileSystem {
       fs.readFileSync(this.dataPath+this.inputFile, (data, err) => {
         if (data) {
           console.log("errr  ",err);
-          reject(data)
+          resolve(data)
         } else {
           console.log("datata:  ",err);
-          resolve(err)
+          reject(err)
         }
       })
     })
