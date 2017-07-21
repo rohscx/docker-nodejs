@@ -33,13 +33,15 @@ apicTicket.httpRequest()
     apicDiscovery.setHeaders(apicTicket.getTicketData());
     apicDiscovery.setUriBase(apicTicket.getUriBase());
     temp.map((data) =>{
+      let type = "POST";
       console.log(data);
       console.log(data[0].jobName);
       console.log(data[0].ipRange);
+      apicDiscovery.setBody(data[0].jobName,type,data[0].ipRange);
+      apicDiscovery.debug();
+      // Uses ticket to pull device list
+      //return apicDiscovery.httpRequest();
     })
-    apicDiscovery.setBody(name,type,ipList);
-    // Uses ticket to pull device list
-    //return apicDiscovery.httpRequest();
   })
   .then((discoveryReturn) =>{
     console.log(discoveryReturn);
