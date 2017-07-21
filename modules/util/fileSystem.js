@@ -28,9 +28,7 @@ module.exports = class fileSystem {
           reject(err)
         } else {
           resolve(data)
-        }
-      })
-    })
+        }})})
   }
 
   writeFile (fileName){
