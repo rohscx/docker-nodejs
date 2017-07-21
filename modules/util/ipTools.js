@@ -51,6 +51,7 @@ module.exports = {
             // Checks for IP address outside of the normal range
           } else if (octants[i] <= 229 || octants[i] >= 241) {
             newRange = data+"-"+data
+            ipRange.push(newRange);
           } else {
             // Just in case catch the rest
             let dataIndex = newData.indexOf(data) + 1;
