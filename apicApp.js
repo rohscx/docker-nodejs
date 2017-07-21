@@ -21,6 +21,7 @@ console.log(ipRangeArray);
 // Uses IP list to generate array with IP range and Job name objects
 apicDiscovery.setDiscoveryList(ipRangeArray,"JOBTEST__NAME_");
 console.log(apicDiscovery.getDiscoveryList())
+let temp = apicDiscovery.getDiscoveryList();
 
 
 
@@ -31,8 +32,12 @@ apicTicket.httpRequest()
     apicTicket.setTicketData(ticketReturn.response);
     apicDiscovery.setHeaders(apicTicket.getTicketData());
     apicDiscovery.setUriBase(apicTicket.getUriBase());
+    temp.map((data) =>{
+      console.log(data);
+    })
+    apicDiscovery.setBody(name,type,ipList);
     // Uses ticket to pull device list
-    return apicDiscovery.httpRequest();
+    //return apicDiscovery.httpRequest();
   })
   .then((discoveryReturn) =>{
     console.log(discoveryReturn);
