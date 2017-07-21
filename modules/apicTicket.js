@@ -54,7 +54,7 @@ class apicTicket extends rest {
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {
-    console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',,"rejectCert: "+this.rejectCert,'\n'"uriBase: "+this.uriBase,'\n',"headers: "+JSON.stringify(this.headers),'\n',"body: "+JSON.stringify(this.body))
+    console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"rejectCert: "+this.rejectCert,'\n'"uriBase: "+this.uriBase,'\n',"headers: "+JSON.stringify(this.headers),'\n',"body: "+JSON.stringify(this.body))
   }
 }
 
