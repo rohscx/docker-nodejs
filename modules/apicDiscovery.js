@@ -38,6 +38,11 @@ class apicDiscovery extends rest {
     this.body.ipAddressList = ipList;
   }
 
+  setNewBody (){
+    this.body = ""
+    this.method = "GET"
+  }
+
   setUriBase (uriBase){
     const newUri = uriBase+"/api/v1/discovery"
     this.uri = newUri;
