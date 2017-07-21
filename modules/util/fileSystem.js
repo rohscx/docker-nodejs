@@ -24,11 +24,11 @@ module.exports = class fileSystem {
   readFile (){
     return new Promise((resolve, reject) =>{
       fs.readFileSync(this.dataPath+this.inputFile, (data, err) => {
-        if (data) {
-          console.log("errr  ",err);
+        if (data || error) {
+          console.log("errr  ",err,data);
           resolve(data)
         } else {
-          console.log("datata:  ",err);
+          console.log("datata:  ",err,data);
           reject(err)
         }
       })
