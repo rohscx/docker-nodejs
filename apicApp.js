@@ -19,8 +19,8 @@ ipTools.readFile()
 .then((fileReturn) =>{
     console.log(fileReturn)
 })
-ipTools.formatData(20);
-console.log(ipTools.getIpRange());
+//ipTools.formatData(20);
+//console.log(ipTools.getIpRange());
 
 
 
