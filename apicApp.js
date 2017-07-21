@@ -46,10 +46,13 @@ apicTicket.httpRequest()
         return apicDiscovery.httpRequest()
         .then((discoveryReturn) =>{
           apicDiscovery.setDiscoveryTickets(discoveryReturn);
-          let newIndex = discoveryList.indexOf(data) + 1;
-          console.log(newIndex);
-          console.log(discoveryList.length);
-          resolve(apicDiscovery.getDiscoveryTickets());
+          let indexPosition = discoveryList.indexOf(data) + 1;
+          let dataLength = discoveryList.length;
+          console.log(indexPosition);
+          console.log(dataLength);
+          if (indexPosition == dataLength) {
+              resolve(apicDiscovery.getDiscoveryTickets());
+          }
         })
       })
     })
