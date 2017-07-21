@@ -21,7 +21,7 @@ class apicDiscovery extends rest {
     super(method,uri,rejectCert,headers,body)
     this.discoveryList = [];
     this.uriBase = "";
-    this.discoveryTickets[];
+    this.discoveryTickets = [];
   }
 
   setHeaders (ticket){
