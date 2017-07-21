@@ -41,7 +41,7 @@ apicTicket.httpRequest()
       console.log(data[0].ipRange);
       apicDiscovery.setBody(data[0].jobName,type,data[0].ipRange);
       apicDiscovery.debug();
-      Uses ticket to pull device list
+      //Uses ticket to pull device list
       return apicDiscovery.httpRequest()
       .then((discoveryReturn) =>{
         console.log(discoveryReturn);
