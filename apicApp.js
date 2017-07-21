@@ -57,8 +57,9 @@ apicTicket.httpRequest()
       })
     })
     .then((apicDiscovery) =>{
-      console.log(apicDiscovery);
-      console.log("asdfasdfasdfasdfasfasdfasdfasdasdfadsfasdfasdfadsfasdfdsafadsfasdfadfafasfsadfasdf")
+      apicDiscovery.map((data) => {
+        console.log(data);
+      })
     })
   })
   // Catches any errors from the HTTP Rest Request
