@@ -3,7 +3,7 @@ const securityFile = require('../securityFile')
 
 
 const method = 'GET';
-const uri = securityFile.public.apicEM.uri+"/reachability-info";
+const uri = "";
 const headers = "";
 const body = "";
 
@@ -18,6 +18,12 @@ class apicReachability extends rest {
         "x-auth-token": ticket,
       };
   }
+
+  setUriBase (uriBase){
+    newUri = uri+"/reachability-info"
+    this.uri = newUri;
+  }
+
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {

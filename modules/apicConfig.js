@@ -3,7 +3,7 @@ const securityFile = require('../securityFile')
 
 
 const method = 'GET';
-const uri = securityFile.public.apicEM.uri+"/network-device";
+const uri = "";
 const headers = "";
 const body = "";
 
@@ -22,6 +22,11 @@ class apicConfig extends rest {
 
   setDeviceId(deviceId){
     this.deviceId = "/"+deviceId;
+  }
+
+  setUriBase (uriBase){
+    newUri = uri+"/network-device"
+    this.uri = newUri;
   }
 
   setUri(){

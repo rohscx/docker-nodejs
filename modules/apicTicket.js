@@ -37,14 +37,18 @@ class apicTicket extends rest {
     this.uriBase = uriBase;
   }
 
-  setTicketData(ticket) {
+  setTicketData (ticket) {
     const  newTicket = ticket;
     this.ticket = newTicket.serviceTicket;
     return newTicket;
   }
 
-  getTicketData(){
+  getTicketData (){
     return this.ticket;
+  }
+
+  getUriBase (){
+    return this.uriBase;
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request

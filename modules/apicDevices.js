@@ -3,7 +3,7 @@ const securityFile = require('../securityFile')
 
 
 const method = 'GET';
-const uri = securityFile.public.apicEM.uri+"/network-device";
+const uri = "";
 const headers = "";
 const body = "";
 
@@ -17,6 +17,11 @@ class apicDevices extends rest {
         "content-type": "application/json",
         "x-auth-token": ticket,
       };
+  }
+
+  setUriBase (uriBase){
+    newUri = uri+"/network-device"
+    this.uri = newUri;
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request

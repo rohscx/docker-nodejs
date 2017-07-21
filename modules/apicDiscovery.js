@@ -3,7 +3,7 @@ const securityFile = require('../securityFile')
 
 
 const method = 'POST';
-const uri = securityFile.public.apicEM.uri+"/discovery";
+const uri = "";
 const headers = "";
 const body = {
   "snmpVersion": "v2",
@@ -19,6 +19,7 @@ class apicDiscovery extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
     this.discoveryList = [];
+    this.uriBase = "";
   }
 
   setHeaders (ticket){
@@ -32,6 +33,11 @@ class apicDiscovery extends rest {
     this.body.name = name;
     this.body.type = type;
     this.body.ipAddressList = ipList;
+  }
+
+  setUriBase (uriBase){
+    newUri = uri+"/discovery"
+    this.uri = newUri;
   }
 
   setDiscoveryList (ipList,name){
