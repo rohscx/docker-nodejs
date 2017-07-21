@@ -46,10 +46,10 @@ apicTicket.httpRequest()
       .then((discoveryReturn) =>{
         apicDiscovery.setDiscoveryTickets(discoveryReturn);
       })
-      .then((devicesReturn) =>{
-        console.log(apicDiscovery.getDiscoveryTickets());
-        console.log("asdfasdfasdfasdfasfasdfasdfasdasdfadsfasdfasdfadsfasdfdsafadsfasdfadfafasfsadfasdf")
-      })
+    })
+    .then((devicesReturn) =>{
+      console.log(apicDiscovery.getDiscoveryTickets());
+      console.log("asdfasdfasdfasdfasfasdfasdfasdasdfadsfasdfasdfadsfasdfdsafadsfasdfadfafasfsadfasdf")
     })
   })
   // Catches any errors from the HTTP Rest Request
