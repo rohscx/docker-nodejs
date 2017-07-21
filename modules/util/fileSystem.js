@@ -22,7 +22,7 @@ module.exports = class fileSystem {
 
   readFile (){
     return new Promise((resolve, reject) =>{
-      let data = fs.readFileSync(this.dataPath+this.inputFile).toString();
+      fs.readFileSync(this.dataPath+this.inputFile).toString()
       .then((data) =>{
         data = this.fileData;
         resolve(apicDiscovery.getDiscoveryTickets());
