@@ -21,7 +21,7 @@ module.exports = class fileSystem {
   }
 
   readFile (){
-    this.inputFile = return new Promise((resolve, reject) =>{
+    return new Promise((resolve, reject) =>{
       let data = fs.readFileSync(this.dataPath+this.inputFile).toString();
       .then((data) =>{
         data = this.fileData;
