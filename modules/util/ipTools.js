@@ -53,10 +53,10 @@ module.exports = {
             newRange = data+"-"+data
           } else {
             // Just in case catch the rest
-            skipped.push(data);
+            skipped.push(data+"  <- index -("+newData.indexOf(data)+")");
           }
         } else if (octants.length <= 3 || octants.length >= 5) {
-          badData.push(data+" <- index -("+newData.indexOf(data)+")");
+          badData.push(data+"  <- index -("+newData.indexOf(data)+")");
         }
       }})
       // debug
