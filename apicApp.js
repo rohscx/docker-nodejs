@@ -49,10 +49,10 @@ apicTicket.httpRequest()
           resolve(apicDiscovery.getDiscoveryTickets());
         })
       })
-    })
-    .then((apicDiscovery) =>{
-      console.log(apicDiscovery);
-      console.log("asdfasdfasdfasdfasfasdfasdfasdasdfadsfasdfasdfadsfasdfdsafadsfasdfadfafasfsadfasdf")
+      .then((apicDiscovery) =>{
+        console.log(apicDiscovery);
+        console.log("asdfasdfasdfasdfasfasdfasdfasdasdfadsfasdfasdfadsfasdfdsafadsfasdfadfafasfsadfasdf")
+      })
     })
   })
   // Catches any errors from the HTTP Rest Request
