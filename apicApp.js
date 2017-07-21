@@ -3,7 +3,7 @@ const apicDevices = require('./modules/apicDevices');
 const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
 const apicDiscovery = require('./modules/apicDiscovery');
-const ipTools = require('./modules/util/ipTools');
+const ipTools = require('./modules/ipTools');
 
 
 /* These can be broken up into speperate .js files to accomplish a task
@@ -14,14 +14,15 @@ const ipTools = require('./modules/util/ipTools');
 
 
 // Reads the value of a properly formated CSV file, processes it, and stores it.
-let ipList =  ipTools.readFile();
-ipRangeArray = ipTools.formatData(ipList,20);
+ipTools.setFile(ipList.csv)
+ipTools.readFile()
+ipTools.formatData(ipList,20);
 console.log(ipRangeArray);
 
 
 
 
-
+/*
 
 apicTicket.debug()
 apicTicket.httpRequest()
@@ -73,7 +74,7 @@ apicTicket.httpRequest()
   .catch((httpReject) =>{
     console.log(httpReject);
   })
-
+*/
 
 /*
 // Gets an ApicEM Ticket

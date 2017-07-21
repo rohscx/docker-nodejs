@@ -1,22 +1,18 @@
 const fs = require('fs');
 const path = require('path');
-
+const fileSystem = require('./util/fileSystem')
 //path.normalize(): example /opt/datafiles/about.html
 //path.dirname();  example /opt/datafiles
 //path.basename(); example about.html
 //path.extname(); example .html
 
-module.exports = {
+class ipTools extends fileSystem {
+  constructor (inputFile,outputFile){
+    super(inputFile,outputFile)
+    this.ipRange = "";
+  }
 
-  writeFile: (fileName) =>{
-    let newFile = fileName+".csv";
-    fs.writeFileSync("/home/node_dev/nodeProjects/docker-nodejs/serverData/ipList.csv", newFile);
-    console.log()
-  },
-  readFile: () =>{
-    return fs.readFileSync("/home/node_dev/nodeProjects/docker-nodejs/serverData/ipList.csv").toString();
-  },
-  formatData: (data, expandBy) =>{
+  formatData (data, expandBy) =>{
     let ipRange = [];
     let badData = [];
     let skipped = [];
@@ -80,6 +76,11 @@ module.exports = {
       } else {
         console.log("Nothing skipped. DataSet appears to be clean!!!");
       }
-      return ipRange;
+      this.ipRange = ipRange;
+  }
+
+  // Adds a Debugs for the contest of the Ticket POST HTTP request
+  debug() {
+    console.log("inputFile: "+this.inputFile,'\n',"outputFile: "+outputFile.uri,'\n')
   }
 }
