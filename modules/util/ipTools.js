@@ -57,7 +57,7 @@ module.exports = {
       console.log(newData);
       console.log(ipRange)
       */
-      console.log("These appear to be formated incorrectly: ",badData):
+      console.log("These appear to be formated incorrectly: ",badData);
       return ipRange;
   }
 }
