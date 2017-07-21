@@ -56,8 +56,8 @@ apicTicket.httpRequest()
         })
       })
     })
-    .then((apicDiscovery) =>{
-      apicDiscovery.map((data) => {
+    .then((discoveryResult) =>{
+      discoveryResult.map((data) => {
         console.log(data);
         console.log(data[0].response.url);
         apicDiscovery.setUri(data[0].response.url);
