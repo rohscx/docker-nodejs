@@ -19,7 +19,8 @@ ipRangeArray = ipTools.formatData(ipList,10);
 console.log(ipRangeArray);
 
 
-apicDiscovery.setDiscoveryList(ipRangeArray,"JOBTEST__NAME_")
+apicDiscovery.setDiscoveryList(ipRangeArray,"JOBTEST__NAME_");
+console.log(apicDiscovery.getDiscoveryList())
 
 
 /*

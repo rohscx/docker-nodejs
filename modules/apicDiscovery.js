@@ -46,7 +46,7 @@ class apicDiscovery extends rest {
   }
 
   getDiscoveryList () {
-    console.log(this.discoveryList);
+    return;
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
