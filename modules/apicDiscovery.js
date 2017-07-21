@@ -44,14 +44,14 @@ class apicDiscovery extends rest {
         if (ipList.indexOf(data) == 0) {
           ipRangeHold.ipRange += data+",";
         } else {
-          ipRangeHold.jobName = name+ipList.indexOf(data)
+          ipRangeHold.jobName = name+ipList.indexOf(data);
           ipRangeHold.ipRange += data;
-          let newIpList = ipRangeHold;
+          let newIpList = [ ipRangeHold ];
           this.discoveryList.push(newIpList);
           ipRangeHold ={
             jobName: "",
             ipRange: ""
-          };  
+          };
         }
       } else {
         ipRangeHold.ipRange += data+","
