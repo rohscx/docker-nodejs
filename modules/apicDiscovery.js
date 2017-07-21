@@ -4,6 +4,7 @@ const securityFile = require('../securityFile')
 
 const method = 'POST';
 const uri = "";
+const rejectCert = false;
 const headers = "";
 const body = {
   "name": "string",
@@ -16,8 +17,8 @@ const body = {
 };
 
 class apicDiscovery extends rest {
-  constructor (method,uri,headers,body){
-    super(method,uri,headers,body)
+  constructor (method,uri,rejectCert,headers,body){
+    super(method,uri,rejectCert,headers,body)
     this.discoveryList = [];
     this.uriBase = "";
   }
@@ -78,8 +79,8 @@ class apicDiscovery extends rest {
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {
-    console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"headers: "+JSON.stringify(this.headers),'\n',"body: "+JSON.stringify(this.body))
+    console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"rejectCert: "+this.rejectCert,'\n',"uriBase: "+this.uriBase,'\n',"headers: "+JSON.stringify(this.headers),'\n',"body: "+JSON.stringify(this.body))
   }
 }
 
-module.exports = new apicDiscovery(method,uri,headers,body)
+module.exports = new apicDiscovery(method,uri,rejectCert,headers,body)
