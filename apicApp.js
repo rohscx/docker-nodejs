@@ -46,9 +46,9 @@ apicTicket.httpRequest()
         return apicDiscovery.httpRequest()
         .then((discoveryReturn) =>{
           apicDiscovery.setDiscoveryTickets(discoveryReturn);
+          resolve(apicDiscovery.getDiscoveryTickets());
         })
       })
-        resolve(apicDiscovery.getDiscoveryTickets());
     })
     .then((apicDiscovery) =>{
       console.log(apicDiscovery);
