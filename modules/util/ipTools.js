@@ -54,12 +54,12 @@ module.exports = {
           } else {
             // Just in case catch the rest
             let dataIndex = newData.indexOf(data) + 1;
-            skipped.push(data+"  <- index -("+dataIndex+")");
+            skipped.push(data+"  <- index-("+dataIndex+")");
           }
           //  checks for malformed octant lengths
         } else if (octants.length <= 3 || octants.length >= 5) {
           let dataIndex = newData.indexOf(data) + 1;
-          badData.push(data+"  <- index -("+dataIndex+")");
+          badData.push(data+"  <- index-("+dataIndex+")");
         }
       }})
       // debug
