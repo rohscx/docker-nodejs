@@ -26,6 +26,7 @@ let apicHeaders = {
 
 const method = 'POST';
 const uri = publicApicEm.uri+"/ticket";
+const uriBase = publicApicEm.uri;
 const headers = apicHeaders;
 const body = publicApicEm.body;
 
@@ -33,6 +34,7 @@ class apicTicket extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
     this.ticket = "";
+    this.uriBase = uriBase;
   }
 
   setTicketData(ticket) {
@@ -47,7 +49,7 @@ class apicTicket extends rest {
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {
-    console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"headers: "+JSON.stringify(this.headers),'\n',"body: "+JSON.stringify(this.body))
+    console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"uriBase: "+this.uriBase,'\n',"headers: "+JSON.stringify(this.headers),'\n',"body: "+JSON.stringify(this.body))
   }
 }
 
