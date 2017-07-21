@@ -57,8 +57,9 @@ module.exports = {
       console.log(newData);
       console.log(ipRange)
       */
+      // If data Does not match the length requirement it is considered bad data!
       if (badData.length != 0) {
-        console.log("These appear to be formated incorrectly===>>  ",badData,"  <<===");
+        console.log("These appear to be formated incorrectly  ===>>  ",badData,"  <<===");
       } else {
         console.log("DataSet appears to be clean!!!");
       }
