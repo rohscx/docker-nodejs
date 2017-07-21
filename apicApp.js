@@ -37,9 +37,9 @@ apicTicket.httpRequest()
     return new Promise((resolve, reject) =>{
       discoveryList.map((data) =>{
         let type = "multi range";
-        console.log(data);
-        console.log(data[0].jobName);
-        console.log(data[0].ipRange);
+        //console.log(data);
+        //console.log(data[0].jobName);
+        //console.log(data[0].ipRange);
         apicDiscovery.setBody(data[0].jobName,type,data[0].ipRange);
         apicDiscovery.debug();
         //Uses ticket to pull device list
