@@ -25,7 +25,7 @@ class apicConfig extends rest {
   }
 
   setUriBase (uriBase){
-    const newUri = uri+"/network-device"
+    const newUri = uriBase+"/network-device"
     this.uri = newUri;
   }
 
