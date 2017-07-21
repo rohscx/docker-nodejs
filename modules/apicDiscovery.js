@@ -39,6 +39,7 @@ class apicDiscovery extends rest {
       jobName: "",
       ipRange: ""
     };
+    let ipListlength = ipList.length - 1;
     ipList.map((data) =>{
       if (ipList.indexOf(data) % 7 == 0) {
         if (ipList.indexOf(data) == 0) {
@@ -56,7 +57,11 @@ class apicDiscovery extends rest {
       } else {
         ipRangeHold.ipRange += data+",";
         console.log(ipList.length, ipList.indexOf(data));
-
+        if (ipListlength == ipList.indexOf(data)) {
+          ipRangeHold.jobName = name+ipList.indexOf(data);
+          let newIpList = [ ipRangeHold ];
+          this.discoveryList.push(newIpList);
+        }
       }
     })
   }
