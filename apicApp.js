@@ -18,10 +18,8 @@ let ipList =  ipTools.readFile();
 ipRangeArray = ipTools.formatData(ipList,20);
 console.log(ipRangeArray);
 
-// Uses IP list to generate array with IP range and Job name objects
-apicDiscovery.setDiscoveryList(ipRangeArray,"JOBTEST__NAME_");
-console.log(apicDiscovery.getDiscoveryList())
-let temp = apicDiscovery.getDiscoveryList();
+
+
 
 
 
@@ -32,7 +30,11 @@ apicTicket.httpRequest()
     apicTicket.setTicketData(ticketReturn.response);
     apicDiscovery.setHeaders(apicTicket.getTicketData());
     apicDiscovery.setUriBase(apicTicket.getUriBase());
-    temp.map((data) =>{
+    // Uses IP list to generate array with IP range and Job name objects
+    apicDiscovery.setDiscoveryList(ipRangeArray,"JOBTEST__NAME_");
+    console.log(apicDiscovery.getDiscoveryList())
+    let discoveryList = apicDiscovery.getDiscoveryList();
+    discoveryList.map((data) =>{
       let type = "POST";
       console.log(data);
       console.log(data[0].jobName);
