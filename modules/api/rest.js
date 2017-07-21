@@ -3,9 +3,10 @@ const formData = require('form-data');
 
 //
 module.exports = class rest {
-  constructor (method,uri,headers,body){
+  constructor (method,uri,rejectCert,headers,body){
     this.method = method;
     this.uri = uri;
+    this.rejectCert = rejectCert;
     this.headers = headers;
     this.body = body;
   }
@@ -15,6 +16,7 @@ module.exports = class rest {
       const options = {
         method: this.method,
         uri: this.uri,
+        rejectunauthorized: this.rejectCert,
         headers: this.headers,
         body: this.body,
         json: true
