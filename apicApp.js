@@ -23,7 +23,7 @@ ipTools.setFile("ipList.csv")
 })
 .then((readReturn) => {
   console.log(readReturn)
-  ipTools.cleanedData()
+  ipTools.cleanData()
 })
 .then((cleanReturn) => {
   console.log(cleanReturn)
