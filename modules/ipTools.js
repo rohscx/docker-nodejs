@@ -19,10 +19,11 @@ class ipTools extends fileSystem {
   cleanData (){
     return new Promise((resolve, reject) =>{
       let newData = this.fileData.dataString.split("\n");
+      newData.map((data) => {
+        console.log(data)
+      })
       if (newData){
-        console.log("asdfasdfsadfasfsadfasdfasdfasdf", this.fileData)
-        console.log("NEW NEW NEW DATa", newData)
-        resolve("NEW ENWENENWEWEJ   ",newData);
+        resolve(newData);
       } else {
         reject();
       }
