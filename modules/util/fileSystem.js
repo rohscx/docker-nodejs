@@ -20,9 +20,12 @@ module.exports = class fileSystem {
     this.inputFile = "/"+fileName;
   }
 
+  getData() {
+    return this.fileData;
+  }
+
   readFile (){
-    this.inputFile = fs.readFileSync(this.dataPath+this.inputFile).toString();
-    this.fileData = this.inputFile;
+    this.fileData = fs.readFileSync(this.dataPath+this.inputFile).toString();
   }
 
   writeFile (fileName){
