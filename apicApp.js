@@ -27,6 +27,10 @@ ipTools.writeFile("gogogogo","Cats on everthing because this does not work yet")
 })
 .then((cleanReturn) => {
   console.log(cleanReturn)
+  return testMan()
+})
+.then((restReturn) => {
+  console.log("YOOOOOO ", restReturn)
 })
 //ipTools.readFile()
 //console.log(ipTools.readFile())
