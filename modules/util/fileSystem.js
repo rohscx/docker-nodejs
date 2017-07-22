@@ -42,13 +42,13 @@ module.exports = class fileSystem {
     return new Promise((resolve, reject) =>{
       let fileData
       let filePath = this.dataPath+this.inputFile;
-      fileData = fs.readFileSync(filePath, (err, data)=>{
+      fs.readFileSync(filePath, (err, data)=>{
         if (err){
-          return reject(err);
+          reject(err);
         } else {
           this.fileData = fileData;
           console.log("asdfasdf ",data)
-          return resolve(fileData);
+          resolve(fileData);
         }
       }).toString();
     })
