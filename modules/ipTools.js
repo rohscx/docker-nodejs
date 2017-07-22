@@ -27,9 +27,25 @@ class ipTools extends fileSystem {
         cleanData.push(data.trim())
       })
 
-      console.log(cleanData.sort(function(a, b){return a-b}));
+      console.log(cleanData.sort(function(a,b){
+	aa = a[0].split(".");
+	bb = b[0].split(".");
+
+        var resulta = aa[0]*0x1000000 + aa[1]*0x10000 + aa[2]*0x100 + aa[3]*1;
+        var resultb = ab[0]*0x1000000 + ab[1]*0x10000 + ab[2]*0x100 + ab[3]*1;
+
+	return resulta-resultb;
+  }));
       if (cleanData){
-        resolve(cleanData.sort(function(a, b){return a-b}));
+        resolve(cleanData.sort(function(a,b){
+	aa = a[0].split(".");
+	bb = b[0].split(".");
+
+        var resulta = aa[0]*0x1000000 + aa[1]*0x10000 + aa[2]*0x100 + aa[3]*1;
+        var resultb = ab[0]*0x1000000 + ab[1]*0x10000 + ab[2]*0x100 + ab[3]*1;
+
+	return resulta-resultb;
+  }));
       } else {
         reject();
       }
