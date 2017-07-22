@@ -25,7 +25,6 @@ class ipTools extends fileSystem {
         console.log(data, "<=Array")
         // removes empty arrays
         if (data.length >= 0){
-          cleanData.push(data)
         }
       })
       if (newData){
