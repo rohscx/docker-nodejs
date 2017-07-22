@@ -19,7 +19,7 @@ class ipTools extends fileSystem {
   cleanData (){
     return new Promise((resolve, reject) =>{
       let temp = {data:this.fileData.toString()};
-      let newData = temp.split("\n");
+      let newData = temp.data.split("\n");
 
       if (newData){
         console.log("asdfasdfsadfasfsadfasdfasdfasdf", temp)
