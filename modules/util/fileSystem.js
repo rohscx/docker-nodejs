@@ -55,13 +55,14 @@ module.exports = class fileSystem {
 
   writeFile (fileName, fileContent){
     return new Promise((resolve, reject) =>{
-      let data ,dataPath
+      let data ,dataPath, dataReturn
       let newFileName = "/"+fileName+this.saveExtension;
       let filePath = this.dataPath+newFileName;
       fs.writeFile(filePath, fileContent, (err) => {
         if (err) return reject(err);
+        dataReturn = "Saved! "+path.basename(filePath);
         console.log(path.basename(filePath))
-        return resolve('Saved! ', path.basename(filePath));
+        return resolve(dataReturn);
         });
     })
 
