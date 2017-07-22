@@ -48,6 +48,7 @@ module.exports = class fileSystem {
           return reject(err);
         } else {
           this.fileData = data.toString();
+          console.log("DLATA LLOADED   "this.fileData);
           return resolve(data.toString());
         }
       })
