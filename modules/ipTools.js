@@ -22,8 +22,7 @@ class ipTools extends fileSystem {
         let octants = data.split(".");
         octants.map((data1) =>{
           console.log(data1);
-          newArray.push(octants.toString(2))
-          console.log(data1);
+          newArray.push(data1.toString(2))
         })
       })
       if (newArray){
