@@ -23,6 +23,7 @@ class ipTools extends fileSystem {
       let newData = newArray[0].split("\n");
       //
       if (newData){
+        console.log(newData);
         console.log(newArray);
         console.log(test);
         resolve(newData);
