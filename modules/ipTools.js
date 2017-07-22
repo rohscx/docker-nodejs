@@ -9,6 +9,8 @@ const fileSystem = require('./util/fileSystem')
 class ipTools extends fileSystem {
   constructor (inputFile,outputFile){
     super(inputFile,outputFile)
+    this.cleanedData = "";
+    this.sortedData = "";
     this.ipRange = "";
   }
 
@@ -16,37 +18,36 @@ class ipTools extends fileSystem {
     return this.ipRange;
   }
 
-  cleanData (){
+  cleanedData (){
     return new Promise((resolve, reject) =>{
-      let cleanData =[];
+      let cleanedData =[];
       let newData = this.fileData.dataString.split("\n");
       newData = newData.filter(Boolean);
       newData.map((data) => {
         console.log(data, "<=Array")
         console.log(data.trim(), "<=Trrrrm")
-        cleanData.push(data.trim())
+        cleanedData.push(data.trim())
       })
-
-      if (cleanData){
-        this.fileData.cleanData = cleanData;
-        resolve(cleanData);
+      if (cleanedData){
+        this.cleanedData = cleanedData;
+        resolve(cleanedData);
       } else {
         reject("Error Cleaning");
       }
     })
   }
 
-  sortData () {
+  sortedData () {
     return new Promise((resolve, reject) =>{
-      let sortData = cleanData.sort((a,b)=>{
+      let sortedData = this.cleanedData.sort((a,b)=>{
 	      let aa = a.split(".");
 	      var bb = b.split(".");
         return ( aa[0]*0x1000000 + aa[1]*0x10000 + aa[2]*0x100 + aa[3]*1 )
              - ( bb[0]*0x1000000 + bb[1]*0x10000 + bb[2]*0x100 + bb[3]*1 );
     })
-      if (sortData){
-        this.fileData.sortData = sortData;
-        resolve(sortData)
+      if (sortedData){
+        this.sortedData = sortedData;
+        resolve(sortedData)
       } else {
         reject("Error Sorting");
       }
