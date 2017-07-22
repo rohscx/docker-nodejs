@@ -40,8 +40,10 @@ module.exports = class fileSystem {
   }
 
   readFile(){
+    console.log(this.dataPath+this.inputFile);
     return new Promise((resolve, reject) =>{
       let fileData
+      console.log(this.dataPath+this.inputFile);
       let filePath = this.dataPath+this.inputFile;
       fs.readFile(filePath, (err, data)=>{
         if (err){
