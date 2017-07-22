@@ -47,15 +47,15 @@ ipTools.setFile("ipList.csv")
 //.then((readReturn) => {
 //  console.log(ipTools.cleanData())
 //})
-/*
-Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile(),ipTools.cleanData()])
+
+Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile(),ipTools.cleanData(),ipTools.sortData(),ipTools.formatData(20)])
 .then((dataRe)=>{
   console.log(dataRe);
 })
 .catch((reject) =>{
   console.log(reject);
 })
-*/
+
 //ipTools.formatData(20)
 //console.log(ipTools.getData())
 //console.log(ipTools.getIpRange())
