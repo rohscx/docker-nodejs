@@ -20,7 +20,7 @@ class ipTools extends fileSystem {
       let ipList = this.sortedData;
       ipList.map((data) =>{
         let octants = data.split(".");
-        octants.map((data1){
+        octants.map((data1) =>{
           console.log(data1);
         })
       })
