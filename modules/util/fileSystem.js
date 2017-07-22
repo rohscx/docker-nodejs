@@ -42,7 +42,7 @@ module.exports = class fileSystem {
     return new Promise((resolve, reject) =>{
       let fileData
       let filePath = this.dataPath+this.inputFile;
-      fs.readFileSync(filePath, (err, data)=>{
+      fs.readFile(filePath, (err, data)=>{
         if (err){
           return reject(err);
         } else {
