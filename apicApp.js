@@ -34,6 +34,9 @@ Promise.all([ipTools.readFile(),ipTools.cleanData(),ipTools.formatData()])
 .then((dataRe)=>{
   console.log(dataRe);
 })
+.catch((Reject) =>{
+  console.log(Reject);
+})
 //ipTools.formatData(20)
 //console.log(ipTools.getData())
 //console.log(ipTools.getIpRange())
