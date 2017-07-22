@@ -14,7 +14,18 @@ const ipTools = require('./modules/ipTools');
 
 
 // Reads the value of a properly formated CSV file, processes it, and stores it.
-
+ipTools.setFile("ipList.csv")
+.then((setReturn) => {
+  console.log(setReturn)
+  return ipTools.readFile()
+})
+.then((readReturn)) => {
+  console.log(readReturn)
+  ipTools.cleanData()
+})
+.then((cleanReturn)) => {
+  console.log(cleanReturn)
+}
 
 //ipTools.readFile()
 //console.log(ipTools.readFile())
@@ -23,6 +34,7 @@ const ipTools = require('./modules/ipTools');
 //.then((readReturn) => {
 //  console.log(ipTools.cleanData())
 //})
+/*
 Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile(),ipTools.cleanData()])
 .then((dataRe)=>{
   console.log(dataRe);
@@ -30,6 +42,7 @@ Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile(),ipTools.cleanData(
 .catch((reject) =>{
   console.log(reject);
 })
+*/
 //ipTools.formatData(20)
 //console.log(ipTools.getData())
 //console.log(ipTools.getIpRange())
