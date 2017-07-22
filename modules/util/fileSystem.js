@@ -58,16 +58,16 @@ module.exports = class fileSystem {
       let newFile = fileName+this.saveExtension;
       let filePath = this.dataPath+newFile;
       fs.writeFileSync(this.dataPath, newFile);
-      dataPath = path.existsSync(filePath);
-      if (dataPath){
-        resolve(dataPath);
-      } else {
-        reject();
-      }
+
+      fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
+        if (err) reject(err);
+        resolve('Saved!');
+        });
+
     })
 
-    let newFile = fileName+this.saveExtension;
-    fs.writeFileSync(this.dataPath, inputFile);
+    //let newFile = fileName+this.saveExtension;
+    //fs.writeFileSync(this.dataPath, inputFile);
   }
 
   get(){
