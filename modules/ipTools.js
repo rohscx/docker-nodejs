@@ -18,12 +18,14 @@ class ipTools extends fileSystem {
 
   cleanData (){
     return new Promise((resolve, reject) =>{
+      let cleanData
       let newData = this.fileData.dataString.split("\n");
+      newData = newData.filter(Boolean);
       newData.map((data) => {
         console.log(data, "<=Array")
-        if (data.length == 0){
-          console.log(data, "<=This Array looks bad")
-          newData.pop(data)
+        // removes empty arrays
+        if (data.length >= 0){
+          cleanData.push(data)
         }
       })
       if (newData){
