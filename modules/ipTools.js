@@ -118,9 +118,8 @@ class ipTools extends fileSystem {
           let rejectMessage = "skipped  ===>>  "+skipped+"  <<===";
           reject(rejectMessage)
         } else {
-          let resolveMessage = "Nothing skipped. DataSet appears to be clean!!!"+'\n'+"No badData. DataSet appears to be clean!!!";
           this.ipRange = ipRange;
-          resolve(resolveMessage);
+          resolve(ipRange);
         }
     })
 
