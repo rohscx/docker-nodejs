@@ -120,7 +120,7 @@ class ipTools extends fileSystem {
         } else {
           let resolveMessage = "Nothing skipped. DataSet appears to be clean!!!"+'\n'+"No badData. DataSet appears to be clean!!!";
           this.ipRange = ipRange;
-          resoleve(resolveMessage);
+          resolve(resolveMessage);
         }
     })
 
