@@ -94,6 +94,9 @@ apicTicket.httpRequest()
               resolve(apicDiscovery.getDiscoveryTickets());
           }
         })
+        .catch((httpReject) =>{
+          console.log(httpReject);
+        })
       })
     })
     .then((discoveryResult) =>{
