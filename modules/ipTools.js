@@ -27,12 +27,6 @@ class ipTools extends fileSystem {
     })
   }
 
-  testMan(){
-    return new Promise((resolve, reject) =>{
-      console.log("casts", this.fileData)
-      resolve(this.fileData)
-    })
-  }
 
   formatData (expandBy) {
     return new Promise((resolve, reject) =>{
