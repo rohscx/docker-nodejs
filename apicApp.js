@@ -23,10 +23,14 @@ ipTools.setFile("ipList.csv")
 })
 .then((readReturn) => {
   console.log(readReturn)
-  ipTools.cleanData()
+  return ipTools.cleanData()
 })
 .then((cleanReturn) => {
   console.log(cleanReturn)
+  return ipTools.sortData()
+})
+.then((sortReturn) => {
+  console.log(sortReturn)
 })
 .catch((reject) =>{
   console.log(reject);
