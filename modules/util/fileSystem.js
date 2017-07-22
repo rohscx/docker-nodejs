@@ -50,7 +50,7 @@ module.exports = class fileSystem {
           console.log("asdfasdf ",data)
           return resolve(fileData);
         }
-      }).toString();
+      })
     })
   }
 
