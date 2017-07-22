@@ -44,11 +44,11 @@ module.exports = class fileSystem {
       let filePath = this.dataPath+this.inputFile;
       fs.readFileSync(filePath, (err, data)=>{
         if (err){
-          reject(err);
+          return reject(err);
         } else {
           this.fileData = fileData;
           console.log("asdfasdf ",data)
-          resolve(fileData);
+          return resolve(fileData);
         }
       }).toString();
     })
