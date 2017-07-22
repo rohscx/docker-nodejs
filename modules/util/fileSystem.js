@@ -18,8 +18,9 @@ module.exports = class fileSystem {
 
   setFile (fileName){
     return new Promise((resolve, reject) =>{
-      let data = this.inputFile = "/"+fileName;
+      let data = "/"+fileName;
       if (data){
+        this.inputFile = data;
         resolve(data);
       } else {
         reject();
