@@ -20,6 +20,7 @@ class ipTools extends fileSystem {
     return new Promise((resolve, reject) =>{
       let newData = this.fileData.split("\n");
       if (newData){
+        console.log("asdfasdfsadfasfsadfasdfasdfasdf")
         resolve("NEW ENWENENWEWEJ   ",newData);
       } else {
         reject();
