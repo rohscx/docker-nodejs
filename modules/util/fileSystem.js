@@ -54,13 +54,13 @@ module.exports = class fileSystem {
 
   writeFile (fileName){
     return new Promise((resolve, reject) =>{
-      let data
+      let data ,dataPath
       let newFile = fileName+this.saveExtension;
       let filePath = this.dataPath+newFile;
       fs.writeFileSync(this.dataPath, newFile);
-      data = fs.readFileSync(filePath).toString();
-      if (data){
-        resolve(data);
+      dataPath = path.existsSync(filePath);
+      if (dataPath){
+        resolve(dataPath);
       } else {
         reject();
       }
