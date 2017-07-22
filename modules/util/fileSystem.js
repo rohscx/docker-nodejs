@@ -57,13 +57,10 @@ module.exports = class fileSystem {
       let data ,dataPath
       let newFile = fileName+this.saveExtension;
       let filePath = this.dataPath+newFile;
-      fs.writeFileSync(this.dataPath, newFile);
-
-      fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
+      fs.writeFile(filePath, 'Hello content!', function (err) {
         if (err) reject(err);
         resolve('Saved!');
         });
-
     })
 
     //let newFile = fileName+this.saveExtension;
