@@ -48,6 +48,22 @@ ipTools.setFile("ipList.csv")
 //  console.log(ipTools.cleanData())
 //})
 
+
+setBase
+Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
+.then((promiseReturn)=>{
+  console.log(promiseReturn);
+  return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.setBase()])
+})
+.then((promiseReturn)=>{
+  console.log(promiseReturn);
+})
+.catch((reject) =>{
+  console.log(reject);
+})
+
+/*
+
 Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
 .then((promiseReturn)=>{
   console.log(promiseReturn);
@@ -59,8 +75,6 @@ Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
 .catch((reject) =>{
   console.log(reject);
 })
-
-
 
 
 apicTicket.debug()
@@ -124,7 +138,7 @@ apicTicket.httpRequest()
   .catch((httpReject) =>{
     console.log(httpReject);
   })
-
+*/
 
 /*
 // Gets an ApicEM Ticket

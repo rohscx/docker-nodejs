@@ -14,6 +14,17 @@ class ipTools extends fileSystem {
     this.ipRange = "";
   }
 
+  setBase (){
+    return new Promise((resolve, reject) =>{
+      data = "Cats"
+      if (data){
+        resolve(data)
+      } else {
+        reject("Nothing to See")
+      }
+    })
+  }
+
   getIpRange (){
     return this.ipRange;
   }
