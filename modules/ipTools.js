@@ -91,12 +91,13 @@ class ipTools extends fileSystem {
               ipRange.push(newRange);
               // Checks for IP address outside of the normal range
             } else if (octants[i] <= 229 + expandBy || octants[i] >= 241 + expandBy) {
-              let newRange = data+"-"+data
+              let newRange = data+"-"+data;
               ipRange.push(newRange);
             } else {
+              let newRange = data+"-"+data;
               // Just in case catch the rest
               let dataIndex = newData.indexOf(data) + 1;
-              skipped.push(data+"  <- index-("+dataIndex+")");
+              //skipped.push(data+"  <- index-("+dataIndex+")");
             }
             //  checks for malformed octant lengths
           } else if (octants.length <= 3 || octants.length >= 5) {
