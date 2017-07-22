@@ -49,7 +49,6 @@ ipTools.setFile("ipList.csv")
 //})
 
 
-setBase
 Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
 .then((promiseReturn)=>{
   console.log(promiseReturn);
