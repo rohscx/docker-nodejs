@@ -52,12 +52,12 @@ module.exports = class fileSystem {
     })
   }
 
-  writeFile (fileName){
+  writeFile (fileName, fileContent){
     return new Promise((resolve, reject) =>{
       let data ,dataPath
       let newFileName = "/"+fileName+this.saveExtension;
       let filePath = this.dataPath+newFileName;
-      fs.writeFile(filePath, 'Hello content!', function (err) {
+      fs.writeFile(filePath, fileContent, (err) => {
         if (err) reject(err);
         resolve('Saved!');
         });
