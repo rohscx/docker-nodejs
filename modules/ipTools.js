@@ -17,7 +17,14 @@ class ipTools extends fileSystem {
   }
 
   cleanData (){
-    return "Cats on everthing because this does not work yet"
+    return new Promise((resolve, reject) =>{
+      let data = "Cats on everthing because this does not work yet";
+      if (data){
+        resolve(data);
+      } else {
+        reject();
+      }
+    })
   }
 
   formatData (expandBy) {
