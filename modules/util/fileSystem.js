@@ -17,7 +17,7 @@ module.exports = class fileSystem {
   }
 
   setFile (fileName){
-    this.inputFile = "/"f+ileName;
+    this.inputFile = "/"+fileName;
   }
 
   readFile (){
