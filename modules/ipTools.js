@@ -104,4 +104,4 @@ class ipTools extends fileSystem {
   }
 }
 
-module.exports = new ipTools(inputFile,outputFile)
+module.exports = new ipTools()
