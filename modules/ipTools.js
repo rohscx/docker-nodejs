@@ -24,7 +24,7 @@ class ipTools extends fileSystem {
     let ipRange = [];
     let badData = [];
     let skipped = [];
-    let newData = this.inputFile.split("\n");
+    let newData = this.fileData.split("\n");
     let i = 0;
     let fixup = newData.map((data) =>{
       let octants = data.split(".");
