@@ -16,8 +16,15 @@ class ipTools extends fileSystem {
 
   setBase (){
     return new Promise((resolve, reject) =>{
-      let data = "Cats";
-      if (data){
+      let newArray
+      let ipList = this.sortedData;
+      ipList.map((data) =>{
+        let octants = data.split(".");
+        octants.map((data1){
+          console.log(data1);
+        })
+      })
+      if (ipList){
         resolve(data)
       } else {
         reject("Nothing to See")
