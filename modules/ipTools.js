@@ -21,6 +21,7 @@ class ipTools extends fileSystem {
       let newData = this.fileData.dataString.split("\n");
       if (newData){
         console.log("asdfasdfsadfasfsadfasdfasdfasdf", this.fileData)
+        console.log("NEW NEW NEW DATa", newData)
         resolve("NEW ENWENENWEWEJ   ",newData);
       } else {
         reject();
