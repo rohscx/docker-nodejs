@@ -26,6 +26,7 @@ class ipTools extends fileSystem {
         console.log(data.trim(), "<=Trrrrm")
         cleanData.push(data.trim())
       })
+      console.log(cleanData);
       if (cleanData){
         resolve(cleanData);
       } else {
