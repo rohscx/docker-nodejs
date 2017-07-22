@@ -52,7 +52,7 @@ ipTools.setFile("ipList.csv")
 Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
 .then((promiseReturn)=>{
   console.log(promiseReturn);
-  return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.setBase()])
+  return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.setBase(),ipTools.setSuperNet()])
 })
 .then((promiseReturn)=>{
   console.log(promiseReturn);
