@@ -71,7 +71,7 @@ apicTicket.httpRequest()
     apicDiscovery.setHeaders(apicTicket.getTicketData());
     apicDiscovery.setUriBase(apicTicket.getUriBase());
     // Uses IP list to generate array with IP range and Job name objects
-    apicDiscovery.setDiscoveryList(ipTools.getIpRange(),"<JOBNAME>_<JOBDESCRIPTION>_");
+    apicDiscovery.setDiscoveryList(ipTools.getIpRange(),"JOBNAME_JOBDESCRIPTION_");
     console.log(apicDiscovery.getDiscoveryList())
     let discoveryList = apicDiscovery.getDiscoveryList();
     return new Promise((resolve, reject) =>{
