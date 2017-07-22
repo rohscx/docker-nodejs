@@ -46,8 +46,9 @@ module.exports = class fileSystem {
         if (err){
           reject(err);
         } else {
-          this.fileData = data;
-          resolve(data);
+          this.fileData = fileData;
+          console.log("asdfasdf ",data)
+          resolve(fileData);
         }
       }).toString();
     })
