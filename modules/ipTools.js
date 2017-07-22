@@ -18,7 +18,7 @@ class ipTools extends fileSystem {
 
   cleanData (){
     return new Promise((resolve, reject) =>{
-      let newArray= [this.fileData];
+      let newArray= this.fileData;
       let test = this.fileData.split("\r")
       let newData = this.fileData.split("\n");
       //
