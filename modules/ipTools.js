@@ -27,29 +27,31 @@ class ipTools extends fileSystem {
         cleanData.push(data.trim())
       })
 
-      console.log(cleanData.sort(function( a, b )
-    {
-	var aa = a.split(".");
-	var bb = b.split(".");
-
-        return ( aa[0]*0x1000000 + aa[1]*0x10000 + aa[2]*0x100 + aa[3]*1 )
-             - ( bb[0]*0x1000000 + bb[1]*0x10000 + bb[2]*0x100 + bb[3]*1 );
-    }));
       if (cleanData){
-        resolve(cleanData.sort(function( a, b )
-    {
-	var aa = a.split(".");
-	var bb = b.split(".");
-
-        return ( aa[0]*0x1000000 + aa[1]*0x10000 + aa[2]*0x100 + aa[3]*1 )
-             - ( bb[0]*0x1000000 + bb[1]*0x10000 + bb[2]*0x100 + bb[3]*1 );
-    }));
+        this.fileData.cleanData = cleanData;
+        resolve(cleanData);
       } else {
-        reject();
+        reject("Error Cleaning");
       }
     })
   }
 
+  sortData () {
+    return new Promise((resolve, reject) =>{
+      let sortData = cleanData.sort((a,b)=>{
+	      let aa = a.split(".");
+	      var bb = b.split(".");
+        return ( aa[0]*0x1000000 + aa[1]*0x10000 + aa[2]*0x100 + aa[3]*1 )
+             - ( bb[0]*0x1000000 + bb[1]*0x10000 + bb[2]*0x100 + bb[3]*1 );
+    })
+      if (sortData){
+        this.fileData.sortData = sortData;
+        resolve(sortData)
+      } else {
+        reject("Error Sorting");
+      }
+    })
+  }
 
   formatData (expandBy) {
     return new Promise((resolve, reject) =>{
