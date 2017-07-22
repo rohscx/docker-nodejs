@@ -11,9 +11,23 @@ module.exports = class fileSystem {
   constructor (inputFile,outputFile){
     this.inputFile = "/"+inputFile;
     this.saveExtension = ".csv";
+    this.laodExtension = ".csv";
     this.outputFile = outputFile;
     this.dataPath = "/home/node_dev/nodeProjects/docker-nodejs/serverData";
     this.fileData ="";
+  }
+
+  setSaveExtentions (extention){
+    return new Promise((resolve, reject) =>{
+      let data = extentsion;
+      let message = "Extention changed to: "+ data;
+      if (data){
+        this.saveExtension = data;
+        resolve(message);
+      } else {
+        reject();
+      }
+    })
   }
 
   setFile (fileName){
@@ -55,7 +69,7 @@ module.exports = class fileSystem {
     })
   }
 
-  writeFile (fileName, fileContent){
+  writeFile (fileName,fileContent){
     return new Promise((resolve, reject) =>{
       let data ,dataPath, dataReturn
       let newFileName = "/"+fileName+this.saveExtension;
