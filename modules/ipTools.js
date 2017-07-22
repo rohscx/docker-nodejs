@@ -24,7 +24,7 @@ class ipTools extends fileSystem {
         first = data;
         dataBase2.map((data1) =>{
           if (first != data1) {
-            console.log (first,"   ",data1, "    ",data)
+            console.log ("FIRST==   "first," DATA1==  ",data1, " DATA==   ",data)
           }
         })
       })
