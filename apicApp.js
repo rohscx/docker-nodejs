@@ -30,7 +30,7 @@ ipTools.readFile()
 //.then((readReturn) => {
 //  console.log(ipTools.cleanData())
 //})
-Promise.all([ipTools.readFile(),ipTools.cleanData(),ipTools.formatData()])
+Promise.all([ipTools.readFile(),ipTools.cleanData()])
 .then((dataRe)=>{
   console.log(dataRe);
 })
