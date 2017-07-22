@@ -12,6 +12,23 @@ class ipTools extends fileSystem {
     this.cleanedData = "";
     this.sortedData = "";
     this.ipRange = "";
+    this.ipBase2 = "";
+  }
+
+  setSuperNet () {
+    return new Promise(resolve, reject) =>{
+      let dataBase2 = this.ipBase2;
+      let first = "";
+      let last = "";
+      dataBase2.map((data){
+        first = data;
+        dataBase2.map((data1){
+          if (first != data1) {
+            console.log (first,"   ",data1, "    ",data)
+          }
+        })
+      })
+    })
   }
 
   setBase (){
@@ -29,6 +46,7 @@ class ipTools extends fileSystem {
         newArray.push(temp1);
       })
       if (newArray){
+        this.ipBase2 = newArray;
         resolve(newArray)
       } else {
         reject("Nothing to See")
