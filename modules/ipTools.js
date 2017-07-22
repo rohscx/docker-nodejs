@@ -37,7 +37,7 @@ class ipTools extends fileSystem {
     })
   }
 
-  sortedData () {
+  sortedData (){
     return new Promise((resolve, reject) =>{
       let sortedData = this.cleanedData.sort((a,b)=>{
 	      let aa = a.split(".");
