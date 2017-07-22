@@ -16,7 +16,7 @@ class ipTools extends fileSystem {
 
   setBase (){
     return new Promise((resolve, reject) =>{
-      let newArray
+      let newArray = [];
       let ipList = this.sortedData;
       ipList.map((data) =>{
         let octants = data.split(".");
