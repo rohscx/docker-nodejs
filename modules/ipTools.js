@@ -16,7 +16,7 @@ class ipTools extends fileSystem {
   }
 
   setSuperNet () {
-    return new Promise(resolve, reject) =>{
+    return new Promise((resolve, reject) =>{
       let dataBase2 = this.ipBase2;
       let first = "";
       let last = "";
