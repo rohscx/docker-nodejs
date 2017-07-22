@@ -14,7 +14,11 @@ const ipTools = require('./modules/ipTools');
 
 
 // Reads the value of a properly formated CSV file, processes it, and stores it.
-ipTools.cleanData()
+
+
+ipTools.setFile("ipList.csv")
+/*
+ipTools.setFile("ipList.csv")
 .then((setReturn) => {
   console.log(setReturn)
   return ipTools.readFile()
@@ -29,7 +33,7 @@ ipTools.cleanData()
 .catch((reject) =>{
   console.log(reject);
 })
-
+*/
 //ipTools.readFile()
 //console.log(ipTools.readFile())
 //console.log(ipTools.cleanData())
