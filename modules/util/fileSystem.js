@@ -16,7 +16,7 @@ module.exports = class fileSystem {
     this.fileData ="";
   }
 
-  setFile (fileName) =>{
+  setFile (fileName){
     this.inputFile = fileName;
   }
 
@@ -25,7 +25,7 @@ module.exports = class fileSystem {
     this.fileData = this.inputFile;
   }
 
-  writeFile (fileName) =>{
+  writeFile (fileName){
     let newFile = fileName+this.saveExtension;
     fs.writeFileSync(this.dataPath, inputFile);
   }
