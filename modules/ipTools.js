@@ -18,7 +18,7 @@ class ipTools extends fileSystem {
 
   cleanData (){
     return new Promise((resolve, reject) =>{
-      let newData = this.fileData.split("\n");
+      let newData = this.fileData.split("\r\n");
       if (newData){
         resolve(newData);
       } else {
@@ -32,7 +32,7 @@ class ipTools extends fileSystem {
       let ipRange = [];
       let badData = [];
       let skipped = [];
-      let newData = this.fileData.split("\r\n");
+      let newData = this.fileData.split("\n");
       let i = 0;
       let fixup = newData.map((data) =>{
         let octants = data.split(".");
