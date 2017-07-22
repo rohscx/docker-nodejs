@@ -23,14 +23,16 @@ class ipTools extends fileSystem {
       let nextPredict= "";
       let nextP = (binary) => {
         let baseTen = parseInt(binary, 10);
+        console.log("IN>>> ",baseTen)
         baseTen ++
+        console.log("OUT>>> ",baseTen.toString(2))
 
         return baseTen.toString(2);
       }
 
       dataBase2.map((data) =>{
         first = data;
-        nextPredict = [data[0],data[1],data[2]]
+        nextPredict = [data[0],data[1],data[2],newNextP]
         let newNextP = nextP(data[3])
         console.log (" FIRST==   ",first, " PREDIC==   ",newNextP)
         dataBase2.map((data1) =>{
