@@ -23,6 +23,7 @@ class ipTools extends fileSystem {
         console.log(data, "<=Array")
         if (data.length == 0){
           console.log(data, "<=This Array looks bad")
+          newData.pop(data)
         }
       })
       if (newData){
