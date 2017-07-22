@@ -59,7 +59,7 @@ module.exports = class fileSystem {
       let newFileName = "/"+fileName+this.saveExtension;
       let filePath = this.dataPath+newFileName;
       fs.writeFile(filePath, fileContent, (err) => {
-        if (err) reject(err);
+        if (err) return reject(err);
         return resolve('Saved!');
         });
     })

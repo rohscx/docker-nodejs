@@ -17,7 +17,7 @@ const ipTools = require('./modules/ipTools');
 ipTools.setFile("ipList.csv")
 ipTools.writeFile("gogogogo","Cats on everthing because this does not work yet")
 if((writeReturn) =>{
-  console.log(writeReturn)
+  console.log("Writen d ",writeReturn)
 })
 ipTools.readFile()
 .then((returnd) =>{
