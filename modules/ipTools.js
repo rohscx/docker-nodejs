@@ -16,7 +16,7 @@ class ipTools extends fileSystem {
 
   setBase (){
     return new Promise((resolve, reject) =>{
-      data = "Cats"
+      let data = "Cats";
       if (data){
         resolve(data)
       } else {
