@@ -20,7 +20,7 @@ class ipTools extends fileSystem {
     return new Promise((resolve, reject) =>{
       let newData = this.fileData.dataString.split("\n");
       newData.map((data) => {
-        console.log(data)
+        console.log(data, "<=Array")
       })
       if (newData){
         resolve(newData);
