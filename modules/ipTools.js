@@ -18,7 +18,7 @@ class ipTools extends fileSystem {
     return this.ipRange;
   }
 
-  cleaneData (){
+  cleanedData (){
     return new Promise((resolve, reject) =>{
       let cleanedData =[];
       let newData = this.fileData.dataString.split("\n");
