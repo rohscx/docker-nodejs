@@ -55,8 +55,8 @@ module.exports = class fileSystem {
   writeFile (fileName){
     return new Promise((resolve, reject) =>{
       let data ,dataPath
-      let newFile = fileName+this.saveExtension;
-      let filePath = this.dataPath+newFile;
+      let newFileName = "/"+fileName+this.saveExtension;
+      let filePath = this.dataPath+newFileName;
       fs.writeFile(filePath, 'Hello content!', function (err) {
         if (err) reject(err);
         resolve('Saved!');
