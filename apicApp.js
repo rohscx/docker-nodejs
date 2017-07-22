@@ -31,6 +31,10 @@ ipTools.setFile("ipList.csv")
 })
 .then((sortReturn) => {
   console.log(sortReturn)
+  return ipTools.formatData()
+})
+.then((formatReturn) => {
+  console.log(formatReturn)
 })
 .catch((reject) =>{
   console.log(reject);
