@@ -19,6 +19,10 @@ ipTools.writeFile("gogogogo","Cats on everthing because this does not work yet")
 if((writeReturn) =>{
   console.log(writeReturn)
 })
+ipTools.readFile()
+.then((returnd) =>{
+  console.log("returnd   ", returnd)
+})
 //ipTools.readFile()
 //console.log(ipTools.readFile())
 //console.log(ipTools.cleanData())
