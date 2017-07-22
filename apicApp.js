@@ -34,8 +34,8 @@ Promise.all([ipTools.readFile(),ipTools.cleanData(),ipTools.formatData()])
 .then((dataRe)=>{
   console.log(dataRe);
 })
-.catch((Reject) =>{
-  console.log(Reject);
+.catch((reject) =>{
+  console.log(reject);
 })
 //ipTools.formatData(20)
 //console.log(ipTools.getData())
