@@ -19,6 +19,7 @@ ipTools.readFile()
 ipTools.cleanData()
 ipTools.formatData()
 console.log(ipTools.getData())
+console.log(ipTools.getIpRange())
 //.then((fileReturn) =>{
   //  console.log("promise return",fileReturn)
 //})
