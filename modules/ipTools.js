@@ -22,10 +22,12 @@ class ipTools extends fileSystem {
         let octants = data.split(".");
         octants.map((data1) =>{
           console.log(data1);
+          newArray.push(octants.toString(2))
+          console.log(data1);
         })
       })
-      if (ipList){
-        resolve(data)
+      if (newArray){
+        resolve(newArray)
       } else {
         reject("Nothing to See")
       }
