@@ -32,7 +32,7 @@ ipTools.readFile()
 //.then((readReturn) => {
 //  console.log(ipTools.cleanData())
 //})
-Promise.all([ipTools.readFile(),ipTools.cleanData()])
+Promise.all([ipTools.setFile("ipList.csv")])
 .then((dataRe)=>{
   console.log(dataRe);
 })
