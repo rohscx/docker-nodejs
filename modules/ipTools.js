@@ -20,9 +20,9 @@ class ipTools extends fileSystem {
       let dataBase2 = this.ipBase2;
       let first = "";
       let last = "";
-      dataBase2.map((data){
+      dataBase2.map((data) =>{
         first = data;
-        dataBase2.map((data1){
+        dataBase2.map((data1) =>{
           if (first != data1) {
             console.log (first,"   ",data1, "    ",data)
           }
