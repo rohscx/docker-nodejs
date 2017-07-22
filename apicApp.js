@@ -48,8 +48,12 @@ ipTools.setFile("ipList.csv")
 //  console.log(ipTools.cleanData())
 //})
 
-Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile(),ipTools.cleanData(),ipTools.sortData(),ipTools.formatData(20)])
-.then((dataRe)=>{
+Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
+.then((dataRe1)=>{
+  console.log(dataRe);
+  return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.formatData(20)])
+})
+.then((dataRe2)=>{
   console.log(dataRe);
 })
 .catch((reject) =>{
