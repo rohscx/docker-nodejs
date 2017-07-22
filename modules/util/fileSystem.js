@@ -24,7 +24,7 @@ module.exports = class fileSystem {
     return this.fileData;
   }
 
-  testFile(){
+  readFile(){
     return new Promise((resolve, reject) =>{
       let data
       let filePath = this.dataPath+this.inputFile;
@@ -36,10 +36,6 @@ module.exports = class fileSystem {
         reject();
       }
     })
-  }
-
-  readFile (){
-    this.fileData = fs.readFileSync(this.dataPath+this.inputFile).toString();
   }
 
   writeFile (fileName){
