@@ -11,7 +11,7 @@ module.exports = class fileSystem {
   constructor (inputFile,outputFile){
     this.inputFile = "/"+inputFile;
     this.saveExtension = ".csv";
-    this.outputFile = outPut;
+    this.outputFile = outputFile;
     this.dataPath = "/home/node_dev/nodeProjects/docker-nodejs/serverData";
     this.fileData ="";
   }
