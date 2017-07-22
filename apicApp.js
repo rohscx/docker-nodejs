@@ -25,7 +25,10 @@ ipTools.setFile("ipList.csv")
 })
 .then((cleanReturn)) => {
   console.log(cleanReturn)
-}
+})
+.catch((reject) =>{
+  console.log(reject);
+})
 
 //ipTools.readFile()
 //console.log(ipTools.readFile())
