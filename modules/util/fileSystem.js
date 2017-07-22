@@ -17,9 +17,9 @@ module.exports = class fileSystem {
     this.fileData ="";
   }
 
-  setSaveExtentions (extention){
+  setSaveExtentions (extension){
     return new Promise((resolve, reject) =>{
-      let data = extentsion;
+      let data = extension;
       let message = "Extention changed to: "+ data;
       if (data){
         this.saveExtension = data;

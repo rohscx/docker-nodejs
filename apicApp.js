@@ -108,7 +108,7 @@ apicTicket.httpRequest()
         return apicDiscovery.httpRequest()
         .then((status) =>{
           console.log(status);
-          ipTools.setSaveExtentions("json")
+          ipTools.setSaveExtentions(".json")
           return ipTools.writeFile(status.response.rootId,JSON.stringify(status, null, 2))
           .then((writeReturn) => {
             console.log(writeReturn)
