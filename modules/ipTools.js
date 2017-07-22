@@ -16,6 +16,10 @@ class ipTools extends fileSystem {
     return this.ipRange;
   }
 
+  cleanData (){
+    return "Cats on everthing because this does not work yet"
+  }
+
   formatData (expandBy) {
     let ipRange = [];
     let badData = [];
