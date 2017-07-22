@@ -23,7 +23,7 @@ class ipTools extends fileSystem {
       console.log("BOOOOOOOOOOLAN",newData.filter(Boolean))
       newData.map((data) => {
         console.log(data, "<=Array")
-        cleanData.push(str.trim(data))
+        cleanData.push(data.trim())
       })
       if (cleanData){
         resolve(cleanData);
