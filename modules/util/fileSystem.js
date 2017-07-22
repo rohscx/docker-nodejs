@@ -24,6 +24,16 @@ module.exports = class fileSystem {
     return this.fileData;
   }
 
+  testFile(){
+    return new Promise((resolve, reject) =>{
+      if (this.fileData){
+        resolve(this.fileData);
+      } else {
+        reject();
+      }
+    })
+  }
+
   readFile (){
     this.fileData = fs.readFileSync(this.dataPath+this.inputFile).toString();
   }
