@@ -24,6 +24,7 @@ class ipTools extends fileSystem {
       //
       if (newData){
         console.log(newArray);
+        console.log(test);
         resolve(newData);
       } else {
         reject();
