@@ -23,12 +23,10 @@ class ipTools extends fileSystem {
       console.log("BOOOOOOOOOOLAN",newData.filter(Boolean))
       newData.map((data) => {
         console.log(data, "<=Array")
-        // removes empty arrays
-        if (data.length >= 0){
-        }
+        cleanData.push(str.trim(data))
       })
-      if (newData){
-        resolve(newData);
+      if (cleanData){
+        resolve(cleanData);
       } else {
         reject();
       }
