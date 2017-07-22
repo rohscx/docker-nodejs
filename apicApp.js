@@ -108,7 +108,7 @@ apicTicket.httpRequest()
         return apicDiscovery.httpRequest()
         .then((status) =>{
           console.log(status);
-          return ipTools.writeFile(status.response.rootId,status.response)
+          return ipTools.writeFile(status.response.rootId,status.response.toString())
           .then((writeReturn) => {
             console.log(writeReturn)
           })
