@@ -47,7 +47,7 @@ module.exports = class fileSystem {
           return reject(err);
         } else {
           this.fileData = data.toString();
-          return resolve(fileData);
+          return resolve(data.toString());
         }
       })
     })
