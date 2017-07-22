@@ -47,10 +47,10 @@ module.exports = class fileSystem {
           return reject(err);
         } else {
           this.fileData = fileData;
-          console.log("asdfasdf ",data)
+          console.log("asdfasdf ",data.toString())
           return resolve(fileData);
         }
-      }).toString();
+      })
     })
   }
 
