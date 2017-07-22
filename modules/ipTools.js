@@ -20,11 +20,21 @@ class ipTools extends fileSystem {
       let dataBase2 = this.ipBase2;
       let first = "";
       let last = "";
+      let nextPredict= "";
+      let nextP = (binary) => {
+        let baseTen = parseInt(binary, 10);
+        baseTen ++
+
+        return baseTen.toString(2);
+      }
+
       dataBase2.map((data) =>{
         first = data;
+
+        nextPredict = [data[0],data[1],data[2],]
         dataBase2.map((data1) =>{
           if (first != data1) {
-            console.log (" FIRST==   ",first," DATA1==  ",data1, " DATA==   ",data)
+            console.log (" FIRST==   ",first," DATA1==  ",data1, " PREDIC==   ",nextP(first[3])
           }
         })
       })
