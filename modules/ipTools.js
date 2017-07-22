@@ -21,6 +21,9 @@ class ipTools extends fileSystem {
       let newData = this.fileData.dataString.split("\n");
       newData.map((data) => {
         console.log(data, "<=Array")
+        if (data.length == 0){
+          console.log(data, "<=This Array looks bad")
+        }
       })
       if (newData){
         resolve(newData);
