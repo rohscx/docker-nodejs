@@ -17,11 +17,11 @@ const ipTools = require('./modules/ipTools');
 ipTools.setFile("ipList.csv")
 ipTools.writeFile("gogogogo","Cats on everthing because this does not work yet")
 .then((writeReturn) =>{
-  console.log("Writen d ",writeReturn)
+  console.log(writeReturn)
 })
 ipTools.readFile()
-.then((returnd) =>{
-  console.log("returnd   ", returnd)
+.then((readReturn) =>{
+  console.log(readReturn)
 })
 //ipTools.readFile()
 //console.log(ipTools.readFile())
@@ -30,7 +30,7 @@ ipTools.readFile()
 //.then((readReturn) => {
 //  console.log(ipTools.cleanData())
 //})
-Promise.all([ipTools.readFile(),ipTools.cleanData()])
+Promise.all([ipTools.readFile(),ipTools.cleanData(),formatData()])
 .then((dataRe)=>{
   console.log(dataRe);
 })
