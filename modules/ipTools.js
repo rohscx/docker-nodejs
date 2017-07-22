@@ -19,12 +19,14 @@ class ipTools extends fileSystem {
       let newArray = [];
       let ipList = this.sortedData;
       ipList.map((data) =>{
+        let temp1 = [];
         let octants = data.split(".");
         octants.map((data1) =>{
           console.log(data1);
           let temp = parseInt(data1,10)
-          newArray.push(temp.toString(2))
+          temp1.push(temp.toString(2))
         })
+        newArray.push(temp1);
       })
       if (newArray){
         resolve(newArray)
