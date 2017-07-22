@@ -17,7 +17,7 @@ const ipTools = require('./modules/ipTools');
 ipTools.setFile("ipList.csv")
 ipTools.readFile()
 console.log(ipTools.testFile())
-ipTools.cleanData()
+console.log(ipTools.cleanData())
 //ipTools.formatData(20)
 //console.log(ipTools.getData())
 //console.log(ipTools.getIpRange())
