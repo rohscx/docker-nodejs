@@ -32,8 +32,9 @@ class ipTools extends fileSystem {
 
       dataBase2.map((data) =>{
         first = data;
-        nextPredict = [data[0],data[1],data[2],newNextP]
+
         let newNextP = nextP(data[3])
+        nextPredict = [data[0],data[1],data[2],newNextP]
         console.log (" FIRST==   ",first, " PREDIC==   ",newNextP)
         dataBase2.map((data1) =>{
           if (first == newNextP) {
