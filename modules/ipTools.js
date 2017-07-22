@@ -42,12 +42,12 @@ class ipTools extends fileSystem {
           console.log(octants[i]);
           */
           if (octants[i] == 230) {
-            incrementBy = expandBy;
+            let incrementBy = expandBy;
             // Converts string value to int and add the values
-            newOctant = Number(octants[i]) + incrementBy;
+            let newOctant = Number(octants[i]) + incrementBy;
             // Creates
-            createIP = octants[0]+"."+octants[1]+"."+octants[2]+"."+newOctant;
-            newRange = data+"-"+createIP;
+            let createIP = octants[0]+"."+octants[1]+"."+octants[2]+"."+newOctant;
+            let newRange = data+"-"+createIP;
             // debug
             /*
             console.log(createIP);
@@ -56,7 +56,7 @@ class ipTools extends fileSystem {
             ipRange.push(newRange);
             // Checks for IP address outside of the normal range
           } else if (octants[i] <= 229 + expandBy || octants[i] >= 241 + expandBy) {
-            newRange = data+"-"+data
+            let newRange = data+"-"+data
             ipRange.push(newRange);
           } else {
             // Just in case catch the rest
