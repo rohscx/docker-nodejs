@@ -21,11 +21,11 @@ ipTools.setFile("ipList.csv")
   console.log(setReturn)
   return ipTools.readFile()
 })
-.then((readReturn)) => {
+.then((readReturn) => {
   console.log(readReturn)
   ipTools.cleanData()
 })
-.then((cleanReturn)) => {
+.then((cleanReturn) => {
   console.log(cleanReturn)
 })
 .catch((reject) =>{
