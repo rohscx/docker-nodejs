@@ -17,9 +17,9 @@ let apicInterface = {
     nine: "9 : Return to main Menu"
   }
 };
-apicMenu() => {
+let apicMenu = () => {
   Object.keys(apicInterface.mainMenu).map(function(key, index) {
-       return (apicInterface.mainMenu[key]);
+       console.log(apicInterface.mainMenu[key]);
      })
 }
 
