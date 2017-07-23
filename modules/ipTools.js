@@ -24,12 +24,12 @@ class ipTools extends fileSystem {
       let nextP = (binary) => {
         console.log("binary",typeof("binary"))
         console.log("IN>>> ",binary)
-        let baseTen = parseInt(binary, 10);
+        let baseTen = parseInt(binary, 2);
         baseTen.toString(2)
         console.log("baseTen",typeof("baseTen"))
         console.log("IN>>> ",baseTen)
         baseTen ++
-        console.log("OUT>>> ",baseTen.toString(2))
+        console.log("OUT>>> ",baseTen.toString(10))
 
         return baseTen.toString(2);
       }
