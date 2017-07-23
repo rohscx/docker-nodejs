@@ -18,7 +18,7 @@ class ipTools extends fileSystem {
   setSuperNet () {
     return new Promise((resolve, reject) =>{
       let firstIp,lastIp,nextPredict,superNet;
-      superNet = "";
+      superNet = [];
       let dataBase2 = this.ipBase2;
 
       let makeRange = (ipArray1, ipArray2) =>{
@@ -90,19 +90,19 @@ class ipTools extends fileSystem {
               let firstIpBase10 = baseConvert10(firstIp);
               let lastIpBase10 = baseConvert10(lastIp);
               console.log("*********",makeRange(firstIpBase10,lastIpBase10));
-              superNet += makeRange(firstIpBase10,lastIpBase10);
+              superNet.push(makeRange(firstIpBase10,lastIpBase10));
             }
           } else {
             let firstIpBase10 = baseConvert10(firstIp);
             let lastIpBase10 = baseConvert10(lastIp);
             console.log("*********",makeRange(firstIpBase10,lastIpBase10));
-            superNet += makeRange(firstIpBase10,lastIpBase10)+",";
+            superNet.push(makeRange(firstIpBase10,lastIpBase10));
             if (dataBase2.length == count){
               console.log("END OF ARRAY : ")
               let firstIpBase10 = baseConvert10(data);
               let lastIpBase10 = baseConvert10(data);
               console.log("*********",makeRange(firstIpBase10,lastIpBase10));
-              superNet += makeRange(firstIpBase10,lastIpBase10);
+              superNet.push(makeRange(firstIpBase10,lastIpBase10));
             } else {
               firstIp = data;
               lastIp = firstIp;
@@ -117,6 +117,7 @@ class ipTools extends fileSystem {
           console.log("###################################################################################")
         }
       })
+      console.log(superNet)
     })
   }
 
