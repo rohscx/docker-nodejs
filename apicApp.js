@@ -24,8 +24,8 @@ prompts.question("What would you like to do?", (number)=>{
         console.log("not in use")
         break;
     default:
-        readline.setPrompt('What would you like to do?');
-        readline.prompt();
+        console.log("NO WAY BECUASE THIS OPTION DOES NOT EXIST... YET")
+        process.exit();
         break;
   }
 })
