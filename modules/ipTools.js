@@ -23,7 +23,7 @@ class ipTools extends fileSystem {
         let baseTen = parseInt(binary, 2);
         baseTen.toString(2)
         baseTen ++
-        return baseTen.toString(2).trim();
+        return baseTen.toString(2);
       }
       dataBase2.map((data) =>{
         firstIp = data;
@@ -49,11 +49,19 @@ class ipTools extends fileSystem {
             console.log(typeof('lastIp[0]'),typeof('lastIp[1]'),typeof('lastIp[2]'),typeof('lastIp[3]'))
             console.log(lastIp[0].length,lastIp[1].length,lastIp[2].length,lastIp[3].length)
             console.log("compare lastIp and firstIP",lastIp === firstIp)
+            let index;
+            for (index = 0; index < lastIp.length; ++index) {
+              console.log("char lastIp " + index + ": " + targetText.charCodeAt(index));
+            }
           }
           console.log(typeof('firstIp'))
           console.log(typeof('firstIp[0]'),typeof('firstIp[1]'),typeof('firstIp[2]'),typeof('firstIp[3]'))
           console.log(firstIp[0].length,firstIp[1].length,firstIp[2].length,firstIp[3].length)
           console.log("TEST MATCH", lastIp == firstIp)
+          let index;
+          for (index = 0; index < lastIp.length; ++index) {
+            console.log("char firstIp " + index + ": " + targetText.charCodeAt(index));
+          }
           lastIp = nextPredict;
         }
 
