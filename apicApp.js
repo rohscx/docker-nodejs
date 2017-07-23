@@ -86,7 +86,7 @@ let apiccDevices = () => {
         apicDevices.setHeaders(apicTicket.getTicketData())
         apicDevices.setUriBase(apicTicket.getUriBase())
         return apicDevices.httpRequest()
-      )}
+      })
       .then((devicesReturn) =>{
         console.log(devicesReturn)
         processSuccess = true;
