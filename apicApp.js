@@ -7,6 +7,9 @@ const ipTools = require('./modules/ipTools');
 const rl = require('readline');
 
 
+
+
+// apic-EM user menu. not deep very shallow
 let prompts = rl.createInterface(process.stdin, process.stdout);
 let apicInterface = {
   menuFirstRun: true,
@@ -24,10 +27,7 @@ let apicMenu = () => {
        console.log(apicInterface.mainMenu[key]);
      })
 }
-
 console.log(apicMenu())
-
-
 prompts.question(apicInterface.greeting, (init)=>{
   let menu = (init) => {
     let clearScreen = () =>{
@@ -39,7 +39,7 @@ prompts.question(apicInterface.greeting, (init)=>{
         case "1":
             apiccDiscovery()
             .then((apiccReturn) =>{
-              console.log("Complete")
+              console.log("apicDiscovery Complete")
               menu("OkayGo!")
             })
             break;
@@ -50,13 +50,13 @@ prompts.question(apicInterface.greeting, (init)=>{
         case "3":
             apiccDevices()
             .then((apiccReturn) =>{
-              console.log("Complete")
+              console.log("apicDevices Complete")
               menu("OkayGo!")
             })
             break;
         case "9":
             clearScreen()
-            console.log("Complete")
+            console.log("clearScreen Complete")
             menu("OkayGo!")
             break;
         default:
