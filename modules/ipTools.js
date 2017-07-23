@@ -23,7 +23,7 @@ class ipTools extends fileSystem {
         let baseTen = parseInt(binary, 2);
         baseTen.toString(2)
         baseTen ++
-        return baseTen.toString(2);
+        return baseTen.toString(2).trim();
       }
       dataBase2.map((data) =>{
         firstIp = data;
@@ -55,7 +55,6 @@ class ipTools extends fileSystem {
           console.log(firstIp[0].length,firstIp[1].length,firstIp[2].length,firstIp[3].length)
           console.log("TEST MATCH", lastIp == firstIp)
           lastIp = nextPredict;
-          lastIp.trim();
         }
 
       })
