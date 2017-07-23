@@ -22,7 +22,7 @@ prompts.question("Apic Upload?", ()=>{
 
 
 // Reads the value of a properly formated CSV file, processes it, and stores it.
-let apicDiscovery = () => {
+let apiccDiscovery = () => {
   Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
   .then((promiseReturn)=>{
     console.log(promiseReturn);
