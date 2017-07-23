@@ -27,7 +27,7 @@ class ipTools extends fileSystem {
       }
 
       let syntheticIp = (ipArray) => {
-        let temp1 = ""
+        let syntheticIp = ""
         ipArray.map((data) => {
           console.log(data.toString().trim().charCodeAt())
           console.log(typeof('data'))
@@ -36,17 +36,16 @@ class ipTools extends fileSystem {
             if (charCode == 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57) {
               console.log("char syntheticIp " + index + ": " + data.charCodeAt(index));
               console.log("hit ", charCode, " charCode  ", String.fromCharCode(charCode))
-              temp1 += String.fromCharCode(charCode)
+              syntheticIp += String.fromCharCode(charCode)
             }
           }
         })
-        console.log(temp1)
-        return temp1;
+        console.log(syntheticIp)
+        return syntheticIp;
       }
 
       dataBase2.map((data) =>{
         firstIp = data;
-
         if (firstIp == nextPredict) {
           console.log("MATCH?   :",firstIp == nextPredict)
           nextPredict = [data[0],data[1],data[2],nextP(data[3])]
