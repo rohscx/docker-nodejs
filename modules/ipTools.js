@@ -51,7 +51,6 @@ class ipTools extends fileSystem {
       }
 
       dataBase2.map((data) =>{
-        firstIp = data;
         nextPredict = [data[0],data[1],data[2],nextP(data[3])]
         if (lastIp){
           console.log (" 1LAST_IP==   ",lastIp," 1FIRST_IP==   ",firstIp)
@@ -64,6 +63,7 @@ class ipTools extends fileSystem {
           if (ip1 == ip2) {
             lastIp = nextPredict;
           } else {
+            firstIp = data;
             lastIp = firstIp;
           }
         } else {
