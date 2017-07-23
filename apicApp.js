@@ -48,6 +48,7 @@ prompts.question(apicInterface.greeting, (init)=>{
               apiccDevices()
               .then((apiccReturn) =>{
                 console.log("Complete")
+                menu("OkayGo!")
               })
               break;
           case "9":
