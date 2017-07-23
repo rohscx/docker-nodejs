@@ -29,7 +29,7 @@ class ipTools extends fileSystem {
       let syntheticIp = (ipArray) => {
         let temp1
         ipArray.map((data) => {
-          temp1.toString() += data;
+          temp1 += data.toString();
         })
         return temp1;
       }
