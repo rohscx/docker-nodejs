@@ -56,7 +56,7 @@ class ipTools extends fileSystem {
           console.log (" PREDICTED_IP==   ",nextPredict)
           console.log(typeof('lastIp[0]'),typeof('lastIp[1]'),typeof('lastIp[2]'),typeof('lastIp[3]'))
           console.log(lastIp[0].length,lastIp[1].length,lastIp[2].length,lastIp[3].length)
-          let ip1 = syntheticIp(lastIp);
+          let ip1 = syntheticIp(data);
           let ip2 = syntheticIp(nextPredict);
           console.log("Was the prediction successful:  ",ip1 === ip2)
           if (ip1 == ip2) {
