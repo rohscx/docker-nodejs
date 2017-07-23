@@ -6,6 +6,8 @@ const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
 const rl = require('readline');
 
+
+let prompts = rl.createInterface(process.stdin, process.stdout);
 let apicInterface = {
   greeting: "What would you like to do?",
   mainMenu: {
@@ -15,8 +17,11 @@ let apicInterface = {
   }
 };
 
-let prompts = rl.createInterface(process.stdin, process.stdout);
-console.log(apicInterface.mainMenu.one,'\n',apicInterface.mainMenu.two)
+ () => {
+   Object.keys(apicInterface.mainMenu).map(function(key, index) {
+     console.log(apicInterface.mainMenu[key]);
+   })
+ }
 
 prompts.question(apicInterface.greeting, (number)=>{
   switch(number) {
