@@ -81,7 +81,7 @@ class ipTools extends fileSystem {
             let firstIpBase10 = baseConvert10(firstIp);
             let lastIpBase10 = baseConvert10(lastIp);
             console.log(baseConvert10(firstIp));
-            console.log(baseConvert10(lasttIp));
+            console.log(baseConvert10(lastIp));
             console.log(makeRange(firstIpBase10,lastIpBase10))
             firstIp = data;
             lastIp = firstIp;
