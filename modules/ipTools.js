@@ -29,13 +29,19 @@ class ipTools extends fileSystem {
       let syntheticIp = (ipArray) => {
         let syntheticIp = ""
         ipArray.map((data) => {
+          // debug
+          /*
           console.log(data.toString().trim().charCodeAt())
           console.log(typeof('data'))
+          */
           for (let index = 0; index < data.length; ++index) {
             let charCode = data.charCodeAt(index);
             if (charCode == 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57) {
+              // debug
+              /*
               console.log("char syntheticIp " + index + ": " + data.charCodeAt(index));
               console.log("hit ", charCode, " charCode  ", String.fromCharCode(charCode))
+              */
               syntheticIp += String.fromCharCode(charCode)
             }
           }
@@ -47,9 +53,11 @@ class ipTools extends fileSystem {
       dataBase2.map((data) =>{
         firstIp = data;
         if (firstIp == nextPredict) {
-          console.log("MATCH?   :",firstIp == nextPredict)
+          // debug
+          // console.log("MATCH?   :",firstIp == nextPredict)
           nextPredict = [data[0],data[1],data[2],nextP(data[3])]
-          console.log (" 0ACCTUAL==   ",firstIp," 0PREDICTION==   ",nextPredict)
+          // debug
+          // console.log (" 0ACCTUAL==   ",firstIp," 0PREDICTION==   ",nextPredict)
         } else {
 
 
