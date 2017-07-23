@@ -30,7 +30,7 @@ class ipTools extends fileSystem {
       let baseConvert10 = (ipArray) =>{
         let ipAddress = [];
         ipArray.map((data) => {
-          ipAddress.push(data.toString(10));
+          ipAddress.push(parseInt(data, 2));
         })
         return ipAddress;
       }
