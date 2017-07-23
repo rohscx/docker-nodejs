@@ -4,7 +4,12 @@ const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
 const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
+const rl = require('readline');
 
+
+
+let propts = rl.createInterface(process.stdin, process.stdout);
+prompts.question("Apic Upload?", apicDiscovery())
 
 /* These can be broken up into speperate .js files to accomplish a task
    ultimately some user interaction front end should be build, but this is a
@@ -14,129 +19,85 @@ const ipTools = require('./modules/ipTools');
 
 
 // Reads the value of a properly formated CSV file, processes it, and stores it.
-
-/*
-ipTools.setFile("ipList.csv")
-.then((setReturn) => {
-  console.log(setReturn)
-  return ipTools.readFile()
-})
-.then((readReturn) => {
-  console.log(readReturn)
-  return ipTools.cleanData()
-})
-.then((cleanReturn) => {
-  console.log(cleanReturn)
-  return ipTools.sortData()
-})
-.then((sortReturn) => {
-  console.log(sortReturn)
-  return ipTools.formatData(20)
-})
-.then((formatReturn) => {
-  console.log(formatReturn)
-})
-.catch((reject) =>{
-  console.log(reject);
-})
-*/
-//ipTools.readFile()
-//console.log(ipTools.readFile())
-//console.log(ipTools.cleanData())
-//ipTools.readFile()
-//.then((readReturn) => {
-//  console.log(ipTools.cleanData())
-//})
+let apicDiscovery = () => {
+  Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
+  .then((promiseReturn)=>{
+    console.log(promiseReturn);
+    return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.setBase(),ipTools.setSuperNet()])
+  })
+  .then((promiseReturn)=>{
+    console.log(promiseReturn);
+  })
+  .catch((reject) =>{
+    console.log(reject);
+  })
 
 
-Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
-.then((promiseReturn)=>{
-  console.log(promiseReturn);
-  return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.setBase(),ipTools.setSuperNet()])
-})
-.then((promiseReturn)=>{
-  console.log(promiseReturn);
-})
-.catch((reject) =>{
-  console.log(reject);
-})
-
-/*
-
-Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
-.then((promiseReturn)=>{
-  console.log(promiseReturn);
-  return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.formatData(20)])
-})
-.then((promiseReturn)=>{
-  console.log(promiseReturn);
-})
-.catch((reject) =>{
-  console.log(reject);
-})
-*/
-
-apicTicket.debug()
-apicTicket.httpRequest()
-  .then((ticketReturn) =>{
-    console.log(ticketReturn);
-    apicTicket.setTicketData(ticketReturn.response);
-    apicDiscovery.setHeaders(apicTicket.getTicketData());
-    apicDiscovery.setUriBase(apicTicket.getUriBase());
-    // Uses IP list to generate array with IP range and Job name objects
-    apicDiscovery.setDiscoveryList(ipTools.getIpRange(),"JOBNAME_JOBDESCRIPTION_");
-    console.log(apicDiscovery.getDiscoveryList())
-    let discoveryList = apicDiscovery.getDiscoveryList();
-    return new Promise((resolve, reject) =>{
-      discoveryList.map((data) =>{
-        let type = "multi range";
-        //console.log(data);
-        //console.log(data[0].jobName);
-        //console.log(data[0].ipRange);
-        apicDiscovery.setBody(data[0].jobName,type,data[0].ipRange);
-        apicDiscovery.debug();
-        //Uses ticket to pull device list
-        return apicDiscovery.httpRequest()
-        .then((discoveryReturn) =>{
-          apicDiscovery.setDiscoveryTickets(discoveryReturn);
-          // normalizes indexOf to work with .length
-          let indexPosition = discoveryList.indexOf(data) + 1;
-          let dataLength = discoveryList.length;
-          // Verifies all array items have been processed before resolving promise
-          if (indexPosition == dataLength) {
-              resolve(apicDiscovery.getDiscoveryTickets());
-          }
-        })
-        .catch((httpReject) =>{
-          console.log(httpReject);
-        })
-      })
-    })
-    .then((discoveryResult) =>{
-      discoveryResult.map((data) => {
-        console.log(data);
-        console.log(data[0].response.url);
-        apicDiscovery.setUri(data[0].response.url);
-        apicDiscovery.setNewReqest();
-        return apicDiscovery.httpRequest()
-        .then((status) =>{
-          console.log(status);
-          ipTools.setSaveExtentions(".json")
-          return ipTools.writeFile(status.response.rootId,JSON.stringify(status, null, 2))
-          .then((writeReturn) => {
-            console.log(writeReturn)
+  apicTicket.debug()
+  apicTicket.httpRequest()
+    .then((ticketReturn) =>{
+      console.log(ticketReturn);
+      apicTicket.setTicketData(ticketReturn.response);
+      apicDiscovery.setHeaders(apicTicket.getTicketData());
+      apicDiscovery.setUriBase(apicTicket.getUriBase());
+      // Uses IP list to generate array with IP range and Job name objects
+      apicDiscovery.setDiscoveryList(ipTools.getIpRange(),"JOBNAME_JOBDESCRIPTION_");
+      console.log(apicDiscovery.getDiscoveryList())
+      let discoveryList = apicDiscovery.getDiscoveryList();
+      return new Promise((resolve, reject) =>{
+        discoveryList.map((data) =>{
+          let type = "multi range";
+          //console.log(data);
+          //console.log(data[0].jobName);
+          //console.log(data[0].ipRange);
+          apicDiscovery.setBody(data[0].jobName,type,data[0].ipRange);
+          apicDiscovery.debug();
+          //Uses ticket to pull device list
+          return apicDiscovery.httpRequest()
+          .then((discoveryReturn) =>{
+            apicDiscovery.setDiscoveryTickets(discoveryReturn);
+            // normalizes indexOf to work with .length
+            let indexPosition = discoveryList.indexOf(data) + 1;
+            let dataLength = discoveryList.length;
+            // Verifies all array items have been processed before resolving promise
+            if (indexPosition == dataLength) {
+                resolve(apicDiscovery.getDiscoveryTickets());
+            }
           })
           .catch((httpReject) =>{
             console.log(httpReject);
           })
         })
       })
+      .then((discoveryResult) =>{
+        discoveryResult.map((data) => {
+          console.log(data);
+          console.log(data[0].response.url);
+          apicDiscovery.setUri(data[0].response.url);
+          apicDiscovery.setNewReqest();
+          return apicDiscovery.httpRequest()
+          .then((status) =>{
+            console.log(status);
+            ipTools.setSaveExtentions(".json")
+            return ipTools.writeFile(status.response.rootId,JSON.stringify(status, null, 2))
+            .then((writeReturn) => {
+              console.log(writeReturn)
+            })
+            .catch((httpReject) =>{
+              console.log(httpReject);
+            })
+          })
+        })
+      })
     })
-  })
-  // Catches any errors from the HTTP Rest Request
-  .catch((httpReject) =>{
-    console.log(httpReject);
-  })
+    // Catches any errors from the HTTP Rest Request
+    .catch((httpReject) =>{
+      console.log(httpReject);
+    })
+
+    process.exit();
+}
+
 
 /*
 // Gets an ApicEM Ticket
