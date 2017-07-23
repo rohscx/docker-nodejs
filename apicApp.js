@@ -25,7 +25,7 @@ prompts.question("Apic Upload?", (number)=>{
         console.log("not in use")
         break;
     default:
-        onsole.log("not in use")
+        console.log("not in use")
   }
 })
 
