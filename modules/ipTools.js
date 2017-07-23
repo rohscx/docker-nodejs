@@ -68,12 +68,12 @@ class ipTools extends fileSystem {
             console.log(typeof('lastIp'))
             console.log(typeof('lastIp[0]'),typeof('lastIp[1]'),typeof('lastIp[2]'),typeof('lastIp[3]'))
             console.log(lastIp[0].length,lastIp[1].length,lastIp[2].length,lastIp[3].length)
+            let ip1 = syntheticIp(firstIp);
+            let ip2 = syntheticIp(lastIp);
             let index;
             for (index = 0; index < lastIp.length; ++index) {
               console.log("char lastIp " + index + ": " + lastIp[index].charCodeAt(index));
             }
-            let ip1 = syntheticIp(firstIp);
-            let ip2 = syntheticIp(lastIp);
             console.log("syntheticIp1:  ", ip1,"  ",typeof('ip1'),"  syntheticIp2:  ",ip2,"  ",typeof('ip2'))
             index;
             for (index = 0; index < ip1.length; ++index) {
