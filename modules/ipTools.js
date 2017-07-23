@@ -67,6 +67,10 @@ class ipTools extends fileSystem {
             let ip1 = syntheticIp(firstIp);
             let ip2 = syntheticIp(lastIp);
             console.log("syntheticIp1:  ", ip1,"  ",typeof('ip1'),"  syntheticIp2:  ",ip2,"  ",typeof('ip2'))
+            index;
+            for (index = 0; index < ip1.length; ++index) {
+              console.log("char ip1 " + index + ": " + ip1.charCodeAt(index));
+            }
           }
           console.log(typeof('firstIp'))
           console.log(typeof('firstIp[0]'),typeof('firstIp[1]'),typeof('firstIp[2]'),typeof('firstIp[3]'))
