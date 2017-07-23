@@ -59,7 +59,7 @@ class ipTools extends fileSystem {
           console.log(firstIp[0].length,firstIp[1].length,firstIp[2].length,firstIp[3].length)
           console.log("TEST MATCH", lastIp == firstIp)
           let index;
-          for (index = 0; index < lastIp.length; ++index) {
+          for (index = 0; index < firstIp.length; ++index) {
             console.log("char firstIp " + index + ": " + targetText.charCodeAt(index));
           }
           lastIp = nextPredict;
