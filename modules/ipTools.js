@@ -54,7 +54,8 @@ class ipTools extends fileSystem {
           console.log(typeof('firstIp[0]'),typeof('firstIp[1]'),typeof('firstIp[2]'),typeof('firstIp[3]'))
           console.log(firstIp[0].length,firstIp[1].length,firstIp[2].length,firstIp[3].length)
           console.log("TEST MATCH", lastIp == firstIp)
-          lastIp = nextPredict.trim();
+          lastIp = nextPredict;
+          lastIp.trim();
         }
 
       })
