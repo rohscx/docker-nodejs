@@ -41,6 +41,7 @@ class ipTools extends fileSystem {
             temp1 += String.fromCharCode(charCode)
           }
         })
+        console.log(temp1)
         return temp1;
       }
       dataBase2.map((data) =>{
