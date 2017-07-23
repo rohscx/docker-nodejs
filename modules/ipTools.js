@@ -34,8 +34,9 @@ class ipTools extends fileSystem {
           let index;
           for (index = 0; index < data.length; ++index) {
             console.log("char ip1 " + index + ": " + data.charCodeAt(index));
-            if (data.charCodeAt(index) == 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57)
-            temp1 += data.toString().trim()
+            let charCode = ata.charCodeAt(index);
+            if (charCode == 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57)
+            temp1 += fromCharCode(charCode).toString().trim()
           }
         })
         return temp1;
