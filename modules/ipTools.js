@@ -21,6 +21,12 @@ class ipTools extends fileSystem {
       superNet = "";
       let dataBase2 = this.ipBase2;
 
+      let makeRange = (ipArray1, ipArray2) =>{
+        let ipRange ="";
+        ipRange = ipArray1.join(".")+"-"ipArray1.join(".")
+        return ipRange;
+      }
+
       let baseConvert10 = (ipArray) =>{
         let ipAddress = [];
         ipArray.map((data) => {
@@ -72,7 +78,11 @@ class ipTools extends fileSystem {
             lastIp = nextPredict;
             nextPredict = [data[0],data[1],data[2],nextP(data[3])]
           } else {
+            firstIpBase10 = baseConvert10(firstIp);
+            lastIpBase10 = baseConvert10(lastIp);
             console.log(baseConvert10(firstIp));
+            console.log(baseConvert10(lasttIp));
+            console.log(makeRange(firstIpBase10,lastIpBase10))
             firstIp = data;
             lastIp = firstIp;
             nextPredict = [data[0],data[1],data[2],nextP(data[3])]
