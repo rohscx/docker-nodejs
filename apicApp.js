@@ -9,13 +9,24 @@ const rl = require('readline');
 
 
 let prompts = rl.createInterface(process.stdin, process.stdout);
-prompts.question("Apic Upload?", ()=>{
-  apiccDiscovery()
-  .then((apiccReturn) =>{
-    console.log("Job Complete")
-    process.exit();
-  })
+console.log("What would you like to do?");
+console.log("1 : Apic-EM Discovery")
 
+prompts.question("Apic Upload?", (number)=>{
+  switch(number) {
+    case 1:
+      apiccDiscovery()
+      .then((apiccReturn) =>{
+        console.log("Job Complete")
+        process.exit();
+      })
+        break;
+    case 2:
+        console.log("not in use")
+        break;
+    default:
+        onsole.log("not in use")
+  }
 })
 
 /* These can be broken up into speperate .js files to accomplish a task
