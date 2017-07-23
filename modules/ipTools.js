@@ -22,21 +22,16 @@ class ipTools extends fileSystem {
       let dataBase2 = this.ipBase2;
 
       let makeRange = (ipArray1, ipArray2) =>{
-        let blah = [];
+        let ipRange = [];
         for (let i = 0; i < ipArray1.length; i++) {
-          blah.push(ipArray1[i])
-          console.log(i)
-          console.log(ipArray1.length)
+          ipRange.push(ipArray1[i])
           if (i +1 == ipArray1.length) {
-            blah.push("-")
+            ipRange.push("-")
             for (let ii = 0; ii < ipArray2.length; ii++) {
-              blah.push(ipArray2[ii])
+              ipRange.push(ipArray2[ii])
             }
           }
         }
-        console.log(blah)
-        let ipRange ="";
-        ipRange = ipArray1.join(".")+"-"+ipArray2.join(".")
         return ipRange;
       }
 
