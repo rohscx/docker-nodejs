@@ -11,7 +11,7 @@ const rl = require('readline');
 let prompts = rl.createInterface(process.stdin, process.stdout);
 prompts.question("Apic Upload?", ()=>{
   apiccDiscovery();
-  process.exit();
+
 })
 
 /* These can be broken up into speperate .js files to accomplish a task
