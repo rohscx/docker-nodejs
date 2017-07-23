@@ -26,17 +26,14 @@ let apicMenu = () => {
 console.log(apicMenu())
 
 
-prompts.question(apicInterface.greeting, (number)=>{
-  let menu = (number) => {
-    prompts.setPrompt(apicMenu())
-    prompts.prompt()
-    prompts.on('line', (number) =>{
+prompts.question(apicInterface.greeting, (init)=>{
+  let menu = (init) => {
+    let switchMenu = (number) => {
       switch(number) {
           case "1":
               apiccDiscovery()
               .then((apiccReturn) =>{
-
-                //process.exit();
+                console.log("Complete")
               })
               break;
           case "2":
@@ -57,10 +54,20 @@ prompts.question(apicInterface.greeting, (number)=>{
           default:
               console.log(apicMenu())
       }
-    })
+    };
 
+    if (init) {
+      init = false;
+      switchMenu(init)
+    } else {
+      prompts.setPrompt(apicMenu())
+      prompts.prompt()
+      prompts.on('line', (number) =>{
+        switchMenu(number)
+      })
+    }
   }
-  menu(number)
+  menu(init)
 })
 
 
