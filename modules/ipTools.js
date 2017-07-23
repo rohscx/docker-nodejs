@@ -29,7 +29,7 @@ class ipTools extends fileSystem {
         firstIp = data;
 
         if (firstIp == nextPredict) {
-          console.log("MATCH?   :",first == nextPredict)
+          console.log("MATCH?   :",firstIp == nextPredict)
           nextPredict = [data[0],data[1],data[2],nextP(data[3])]
           console.log (" 0ACCTUAL==   ",firstIp," 0PREDICTION==   ",nextPredict)
         } else {
@@ -42,7 +42,7 @@ class ipTools extends fileSystem {
 
           nextPredict = [data[0],data[1],data[2],nextP(data[3])]
 
-          if (last){
+          if (lastIp){
             console.log (" FIRST_IP==   ",firstIp," 1PREDICTION==   ",nextPredict)
             console.log (" 1LAST_IP==   ",lastIp,"  1PREDICTION==   ",nextPredict)
             console.log(typeof('lastIp'))
