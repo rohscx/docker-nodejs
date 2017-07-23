@@ -17,7 +17,7 @@ class ipTools extends fileSystem {
 
   setSuperNet () {
     return new Promise((resolve, reject) =>{
-      let first,last,nextPredict,truth;
+      let firstIp,lastIp,nextPredict,truth;
       let dataBase2 = this.ipBase2;
       let nextP = (binary) => {
         let baseTen = parseInt(binary, 2);
@@ -26,12 +26,12 @@ class ipTools extends fileSystem {
         return baseTen.toString(2);
       }
       dataBase2.map((data) =>{
-        first = data;
+        firstIp = data;
 
-        if (first == nextPredict) {
+        if (firstIp == nextPredict) {
           console.log("MATCH?   :",first == nextPredict)
           nextPredict = [data[0],data[1],data[2],nextP(data[3])]
-          console.log (" 0ACCTUAL==   ",first," 0PREDICTION==   ",nextPredict)
+          console.log (" 0ACCTUAL==   ",firstIp," 0PREDICTION==   ",nextPredict)
         } else {
 
 
@@ -43,18 +43,18 @@ class ipTools extends fileSystem {
           nextPredict = [data[0],data[1],data[2],nextP(data[3])]
 
           if (last){
-            console.log (" FIRST==   ",first," 1PREDICTION==   ",nextPredict)
-            console.log (" 1LAST==   ",last," 1PREDICTION==   ",nextPredict)
-            console.log(typeof('last'))
-            console.log(typeof('last[0]'),typeof('last[1]'),typeof('last[2]'),typeof('last[3]'))
-            console.log(last[0].length,last[1].length,last[2].length,last[3].length)
-            console.log("compare last and first",last === first)
+            console.log (" FIRST_IP==   ",firstIp," 1PREDICTION==   ",nextPredict)
+            console.log (" 1LAST_IP==   ",lastIp,"  1PREDICTION==   ",nextPredict)
+            console.log(typeof('lastIp'))
+            console.log(typeof('lastIp[0]'),typeof('lastIp[1]'),typeof('lastIp[2]'),typeof('lastIp[3]'))
+            console.log(lastIp[0].length,lastIp[1].length,lastIp[2].length,lastIp[3].length)
+            console.log("compare lastIp and firstIP",lastIp === firstIp)
           }
-          console.log(typeof('first'))
-          console.log(typeof('first[0]'),typeof('first[1]'),typeof('first[2]'),typeof('first[3]'))
-          console.log(first[0].length,first[1].length,first[2].length,first[3].length)
-          console.log("TEST MATCH", last == first)
-          last = nextPredict;
+          console.log(typeof('firstIp'))
+          console.log(typeof('firstIp[0]'),typeof('firstIp[1]'),typeof('firstIp[2]'),typeof('firstIp[3]'))
+          console.log(firstIp[0].length,firstIp[1].length,firstIp[2].length,firstIp[3].length)
+          console.log("TEST MATCH", lastIp == firstIp)
+          lastIp = nextPredict;
         }
 
       })
