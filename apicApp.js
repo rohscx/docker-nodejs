@@ -10,7 +10,8 @@ let apicInterface = {
   greeting: "What would you like to do?",
   mainMenu: {
     one: "1 : Apic-EM Discovery",
-    two: "PLACE HOLDER"
+    two: "2 : PLACE HOLDER",
+    nine: "Return to main Menu"
   }
 };
 
@@ -27,6 +28,9 @@ prompts.question(apicInterface.greeting, (number)=>{
           })
           break;
       case "2":
+          console.log("NADA")
+          break;
+      case "9":
           console.log("NADA")
           break;
       default:
