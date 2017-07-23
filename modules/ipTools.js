@@ -109,7 +109,13 @@ class ipTools extends fileSystem {
           console.log("###################################################################################")
         }
       })
-      console.log(superNet)
+      if (superNet){
+        this.ipRange = superNet;
+        resolve(superNet)
+      } else {
+        reject("Something is wrong with the dataset")
+      }
+
     })
   }
 
