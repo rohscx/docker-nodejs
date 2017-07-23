@@ -17,7 +17,8 @@ class ipTools extends fileSystem {
 
   setSuperNet () {
     return new Promise((resolve, reject) =>{
-      let firstIp,lastIp,nextPredict,truth;
+      let firstIp,lastIp,nextPredict,superNet;
+      superNet = "";
       let dataBase2 = this.ipBase2;
       let nextP = (binary) => {
         let baseTen = parseInt(binary, 2);
@@ -46,62 +47,26 @@ class ipTools extends fileSystem {
             }
           }
         })
-        console.log(syntheticIp)
         return syntheticIp;
       }
 
       dataBase2.map((data) =>{
         firstIp = data;
-        if (firstIp == nextPredict) {
-          // debug
-          // console.log("MATCH?   :",firstIp == nextPredict)
-          nextPredict = [data[0],data[1],data[2],nextP(data[3])]
-          // debug
-          // console.log (" 0ACCTUAL==   ",firstIp," 0PREDICTION==   ",nextPredict)
-        } else {
+        nextPredict = [data[0],data[1],data[2],nextP(data[3])]
+        if (lastIp){
+          console.log (" FIRST_IP==   ",firstIp," 1PREDICTION==   ",nextPredict)
+          console.log (" 1LAST_IP==   ",lastIp," 1PREDICTION==   ",nextPredict)
+          console.log(typeof('lastIp[0]'),typeof('lastIp[1]'),typeof('lastIp[2]'),typeof('lastIp[3]'))
+          console.log(lastIp[0].length,lastIp[1].length,lastIp[2].length,lastIp[3].length)
+          let ip1 = syntheticIp(firstIp);
+          let ip2 = syntheticIp(lastIp);
+          console.log("compare firstIp and lastIp",ip1 === ip2)
+          if (ip1 == ip2) {
+            lastIp = nextPredict;
+          } else {
 
-
-          //console.log(typeof('last[0]'),typeof('last[1]'),typeof('last[2]'),typeof('nextP(data[3])'))
-          console.log(nextPredict)
-          //console.log(typeof('nextPredict[0]'),typeof('nextPredict[1]'),typeof('nextPredict[2]'),typeof('nextPredict[3]'))
-          //console.log(typeof('first[0]'),typeof('first[1]'),typeof('first[2]'),typeof('first[3]'))
-
-          nextPredict = [data[0],data[1],data[2],nextP(data[3])]
-
-          if (lastIp){
-            console.log (" FIRST_IP==   ",firstIp," 1PREDICTION==   ",nextPredict)
-            console.log (" 1LAST_IP==   ",lastIp," 1PREDICTION==   ",nextPredict)
-            console.log(typeof('lastIp[0]'),typeof('lastIp[1]'),typeof('lastIp[2]'),typeof('lastIp[3]'))
-            console.log(lastIp[0].length,lastIp[1].length,lastIp[2].length,lastIp[3].length)
-            let ip1 = syntheticIp(firstIp);
-            let ip2 = syntheticIp(lastIp);
-            console.log("compare lastIp and firstIP",ip1 === ip2)
-            let index;
-            // debug
-            /*
-            for (index = 0; index < lastIp.length; ++index) {
-              console.log("char lastIp " + index + ": " + lastIp[index].charCodeAt(index));
-            }
-            console.log("syntheticIp1:  ", ip1,"  ",typeof('ip1'),"  syntheticIp2:  ",ip2,"  ",typeof('ip2'))
-            index;
-            for (index = 0; index < ip1.length; ++index) {
-              console.log("char ip1 " + index + ": " + ip1.charCodeAt(index));
-            }
-            */
           }
-          // debug
-          /*
-          console.log(typeof('firstIp'))
-          console.log(typeof('firstIp[0]'),typeof('firstIp[1]'),typeof('firstIp[2]'),typeof('firstIp[3]'))
-          console.log(firstIp[0].length,firstIp[1].length,firstIp[2].length,firstIp[3].length)
-          let index;
-          for (index = 0; index < firstIp.length; ++index) {
-            console.log("char firstIp " + index + ": " + firstIp[index].charCodeAt(index));
-          }
-          */
-          lastIp = nextPredict;
         }
-
       })
     })
   }
