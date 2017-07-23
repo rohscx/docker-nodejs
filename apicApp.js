@@ -13,7 +13,7 @@ let apicInterface = {
   mainMenu: {
     one: "1 : Apic-EM Discovery",
     two: "2 : PLACE HOLDER",
-    nine: "Return to main Menu"
+    nine: "9 : Return to main Menu"
   }
 };
 
@@ -33,6 +33,8 @@ prompts.question(apicInterface.greeting, (number)=>{
           break;
       case "2":
           console.log("NADA")
+          prompts.setPrompt('do you hava any gold?')
+          prompts.prompt()
           break;
       case "9":
           console.log("NADA")
