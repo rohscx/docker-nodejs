@@ -50,7 +50,7 @@ class ipTools extends fileSystem {
             console.log(last[0].length,last[1].length,last[2].length,last[3].length)
           }
           console.log(typeof('first[0]'),typeof('first[1]'),typeof('first[2]'),typeof('first[3]'))
-          //console.log(first[0].length,first[1].length,first[2].length,first[3].length)
+          console.log(first[0].length,first[1].length,first[2].length,first[3].length)
           console.log("TEST MATCH", last == first)
           last = nextPredict;
         }
