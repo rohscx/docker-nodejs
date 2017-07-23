@@ -20,6 +20,15 @@ class ipTools extends fileSystem {
       let firstIp,lastIp,nextPredict,superNet;
       superNet = "";
       let dataBase2 = this.ipBase2;
+
+      let baseConvert10 = (ipArray) =>{
+        let ipAddress = [];
+        ipArray.map((data) => {
+          ipAddress.push(data.toString(10));
+        })
+        return ipAddress;
+      }
+
       let nextP = (binary) => {
         let baseTen = parseInt(binary, 2);
         baseTen.toString(2)
@@ -63,6 +72,7 @@ class ipTools extends fileSystem {
             lastIp = nextPredict;
             nextPredict = [data[0],data[1],data[2],nextP(data[3])]
           } else {
+            baseConvert10(firstIp);
             firstIp = data;
             lastIp = firstIp;
             nextPredict = [data[0],data[1],data[2],nextP(data[3])]
