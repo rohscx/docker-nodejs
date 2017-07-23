@@ -23,13 +23,9 @@ class ipTools extends fileSystem {
 
       let makeRange = (ipArray1, ipArray2) =>{
         let blah = [];
-        for (let i = 0; i < ipArray1.length; i++) {
-          if (i = ipArray1.length) {
-            blah.push(ipArray1);
-            blah.push("-");
-            blah.push(ipArray2[ii]);
-          }
-        }
+        blah.push(ipArray1);
+        blah.push("-");
+        blah.push(ipArray2[i]);
         console.log(blah)
         let ipRange ="";
         ipRange = ipArray1.join(".")+"-"+ipArray2.join(".")
