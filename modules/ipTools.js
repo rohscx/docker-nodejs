@@ -44,7 +44,7 @@ class ipTools extends fileSystem {
 
           if (lastIp){
             console.log (" FIRST_IP==   ",firstIp," 1PREDICTION==   ",nextPredict)
-            console.log (" 1LAST_IP==   ",lastIp,"  1PREDICTION==   ",nextPredict)
+            console.log (" 1LAST_IP==   ",lastIp,"1PREDICTION==   ",nextPredict)
             console.log(typeof('lastIp'))
             console.log(typeof('lastIp[0]'),typeof('lastIp[1]'),typeof('lastIp[2]'),typeof('lastIp[3]'))
             console.log(lastIp[0].length,lastIp[1].length,lastIp[2].length,lastIp[3].length)
