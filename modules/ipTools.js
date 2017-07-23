@@ -38,7 +38,7 @@ class ipTools extends fileSystem {
             if (charCode == 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57)
             console.log("char syntheticIp " + index + ": " + data.charCodeAt(index));
             console.log("hit ", charCode)
-            temp1 += String.fromCharCode(charCode).toString().trim()
+            temp1 += String.fromCharCode(charCode)
           }
         })
         return temp1;
