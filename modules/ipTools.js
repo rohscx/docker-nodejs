@@ -17,16 +17,20 @@ class ipTools extends fileSystem {
 
   setSuperNet () {
     return new Promise((resolve, reject) =>{
-      let firstIp,lastIp,nextPredict,superNet;
+      let firstIp,lastIp,nextPredict,superNet,count;
+      //holds return data
       superNet = [];
+      // counts ip address in the array
+      count = 0;
+      // pulls ip address list
       let dataBase2 = this.ipBase2;
-
+      // geneates an array of ranges
       let makeRange = (ipArray1, ipArray2) =>{
         let ipRange = [];
         ipRange.push(ipArray1.join(".")+"-"+ipArray2.join("."));
         return ipRange;
       }
-
+      // converts base2 numbers to base 10
       let baseConvert10 = (ipArray) =>{
         let ipAddress = [];
         ipArray.map((data) => {
@@ -34,14 +38,14 @@ class ipTools extends fileSystem {
         })
         return ipAddress;
       }
-
+      // converts to base 10 and generates next number in sequence, returns base 2 number
       let nextP = (binary) => {
         let baseTen = parseInt(binary, 2);
         baseTen.toString(2)
         baseTen ++
         return baseTen.toString(2);
       }
-
+      // generates sytehntic base 2 address. used in IP comparison
       let syntheticIp = (ipArray) => {
         let syntheticIp = ""
         ipArray.map((data) => {
@@ -64,7 +68,8 @@ class ipTools extends fileSystem {
         })
         return syntheticIp;
       }
-      let count = 0;
+      // processes the cleaned and verified IP address list.
+      // attempts to create IP address ranges where possiable
       dataBase2.map((data) =>{
         count ++;
         if (lastIp){
@@ -129,7 +134,7 @@ class ipTools extends fileSystem {
 
     })
   }
-
+  // changes the base of a number, by default base 10 to base 2
   setBase (){
     return new Promise((resolve, reject) =>{
       let newArray = [];
@@ -151,11 +156,11 @@ class ipTools extends fileSystem {
       }
     })
   }
-
+  // return ip range. This is raw and uncleaned
   getIpRange (){
     return this.ipRange;
   }
-
+  // attempts to clean the ip list. remove leading spaces, trailling spaces and empty lines
   cleanData (){
     return new Promise((resolve, reject) =>{
       let cleanedData =[];
@@ -172,7 +177,7 @@ class ipTools extends fileSystem {
       }
     })
   }
-
+  // sorts cleaned IP address list by lowest to highest. data should be base 10
   sortData (){
     return new Promise((resolve, reject) =>{
       let sortedData = this.cleanedData.sort((a,b)=>{
@@ -189,78 +194,6 @@ class ipTools extends fileSystem {
       }
     })
   }
-
-  formatData (expandBy) {
-    return new Promise((resolve, reject) =>{
-      let ipRange = [];
-      let badData = [];
-      let skipped = [];
-      let newData = this.sortedData;
-      let i = 0;
-      let fixup = newData.map((data) =>{
-        let octants = data.split(".");
-        // debug
-        /*
-        console.log(octants);
-        console.log(octants.length);
-        console.log(octants[3]);
-        */
-        for (i = 0 ; i < octants.length; i++) {
-          // side effect is that this standardises the data to proper IP's only..
-          if (i == 3) {
-            // debug
-            /*
-            console.log(octants[i]);
-            */
-            if (octants[i] == 230) {
-              let incrementBy = expandBy;
-              // Converts string value to int and add the values
-              let newOctant = Number(octants[i]) + incrementBy;
-              // Creates
-              let createIP = octants[0]+"."+octants[1]+"."+octants[2]+"."+newOctant;
-              let newRange = data+"-"+createIP;
-              // debug
-              /*
-              console.log(createIP);
-              console.log(newRange);
-              */
-              ipRange.push(newRange);
-              // Checks for IP address outside of the normal range
-            } else if (octants[i] <= 229 + expandBy || octants[i] >= 241 + expandBy) {
-              let newRange = data+"-"+data;
-              ipRange.push(newRange);
-            } else {
-              let newRange = data+"-"+data;
-              // Just in case catch the rest
-              let dataIndex = newData.indexOf(data) + 1;
-              //skipped.push(data+"  <- index-("+dataIndex+")");
-            }
-            //  checks for malformed octant lengths
-          } else if (octants.length <= 3 || octants.length >= 5) {
-            let dataIndex = newData.indexOf(data) + 1;
-            badData.push(data+"  <- index-("+dataIndex+")");
-          }
-        }})
-        // debug
-        /*
-        console.log(newData);
-        console.log(ipRange)
-        */
-        // If data Does not match the length requirement it is considered bad data!
-        if (badData.length != 0) {
-          let rejectMessage = "badData  ===>>  "+badData+"  <<===";
-          reject(rejectMessage)
-        } else if (skipped.length != 0) {
-          let rejectMessage = "skipped  ===>>  "+skipped+"  <<===";
-          reject(rejectMessage)
-        } else {
-          this.ipRange = ipRange;
-          resolve(ipRange);
-        }
-    })
-
-  }
-
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {
     console.log("inputFile: "+this.inputFile,'\n',"outputFile: "+outputFile.uri,'\n')
