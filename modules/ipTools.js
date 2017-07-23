@@ -27,8 +27,8 @@ class ipTools extends fileSystem {
       }
 
       let syntheticIp = (ipArray) => {
+        let temp1;
         ipArray.map((data) => {
-          let temp1
           console.log(data.toString().trim().charCodeAt())
           console.log(typeof('data'))
           for (let index = 0; index < data.length; ++index) {
