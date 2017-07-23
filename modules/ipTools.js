@@ -25,7 +25,7 @@ class ipTools extends fileSystem {
         console.log(typeof("binary"))
         console.log("IN>>> ",binary)
         let baseTen = parseInt(binary, 10);
-        onsole.log(typeof("baseTen"))
+        console.log(typeof("baseTen"))
         console.log("IN>>> ",baseTen)
         baseTen ++
         console.log("OUT>>> ",baseTen.toString(2))
