@@ -71,6 +71,8 @@ class ipTools extends fileSystem {
             let ip1 = syntheticIp(firstIp);
             let ip2 = syntheticIp(lastIp);
             let index;
+            // debug
+            /*
             for (index = 0; index < lastIp.length; ++index) {
               console.log("char lastIp " + index + ": " + lastIp[index].charCodeAt(index));
             }
@@ -79,7 +81,10 @@ class ipTools extends fileSystem {
             for (index = 0; index < ip1.length; ++index) {
               console.log("char ip1 " + index + ": " + ip1.charCodeAt(index));
             }
+            */
           }
+          // debug
+          /*
           console.log(typeof('firstIp'))
           console.log(typeof('firstIp[0]'),typeof('firstIp[1]'),typeof('firstIp[2]'),typeof('firstIp[3]'))
           console.log(firstIp[0].length,firstIp[1].length,firstIp[2].length,firstIp[3].length)
@@ -87,6 +92,7 @@ class ipTools extends fileSystem {
           for (index = 0; index < firstIp.length; ++index) {
             console.log("char firstIp " + index + ": " + firstIp[index].charCodeAt(index));
           }
+          */
           lastIp = nextPredict;
         }
 
