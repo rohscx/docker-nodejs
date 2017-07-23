@@ -23,7 +23,7 @@ class ipTools extends fileSystem {
 
       let makeRange = (ipArray1, ipArray2) =>{
         let ipRange ="";
-        ipRange = ipArray1.join(".")+"-"+ipArray1.join(".")
+        ipRange = ipArray1.join(".")+"-"+ipArray2.join(".")
         return ipRange;
       }
 
@@ -78,9 +78,11 @@ class ipTools extends fileSystem {
             lastIp = nextPredict;
             nextPredict = [data[0],data[1],data[2],nextP(data[3])]
           } else {
+            let firstIpBase10 = baseConvert10(firstIp);
+            let lastIpBase10 = baseConvert10(lastIp);
             console.log(baseConvert10(firstIp));
             console.log(baseConvert10(lastIp));
-            console.log(makeRange(baseConvert10(firstIp),baseConvert10(lastIp)))
+            console.log(makeRange(firstIpBase10,lastIpBase10))
             firstIp = data;
             lastIp = firstIp;
             nextPredict = [data[0],data[1],data[2],nextP(data[3])]
