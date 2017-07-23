@@ -25,11 +25,9 @@ class ipTools extends fileSystem {
         let blah = [];
         for (let i = 0; i < ipArray1.length; i++) {
           if (i = ipArray1.length) {
-            for (let ii = 0; ii < ipArray2.length; ii++) {
-              blah.push(ipArray1);
-              blah.push("-");
-              blah.push(ipArray2[ii]);
-            }
+            blah.push(ipArray1);
+            blah.push("-");
+            blah.push(ipArray2[ii]);
           }
         }
         console.log(blah)
