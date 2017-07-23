@@ -9,13 +9,13 @@ const rl = require('readline');
 let apicInterface = {
   greeting: "What would you like to do?",
   mainMenu: {
-    "1": "1 : Apic-EM Discovery",
-    "2": "PLACE HOLDER"
+    one: "1 : Apic-EM Discovery",
+    two: "PLACE HOLDER"
   }
 };
 
 let prompts = rl.createInterface(process.stdin, process.stdout);
-console.log(apicInterface.mainMenu."1",'\n',apicInterface.mainMenu."2")
+console.log(apicInterface.mainMenu.one,'\n',apicInterface.mainMenu.two)
 
 prompts.question(apicInterface.greeting, (number)=>{
   switch(number) {
