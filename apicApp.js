@@ -4,11 +4,12 @@ const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
 const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
-const rl = require('readline');
+const readline = require('readline');
 
 
 
-let prompts = rl.createInterface(process.stdin, process.stdout);
+let prompts = readline.createInterface(process.stdin, process.stdout);
+clear();
 console.log("1 : Apic-EM Discovery")
 
 prompts.question("What would you like to do?", (number)=>{
@@ -24,8 +25,8 @@ prompts.question("What would you like to do?", (number)=>{
         console.log("not in use")
         break;
     default:
-        rl.setPrompt('What would you like to do?');
-        rl.prompt();
+        readline.setPrompt('What would you like to do?');
+        readline.prompt();
         break;
   }
 })
