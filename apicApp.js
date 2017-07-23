@@ -10,7 +10,7 @@ const rl = require('readline');
 
 let prompts = rl.createInterface(process.stdin, process.stdout);
 prompts.question("Apic Upload?", ()=>{
-  apicDiscovery();
+  apiccDiscovery();
   process.exit();
 })
 
