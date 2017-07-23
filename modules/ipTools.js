@@ -32,8 +32,8 @@ class ipTools extends fileSystem {
         first = data;
         let newNextP = nextP(data[3])
         nextPredict = [data[0],data[1],data[2],newNextP]
-        console.log (" FIRST==   ",first," T==   ",first[3]," PREDIC==   ",newNextP)
-
+        console.log (" FIRST==   ",first," T==   ",first[3]," PREDIC==   ",newNextP, " asdf", nextPredict)
+        if ()
       })
     })
   }
