@@ -119,7 +119,6 @@ class ipTools extends fileSystem {
           console.log("###################################################################################")
         }
       })
-      console.log(superNet.)
     })
   }
 
