@@ -51,14 +51,17 @@ class ipTools extends fileSystem {
             console.log("compare lastIp and firstIP",lastIp === firstIp)
             let index;
             for (index = 0; index < lastIp.length; ++index) {
-              console.log("char lastIp " + index + ": " + lastIp.charCodeAt(index));
+              console.log("char lastIp " + index + ": " + lastIp[3].charCodeAt(index));
             }
           }
           console.log(typeof('firstIp'))
           console.log(typeof('firstIp[0]'),typeof('firstIp[1]'),typeof('firstIp[2]'),typeof('firstIp[3]'))
           console.log(firstIp[0].length,firstIp[1].length,firstIp[2].length,firstIp[3].length)
           console.log("TEST MATCH", lastIp == firstIp)
-
+          let index;
+          for (index = 0; index < firstIp.length; ++index) {
+            console.log("char firstIp " + index + ": " + firstIp[3].charCodeAt(index));
+          }
           lastIp = nextPredict;
         }
 
