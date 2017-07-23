@@ -9,7 +9,6 @@ const readline = require('readline');
 
 
 let prompts = readline.createInterface(process.stdin, process.stdout);
-clear();
 console.log("1 : Apic-EM Discovery")
 
 prompts.question("What would you like to do?", (number)=>{
