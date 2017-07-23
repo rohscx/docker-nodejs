@@ -15,11 +15,11 @@ console.log("1 : Apic-EM Discovery")
 prompts.question("Apic Upload?", (number)=>{
   switch(number) {
       case 1:
-      apiccDiscovery()
-      .then((apiccReturn) =>{
-        console.log("Job Complete")
-        process.exit();
-      })
+          apiccDiscovery()
+          .then((apiccReturn) =>{
+            console.log("Job Complete")
+            process.exit();
+          })
           break;
       case 2:
           console.log("NADA")
