@@ -14,6 +14,7 @@ console.log("1 : Apic-EM Discovery")
 
 prompts.question("Apic Upload?", (number)=>{
   console.log(number);
+  console.log(typeof('number'))
   switch(number) {
       case 1:
           apiccDiscovery()
