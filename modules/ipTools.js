@@ -22,16 +22,9 @@ class ipTools extends fileSystem {
       let last = "";
       let nextPredict= "";
       let nextP = (binary) => {
-        console.log("binary",typeof("binary"))
-        console.log("IN>>> ",binary)
         let baseTen = parseInt(binary, 2);
         baseTen.toString(2)
-        console.log("baseTen",typeof("baseTen"))
-        console.log("IN>>> ",baseTen)
         baseTen ++
-        console.log("IN>>> ",baseTen)
-        console.log("OUT>>> ",baseTen.toString(2))
-
         return baseTen.toString(2);
       }
 
