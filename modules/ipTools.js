@@ -64,7 +64,7 @@ class ipTools extends fileSystem {
           if (ip1 == ip2) {
             lastIp = nextPredict;
           } else {
-            
+            lastIp = firstIp;
           }
         } else {
           console.log (" FIRST_IP==   ",firstIp," 1PREDICTION==   ",nextPredict)
