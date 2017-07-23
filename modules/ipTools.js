@@ -61,9 +61,11 @@ class ipTools extends fileSystem {
           console.log("Was the prediction successful:  ",ip1 === ip2)
           if (ip1 == ip2) {
             lastIp = nextPredict;
+            nextPredict = [data[0],data[1],data[2],nextP(data[3])]
           } else {
             firstIp = data;
             lastIp = firstIp;
+            nextPredict = [data[0],data[1],data[2],nextP(data[3])]
           }
         } else {
           firstIp = data;
