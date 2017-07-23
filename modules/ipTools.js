@@ -28,7 +28,7 @@ class ipTools extends fileSystem {
       dataBase2.map((data) =>{
         first = data;
         console.log("MATCH?   :",first == nextPredict)
-        if (truth == false) {
+        if (truth == null) {
           nextPredict = [data[0],data[1],data[2],nextP(data[3])]
           console.log (" ACCTUAL==   ",first," PREDICTION==   ",nextPredict)
         }
