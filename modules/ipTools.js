@@ -78,8 +78,8 @@ class ipTools extends fileSystem {
             lastIp = nextPredict;
             nextPredict = [data[0],data[1],data[2],nextP(data[3])]
           } else {
-            firstIpBase10 = baseConvert10(firstIp);
-            lastIpBase10 = baseConvert10(lastIp);
+            let firstIpBase10 = baseConvert10(firstIp);
+            let lastIpBase10 = baseConvert10(lastIp);
             console.log(baseConvert10(firstIp));
             console.log(baseConvert10(lasttIp));
             console.log(makeRange(firstIpBase10,lastIpBase10))
