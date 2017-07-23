@@ -27,37 +27,40 @@ console.log(apicMenu())
 
 
 prompts.question(apicInterface.greeting, (number)=>{
-  switch(number) {
-      case "1":
-          apiccDiscovery()
-          .then((apiccReturn) =>{
-            console.log(apicMenu())
-            //process.exit();
-          })
-          break;
-      case "2":
-          console.log("NADA")
-          prompts.setPrompt('do you hava any gold?')
-          prompts.prompt()
-          //prompts.on('line',)
-          break;
-      case "3":
-          apiccDevices()
-          .then((apiccReturn) =>{
-            prompts.setPrompt(apicMenu())
-            prompts.prompt()
-            //process.exit();
-          })
-          break;
-      case "9":
-          console.log("NADA")
-          break;
-      default:
-          console.log("NO WAY")
+  let menu = (number) => {
+    prompts.setPrompt(apicMenu())
+    prompts.prompt()
+    prompts.on('line', (number) =>{
+      switch(number) {
+          case "1":
+              apiccDiscovery()
+              .then((apiccReturn) =>{
+
+                //process.exit();
+              })
+              break;
+          case "2":
+              console.log("NADA")
+              prompts.setPrompt('do you hava any gold?')
+              prompts.prompt()
+              //prompts.on('line',)
+              break;
+          case "3":
+              apiccDevices()
+              .then((apiccReturn) =>{
+                //process.exit();
+              })
+              break;
+          case "9":
+              console.log("NADA")
+              break;
+          default:
+              console.log(apicMenu())
+      }
+    })
+
   }
-
-
-
+  menu(number)
 })
 
 
