@@ -70,8 +70,8 @@ class ipTools extends fileSystem {
           firstIp = data;
           lastIp = firstIp;
           nextPredict = [data[0],data[1],data[2],nextP(data[3])]
-          console.log (" FIRST_IP==   ",firstIp," NEXT_PREDICTION==   ",nextPredict)
-          console.log("FIRST LOOP KINDA LIKE SETUP MAY NOt run MORE THAN ONCE +++++")
+          console.log (" FIRST_IP==   ",firstIp," NEXT_PREDICTION==   ",nextPredict," THIS_IP==   ",data)
+          console.log("###################################################################################")
         }
       })
     })
