@@ -68,32 +68,40 @@ class ipTools extends fileSystem {
       dataBase2.map((data) =>{
         count ++;
         if (lastIp){
+          // debug
+          /*
           console.log (" FIRST_IP==   ",firstIp," LAST_IP==   ",lastIp," THIS_IP==   ",data)
           console.log (" PREDICTED_IP==   ",nextPredict)
           console.log(typeof('lastIp[0]'),typeof('lastIp[1]'),typeof('lastIp[2]'),typeof('lastIp[3]'))
           console.log(lastIp[0].length,lastIp[1].length,lastIp[2].length,lastIp[3].length)
+          */
           let ip1 = syntheticIp(data);
           let ip2 = syntheticIp(nextPredict);
-          console.log("Was the prediction successful:  ",ip1 === ip2)
+          // debug
+          //console.log("Was the prediction successful:  ",ip1 === ip2)
           if (ip1 == ip2) {
             lastIp = nextPredict;
             nextPredict = [data[0],data[1],data[2],nextP(data[3])]
             if (dataBase2.length == count){
               let firstIpBase10 = baseConvert10(firstIp);
               let lastIpBase10 = baseConvert10(lastIp);
-              console.log("*********",makeRange(firstIpBase10,lastIpBase10));
+              // debug
+              //console.log("*********",makeRange(firstIpBase10,lastIpBase10));
               superNet.push(makeRange(firstIpBase10,lastIpBase10));
             }
           } else {
             let firstIpBase10 = baseConvert10(firstIp);
             let lastIpBase10 = baseConvert10(lastIp);
-            console.log("*********",makeRange(firstIpBase10,lastIpBase10));
+            // debug
+            //console.log("*********",makeRange(firstIpBase10,lastIpBase10));
             superNet.push(makeRange(firstIpBase10,lastIpBase10));
             if (dataBase2.length == count){
-              console.log("END OF ARRAY : ")
+              // debug
+              // console.log("END OF ARRAY : ")
               let firstIpBase10 = baseConvert10(data);
               let lastIpBase10 = baseConvert10(data);
-              console.log("*********",makeRange(firstIpBase10,lastIpBase10));
+              // debug
+              // console.log("*********",makeRange(firstIpBase10,lastIpBase10));
               superNet.push(makeRange(firstIpBase10,lastIpBase10));
             } else {
               firstIp = data;
@@ -105,8 +113,11 @@ class ipTools extends fileSystem {
           firstIp = data;
           lastIp = firstIp;
           nextPredict = [data[0],data[1],data[2],nextP(data[3])]
+          // debug
+          /*
           console.log (" FIRST_IP==   ",firstIp," NEXT_PREDICTION==   ",nextPredict," THIS_IP==   ",data)
           console.log("###################################################################################")
+          */
         }
       })
       if (superNet){
