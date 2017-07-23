@@ -4,14 +4,15 @@ const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
 const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
-const readline = require('readline');
+const rl = require('readline');
 
 
 
-let prompts = readline.createInterface(process.stdin, process.stdout);
+let prompts = rl.createInterface(process.stdin, process.stdout);
+console.log("What would you like to do?");
 console.log("1 : Apic-EM Discovery")
 
-prompts.question("What would you like to do?", (number)=>{
+prompts.question("Apic Upload?", (number)=>{
   switch(number) {
     case 1:
       apiccDiscovery()
@@ -24,8 +25,11 @@ prompts.question("What would you like to do?", (number)=>{
         console.log("not in use")
         break;
     default:
-        break;
-  }
+        console.log("not in use")
+}
+
+
+
 })
 
 /* These can be broken up into speperate .js files to accomplish a task
