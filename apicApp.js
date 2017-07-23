@@ -16,14 +16,14 @@ prompts.question("Apic Upload?", (number)=>{
   console.log(number);
   console.log(typeof('number'))
   switch(number) {
-      case 1:
+      case "1":
           apiccDiscovery()
           .then((apiccReturn) =>{
             console.log("Job Complete")
             process.exit();
           })
           break;
-      case 2:
+      case "2":
           console.log("NADA")
           break;
       default:
