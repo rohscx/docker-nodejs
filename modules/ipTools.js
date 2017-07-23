@@ -23,10 +23,14 @@ class ipTools extends fileSystem {
 
       let makeRange = (ipArray1, ipArray2) =>{
         let blah = [];
-        for (let i = 0; i < ipArray1.length ; i++) {
-          blah.push("-");
-          blah.push(ipArray2[i]);
-          console.log(ipArray2[i])
+        for (let i = 0; i < ipArray1.length; i++) {
+          if (i = ipArray1.length) {
+            for (let ii = 0; ii < ipArray2.length; ii++) {
+              blah.push(ipArray1);
+              blah.push("-");
+              blah.push(ipArray2[ii]);
+            }
+          }
         }
         console.log(blah)
         let ipRange ="";
