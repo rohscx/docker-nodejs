@@ -17,17 +17,14 @@ class ipTools extends fileSystem {
 
   setSuperNet () {
     return new Promise((resolve, reject) =>{
+      let first,last,nextPredict;
       let dataBase2 = this.ipBase2;
-      let first = "";
-      let last = "";
-      let nextPredict= "";
       let nextP = (binary) => {
         let baseTen = parseInt(binary, 2);
         baseTen.toString(2)
         baseTen ++
         return baseTen.toString(2);
       }
-
       dataBase2.map((data) =>{
         first = data;
         let newNextP = nextP(data[3])
