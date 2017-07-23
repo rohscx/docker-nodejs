@@ -64,7 +64,7 @@ class ipTools extends fileSystem {
           if (ip1 == ip2) {
             lastIp = nextPredict;
           } else {
-
+            lastIp = firstIp;
           }
         }
       })
