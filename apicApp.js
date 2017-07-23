@@ -24,7 +24,7 @@ prompts.question("What would you like to do?", (number)=>{
         console.log("not in use")
         break;
     default:
-        rl.setPrompt("What would you like to do?")
+        rl.setPrompt('What would you like to do?');
         rl.prompt();
         break;
   }
