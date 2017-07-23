@@ -15,8 +15,8 @@ let apicInterface = {
   mainMenu: {
     one: "1 : Apic-EM Discovery",
     two: "2 : PLACE HOLDER",
-    three: "3 :  Apic Device Search",
-    nine: "9 : Return to main Menu"
+    three: "3 : Apic Device Search",
+    nine: "9 : Clear the screen"
   }
 };
 let apicMenu = () => {
@@ -30,32 +30,37 @@ console.log(apicMenu())
 
 prompts.question(apicInterface.greeting, (init)=>{
   let menu = (init) => {
+    let clearScreen = () =>{
+      return process.stdout.write('\033c');
+    };
+
     let switchMenu = (number) => {
       switch(number) {
-          case "1":
-              apiccDiscovery()
-              .then((apiccReturn) =>{
-                console.log("Complete")
-              })
-              break;
-          case "2":
-              console.log("NADA")
-              prompts.setPrompt('do you hava any gold?')
-              prompts.prompt()
-              //prompts.on('line',)
-              break;
-          case "3":
-              apiccDevices()
-              .then((apiccReturn) =>{
-                console.log("Complete")
-                menu("OkayGo!")
-              })
-              break;
-          case "9":
-              console.log("NADA")
-              break;
-          default:
-              console.log(apicMenu())
+        case "1":
+            apiccDiscovery()
+            .then((apiccReturn) =>{
+              console.log("Complete")
+              menu("OkayGo!")
+            })
+            break;
+        case "2":
+            console.log("NADA")
+            menu("OkayGo!")
+            break;
+        case "3":
+            apiccDevices()
+            .then((apiccReturn) =>{
+              console.log("Complete")
+              menu("OkayGo!")
+            })
+            break;
+        case "9":
+            clearScreen()
+            console.log("Complete")
+            menu("OkayGo!")
+            break;
+        default:
+            console.log(apicMenu())
       }
     };
 
