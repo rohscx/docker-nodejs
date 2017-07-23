@@ -9,10 +9,9 @@ const rl = require('readline');
 
 
 let prompts = rl.createInterface(process.stdin, process.stdout);
-console.log("What would you like to do?");
 console.log("1 : Apic-EM Discovery")
 
-prompts.question("Apic Upload?", (number)=>{
+prompts.question("What would you like to do?", (number)=>{
   switch(number) {
     case 1:
       apiccDiscovery()
@@ -25,7 +24,9 @@ prompts.question("Apic Upload?", (number)=>{
         console.log("not in use")
         break;
     default:
-        console.log("not in use")
+        rl.setPrompt("What would you like to do?")
+        rl.prompt();
+        break;
   }
 })
 
