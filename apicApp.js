@@ -13,13 +13,17 @@ let apicInterface = {
   mainMenu: {
     one: "1 : Apic-EM Discovery",
     two: "2 : PLACE HOLDER",
+    three: "3 :  Apic Device Search"
     nine: "9 : Return to main Menu"
   }
 };
+let apicMenu = () => {
+  Object.keys(apicInterface.mainMenu).map(function(key, index) {
+       return (apicInterface.mainMenu[key]);
+     })
+}
 
-console.log(   Object.keys(apicInterface.mainMenu).map(function(key, index) {
-     return (apicInterface.mainMenu[key]);
-   }))
+console.log(apicMenu())
 
 
 prompts.question(apicInterface.greeting, (number)=>{
@@ -27,7 +31,7 @@ prompts.question(apicInterface.greeting, (number)=>{
       case "1":
           apiccDiscovery()
           .then((apiccReturn) =>{
-            console.log("Job Complete")
+            console.log(apicMenu())
             process.exit();
           })
           break;
@@ -35,6 +39,16 @@ prompts.question(apicInterface.greeting, (number)=>{
           console.log("NADA")
           prompts.setPrompt('do you hava any gold?')
           prompts.prompt()
+          //prompts.on('line',)
+          break;
+      case "3":
+          apiccDevices()
+          .then((apiccReturn) =>{
+            prompts.setPrompt(apicMenu())
+            prompts.prompt()
+            process.exit();
+          })
+          console.log("NADA")
           break;
       case "9":
           console.log("NADA")
@@ -47,11 +61,48 @@ prompts.question(apicInterface.greeting, (number)=>{
 
 })
 
+
+
+
+
+
+
 /* These can be broken up into speperate .js files to accomplish a task
    ultimately some user interaction front end should be build, but this is a
    quick ad dirty....
    Note to self 240 characters can hold about 8 ip RANGES. <-- Batch Maximum!!
 */
+
+
+
+let apiccDevices = () => {
+  let processSuccess = false;
+  return new Promise((resolve, reject) =>{
+    apicTicket.debug()
+    apicTicket.httpRequest()
+      .then((ticketReturn) =>{
+        console.log(ticketReturn);
+        apicTicket.setTicketData(ticketReturn.response);
+        apicDevices.setHeaders(apicTicket.getTicketData())
+        apicDevices.setUriBase(apicTicket.getUriBase())
+        return apicDevices.httpRequest()
+      )}
+      .then((devicesReturn) =>{
+        console.log(devicesReturn)
+        processSuccess = true;
+        if (processSuccess) {
+          resolve (devicesReturn)
+        } else {
+          reject("Something went wrong")
+        }
+      })
+      .catch((httpReject) =>{
+        console.log(httpReject);
+      })
+
+  })
+}
+
 
 
 // Reads the value of a properly formated CSV file, processes it, and stores it.
