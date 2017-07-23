@@ -52,7 +52,7 @@ class ipTools extends fileSystem {
 
       dataBase2.map((data) =>{
         if (lastIp){
-          console.log (" FIRST_IP==   ",firstIp," LAST_IP==   ",lastIp)
+          console.log (" FIRST_IP==   ",firstIp," LAST_IP==   ",lastIp," THIS_IP==   ",data)
           console.log (" NEXT_PREDICTION==   ",nextPredict)
           console.log(typeof('lastIp[0]'),typeof('lastIp[1]'),typeof('lastIp[2]'),typeof('lastIp[3]'))
           console.log(lastIp[0].length,lastIp[1].length,lastIp[2].length,lastIp[3].length)
