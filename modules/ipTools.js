@@ -35,15 +35,17 @@ class ipTools extends fileSystem {
           for (index = 0; index < data.length; ++index) {
 
             let charCode = data.charCodeAt(index);
-            if (charCode == 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57)
-            console.log("char syntheticIp " + index + ": " + data.charCodeAt(index));
-            console.log("hit ", charCode)
-            temp1 += String.fromCharCode(charCode)
+            if (charCode == 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57) {
+              console.log("char syntheticIp " + index + ": " + data.charCodeAt(index));
+              console.log("hit ", charCode)
+              temp1 += String.fromCharCode(charCode)
+            }
           }
         })
         console.log(temp1)
         return temp1;
       }
+
       dataBase2.map((data) =>{
         firstIp = data;
 
