@@ -74,7 +74,7 @@ Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
 .catch((reject) =>{
   console.log(reject);
 })
-
+*/
 
 apicTicket.debug()
 apicTicket.httpRequest()
@@ -137,7 +137,6 @@ apicTicket.httpRequest()
   .catch((httpReject) =>{
     console.log(httpReject);
   })
-*/
 
 /*
 // Gets an ApicEM Ticket
