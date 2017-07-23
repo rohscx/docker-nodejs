@@ -27,7 +27,7 @@ class ipTools extends fileSystem {
           blah.push(ipArray1[i])
           if (i == ipArray1.length) {
             blah.push("-")
-            for (let ii = 0; ii < ipArray2.leng; i++) {
+            for (let ii = 0; ii < ipArray2.length; ii++) {
               blah.push(ipArray2[ii])
             }
           }
