@@ -72,7 +72,7 @@ class ipTools extends fileSystem {
             lastIp = nextPredict;
             nextPredict = [data[0],data[1],data[2],nextP(data[3])]
           } else {
-            baseConvert10(firstIp);
+            console.log(baseConvert10(firstIp));
             firstIp = data;
             lastIp = firstIp;
             nextPredict = [data[0],data[1],data[2],nextP(data[3])]
