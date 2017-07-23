@@ -9,7 +9,10 @@ const rl = require('readline');
 
 
 let propts = rl.createInterface(process.stdin, process.stdout);
-prompts.question("Apic Upload?", apicDiscovery())
+prompts.question("Apic Upload?", ()=>{
+  apicDiscovery();
+  process.exit();
+})
 
 /* These can be broken up into speperate .js files to accomplish a task
    ultimately some user interaction front end should be build, but this is a
@@ -95,7 +98,7 @@ let apicDiscovery = () => {
       console.log(httpReject);
     })
 
-    process.exit();
+
 }
 
 
