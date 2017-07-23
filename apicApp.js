@@ -6,15 +6,18 @@ const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
 const rl = require('readline');
 
-
+let apicInterface = {
+  greeting: "What would you like to do?",
+  mainMenu: {
+    "1": "1 : Apic-EM Discovery",
+    "2": "PLACE HOLDER"
+  }
+};
 
 let prompts = rl.createInterface(process.stdin, process.stdout);
-console.log("What would you like to do?");
-console.log("1 : Apic-EM Discovery")
+console.log(apicInterface.mainMenu."1",'\n',apicInterface.mainMenu."2")
 
-prompts.question("Apic Upload?", (number)=>{
-  console.log(number);
-  console.log(typeof('number'))
+prompts.question(apicInterface.greeting, (number)=>{
   switch(number) {
       case "1":
           apiccDiscovery()
