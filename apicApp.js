@@ -13,7 +13,7 @@ console.log("What would you like to do?");
 console.log("1 : Apic-EM Discovery")
 
 prompts.question("Apic Upload?", (number)=>{
-  switch(number) {
+  switch(1) {
       case 1:
           apiccDiscovery()
           .then((apiccReturn) =>{
