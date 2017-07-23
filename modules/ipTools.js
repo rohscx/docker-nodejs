@@ -34,13 +34,15 @@ class ipTools extends fileSystem {
           console.log (" 0ACCTUAL==   ",first," 0PREDICTION==   ",nextPredict)
         } else {
 
-          console.log(typeof('last'),typeof('first'))
+
           //console.log(typeof('last[0]'),typeof('last[1]'),typeof('last[2]'),typeof('nextP(data[3])'))
           console.log(nextPredict)
-          console.log(typeof('nextPredict[0]'),typeof('nextPredict[1]'),typeof('nextPredict[2]'),typeof('nextPredict[3]'))
-          console.log(typeof('first[0]'),typeof('first[1]'),typeof('first[2]'),typeof('first[3]'))
-          console.log (" 1LAST==   ",last," 1PREDICTION==   ",nextPredict)
+          //console.log(typeof('nextPredict[0]'),typeof('nextPredict[1]'),typeof('nextPredict[2]'),typeof('nextPredict[3]'))
+          //console.log(typeof('first[0]'),typeof('first[1]'),typeof('first[2]'),typeof('first[3]'))
+
           nextPredict = [data[0],data[1],data[2],nextP(data[3])]
+          console.log(typeof('last'),typeof('first'))
+          console.log (" 1LAST==   ",last," 1PREDICTION==   ",nextPredict)
           console.log (" FIRST==   ",first," 1PREDICTION==   ",nextPredict)
           console.log("TEST MATCH", last == first)
           last = nextPredict;
