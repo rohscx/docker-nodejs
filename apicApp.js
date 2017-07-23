@@ -48,7 +48,6 @@ prompts.question(apicInterface.greeting, (number)=>{
             prompts.prompt()
             //process.exit();
           })
-          console.log("NADA")
           break;
       case "9":
           console.log("NADA")
