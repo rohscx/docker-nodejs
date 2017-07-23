@@ -45,8 +45,8 @@ class ipTools extends fileSystem {
           if (last){
             console.log (" FIRST==   ",first," 1PREDICTION==   ",nextPredict)
             console.log (" 1LAST==   ",last," 1PREDICTION==   ",nextPredict)
-            console.log(typeof('last[0]'),typeof('last[1]'),typeof('last[2]'),typeof('last[3]'))
             console.log(typeof('last'))
+            console.log(typeof('last[0]'),typeof('last[1]'),typeof('last[2]'),typeof('last[3]'))
             console.log(last[0].length,last[1].length,last[2].length,last[3].length)
           }
           console.log(typeof('first'))
