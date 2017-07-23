@@ -66,10 +66,7 @@ class ipTools extends fileSystem {
       }
       let count = 0;
       dataBase2.map((data) =>{
-        console.log(dataBase2.length)
-        console.log(count)
         count ++;
-
         if (lastIp){
           console.log (" FIRST_IP==   ",firstIp," LAST_IP==   ",lastIp," THIS_IP==   ",data)
           console.log (" PREDICTED_IP==   ",nextPredict)
@@ -81,6 +78,11 @@ class ipTools extends fileSystem {
           if (ip1 == ip2) {
             lastIp = nextPredict;
             nextPredict = [data[0],data[1],data[2],nextP(data[3])]
+            if (dataBase2.length == count){
+              let firstIpBase10 = baseConvert10(firstIp);
+              let lastIpBase10 = baseConvert10(lastIp);
+              console.log(makeRange(firstIpBase10,lastIpBase10));
+            }
           } else {
             let firstIpBase10 = baseConvert10(firstIp);
             let lastIpBase10 = baseConvert10(lastIp);
