@@ -32,7 +32,7 @@ prompts.question(apicInterface.greeting, (number)=>{
           apiccDiscovery()
           .then((apiccReturn) =>{
             console.log(apicMenu())
-            process.exit();
+            //process.exit();
           })
           break;
       case "2":
@@ -46,7 +46,7 @@ prompts.question(apicInterface.greeting, (number)=>{
           .then((apiccReturn) =>{
             prompts.setPrompt(apicMenu())
             prompts.prompt()
-            process.exit();
+            //process.exit();
           })
           console.log("NADA")
           break;
