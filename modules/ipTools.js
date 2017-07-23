@@ -64,10 +64,12 @@ class ipTools extends fileSystem {
         })
         return syntheticIp;
       }
-
+      let count = 0;
       dataBase2.map((data) =>{
-        let count = 0;
+        console.log(dataBase2.length)
+        console.log(count)
         count ++;
+
         if (lastIp){
           console.log (" FIRST_IP==   ",firstIp," LAST_IP==   ",lastIp," THIS_IP==   ",data)
           console.log (" PREDICTED_IP==   ",nextPredict)
