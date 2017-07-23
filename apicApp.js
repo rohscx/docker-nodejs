@@ -8,7 +8,7 @@ const rl = require('readline');
 
 
 
-let propts = rl.createInterface(process.stdin, process.stdout);
+let prompts = rl.createInterface(process.stdin, process.stdout);
 prompts.question("Apic Upload?", ()=>{
   apicDiscovery();
   process.exit();
