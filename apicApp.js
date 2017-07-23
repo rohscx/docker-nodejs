@@ -17,12 +17,10 @@ let apicInterface = {
   }
 };
 
- () => {
-   console.log("hahah")
-   Object.keys(apicInterface.mainMenu).map(function(key, index) {
-     console.log(apicInterface.mainMenu[key]);
-   })
- }
+console.log(   Object.keys(apicInterface.mainMenu).map(function(key, index) {
+     return (apicInterface.mainMenu[key]);
+   }))
+
 
 prompts.question(apicInterface.greeting, (number)=>{
   switch(number) {
