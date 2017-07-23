@@ -60,7 +60,6 @@ class ipTools extends fileSystem {
           let ip2 = syntheticIp(nextPredict);
           console.log("Was the prediction successful:  ",ip1 === ip2)
           if (ip1 == ip2) {
-            firstIp = data
             lastIp = nextPredict;
           } else {
             firstIp = data;
