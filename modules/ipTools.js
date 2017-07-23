@@ -29,7 +29,7 @@ class ipTools extends fileSystem {
         console.log("baseTen",typeof("baseTen"))
         console.log("IN>>> ",baseTen)
         baseTen ++
-        console.log("OUT>>> ",baseTen.toString(10))
+        console.log("OUT>>> ",baseTen.toString(2))
 
         return baseTen.toString(2);
       }
