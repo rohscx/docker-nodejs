@@ -17,7 +17,7 @@ class ipTools extends fileSystem {
 
   setSuperNet () {
     return new Promise((resolve, reject) =>{
-      let first,last,nextPredict;
+      let first,last,nextPredict,truth;
       let dataBase2 = this.ipBase2;
       let nextP = (binary) => {
         let baseTen = parseInt(binary, 2);
@@ -28,9 +28,11 @@ class ipTools extends fileSystem {
       dataBase2.map((data) =>{
         first = data;
         console.log("MATCH?   :",first == nextPredict)
+        if (truth == false) {
+          nextPredict = [data[0],data[1],data[2],nextP(data[3])]
+          console.log (" ACCTUAL==   ",first," PREDICTION==   ",nextPredict)
+        }
 
-        nextPredict = [data[0],data[1],data[2],nextP(data[3])]
-        console.log (" ACCTUAL==   ",first," PREDICTION==   ",nextPredict)
       })
     })
   }
