@@ -13,7 +13,7 @@ let apicInterface = {
   mainMenu: {
     one: "1 : Apic-EM Discovery",
     two: "2 : PLACE HOLDER",
-    three: "3 :  Apic Device Search"
+    three: "3 :  Apic Device Search",
     nine: "9 : Return to main Menu"
   }
 };
