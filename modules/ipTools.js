@@ -27,17 +27,15 @@ class ipTools extends fileSystem {
       }
 
       let syntheticIp = (ipArray) => {
-        let temp1
         ipArray.map((data) => {
+          let temp1
           console.log(data.toString().trim().charCodeAt())
           console.log(typeof('data'))
-          let index;
-          for (index = 0; index < data.length; ++index) {
-
+          for (let index = 0; index < data.length; ++index) {
             let charCode = data.charCodeAt(index);
             if (charCode == 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57) {
               console.log("char syntheticIp " + index + ": " + data.charCodeAt(index));
-              console.log("hit ", charCode)
+              console.log("hit ", charCode, " charCode  ", String.fromCharCode(charCode))
               temp1 += String.fromCharCode(charCode)
             }
           }
