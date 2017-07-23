@@ -22,10 +22,10 @@ prompts.question("Apic Upload?", (number)=>{
       })
           break;
       case 2:
-          code block
+          console.log("NADA")
           break;
       default:
-          code block
+          console.log("NO WAY")
   }
 
 
