@@ -47,7 +47,7 @@ prompts.question(apicInterface.greeting, (init)=>{
           case "3":
               apiccDevices()
               .then((apiccReturn) =>{
-                //process.exit();
+                console.log("Complete")
               })
               break;
           case "9":
