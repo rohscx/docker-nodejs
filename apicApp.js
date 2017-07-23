@@ -9,6 +9,8 @@ const rl = require('readline');
 
 let prompts = rl.createInterface(process.stdin, process.stdout);
 let apicInterface = {
+  menuFirstRun: true,
+  menuRun: true,
   greeting: "What would you like to do?",
   mainMenu: {
     one: "1 : Apic-EM Discovery",
@@ -56,8 +58,8 @@ prompts.question(apicInterface.greeting, (init)=>{
       }
     };
 
-    if (init) {
-      init = false;
+    if (apicInterface.menuFirstRun) {
+      apicInterface.menuFirstRun = false;
       switchMenu(init)
     } else {
       prompts.setPrompt(apicMenu())
