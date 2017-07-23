@@ -18,6 +18,7 @@ let apicInterface = {
 };
 
  () => {
+   console.log("hahah")
    Object.keys(apicInterface.mainMenu).map(function(key, index) {
      console.log(apicInterface.mainMenu[key]);
    })
