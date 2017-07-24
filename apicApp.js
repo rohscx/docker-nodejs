@@ -229,6 +229,6 @@ program
   .option('-o, --optional [value]', 'An optional value')
   .option('-c, --collect [value]', 'A repeatable value', collect, [])
   .option('-v, --verbose', 'A value that can be increased', increaseVerbosity, 0)
-  .option('-r, --reachability', 'A value that can be increased', apiccReachability)
+  .option('-rr, --reachability', 'A value that can be increased', apiccReachability)
   .parse(process.argv);
  
