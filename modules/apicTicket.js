@@ -25,7 +25,7 @@ let apicHeaders = {
 };
 
 const method = 'POST';
-const uri = () => {
+let uri = () => {
   if (privateApicEm != false) {
     return publicApicEm.uri+"/api/v1/ticket";
   } else {
@@ -33,7 +33,7 @@ const uri = () => {
   }
 }
 const rejectCert = false;
-const uriBase = () => {
+let uriBase = () => {
   if (privateApicEm != false) {
     return publicApicEm.uri;
   } else {
@@ -41,7 +41,7 @@ const uriBase = () => {
   }
 }
 const headers = apicHeaders;
-const body = () => {
+let body = () => {
   if (privateApicEm != false) {
     return publicApicEm.body;
   } else {
