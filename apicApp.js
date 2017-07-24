@@ -217,7 +217,7 @@ program
      cmdValue = cmd;
      envValue = env;
   });
-  program.parse(process.argv);
+  .parse(process.argv);
 
 
 
