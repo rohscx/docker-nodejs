@@ -21,7 +21,7 @@ class apicReachability extends rest {
       };
   }
 
-  setUriBase (uriBase){
+  setUriBase(uriBase){
     const newUri = uriBase+"/api/v1/reachability-info"
     this.uri = newUri;
   }
@@ -30,18 +30,19 @@ class apicReachability extends rest {
     this.returnData = httpDataArray;
   }
 
-  setUnreachable () {
+  setUnreachable(){
     let returnData = this.returnData.response;
-    typeof('returnData')
-    console.log("asdfasdf",returnData[0].discoveryId)
-
     returnData.map((data,index) => {
       for (let [key, value] of Object.entries(data)) {
         if (value != "Reachable") {
-          console.log("++>", returnData[index])
+          this.unReachable.push(returnData[index])
         }
       }
     })
+  }
+
+  getUnreachable(){
+    return this.unReachable;
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request

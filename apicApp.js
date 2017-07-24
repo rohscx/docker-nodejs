@@ -32,6 +32,7 @@ let apiccReachability= () => {
         console.log(devicesReturn)
         apicReachability.setReturnData(devicesReturn)
         apicReachability.setUnreachable()
+        console.log(apicReachability.getUnreachable())
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
