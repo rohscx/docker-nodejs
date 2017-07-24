@@ -224,7 +224,7 @@ if (typeof cmdValue === 'undefined') {
    console.error('no command given!');
    process.exit(1);
 }
-if (typeof cmdValue === 'undefined' && typeof cmdValue === 'undefined && typeof envValue === 'undefined') {
+if (typeof cmdValue === 'undefined' && typeof envValue === 'undefined') {
    console.error('no command given!');
    process.exit(1);
 }
