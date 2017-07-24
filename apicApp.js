@@ -13,7 +13,7 @@ const rl = require('readline');
 let prompts = rl.createInterface(process.stdin, process.stdout);
 let apicInterface = () => {
   return ({
-    menuFirstRun: true,
+    menuFirstRun: "true",
     menuRun: true,
     greeting: "What would you like to do?",
     mainMenu: {
@@ -26,8 +26,9 @@ let apicInterface = () => {
   })
 };
 let apicMenu = () => {
-  Object.keys(apicInterface()).map(function(key, index) {
-    console.log(apicInterface.mainMenu[key]);
+  let menu = apicInterface();
+  Object.keys(menu.mainMenu).map(function(key, index) {
+    console.log(menu.mainMenu[key]);
   })
 };
 console.log(apicMenu())
