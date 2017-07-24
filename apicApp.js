@@ -45,34 +45,34 @@ prompts.question(apicMenu.greeting, (init)=>{
             apiccDiscovery()
             .then((apiccReturn) =>{
               console.log("apicDiscovery Complete")
-              mainMenu()
+              menu()
             })
             break;
         case "2":
             console.log("NADA")
-            mainMenu()
+            menu()
             break;
         case "3":
             apiccDevices()
             .then((apiccReturn) =>{
               console.log("apicDevices Complete")
-              mainMenu()
+              menu()
             })
             break;
         case "4":
             apiccReachability()
             .then((apiccReturn) =>{
               console.log("apicReachability Complete")
-              mainMenu()
+              menu()
             })
             break;
         case "9":
             clearScreen()
             console.log("clearScreen Complete")
-            mainMenu()
+            menu()
             break;
         default:
-            mainMenu()
+            menu()
       }
     };
 
