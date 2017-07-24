@@ -41,19 +41,15 @@ prompts.question(apicInterface.greeting, (init)=>{
             apiccDiscovery()
             .then((apiccReturn) =>{
               console.log("apicDiscovery Complete")
-              menu("OkayGo!")
-              break;
             })
             break;
         case "2":
             console.log("NADA")
-            menu("OkayGo!")
             break;
         case "3":
             apiccDevices()
             .then((apiccReturn) =>{
               console.log("apicDevices Complete")
-              menu("OkayGo!")
               break;
             })
             break;
@@ -61,14 +57,12 @@ prompts.question(apicInterface.greeting, (init)=>{
             apiccReachability()
             .then((apiccReturn) =>{
               console.log("apicReachability Complete")
-              menu("OkayGo!")
               break;
             })
             break;
         case "9":
             clearScreen()
             console.log("clearScreen Complete")
-            menu("OkayGo!")
             break;
         default:
 
