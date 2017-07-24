@@ -206,7 +206,7 @@ apicTicket.httpRequest()
 program
   .version('0.1.0')
   .option('-d, --devices', 'apicDevices')
-  .option('-D, --discovery', 'apicDiscovery')
+  .option('-i, --discovery', 'apicDiscovery')
   .option('-r, --reachability', 'apicReachability')
   .parse(process.argv);
 
