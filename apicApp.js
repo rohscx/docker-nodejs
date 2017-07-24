@@ -97,7 +97,7 @@ let mainMenu = () => {
     };
   }
   menu(number)
-})
+}
 
 
 
