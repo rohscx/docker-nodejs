@@ -26,7 +26,7 @@ let apicInterface = () => {
     }
   })
 };
-let menu = apicInterface();
+let apicMenu = apicInterface();
 let apicMenu = () => {
   Object.keys(menu.mainMenu).map(function(key, index) {
     console.log(menu.mainMenu[key]);
@@ -34,7 +34,6 @@ let apicMenu = () => {
 };
 console.log(apicMenu())
 prompts.question(menu.greeting, (init)=>{
-  menu =  apicInterface();
   let menu = (init) => {
     let clearScreen = () =>{
       return process.stdout.write('\033c');
@@ -83,7 +82,7 @@ prompts.question(menu.greeting, (init)=>{
       switchMenu(init)
     } else {
       console.log("MENDFIST", menu.menuFirstRun, "OTHER THING  ",menu.firstTimeRan)
-      JSON.parse(menu.greeting, false, 2)
+      JSON.parse(menu, false, 2)
       console.log("INIT2  ",init)
       prompts.setPrompt(apicMenu())
       prompts.prompt()
