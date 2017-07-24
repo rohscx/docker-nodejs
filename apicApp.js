@@ -277,3 +277,4 @@ if (program.discovery) console.log(apiccDiscovery(program.args));
 if (program.devices) console.log(apiccDevices());
 if (program.discoveryCheck) console.log(apicDiscoveryFileCheck(program.args));
 console.log(program.args);
+console.log(program.apicDiscoveryFileCheck)
