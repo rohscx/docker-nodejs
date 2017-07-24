@@ -3,16 +3,17 @@ const securityFile = require('../securityFile')
 
 
 // Private Cisco ApicEM resource on the INTRAnet
-const privateApicEm = {
+/*
+const ApicEm = {
   body:{
     "username": securityFile.private.apicEM.uName,
     "password": securityFile.private.apicEM.uPass
   },
   uri: securityFile.private.apicEM.uri
 };
-
+*/
 // Public Cisco ApicEM resource on the INTERnet
-const publicApicEm = {
+const ApicEm = {
   body:{
     "username": securityFile.public.apicEM.uName,
     "password": securityFile.public.apicEM.uPass
@@ -25,11 +26,11 @@ let apicHeaders = {
 };
 
 const method = 'POST';
-const uri = publicApicEm.uri+"/api/v1/ticket";
+const uri = ApicEm.uri+"/api/v1/ticket";
 const rejectCert = false;
-const uriBase = publicApicEm.uri;
+const uriBase = ApicEm.uri;
 const headers = apicHeaders;
-const body = publicApicEm.body;
+const body = ApicEm.body;
 
 class apicTicket extends rest {
   constructor (method,uri,rejectCert,headers,body){
