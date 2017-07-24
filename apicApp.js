@@ -226,4 +226,5 @@ if (program.apicDiscovery) console.log(apiccDiscovery());
 if (program.apicReachability) console.log(apiccReachability());
 console.log('  - %s %s cheese', program.cheese);
 console.log(' args: %j', program.args);
+console.log(cmdValue,envValue)
 
