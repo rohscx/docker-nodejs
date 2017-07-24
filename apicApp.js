@@ -21,6 +21,7 @@ let test = (fileName) => {
   Promise.all([ipTools.setFile(fileName),ipTools.readFile()])
   .then((test) =>{
     console.log(test)
+    return test;
   })
   .catch((reject) =>{
     console.log(reject);
