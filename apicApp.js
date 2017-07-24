@@ -19,14 +19,15 @@ let apicInterface = {
     one: "1 : Apic-EM Discovery",
     two: "2 : PLACE HOLDER",
     three: "3 : Apic Device Search",
+    four: "4 : Apic Device Reachability",
     nine: "9 : Clear the screen"
   }
 };
 let apicMenu = () => {
   Object.keys(apicInterface.mainMenu).map(function(key, index) {
-       console.log(apicInterface.mainMenu[key]);
-     })
-}
+    console.log(apicInterface.mainMenu[key]);
+  })
+};
 console.log(apicMenu())
 prompts.question(apicInterface.greeting, (init)=>{
   let menu = (init) => {
@@ -54,6 +55,13 @@ prompts.question(apicInterface.greeting, (init)=>{
               menu("OkayGo!")
             })
             break;
+        case "4":
+            apiccReachability()
+            .then((apiccReturn) =>{
+              console.log("apicReachability Complete")
+              menu("OkayGo!")
+            })
+            break;
         case "9":
             clearScreen()
             console.log("clearScreen Complete")
@@ -73,7 +81,7 @@ prompts.question(apicInterface.greeting, (init)=>{
       prompts.on('line', (number) =>{
         switchMenu(number)
       })
-    }
+    };
   }
   menu(init)
 })
@@ -89,6 +97,33 @@ prompts.question(apicInterface.greeting, (init)=>{
    quick ad dirty....
    Note to self 240 characters can hold about 8 ip RANGES. <-- Batch Maximum!!
 */
+
+let apiccReachability= () => {
+  let processSuccess = false;
+  return new Promise((resolve, reject) =>{
+    apicTicket.debug()
+    apicTicket.httpRequest()
+      .then((ticketReturn) =>{
+        console.log(ticketReturn);
+        apicTicket.setTicketData(ticketReturn.response);
+        apicReachability.setHeaders(apicTicket.getTicketData())
+        apicReachability.setUriBase(apicTicket.getUriBase())
+        return apicReachability.httpRequest()
+      })
+      .then((devicesReturn) =>{
+        console.log(devicesReturn)
+        processSuccess = true;
+        if (processSuccess) {
+          resolve (devicesReturn)
+        } else {
+          reject("Something went wrong")
+        };
+      })
+      .catch((httpReject) =>{
+        console.log(httpReject);
+      })
+  })
+};
 
 
 
@@ -111,14 +146,13 @@ let apiccDevices = () => {
           resolve (devicesReturn)
         } else {
           reject("Something went wrong")
-        }
+        };
       })
       .catch((httpReject) =>{
         console.log(httpReject);
       })
-
   })
-}
+};
 
 
 
