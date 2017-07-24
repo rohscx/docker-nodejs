@@ -30,12 +30,12 @@ console.log(
     figlet.textSync('Ginit', { horizontalLayout: 'full' })
   )
 );
-
+/*
 if (files.directoryExists('.git')) {
   console.log(chalk.red('Already a git repository!'));
   process.exit();
 }
-
+*/
 var github = new GitHubApi({
   version: '3.0.0'
 });
