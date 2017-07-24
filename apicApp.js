@@ -163,6 +163,7 @@ let apiccDiscovery = (inputFile,jobName) => {
   }
 }
 
+apiccDiscovery()
 
 /*
 // Gets an ApicEM Ticket
@@ -242,7 +243,7 @@ program
   .option('-o, --devices', 'apicDevices')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
- 
+
 
 if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
