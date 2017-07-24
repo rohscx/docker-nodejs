@@ -90,7 +90,7 @@ prompts.question(apicMenu.startUp, (number)=>{
     } else {
       console.log("MENDFIST", apicMenu.menuFirstRun, "OTHER THING  ",apicMenu.firstTimeRan)
       console.log("INIT2  ",number)
-      console.log(mainMenu())
+      mainMenu()
       prompts.setPrompt(apicMenu.greeting)
       prompts.prompt()
       prompts.on('line', (number) =>{
