@@ -31,14 +31,15 @@ let apicMenu = () => {
 apicMenu()
 prompts.question(apicInterface.greeting, (init)=>{
   let newMenu = () => {
-    return (
-      let prompts = rl.createInterface(process.stdin, process.stdout);
+    let prompts = rl.createInterface(process.stdin, process.stdout);
+
+
       prompts.setPrompt(apicMenu())
       prompts.prompt()
       prompts.on('line', (number) =>{
         switchMenu(number)
       })
-    )
+
   }
   let menu = (init) => {
     let clearScreen = () =>{
