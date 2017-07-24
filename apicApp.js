@@ -235,18 +235,18 @@ if (program.apicReachability) console.log(apiccReachability());
 */
 
 program
-    .version('0.0.1')
-    .option('-i, --discovery', 'apicDiscovery')
-    .usage('[asdf] <keywords>')
-    .parse(process.argv);
+  .command('countdown <count>')
+  .description('Countdown timer')
+  .option(
+    '-i, --interval <interval>',
+    'The delay between ticks',
+    parseInterval, // coercion function
+    1000 // default value
+  ).action(function(count, command) {
+    // option values are placed on 
+    // the command object
+    command.interval 
+    
+    ...
 
-if(!program.args.length) {
-    program.help();
-} else {
-    console.log('Keywords: ' + program.args);
-      console.log("hit");
-   program.apicDiscovery
-    if (program.apicDiscovery) {
-    console.log("hit");
-    }
-}
+  });
