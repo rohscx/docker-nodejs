@@ -31,6 +31,7 @@ test(fileName1)
 
 if (test) {
   console.log(test)
+  console.log("blah blah")
 }
 
 
