@@ -230,7 +230,7 @@ if (program.apicDiscovery && typeof envValue1 | envValue2  === 'undefined') {
    process.exit(1);
 }
 if (program.apicDevices) console.log(apiccDevices());
-if (program.apicDiscovery) console.log(apiccDiscovery(envValue1, envValue2));
+if (cmdValue == 'i') console.log(apiccDiscovery(envValue1, envValue2));
 if (program.apicReachability) console.log(apiccReachability());
 
 console.log('command:', cmdValue);
