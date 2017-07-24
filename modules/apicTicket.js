@@ -25,39 +25,11 @@ let apicHeaders = {
 };
 
 const method = 'POST';
-let uriFunc = () => {
-  let data = "";
-  if (privateApicEm != false) {
-    data = publicApicEm.uri+"/api/v1/ticket";
-  } else {
-    data = privateApicEm.uri+"/api/v1/ticket";
-  }
-  return data;
-}
-let uri = uriFunc;
+const uri = publicApicEm.uri+"/api/v1/ticket";
 const rejectCert = false;
-let uriBaseFunc = () => {
-  let data = "";
-  if (privateApicEm != false) {
-    data = publicApicEm.uri;
-  } else {
-    data = privateApicEm.uri;
-  }
-  return data;
-}
-let uriBase = uriBaseFunc
+const uriBase = publicApicEm.uri;
 const headers = apicHeaders;
-let bodyFunc = () => {
-  let data = "";
-  if (privateApicEm != false) {
-    data = publicApicEm.body;
-  } else {
-    data = privateApicEm.body;
-  }
-  return data;
-}
-let body = bodyFunc;
-console.log("body+>",body(),"URIBASE=>",uriBase(),"uri=>",uri())
+const body = publicApicEm.body;
 
 class apicTicket extends rest {
   constructor (method,uri,rejectCert,headers,body){
