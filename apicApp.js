@@ -243,7 +243,7 @@ program
   .parse(process.argv);
  
 
-if (program.apicdevices) console.log(apiccDevices());
+if (program.apicdevices) console.log("CAASasd",apiccDevices());
 if (program.apicDiscovery) console.log(apiccDiscovery());
 if (program.apicReachability) console.log(apiccReachability());
 console.log('  - %s cheese', program.cheese);
