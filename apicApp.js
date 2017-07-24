@@ -35,6 +35,19 @@ var github = new GitHubApi({
   version: '3.0.0'
 });
 
+function getGithubToken(callback) {
+  var prefs = new Preferences('ginit');
+
+  if (prefs.github &amp;&amp; prefs.github.token) {
+    return callback(null, prefs.github.token);
+  }
+
+  // Fetch token
+  getGithubCredentials(function(credentials) {
+    ...
+  });
+}
+
 function getGithubCredentials(callback) {
   var questions = [
     {
