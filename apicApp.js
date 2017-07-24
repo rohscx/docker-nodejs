@@ -31,6 +31,7 @@ let apicMenu = () => {
 console.log(apicMenu())
 prompts.question(apicInterface.greeting, (init)=>{
   let menu = (init) => {
+    console.log(init)
     let clearScreen = () =>{
       return process.stdout.write('\033c');
     };
@@ -68,7 +69,7 @@ prompts.question(apicInterface.greeting, (init)=>{
             menu()
             break;
         default:
-            console.log(apicMenu())
+            menu()
       }
     };
 
