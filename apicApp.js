@@ -236,6 +236,7 @@ if (program.apicReachability) console.log(apiccReachability());
 
 program
     .version('0.0.1')
+    .option('-i, --discovery', 'apicDiscovery')
     .usage('<keywords>')
     .parse(process.argv);
 
