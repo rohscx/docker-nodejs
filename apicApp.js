@@ -275,7 +275,7 @@ if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
 if (program.discovery) console.log(apiccDiscovery(program.args));
 if (program.devices) console.log(apiccDevices());
-if (program.discoveryCheck) console.log(apicDiscoveryFileCheck(program.args));
+if (program.discoveryCheck) console.log(apiccDiscoveryFileCheck(program.args));
 console.log(program.args);
 console.log('%s', program.cheese)
 console.log('  - %s cheese', program.cheese);
