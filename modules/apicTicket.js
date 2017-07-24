@@ -24,7 +24,7 @@ let apicHeaders = {
   "content-type": "application/json"
 };
 
-if (securityFile.private.apicEM.uName != "s") {
+if (privateApicEm.body.username != "s") {
   const uri = privateApicEm.uri+"/api/v1/ticket";
   const uriBase = privateApicEm.uri;
   const body = privateApicEm.body;
