@@ -22,6 +22,9 @@ let test = (fileName) => {
   .then((test) =>{
     console.log(test)
   })
+  .catch((reject) =>{
+    console.log(reject);
+  })
 }
 
 test(fileName1)
