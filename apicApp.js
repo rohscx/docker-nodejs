@@ -232,5 +232,5 @@ if (program.apicDevices) console.log(apiccDevices());
 if (program.apicDiscovery) console.log(apiccDiscovery(cmdValue1, cmdValue2));
 if (program.apicReachability) console.log(apiccReachability());
 
-console.log('command:', cmdValue);
-console.log('environment:', envValue || "no environment given");
+console.log('command1:', cmdValue1);
+console.log('environment1:', cmdValue2 || "no environment given");
