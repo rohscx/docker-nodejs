@@ -241,10 +241,17 @@ program
   .option('-r, --reachability', 'apicReachability')
   .parse(process.argv);
 
-if(!program.args.length) {
-    program.help();
-} else {
-    if (program.apicDevices) console.log(apiccDevices());
-    if (program.apicDiscovery) console.log(apiccDiscovery());
-    if (program.apicReachability) console.log(apiccReachability());
-}
+if(program.apicDevices) {
+    console.log(apiccDevices())
+} else if (program.apicReachability) {
+   console.log(apiccReachability()
+} else if (!program.args.length) {
+      program.help();
+} else if (program.apicDiscovery) {
+      console.log("hit TOP")
+      console.log(apiccDiscovery())
+       console.log("hit Bottom")
+   }
+
+
+
