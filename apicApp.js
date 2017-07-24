@@ -207,7 +207,7 @@ program
   .option('-p, --peppers', 'Add peppers')
   .option('-P, --pineapple', 'Add pineapple')
   .option('-b, --bbq-sauce', 'Add bbq sauce')
-  .option('-rr, --reachability', 'apiccReachability TEST', 'reachability')
+  .option('-d, --reachability', 'apiccReachability TEST', 'reachability')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
  
