@@ -74,7 +74,7 @@ let apiccDevices = () => {
 
 
 // Reads the value of a properly formated CSV file, processes it, and stores it.
-let apiccDiscovery = () => {
+let apiccDiscovery = (inputFile,jobName) => {
   let processSuccess = false;
   return new Promise((resolve, reject) =>{
     Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
