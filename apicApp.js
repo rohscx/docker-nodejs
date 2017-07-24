@@ -79,7 +79,7 @@ prompts.question(apicInterface.greeting, (init)=>{
       prompts.setPrompt(apicMenu())
       prompts.prompt()
       prompts.on('line', () =>{
-        switchMenu(number)
+        switchMenu()
       })
     };
   }
