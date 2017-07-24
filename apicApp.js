@@ -81,8 +81,8 @@ prompts.question(menu.greeting, (init)=>{
       console.log("INIT1  ",init)
       switchMenu(init)
     } else {
-      console.log("MENDFIST", menu.menuFirstRun, "OTHER THING  ", menu.firstTimeRan)
-      JSON.parse(menu.mainMenu, null, 2)
+      console.log("MENDFIST", menu.menuFirstRun, "OTHER THING  ",menu.firstTimeRan)
+      JSON.parse(menu.mainMenu, false, 2)
       console.log("INIT2  ",init)
       prompts.setPrompt(apicMenu())
       prompts.prompt()
