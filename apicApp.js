@@ -30,7 +30,7 @@ let apicMenu = () => {
 };
 console.log(apicMenu())
 prompts.question(apicInterface.greeting, (init)=>{
-  let menu = () => {
+  let menu = (init) => {
     let clearScreen = () =>{
       return process.stdout.write('\033c');
     };
@@ -74,6 +74,7 @@ prompts.question(apicInterface.greeting, (init)=>{
 
     if (apicInterface.menuFirstRun) {
       apicInterface.menuFirstRun = false;
+      console.log(init)
       switchMenu(init)
     } else {
       prompts.setPrompt(apicMenu())
