@@ -78,7 +78,7 @@ let apiccDevices = () => {
 let apiccDiscovery = (dataBlob) => {
    let inputFile = dataBlob[0];
    let jobName = dataBlob[1];
-   console.log("dataBlob",blob)
+   console.log("dataBlob",dataBlob)
   if (inputFile && jobName) {
     let processSuccess = false;
     return new Promise((resolve, reject) =>{
