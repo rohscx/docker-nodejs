@@ -213,7 +213,7 @@ program
   .option('-i, --discovery', 'apicDiscovery', 'a', 'b')
   .option('-r, --reachability', 'apicReachability')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
-  .arguments('<cmd1> <cmd2>')
+  .arguments('<cmd1> [cmd2]')
   .action(function (cmd1, cmd2) {
      cmdValue1 = cmd1;
      cmdValue2 = cmd2;
