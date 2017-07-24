@@ -14,6 +14,7 @@ let prompts = rl.createInterface(process.stdin, process.stdout);
 let apicInterface = () => {
   return ({
     menuFirstRun: "true",
+    firstTimeRan: true,
     menuRun: true,
     greeting: "What would you like to do?",
     mainMenu: {
@@ -80,7 +81,7 @@ prompts.question(menu.greeting, (init)=>{
       console.log("INIT1  ",init)
       switchMenu(init)
     } else {
-      console.log("MENDFIST", menu.menuFirstRun)
+      console.log("MENDFIST", menu.menuFirstRun, "OTHER THING  ", menu.firstTimeRan)
       console.log("INIT2  ",init)
       prompts.setPrompt(apicMenu())
       prompts.prompt()
