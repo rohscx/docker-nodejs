@@ -14,7 +14,7 @@ let prompts = rl.createInterface(process.stdin, process.stdout);
 let apicInterface = () => {
   return ({
     menuFirstRun: true,
-    firstTimeRan: false
+    firstTimeRan: false,
     menuRun: false,
     greeting: "What would you like to do?",
     mainMenu: {
