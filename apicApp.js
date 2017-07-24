@@ -76,7 +76,7 @@ prompts.question(menu.greeting, (init)=>{
       }
     };
 
-    if (menu.menuFirstRun) {
+    if (menu.menuFirstRun == true) {
       menu.menuFirstRun = false;
       console.log("INIT1  ",init)
       switchMenu(init)
