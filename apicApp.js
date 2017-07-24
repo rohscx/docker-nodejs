@@ -74,10 +74,10 @@ prompts.question(apicInterface.greeting, (init)=>{
 
     if (apicInterface.menuFirstRun) {
       apicInterface.menuFirstRun = false;
-      console.log("INIT  ",init)
+      console.log("INIT1  ",init)
       switchMenu(init)
     } else {
-      console.log("INIT  ",init)
+      console.log("INIT2  ",init)
       prompts.setPrompt(apicMenu())
       prompts.prompt()
       prompts.on('line', (number) =>{
