@@ -30,6 +30,15 @@ let apicMenu = () => {
 };
 apicMenu()
 prompts.question(apicInterface.greeting, (init)=>{
+  let newMenu = () => {
+    return (
+      prompts.setPrompt(apicMenu())
+      prompts.prompt()
+      prompts.on('line', (number) =>{
+        switchMenu(number)
+      })
+    )
+  }
   let menu = (init) => {
     let clearScreen = () =>{
       return process.stdout.write('\033c');
@@ -61,6 +70,7 @@ prompts.question(apicInterface.greeting, (init)=>{
         case "9":
             clearScreen()
             console.log("clearScreen Complete")
+            newMenu()
             break;
         default:
 
