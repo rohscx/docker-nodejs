@@ -97,7 +97,8 @@ prompts.question(apicMenu.startUp, (number)=>{
       })
     };
   }
-  menu(number)
+  process.stdout.write('\033c');
+  menu(number)  
 })
 
 
