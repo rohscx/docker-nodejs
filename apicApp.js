@@ -245,6 +245,8 @@ program
   .parse(process.argv);
 
 let args = program.args;
+let args1 = args1;
+let args2 = args2;
 if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
 if (program.discovery) console.log(args[0],args[1]);
