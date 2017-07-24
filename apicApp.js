@@ -34,6 +34,7 @@ let apicMenu = () => {
 };
 console.log(apicMenu())
 prompts.question(menu.greeting, (init)=>{
+  menu =  apicInterface();
   let menu = (init) => {
     let clearScreen = () =>{
       return process.stdout.write('\033c');
