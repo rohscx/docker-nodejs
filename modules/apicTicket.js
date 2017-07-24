@@ -24,10 +24,18 @@ let apicHeaders = {
   "content-type": "application/json"
 };
 
+if (securityFile.private.apicEM.uName != "s") {
+  const uri = privateApicEm.uri+"/api/v1/ticket";
+  const uriBase = privateApicEm.uri;
+  const body = privateApicEm.body;
+} else {
+  const uri = publicApicEm.uri+"/api/v1/ticket";
+  const uriBase = publicApicEm.uri;
+  const body = publicApicEm.body;
+}
+
 const method = 'POST';
-const uri = publicApicEm.uri+"/api/v1/ticket";
 const rejectCert = false;
-const uriBase = publicApicEm.uri;
 const headers = apicHeaders;
 const body = publicApicEm.body;
 
