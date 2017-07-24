@@ -32,9 +32,9 @@ let mainMenu = () => {
     console.log(apicMenu.mainMenu[key]);
   })
 };
-
-()=>{
-  let menu = () => {
+console.log(mainMenu())
+prompts.question(apicMenu.greeting, (number)=>{
+  let menu = (number) => {
 
     let clearScreen = () =>{
       return process.stdout.write('\033c');
@@ -96,8 +96,8 @@ let mainMenu = () => {
       })
     };
   }
-  return menu()
-}
+  menu(number)
+})
 
 
 
