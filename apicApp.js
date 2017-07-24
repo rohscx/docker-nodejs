@@ -17,7 +17,7 @@ const program = require('commander');
 let fileName1 = "ipList";
 
 
-let test = (fileName) => {
+let test = (fileName,test2) => {
   Promise.all([ipTools.setFile(fileName),ipTools.readFile()])
   .then((test) =>{
     console.log(test)
@@ -99,7 +99,7 @@ let apiccDevices = () => {
 let apiccDiscovery = (inputFile,jobName) => {
   let processSuccess = false;
   return new Promise((resolve, reject) =>{
-    Promise.all([ipTools.setFile("ipList.csv"),ipTools.readFile()])
+    Promise.all([ipTools.setFile(inputFile),ipTools.readFile()])
     .then((promiseReturn)=>{
       console.log(promiseReturn);
       return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.setBase(),ipTools.setSuperNet()])
@@ -120,7 +120,7 @@ let apiccDiscovery = (inputFile,jobName) => {
         apicDiscovery.setHeaders(apicTicket.getTicketData());
         apicDiscovery.setUriBase(apicTicket.getUriBase());
         // Uses IP list to generate array with IP range and Job name objects
-        apicDiscovery.setDiscoveryList(ipTools.getIpRange(),"JOBNAME_JOBDESCRIPTION_");
+        apicDiscovery.setDiscoveryList(ipTools.getIpRange(),jobName);
         console.log(apicDiscovery.getDiscoveryList())
         let discoveryList = apicDiscovery.getDiscoveryList();
         return new Promise((resolve, reject) =>{
