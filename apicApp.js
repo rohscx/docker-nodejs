@@ -15,6 +15,20 @@ const program = require('commander');
    Note to self 240 characters can hold about 8 ip RANGES. <-- Batch Maximum!!
 */
 
+let fileName1 = "ipList";
+
+
+let test = (fileName) => {
+  Promise.all([ipTools.setFile(),ipTools.readFile()])
+  .then((test) =>{
+    console.log(test)
+  })
+}
+
+test(fileName1)
+
+
+
 let apiccReachability= () => {
   let processSuccess = false;
   return new Promise((resolve, reject) =>{
