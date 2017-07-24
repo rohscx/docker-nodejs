@@ -30,7 +30,7 @@ let apicMenu = () => {
 };
 console.log(apicMenu())
 prompts.question(apicInterface.greeting, (init)=>{
-  let menu = () => {
+  let menu = (init) => {
     let clearScreen = () =>{
       return process.stdout.write('\033c');
     };
@@ -41,31 +41,31 @@ prompts.question(apicInterface.greeting, (init)=>{
             apiccDiscovery()
             .then((apiccReturn) =>{
               console.log("apicDiscovery Complete")
-              menu("OkayGo!")
+              menu()
             })
             break;
         case "2":
             console.log("NADA")
-            menu("OkayGo!")
+            menu()
             break;
         case "3":
             apiccDevices()
             .then((apiccReturn) =>{
               console.log("apicDevices Complete")
-              menu("OkayGo!")
+              menu()
             })
             break;
         case "4":
             apiccReachability()
             .then((apiccReturn) =>{
               console.log("apicReachability Complete")
-              menu("OkayGo!")
+              menu()
             })
             break;
         case "9":
             clearScreen()
             console.log("clearScreen Complete")
-            menu("OkayGo!")
+            menu()
             break;
         default:
             console.log(apicMenu())
@@ -78,8 +78,8 @@ prompts.question(apicInterface.greeting, (init)=>{
     } else {
       prompts.setPrompt(apicMenu())
       prompts.prompt()
-      prompts.on('line', () =>{
-        switchMenu()
+      prompts.on('line', (number) =>{
+        switchMenu(number)
       })
     };
   }
