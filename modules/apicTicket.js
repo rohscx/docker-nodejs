@@ -10,10 +10,6 @@ if (securityFile.public.apicEM.uName == false) {
     },
     uri: securityFile.public.apicEM.uri
   };
-
-  let apicHeaders = {
-    "content-type": "application/json"
-  };
 } else {
   const ApicEm = {
     body:{
