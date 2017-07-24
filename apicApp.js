@@ -236,14 +236,22 @@ if (program.apicReachability) console.log(apiccReachability());
 
 program
   .version('0.1.0')
-  .option('-d, --devices', 'apicDevices')
-  .option('-i, --discovery', 'apicDiscovery')
-  .option('-r, --reachability', 'apicReachability')
+  .option('-d, --devices', 'Add apicDevices')
+  .option('-i, --discovery', 'Add apicDiscovery')
+  .option('-r, --reachability', 'Add apicReachability')
   .parse(process.argv);
 
-if (program.apicDevices) console.log(apiccDevices());
-if (program.apicCollect) console.log(apiccDiscovery(envValue1, envValue2));
-if (program.apicReachability) console.log(apiccReachability());
+if(program.apicDevices) {
+    console.log(apiccDevices())
+} else if (program.apicReachability) {
+   console.log(apiccReachability())
+} else if (!program.args.length) {
+   program.help();
+} else if (program.apicDiscovery) {
+   console.log("hit TOP")
+   console.log(apiccDiscovery())
+   console.log("hit Bottom")
+}
 
 
 
