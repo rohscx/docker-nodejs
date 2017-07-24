@@ -50,14 +50,12 @@ prompts.question(apicInterface.greeting, (init)=>{
             apiccDevices()
             .then((apiccReturn) =>{
               console.log("apicDevices Complete")
-              break;
             })
             break;
         case "4":
             apiccReachability()
             .then((apiccReturn) =>{
               console.log("apicReachability Complete")
-              break;
             })
             break;
         case "9":
