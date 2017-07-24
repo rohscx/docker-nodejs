@@ -11,31 +11,26 @@ const rl = require('readline');
 
 // apic-EM user menu. not deep very shallow
 let prompts = rl.createInterface(process.stdin, process.stdout);
-let apicInterface = () => {
-  return ({
-    menuFirstRun: true,
-    firstTimeRan: false,
-    menuRun: false,
-    greeting: "What would you like to do?",
-    startUp: "Application ready, press any key to continue",
-    mainMenu: {
-      a: "1 : Apic-EM Discovery",
-      b: "2 : PLACE HOLDER",
-      c: "3 : Apic Device Search",
-      d: "4 : Apic Device Reachability",
-      e: "9 : Clear the screen"
-    }
+let apicInterface = {
+  menuFirstRun: true,
+  menuRun: true,
+  greeting: "What would you like to do?",
+  mainMenu: {
+    one: "1 : Apic-EM Discovery",
+    two: "2 : PLACE HOLDER",
+    three: "3 : Apic Device Search",
+    four: "4 : Apic Device Reachability",
+    nine: "9 : Clear the screen"
+  }
+};
+let apicMenu = () => {
+  Object.keys(apicInterface.mainMenu).map(function(key, index) {
+    console.log(apicInterface.mainMenu[key]);
   })
 };
-let apicMenu = apicInterface();
-let mainMenu = () => {
-  Object.keys(apicMenu.mainMenu).map(function(key, index) {
-    console.log(apicMenu.mainMenu[key]);
-  })
-};
-prompts.question(apicMenu.startUp, (number)=>{
-  let menu = () => {
-
+console.log(apicMenu())
+prompts.question(apicInterface.greeting, (init)=>{
+  let menu = (init) => {
     let clearScreen = () =>{
       return process.stdout.write('\033c');
     };
@@ -46,55 +41,50 @@ prompts.question(apicMenu.startUp, (number)=>{
             apiccDiscovery()
             .then((apiccReturn) =>{
               console.log("apicDiscovery Complete")
+              menu("OkayGo!")
             })
             break;
         case "2":
             console.log("NADA")
+            menu("OkayGo!")
             break;
         case "3":
             apiccDevices()
             .then((apiccReturn) =>{
               console.log("apicDevices Complete")
+              menu("OkayGo!")
             })
             break;
         case "4":
             apiccReachability()
             .then((apiccReturn) =>{
               console.log("apicReachability Complete")
+              menu("OkayGo!")
             })
             break;
         case "9":
             clearScreen()
             console.log("clearScreen Complete")
+            menu("OkayGo!")
             break;
         default:
-            menu("GREAT!!")
-            break;
+            console.log(apicMenu())
       }
     };
 
-    if (apicMenu.menuFirstRun == true) {
-      apicMenu.menuFirstRun = false;
-      console.log("INIT1  ",number)
-      mainMenu()
-      prompts.setPrompt(apicMenu.greeting)
-      prompts.prompt()
-      prompts.on('line', (number) =>{
-        switchMenu(number)
-      })
+    if (apicInterface.menuFirstRun) {
+      apicInterface.menuFirstRun = false;
+      switchMenu(init)
     } else {
-      console.log("MENDFIST", apicMenu.menuFirstRun, "OTHER THING  ",apicMenu.firstTimeRan)
-      console.log("INIT2  ",number)
-      mainMenu()
-      prompts.setPrompt(apicMenu.greeting)
+      prompts.setPrompt(apicMenu())
       prompts.prompt()
+      console.log("NUMBER  ",number)
       prompts.on('line', (number) =>{
         switchMenu(number)
       })
     };
   }
-  process.stdout.write('\033c');
-  menu(number)
+  menu(init)
 })
 
 
