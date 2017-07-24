@@ -18,7 +18,7 @@ let fileName1 = "ipList";
 
 
 let test = (fileName) => {
-  Promise.all([ipTools.setFile(),ipTools.readFile()])
+  Promise.all([ipTools.setFile(fileName),ipTools.readFile()])
   .then((test) =>{
     console.log(test)
   })
