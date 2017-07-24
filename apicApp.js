@@ -235,8 +235,6 @@ if (program.apicCollect) console.log(apiccDiscovery(envValue1, envValue2));
 if (program.apicReachability) console.log(apiccReachability());
 */
 
-apiccDiscovery("aaa",)
-
 program
   .version('0.1.0')
   .usage('<keywords>')
