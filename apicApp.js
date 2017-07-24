@@ -252,4 +252,4 @@ if (program.reachability) console.log(apiccReachability());
 if (program.discovery) console.log(apiccDiscovery(program.args));
 if (program.devices) console.log(apiccDevices());
 console.log('  - %s cheese', program.cheese);
-console.log('  - %s cheese', program.args);
+console.log('  - %s cats', program.args);
