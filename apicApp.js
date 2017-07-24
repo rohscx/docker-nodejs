@@ -251,6 +251,7 @@ if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
 if (program.discovery) console.log(args[0],args[1]);
 if (program.devices) console.log(apiccDevices());
+console.log(typeof('program.arg'))
 console.log('  - %s cheese', program.cheese);
 console.log('  - %s cats', program.args);
 console.log(args[0],args[1], 'asdfasdf');
