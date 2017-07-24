@@ -30,6 +30,8 @@ let apiccReachability= () => {
       })
       .then((devicesReturn) =>{
         console.log(devicesReturn)
+        apicReachability.setReturnData(devicesReturn)
+        apicReachability.setUnreachable()
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
@@ -91,7 +93,7 @@ let apiccDiscoveryFileCheck = (dataBlob) => {
       .catch((reject) =>{
         console.log(reject);
       })
-    })  
+    })
   }
 }
 

@@ -10,6 +10,8 @@ const body = "";
 class apicReachability extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
+    this.returnData = [];
+    this.unReachable = [];
   }
 
   setHeaders(ticket){
@@ -24,6 +26,18 @@ class apicReachability extends rest {
     this.uri = newUri;
   }
 
+  setReturnData (httpDataArray){
+    this.returnData = httpDataArray;
+  }
+
+  setUnreachable () {
+    let returnData = this.unReachable;
+    for (let [key, value] of Object.returnData.response[0].entries(obj)) {
+      if (value != "Reachable") {
+        console.log("++>", obj)
+      }
+    }
+  }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {
