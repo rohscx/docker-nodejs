@@ -211,11 +211,11 @@ program
   .option('-d, --devices', 'apicDevices')
   .option('-i, --discovery', 'apicDiscovery', 'a', 'b')
   .option('-r, --reachability', 'apicReachability')
-  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
+  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble', 'yarg')
   .parse(process.argv);
 
 
 if (program.apicDevices) console.log(apiccDevices());
 if (program.apicDiscovery) console.log(apiccDiscovery());
 if (program.apicReachability) console.log(apiccReachability());
-console.log('  - %s cheese', program.cheese);
+console.log('  - %s %s cheese', program.cheese);
