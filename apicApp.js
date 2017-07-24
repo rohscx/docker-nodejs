@@ -202,34 +202,18 @@ apicTicket.httpRequest()
   })
 */
 
-function range(val) {
-  return val.split('..').map(Number);
-}
- 
-function list(val) {
-  return val.split(',');
-}
- 
-function collect(val, memo) {
-  memo.push(val);
-  return memo;
-}
- 
-function increaseVerbosity(v, total) {
-  return total + 1;
-}
-
 program
   .version('0.1.0')
-  .usage('[options] <file ...>')
-  .option('-i, --integer <n>', 'An integer argument', parseInt)
-  .option('-f, --float <n>', 'A float argument', parseFloat)
-  .option('-r, --range <a>..<b>', 'A range', range)
-  .option('-l, --list <items>', 'A list', list)
-  .option('-o, --optional [value]', 'An optional value')
-  .option('-c, --collect [value]', 'A repeatable value', collect, [])
-  .option('-v, --verbose', 'A value that can be increased', increaseVerbosity, 0)
-  .option('-rr, --reachability', 'A value that can be increased', apiccReachability)
+  .option('-p, --peppers', 'Add peppers')
+  .option('-P, --pineapple', 'Add pineapple')
+  .option('-b, --bbq-sauce', 'Add bbq sauce')
+  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
+  .option('-rr, --reachability', 'apiccReachability TEST', 'reachability')
   .parse(process.argv);
  
-console.log(program.apiccReachability[0]);
+console.log('you ordered a pizza with:');
+if (program.peppers) console.log('  - peppers');
+if (program.pineapple) console.log('  - pineapple');
+if (program.bbqSauce) console.log('  - bbq');
+if (program.reachability) console.log(apiccReachability());
+console.log('  - %s cheese', program.cheese);
