@@ -18,11 +18,7 @@ let apicInterface = () => {
     menuRun: false,
     greeting: "What would you like to do?",
     mainMenu: {
-      one: "1 : Apic-EM Discovery",
-      hard:"2 : PLACE HOLDER",
-      three: "3 : Apic Device Search",
-      four: "4 : Apic Device Reachability",
-      nine: "9 : Clear the screen"
+      one: "1 : Apic-EM Discovery"
     }
   })
 };
