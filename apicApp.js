@@ -251,7 +251,7 @@ let args1 = args[1];
 let args2 = args[2];
 if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
-if (program.discovery) console.log(program.args);
+if (program.discovery) console.log();
 if (program.devices) console.log(apiccDevices());
 console.log(typeof('program.arg'))
 console.log('  - %s cheese', program.cheese);
