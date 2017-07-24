@@ -213,7 +213,7 @@ program
   .option('-i, --discovery', 'apicDiscovery', 'a', 'b')
   .option('-r, --reachability', 'apicReachability')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
-  .arguments('<cmd1> [env1] [env2]')
+  .arguments('<cmdV> [env1] [env2]')
   .action(function (cmdV, env1, env2) {
      cmdValue = cmdV;
      envValue1 = env1;
