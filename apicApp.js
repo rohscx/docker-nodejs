@@ -267,8 +267,8 @@ program
   .option('-e, --reachability', 'apicReachability')
   .option('-i, --discovery [fileName][jobName]', 'apicDiscovery ','ipList','TEST_RUN')
   .option('-o, --devices', 'apicDevices')
-  .option('-h, --discoveryCheck [fileName][jobName]', 'apicDiscoveryFileCheck','ipList','TEST_RUN')
-  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
+  .option('-c, --discoveryCheck [fileName][jobName]', 'apicDiscoveryFileCheck','ipList','TEST_RUN')
+  .option('-z, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
 
 if(!program.args.length) program.help();
