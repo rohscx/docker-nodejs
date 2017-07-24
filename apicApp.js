@@ -21,6 +21,10 @@ let test = (fileName) => {
   Promise.all([ipTools.setFile(fileName),ipTools.readFile()])
   .then((test) =>{
     console.log(test)
+    if (test) {
+      console.log(test)
+      console.log("blah blah")
+    }
     return test;
   })
   .catch((reject) =>{
@@ -30,10 +34,7 @@ let test = (fileName) => {
 
 test(fileName1)
 
-if (test) {
-  console.log(test)
-  console.log("blah blah")
-}
+
 
 
 let apiccReachability= () => {
