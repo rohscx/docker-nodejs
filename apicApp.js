@@ -218,7 +218,7 @@ function collect(val, memo) {
 function increaseVerbosity(v, total) {
   return total + 1;
 }
- apiccReachability()
+
 program
   .version('0.1.0')
   .usage('[options] <file ...>')
@@ -232,4 +232,4 @@ program
   .option('-rr, --reachability', 'A value that can be increased', apiccReachability)
   .parse(process.argv);
  
-console.log(program.apiccReachability);
+console.log(program.apiccReachability[0]);
