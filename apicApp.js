@@ -232,3 +232,4 @@ program
   .option('-rr, --reachability', 'A value that can be increased', apiccReachability)
   .parse(process.argv);
  
+console.log(program.apiccReachability);
