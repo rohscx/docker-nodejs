@@ -217,3 +217,4 @@ program
 if (program.apicDevices) console.log(apiccDevices());
 if (program.apicDiscovery) console.log(apiccDiscovery());
 if (program.apicReachability) console.log(apiccReachability());
+console.log('%s ')
