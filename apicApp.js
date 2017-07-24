@@ -31,42 +31,52 @@ console.log(
   )
 );
 
-function getGithubCredentials(callback) {
-  var questions = [
-    {
-      name: 'username',
-      type: 'input',
-      message: 'Enter your Github username or e-mail address:',
-      validate: function( value ) {
-        if (value.length) {
-          return true;
-        } else {
-          return 'Please enter your username or e-mail address';
-        }
-      }
-    },
-    {
-      name: 'password',
-      type: 'password',
-      message: 'Enter your password:',
-      validate: function(value) {
-        if (value.length) {
-          return true;
-        } else {
-          return 'Please enter your password';
-        }
-      }
+
+
+getGithubCredentials(function(credentials) {
+  var status = new Spinner('Authenticating you, please wait...');
+  status.start();
+
+  github.authenticate(
+    _.extend(
+      {
+        type: 'basic',
+      },
+      credentials
+    )
+  );
+
+  github.authorization.create({
+    scopes: ['user', 'public_repo', 'repo', 'repo:status'],
+    note: 'ginit, the command-line tool for initalizing Git repos'
+  }, function(err, res) {
+    status.stop();
+    if ( err ) {
+      return callback( err );
     }
-  ];
-
-  inquirer.prompt(questions).then(callback);
-}
-
-getGithubCredentials(function(){
-  console.log(arguments);
+    if (res.token) {
+      prefs.github = {
+        token : res.token
+      };
+      return callback(null, res.token);
+    }
+    return callback();
+  });
 });
 
 
+function getGithubToken(callback) {
+  var prefs = new Preferences('ginit');
+
+  if (prefs.github &amp;&amp; prefs.github.token) {
+    return callback(null, prefs.github.token);
+  }
+
+  // Fetch token
+  getGithubCredentials(function(credentials) {
+    ...
+  });
+}
 
 
 
