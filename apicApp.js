@@ -215,21 +215,7 @@ if (program.apicReachability) console.log(apiccReachability());
 */
 
 
-function collect(val, memo) {
-  memo.push(val);
-  return memo;
-}
-
-
-function apicCollect(val, memo) {
-  memo.push(val);
-  return memo;
-}
-
-function increaseVerbosity(v, total) {
-  return total + 1;
-}
-
+/*
 program
   .version('0.0.1')
   .usage('test')
@@ -246,3 +232,15 @@ console.log(' collect: %j[1]', program.collect);
 if (program.apicDevices) console.log(apiccDevices());
 if (program.apicCollect) console.log(apiccDiscovery(envValue1, envValue2));
 if (program.apicReachability) console.log(apiccReachability());
+*/
+
+program
+    .version('0.0.1')
+    .usage('<keywords>')
+    .parse(process.argv);
+
+if(!program.args.length) {
+    program.help();
+} else {
+    console.log('Keywords: ' + program.args);   
+}
