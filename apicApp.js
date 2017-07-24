@@ -229,7 +229,7 @@ if (typeof cmdValue2 === 'undefined') {
    process.exit(1);
 }
 if (program.apicDevices) console.log(apiccDevices());
-if (program.apicDiscovery) console.log(apiccDiscovery(cmdValue, envValue));
+if (program.apicDiscovery) console.log(apiccDiscovery(cmdValue1, cmdValue2));
 if (program.apicReachability) console.log(apiccReachability());
 
 console.log('command:', cmdValue);
