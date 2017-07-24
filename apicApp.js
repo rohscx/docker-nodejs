@@ -218,7 +218,7 @@ function collect(val, memo) {
 function increaseVerbosity(v, total) {
   return total + 1;
 }
- 
+ apiccReachability()
 program
   .version('0.1.0')
   .usage('[options] <file ...>')
