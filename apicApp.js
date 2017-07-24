@@ -76,7 +76,7 @@ let apiccDevices = () => {
 
 // Reads the value of a properly formated CSV file, processes it, and stores it.
 let apiccDiscovery = (dataBlob) => {
-   dataBlob = dataBlob.split(',');
+   dataBlob = dataBlob.split(",");
    console.log("dataBlob",dataBlob)
   if (inputFile && jobName) {
     let processSuccess = false;
