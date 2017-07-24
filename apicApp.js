@@ -241,6 +241,7 @@ program
   .option('-i, --discovery', 'Add apicDiscovery')
   .option('-r, --reachability', 'Add apicReachability')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
+  .usage('<keywords>')
   .parse(process.argv);
  
 if(!program.args.length) program.help();
