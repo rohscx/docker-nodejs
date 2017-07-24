@@ -202,17 +202,6 @@ apicTicket.httpRequest()
   })
 */
 
-let customHelp = () => {
-
-  console.log('  Examples:');
-  console.log('');
-  console.log('    $ custom-help --help');
-  console.log('    $ custom-help -h');
-  console.log('');
-
-
-};
-
 
 program
   .version('0.1.0')
@@ -225,4 +214,4 @@ console.log('you ordered a pizza with:');
 if (program.apicDevices) console.log(apiccDevices());
 if (program.apicDiscovery) console.log(apiccDiscovery());
 if (program.apicReachability) console.log(apiccReachability());
-console.log(program.outputHelp(console.log('DSDFS')));
+console.log(program.outputHelp(0));
