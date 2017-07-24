@@ -77,6 +77,7 @@ prompts.question(apicInterface.greeting, (init)=>{
       console.log("INIT1  ",init)
       switchMenu(init)
     } else {
+      console.log("MENDFIST", apicInterface.menuFirstRun)
       console.log("INIT2  ",init)
       prompts.setPrompt(apicMenu())
       prompts.prompt()
