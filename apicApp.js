@@ -251,4 +251,4 @@ if (program.discovery) console.log(args[0],args[1]);
 if (program.devices) console.log(apiccDevices());
 console.log('  - %s cheese', program.cheese);
 console.log('  - %s cats', program.args);
-console.log(args, 'asdfasdf');
+console.log(args[0],args[1], 'asdfasdf');
