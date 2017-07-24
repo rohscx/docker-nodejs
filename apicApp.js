@@ -25,14 +25,14 @@ let apicInterface = () => {
     }
   })
 };
+let menu = apicInterface();
 let apicMenu = () => {
-  let menu = apicInterface();
   Object.keys(menu.mainMenu).map(function(key, index) {
     console.log(menu.mainMenu[key]);
   })
 };
 console.log(apicMenu())
-prompts.question(apicInterface.greeting, (init)=>{
+prompts.question(menu.greeting, (init)=>{
   let menu = (init) => {
     let clearScreen = () =>{
       return process.stdout.write('\033c');
@@ -75,12 +75,12 @@ prompts.question(apicInterface.greeting, (init)=>{
       }
     };
 
-    if (apicInterface.menuFirstRun) {
-      apicInterface.menuFirstRun = false;
+    if (menu.menuFirstRun) {
+      menu.menuFirstRun = false;
       console.log("INIT1  ",init)
       switchMenu(init)
     } else {
-      console.log("MENDFIST", apicInterface.menuFirstRun)
+      console.log("MENDFIST", menu.menuFirstRun)
       console.log("INIT2  ",init)
       prompts.setPrompt(apicMenu())
       prompts.prompt()
