@@ -220,12 +220,12 @@ program
   });
  
 program.parse(process.argv);
-if (typeof cmdValue === 'undefined' && program.apicDiscovery) {
+if (typeof cmdValue === 'undefined') {
    console.error('no command given!');
    process.exit(1);
 }
 if (program.apicDevices) console.log(apiccDevices());
-if (program.apicDiscovery) console.log(apiccDiscovery(cmdValue, envValue));
+if (program.apicDiscovery && typeof cmdValue !== 'undefined && ypeof envValue !== 'undefined) console.log(apiccDiscovery(cmdValue, envValue));
 if (program.apicReachability) console.log(apiccReachability());
 
 console.log('command:', cmdValue);
