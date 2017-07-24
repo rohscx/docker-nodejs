@@ -34,14 +34,14 @@ class apicReachability extends rest {
     let returnData = this.returnData.response;
     typeof('returnData')
     console.log("asdfasdf",returnData[0].discoveryId)
-    /*
+
     this.returnData.map((data) => {
       for (let [key, value] of Object.data.entries(obj)) {
         if (value != "Reachable") {
-          console.log("++>", obj)
+          console.log("++>", data)
         }
       }
-    }) */
+    })
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
