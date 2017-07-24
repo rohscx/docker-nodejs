@@ -2,6 +2,28 @@ const rest = require('./api/rest');
 const securityFile = require('../securityFile')
 
 
+if (securityFile.public.apicEM.uName == false) {
+  const ApicEm = {
+    body:{
+      "username": securityFile.public.apicEM.uName,
+      "password": securityFile.public.apicEM.uPass
+    },
+    uri: securityFile.public.apicEM.uri
+  };
+
+  let apicHeaders = {
+    "content-type": "application/json"
+  };
+} else {
+  const ApicEm = {
+    body:{
+      "username": securityFile.private.apicEM.uName,
+      "password": securityFile.private.apicEM.uPass
+    },
+    uri: securityFile.private.apicEM.uri
+  };
+}
+
 // Private Cisco ApicEM resource on the INTRAnet
 /*
 const ApicEm = {
@@ -13,18 +35,10 @@ const ApicEm = {
 };
 */
 // Public Cisco ApicEM resource on the INTERnet
-const ApicEm = {
-  body:{
-    "username": securityFile.public.apicEM.uName,
-    "password": securityFile.public.apicEM.uPass
-  },
-  uri: securityFile.public.apicEM.uri
-};
 
 let apicHeaders = {
   "content-type": "application/json"
 };
-
 const method = 'POST';
 const uri = ApicEm.uri+"/api/v1/ticket";
 const rejectCert = false;
