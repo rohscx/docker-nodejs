@@ -27,7 +27,7 @@ var fs          = require('fs');
 clear();
 console.log(
   chalk.yellow(
-    figlet.textSync('Ginit', { horizontalLayout: 'full' })
+    figlet.textSync('apicApp', { horizontalLayout: 'full' })
   )
 );
 
