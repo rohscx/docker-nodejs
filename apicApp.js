@@ -213,19 +213,19 @@ program
   .option('-i, --discovery', 'apicDiscovery', 'a', 'b')
   .option('-r, --reachability', 'apicReachability')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
-  .arguments('<cmd> [env]')
-  .action(function (cmd, env) {
-     cmdValue = cmd;
-     envValue = env;
+  .arguments('<cmd1> <cmd2>')
+  .action(function (cmd1, cmd2) {
+     cmdValue1 = cmd1;
+     cmdValue2 = cmd2;
   });
  
 program.parse(process.argv);
-if (typeof cmdValue === 'undefined') {
-   console.error('no command given!');
+if (typeof cmdValue1 === 'undefined') {
+   console.error('no command given! 1');
    process.exit(1);
 }
-if (typeof cmdValue === 'undefined' || typeof envValue === 'undefined') {
-   console.error('no command given!');
+if (typeof cmdValue2 === 'undefined') {
+   console.error('no command given! 2');
    process.exit(1);
 }
 if (program.apicDevices) console.log(apiccDevices());
