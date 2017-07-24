@@ -278,3 +278,4 @@ if (program.devices) console.log(apiccDevices());
 if (program.discoveryCheck) console.log(apicDiscoveryFileCheck(program.args));
 console.log(program.args);
 console.log(program.apicDiscoveryFileCheck)
+console.log('  - %s cheese', program.cheese);
