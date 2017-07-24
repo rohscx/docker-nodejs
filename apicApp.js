@@ -74,7 +74,7 @@ prompts.question(apicInterface.greeting, (init)=>{
 
     if (apicInterface.menuFirstRun) {
       apicInterface.menuFirstRun = false;
-      console.log(init)
+      console.log("INIT  "init)
       switchMenu(init)
     } else {
       prompts.setPrompt(apicMenu())
