@@ -10,91 +10,12 @@ const rl = require('readline');
 
 
 // apic-EM user menu. not deep very shallow
-let prompts = rl.createInterface(process.stdin, process.stdout);
-let apicInterface = {
-  menuFirstRun: true,
-  menuRun: true,
-  greeting: "What would you like to do?",
-  mainMenu: {
-    one: "1 : Apic-EM Discovery",
-    two: "2 : PLACE HOLDER",
-    three: "3 : Apic Device Search",
-    four: "4 : Apic Device Reachability",
-    nine: "9 : Clear the screen"
-  }
-};
-let apicMenu = () => {
-  Object.keys(apicInterface.mainMenu).map(function(key, index) {
-    console.log(apicInterface.mainMenu[key]);
-  })
-};
-apicMenu()
-prompts.question(apicInterface.greeting, (init)=>{
-
-  let menu = (init) => {
-    let clearScreen = () =>{
-      return process.stdout.write('\033c');
-    };
-
-    let switchMenu = (number) => {
-      switch(number) {
-        case "1":
-            apiccDiscovery()
-            .then((apiccReturn) =>{
-              console.log("apicDiscovery Complete")
-            })
-            break;
-        case "2":
-            console.log("NADA")
-            break;
-        case "3":
-            apiccDevices()
-            .then((apiccReturn) =>{
-              console.log("apicDevices Complete")
-            })
-            break;
-        case "4":
-            apiccReachability()
-            .then((apiccReturn) =>{
-              console.log("apicReachability Complete")
-            })
-            break;
-        case "9":
-            clearScreen()
-            console.log("clearScreen Complete")
-            newMenu()
-            break;
-        default:
-
-      }
-    };
-
-    if (apicInterface.menuFirstRun) {
-      apicInterface.menuFirstRun = false;
-      switchMenu(init)
-    } else {
-      prompts.setPrompt(apicMenu())
-      prompts.prompt()
-      prompts.on('line', (number) =>{
-        switchMenu(number)
-      })
-    };
-  }
-
-  let newMenu = () => {
-    let prompts = rl.createInterface(process.stdin, process.stdout);
-
-
-      prompts.setPrompt(apicMenu())
-      prompts.prompt()
-      prompts.on('line', (number) =>{
-        menu()
-      })
-
-  }
-
-  menu(init)
-})
+clear();
+console.log(
+  chalk.yellow(
+    figlet.textSync('Ginit', { horizontalLayout: 'full' })
+  )
+);
 
 
 
