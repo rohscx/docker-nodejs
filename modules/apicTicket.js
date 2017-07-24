@@ -25,30 +25,32 @@ let apicHeaders = {
 };
 
 const method = 'POST';
-let uri = () => {
+let uriFunc = () => {
   if (privateApicEm != false) {
     return publicApicEm.uri+"/api/v1/ticket";
   } else {
     return privateApicEm.uri+"/api/v1/ticket";
   }
 }
+let uri = uriFunc;
 const rejectCert = false;
-let uriBase = () => {
+let uriBaseFunc = () => {
   if (privateApicEm != false) {
     return publicApicEm.uri;
   } else {
     return privateApicEm.uri;
   }
 }
+let uriBase = uriBaseFunc
 const headers = apicHeaders;
-let body = () => {
+let bodyFunc = () => {
   if (privateApicEm != false) {
     return publicApicEm.body;
   } else {
     return privateApicEm.body;
   }
 }
-
+let body = bodyFunc;
 console.log("body+>",body(),"URIBASE=>",uriBase(),"uri=>",uri())
 
 class apicTicket extends rest {
