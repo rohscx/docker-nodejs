@@ -164,7 +164,7 @@ let apiccDiscovery = (dataBlob) => {
   }
 }
 */
-apiccDiscovery()
+
 
 /*
 // Gets an ApicEM Ticket
