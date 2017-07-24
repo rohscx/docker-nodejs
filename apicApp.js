@@ -206,25 +206,24 @@ apicTicket.httpRequest()
 */
 
 
+
 program
   .version('0.1.0')
   .option('-d, --devices', 'apicDevices')
   .option('-i, --discovery', 'apicDiscovery', 'a', 'b')
   .option('-r, --reachability', 'apicReachability')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
-    .arguments('<cmd> [env]')
+  .arguments('<cmd> [env]')
   .action(function (cmd, env) {
      cmdValue = cmd;
      envValue = env;
   });
-  .parse(process.argv);
-
-
-
-if (program.apicDevices) console.log(apiccDevices());
-if (program.apicDiscovery) console.log(apiccDiscovery());
-if (program.apicReachability) console.log(apiccReachability());
-console.log('  - %s %s cheese', program.cheese);
-console.log(' args: %j', program.args);
-console.log(cmdValue,envValue)
-
+ 
+program.parse(process.argv);
+ 
+if (typeof cmdValue === 'undefined') {
+   console.error('no command given!');
+   process.exit(1);
+}
+console.log('command:', cmdValue);
+console.log('environment:', envValue || "no environment given");
