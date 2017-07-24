@@ -73,10 +73,12 @@ let apiccDevices = () => {
 };
 
 
-/*
+
 // Reads the value of a properly formated CSV file, processes it, and stores it.
 let apiccDiscovery = (dataBlob) => {
-
+   let inputFile = dataBlob[0];
+   let jobName = dataBlob[1];
+   console.log("dataBlob",blob)
   if (inputFile && jobName) {
     let processSuccess = false;
     return new Promise((resolve, reject) =>{
@@ -163,7 +165,7 @@ let apiccDiscovery = (dataBlob) => {
     })
   }
 }
-*/
+
 
 
 /*
