@@ -24,20 +24,30 @@ let apicHeaders = {
   "content-type": "application/json"
 };
 
-if (privateApicEm.body.username != "s") {
-  const uri = privateApicEm.uri+"/api/v1/ticket";
-  const uriBase = privateApicEm.uri;
-  const body = privateApicEm.body;
-} else {
-  const uri = publicApicEm.uri+"/api/v1/ticket";
-  const uriBase = publicApicEm.uri;
-  const body = publicApicEm.body;
-}
-
 const method = 'POST';
+const uri = () => {
+  if (privateApicEm == false) {
+    return publicApicEm.uri+"/api/v1/ticket";
+  } else {
+    return privateApicEm.uri+"/api/v1/ticket";
+  }
+}
 const rejectCert = false;
+const uriBase = () => {
+  if (privateApicEm == false) {
+    return publicApicEm.uri;
+  } else {
+    return privateApicEm.uri;
+  }
+}
 const headers = apicHeaders;
-const body = publicApicEm.body;
+const body = () => {
+  if (privateApicEm == false) {
+    return publicApicEm.body;
+  } else {
+    return privateApicEm.body;
+  }
+}
 
 class apicTicket extends rest {
   constructor (method,uri,rejectCert,headers,body){

@@ -2,8 +2,8 @@ module.exports = {
   private:{
     apicEM:{
       uName: false,
-      uPass:"d",
-      uri:"f"
+      uPass: false,
+      uri: false
     }
   },
   public:{
