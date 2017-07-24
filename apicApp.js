@@ -29,6 +29,9 @@ let test = (fileName) => {
 
 test(fileName1)
 
+if (test) {
+  console.log(test)
+}
 
 
 let apiccReachability= () => {
