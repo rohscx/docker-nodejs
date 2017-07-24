@@ -38,7 +38,7 @@ class apicReachability extends rest {
       if (value != "Reachable") {
         console.log("++>", obj)
       }
-    */}
+    }*/
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
