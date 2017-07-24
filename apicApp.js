@@ -42,6 +42,7 @@ prompts.question(apicInterface.greeting, (init)=>{
             .then((apiccReturn) =>{
               console.log("apicDiscovery Complete")
               menu("OkayGo!")
+              break;
             })
             break;
         case "2":
@@ -53,6 +54,7 @@ prompts.question(apicInterface.greeting, (init)=>{
             .then((apiccReturn) =>{
               console.log("apicDevices Complete")
               menu("OkayGo!")
+              break;
             })
             break;
         case "4":
@@ -60,6 +62,7 @@ prompts.question(apicInterface.greeting, (init)=>{
             .then((apiccReturn) =>{
               console.log("apicReachability Complete")
               menu("OkayGo!")
+              break;
             })
             break;
         case "9":
