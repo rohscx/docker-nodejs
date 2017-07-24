@@ -28,7 +28,7 @@ let apicMenu = () => {
     console.log(apicInterface.mainMenu[key]);
   })
 };
-console.log(apicMenu())
+apicMenu()
 prompts.question(apicInterface.greeting, (init)=>{
   let menu = (init) => {
     let clearScreen = () =>{
@@ -68,7 +68,7 @@ prompts.question(apicInterface.greeting, (init)=>{
             menu("OkayGo!")
             break;
         default:
-            console.log(apicMenu())
+
       }
     };
 
