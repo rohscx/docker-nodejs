@@ -30,6 +30,7 @@ let menu = apicInterface();
 let apicMenu = () => {
   Object.keys(menu.mainMenu).map(function(key, index) {
     console.log(menu.mainMenu[key]);
+    console.log(JSON.parse(menu))
   })
 };
 console.log(apicMenu())
