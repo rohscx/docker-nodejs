@@ -243,7 +243,7 @@ program
   .parse(process.argv);
  
 
-if (program.apicdevices) console.log(apicDevices());
-if (program.apicDiscovery) console.log(apicDiscovery());
-if (program.apicReachability) console.log(apicReachability());
+if (program.apicdevices) console.log(apiccDevices());
+if (program.apicDiscovery) console.log(apiccDiscovery());
+if (program.apicReachability) console.log(apiccReachability());
 console.log('  - %s cheese', program.cheese);
