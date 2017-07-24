@@ -243,7 +243,7 @@ program
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
  
-console.log('you ordered a pizza with:');
+if(!program.args.length) program.help();
 if (program.apicDevices) console.log(apicDevices());
 if (program.apicDiscovery) console.log(apicDiscovery());
 if (program.apicReachability) console.log(apicReachability());
