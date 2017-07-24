@@ -77,6 +77,7 @@ prompts.question(apicInterface.greeting, (init)=>{
       console.log("INIT  ",init)
       switchMenu(init)
     } else {
+      console.log("INIT  ",init)
       prompts.setPrompt(apicMenu())
       prompts.prompt()
       prompts.on('line', (number) =>{
