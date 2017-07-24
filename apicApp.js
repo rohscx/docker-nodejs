@@ -245,6 +245,7 @@ if(!program.args.length) {
 } else {
     console.log('Keywords: ' + program.args);
       console.log("hit");
+   program.apicDiscovery
     if (program.apicDiscovery) {
     console.log("hit");
     }
