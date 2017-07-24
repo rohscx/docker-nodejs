@@ -247,6 +247,6 @@ program
 if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
 if (program.discovery) console.log(apiccDiscovery(program.args));
-if (program.devices) console.log(apicDevices());
+if (program.devices) console.log(apiccDevices());
 console.log('  - %s cheese', program.cheese);
 console.log('  - %s cheese', program.args);
