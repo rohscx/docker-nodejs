@@ -11,7 +11,7 @@ const rl = require('readline');
 
 // apic-EM user menu. not deep very shallow
 let prompts = rl.createInterface(process.stdin, process.stdout);
-let apicInterface = {
+let apicInterface = () => {
   menuFirstRun: true,
   menuRun: true,
   greeting: "What would you like to do?",
