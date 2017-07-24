@@ -238,8 +238,8 @@ program
   .version('0.1.0')
   .usage('<keywords>')
   .option('-e, --reachability', 'apicReachability')
-  .option('-i, --discovery', 'Add apicDiscovery')
-  .option('-o, --collect', 'Add apicCollect')
+  .option('-i, --discovery', 'apicDiscovery [fileName][jobName]')
+  .option('-o, --collect', 'apicCollect')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
  
