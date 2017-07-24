@@ -18,18 +18,21 @@ let fileName1 = "ipList";
 
 
 let test = (fileName,test2) => {
-  Promise.all([ipTools.setFile(fileName),ipTools.readFile()])
-  .then((test) =>{
-    console.log(test)
-    if (test) {
+  if (fileName && test2) {
+    Promise.all([ipTools.setFile(fileName),ipTools.readFile()])
+    .then((test) =>{
       console.log(test)
-      console.log("blah blah")
-    }
-    return test;
-  })
-  .catch((reject) =>{
-    console.log(reject);
-  })
+      if (test) {
+        console.log(test)
+        console.log("blah blah")
+      }
+      return test;
+    })
+    .catch((reject) =>{
+      console.log(reject);
+    })
+  }
+
 }
 
 test(fileName1)
