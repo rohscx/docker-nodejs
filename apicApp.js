@@ -265,9 +265,9 @@ program
   .version('0.1.0')
   .usage('<keywords>')
   .option('-e, --reachability', 'apicReachability')
-  .option('-i, --discovery [fileName]<jobName>', 'apicDiscovery ','ipList','TEST_RUN')
+  .option('-i, --discovery', 'apicDiscovery [fileName][jobName]' )
   .option('-o, --devices', 'apicDevices')
-  .option('-c, --discoveryCheck [fileName]<jobName>', 'apicDiscoveryFileCheck','ipList','TEST_RUN')
+  .option('-c, --discoveryCheck', 'apicDiscoveryFileCheck [fileName][jobName]')
   .option('-z, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
 
@@ -277,5 +277,3 @@ if (program.discovery) console.log(apiccDiscovery(program.args));
 if (program.devices) console.log(apiccDevices());
 if (program.discoveryCheck) console.log(apiccDiscoveryFileCheck(program.args));
 console.log(program.args);
-console.log('%s', program.cheese)
-console.log('  - %s cheese', program.cheese);
