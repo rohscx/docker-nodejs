@@ -245,7 +245,7 @@ if(!program.args.length) {
     program.help();
 } else {
     console.log('Keywords: ' + program.args);
-    if (program.apicDevices) console.log(apicDevices());
-    if (program.apicDiscovery) console.log(apicDiscovery());
-    if (program.apicReachability) console.log(apicReachability());
+    if (program.apicDevices) console.log(apiccDevices());
+    if (program.apicDiscovery) console.log(apiccDiscovery());
+    if (program.apicReachability) console.log(apiccReachability());
 }
