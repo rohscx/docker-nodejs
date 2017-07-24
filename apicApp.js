@@ -214,7 +214,6 @@ if (program.apicReachability) console.log(apiccDiscovery(envValue1, envValue2));
 if (program.apicReachability) console.log(apiccReachability());
 */
 
-var program = require('../');
 
 function range(val) {
   return val.split('..').map(Number);
