@@ -33,8 +33,9 @@ let mainMenu = () => {
   })
 };
 console.log(mainMenu())
-prompts.question(apicMenu.greeting, (init)=>{
-  let menu = (init) => {
+prompts.question(apicMenu.greeting, (number)=>{
+  let menu = (number) => {
+
     let clearScreen = () =>{
       return process.stdout.write('\033c');
     };
@@ -73,16 +74,17 @@ prompts.question(apicMenu.greeting, (init)=>{
             break;
         default:
             menu("GREAT!!")
+            break;
       }
     };
 
     if (apicMenu.menuFirstRun == true) {
       apicMenu.menuFirstRun = false;
-      console.log("INIT1  ",init)
-      switchMenu(init)
+      console.log("INIT1  ",number)
+      switchMenu(number)
     } else {
       console.log("MENDFIST", apicMenu.menuFirstRun, "OTHER THING  ",apicMenu.firstTimeRan)
-      console.log("INIT2  ",init)
+      console.log("INIT2  ",number)
       prompts.setPrompt(mainMenu())
       prompts.prompt()
       prompts.on('line', (number) =>{
@@ -90,7 +92,7 @@ prompts.question(apicMenu.greeting, (init)=>{
       })
     };
   }
-  menu(init)
+  menu(number)
 })
 
 
