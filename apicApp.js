@@ -243,6 +243,7 @@ program
   .parse(process.argv);
  
 console.log('you ordered a pizza with:');
+if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
 if (program.discovery) console.log('  - pineapple');
 if (program.collect) console.log('  - bbq');
