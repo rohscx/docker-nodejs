@@ -31,6 +31,9 @@ console.log(
   )
 );
 
+var github = new GitHubApi({
+  version: '3.0.0'
+});
 
 function getGithubCredentials(callback) {
   var questions = [
