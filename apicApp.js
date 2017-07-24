@@ -265,9 +265,9 @@ program
   .version('0.1.0')
   .usage('<keywords>')
   .option('-e, --reachability', 'apicReachability')
-  .option('-i, --discovery', 'apicDiscovery [fileName][jobName]')
+  .option('-i, --discovery [fileName][jobName]', 'apicDiscovery ','ipList','TEST_RUN')
   .option('-o, --devices', 'apicDevices')
-  .option('-o, --discoveryCheck', 'apicDiscoveryFileCheck [fileName][jobName]')
+  .option('-h, --discoveryCheck [fileName][jobName]', 'apicDiscoveryFileCheck','ipList','TEST_RUN')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
 
