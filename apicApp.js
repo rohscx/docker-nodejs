@@ -236,14 +236,13 @@ if (program.apicReachability) console.log(apiccReachability());
 
 program
   .version('0.1.0')
-  .usage('<keywords>')
   .option('-d, --devices', 'Add apicDevices')
   .option('-i, --discovery', 'Add apicDiscovery')
   .option('-r, --reachability', 'Add apicReachability')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
  
-if(!program.args.length) program.help();
+
 if (program.apicDevices) console.log(apicDevices());
 if (program.apicDiscovery) console.log(apicDiscovery());
 if (program.apicReachability) console.log(apicReachability());
