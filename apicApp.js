@@ -237,13 +237,13 @@ if (program.apicReachability) console.log(apiccReachability());
 program
   .version('0.1.0')
   .option('-e, --reachability', 'apicReachability')
-  .option('-P, --pineapple', 'Add pineapple')
-  .option('-b, --bbq-sauce', 'Add bbq sauce')
+  .option('-i, --discovery', 'Add apicDiscovery')
+  .option('-o, --collect', 'Add apicCollect')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
  
 console.log('you ordered a pizza with:');
 if (program.reachability) console.log(apiccReachability());
-if (program.pineapple) console.log('  - pineapple');
-if (program.bbqSauce) console.log('  - bbq');
+if (program.discovery) console.log('  - pineapple');
+if (program.collect) console.log('  - bbq');
 console.log('  - %s cheese', program.cheese);
