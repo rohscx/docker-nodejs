@@ -16,10 +16,7 @@ let apicInterface = () => {
     menuFirstRun: true,
     firstTimeRan: false,
     menuRun: false,
-    greeting: "What would you like to do?",
-    mainMenu: {
-      one: "1 : Apic-EM Discovery"
-    }
+    greeting: "What would you like to do?"
   })
 };
 let menu = apicInterface();
