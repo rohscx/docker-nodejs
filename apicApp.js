@@ -17,6 +17,7 @@ let apicInterface = () => {
     firstTimeRan: false,
     menuRun: false,
     greeting: "What would you like to do?",
+    startUp: "Application ready, press any key to continue",
     mainMenu: {
       a: "1 : Apic-EM Discovery",
       b: "2 : PLACE HOLDER",
@@ -32,8 +33,7 @@ let mainMenu = () => {
     console.log(apicMenu.mainMenu[key]);
   })
 };
-console.log(mainMenu())
-prompts.question(apicMenu.greeting, (number)=>{
+prompts.question(apicMenu.startUp, (number)=>{
   let menu = () => {
 
     let clearScreen = () =>{
