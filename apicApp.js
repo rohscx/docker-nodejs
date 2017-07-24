@@ -30,17 +30,7 @@ let apicMenu = () => {
 };
 apicMenu()
 prompts.question(apicInterface.greeting, (init)=>{
-  let newMenu = () => {
-    let prompts = rl.createInterface(process.stdin, process.stdout);
 
-
-      prompts.setPrompt(apicMenu())
-      prompts.prompt()
-      prompts.on('line', (number) =>{
-        switchMenu(number)
-      })
-
-  }
   let menu = (init) => {
     let clearScreen = () =>{
       return process.stdout.write('\033c');
@@ -91,6 +81,17 @@ prompts.question(apicInterface.greeting, (init)=>{
     };
   }
   menu(init)
+  let newMenu = () => {
+    let prompts = rl.createInterface(process.stdin, process.stdout);
+
+
+      prompts.setPrompt(apicMenu())
+      prompts.prompt()
+      prompts.on('line', (number) =>{
+        menu()
+      })
+
+  }
 })
 
 
