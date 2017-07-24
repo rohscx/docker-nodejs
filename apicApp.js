@@ -256,4 +256,4 @@ if (program.devices) console.log(apiccDevices());
 console.log(typeof('program.arg'))
 console.log('  - %s cheese', program.cheese);
 console.log('  - %s cats', program.args);
-console.log(args[0],args[1], 'asdfasdf');
+console.log(program.args, 'asdfasdf');
