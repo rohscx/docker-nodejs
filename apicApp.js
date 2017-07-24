@@ -34,7 +34,7 @@ let mainMenu = () => {
 };
 
 ()=>{
-  let menu = (number) => {
+  let menu = () => {
 
     let clearScreen = () =>{
       return process.stdout.write('\033c');
@@ -96,7 +96,7 @@ let mainMenu = () => {
       })
     };
   }
-  menu(number)
+  menu()
 }
 
 
