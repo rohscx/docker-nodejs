@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rohscx/docker-nodejs#readme",
   "dependencies": {
+    "commander": "^2.11.0",
     "http": "0.0.0",
     "http-request": "^0.7.0",
     "request": "^2.81.0",
