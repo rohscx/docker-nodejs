@@ -12,16 +12,18 @@ const rl = require('readline');
 // apic-EM user menu. not deep very shallow
 let prompts = rl.createInterface(process.stdin, process.stdout);
 let apicInterface = () => {
-  menuFirstRun: true,
-  menuRun: true,
-  greeting: "What would you like to do?",
-  mainMenu: {
-    one: "1 : Apic-EM Discovery",
-    two: "2 : PLACE HOLDER",
-    three: "3 : Apic Device Search",
-    four: "4 : Apic Device Reachability",
-    nine: "9 : Clear the screen"
-  }
+  return ({
+    menuFirstRun: true,
+    menuRun: true,
+    greeting: "What would you like to do?",
+    mainMenu: {
+      one: "1 : Apic-EM Discovery",
+      two: "2 : PLACE HOLDER",
+      three: "3 : Apic Device Search",
+      four: "4 : Apic Device Reachability",
+      nine: "9 : Clear the screen"
+    }
+  })
 };
 let apicMenu = () => {
   Object.keys(apicInterface.mainMenu).map(function(key, index) {
