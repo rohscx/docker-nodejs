@@ -213,4 +213,4 @@ console.log('you ordered a pizza with:');
 if (program.apicDevices) console.log(apiccDevices());
 if (program.apicDiscovery) console.log(apiccDiscovery());
 if (program.apicReachability) console.log(apiccReachability());
-console.log(program.outputHelp);
+console.log(program.outputHelp());
