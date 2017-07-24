@@ -32,7 +32,7 @@ let mainMenu = () => {
     console.log(apicMenu.mainMenu[key]);
   })
 };
-console.log(mainMenu())
+
 ()=>{
   let menu = (number) => {
 
