@@ -49,6 +49,8 @@ const body = () => {
   }
 }
 
+console.log(body(),uriBase(),uri())
+
 class apicTicket extends rest {
   constructor (method,uri,rejectCert,headers,body){
     super(method,uri,rejectCert,headers,body)
