@@ -235,18 +235,17 @@ if (program.apicReachability) console.log(apiccReachability());
 */
 
 program
-  .command('countdown <count>')
-  .description('Countdown timer')
-  .option(
-    '-i, --interval <interval>',
-    'The delay between ticks',
-    parseInterval, // coercion function
-    1000 // default value
-  ).action(function(count, command) {
-    // option values are placed on 
-    // the command object
-    command.interval 
-    
-    ...
+  .version('0.1.0')
+   .option('-d, --devices', 'apicDevices')
+  .option('-i, --discovery', 'apicDiscovery', 'a', 'b')
+  .option('-r, --reachability', 'apicReachability')
+  .parse(process.argv);
 
-  });
+if(!program.args.length) {
+    program.help();
+} else {
+    console.log('Keywords: ' + program.args);
+    if (program.apicDevices) console.log(apicDevices());
+    if (program.apicDiscovery) console.log(apicDiscovery());
+    if (program.apicReachability) console.log(apicReachability());
+}
