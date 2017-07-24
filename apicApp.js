@@ -81,6 +81,7 @@ prompts.question(apicMenu.startUp, (number)=>{
     if (apicMenu.menuFirstRun == true) {
       apicMenu.menuFirstRun = false;
       console.log("INIT1  ",number)
+      mainMenu()
       prompts.setPrompt(apicMenu.greeting)
       prompts.prompt()
       prompts.on('line', (number) =>{
@@ -98,7 +99,7 @@ prompts.question(apicMenu.startUp, (number)=>{
     };
   }
   process.stdout.write('\033c');
-  menu(number)  
+  menu(number)
 })
 
 
