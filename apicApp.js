@@ -260,7 +260,7 @@ if (program.apicDevices) console.log(apiccDevices());
 if (program.apicCollect) console.log(apiccDiscovery(envValue1, envValue2));
 if (program.apicReachability) console.log(apiccReachability());
 */
-apiccDiscoveryCheckFile
+
 program
   .version('0.1.0')
   .usage('<keywords>')
