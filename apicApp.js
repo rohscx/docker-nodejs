@@ -27,12 +27,12 @@ let apicInterface = () => {
   })
 };
 let apicMenu = apicInterface();
-let apicMenu = () => {
-  Object.keys(menu.mainMenu).map(function(key, index) {
-    console.log(menu.mainMenu[key]);
+let mainMenu = () => {
+  Object.keys(apicMenu.mainMenu).map(function(key, index) {
+    console.log(apicMenu.mainMenu[key]);
   })
 };
-console.log(apicMenu())
+console.log(mainMenu())
 prompts.question(menu.greeting, (init)=>{
   let menu = (init) => {
     let clearScreen = () =>{
@@ -45,44 +45,44 @@ prompts.question(menu.greeting, (init)=>{
             apiccDiscovery()
             .then((apiccReturn) =>{
               console.log("apicDiscovery Complete")
-              menu()
+              mainMenu()
             })
             break;
         case "2":
             console.log("NADA")
-            menu()
+            mainMenu()
             break;
         case "3":
             apiccDevices()
             .then((apiccReturn) =>{
               console.log("apicDevices Complete")
-              menu()
+              mainMenu()
             })
             break;
         case "4":
             apiccReachability()
             .then((apiccReturn) =>{
               console.log("apicReachability Complete")
-              menu()
+              mainMenu()
             })
             break;
         case "9":
             clearScreen()
             console.log("clearScreen Complete")
-            menu()
+            mainMenu()
             break;
         default:
-            menu()
+            mainMenu()
       }
     };
 
-    if (menu.menuFirstRun == true) {
-      menu.menuFirstRun = false;
+    if (apicMenu.menuFirstRun == true) {
+      apicMenu.menuFirstRun = false;
       console.log("INIT1  ",init)
       switchMenu(init)
     } else {
-      console.log("MENDFIST", menu.menuFirstRun, "OTHER THING  ",menu.firstTimeRan)
-      JSON.parse(menu, false, 2)
+      console.log("MENDFIST", apicMenu.menuFirstRun, "OTHER THING  ",apicMenu.firstTimeRan)
+      JSON.parse(apicMenu, false, 2)
       console.log("INIT2  ",init)
       prompts.setPrompt(apicMenu())
       prompts.prompt()
