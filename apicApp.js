@@ -237,7 +237,7 @@ if (program.apicReachability) console.log(apiccReachability());
 program
   .version('0.1.0')
   .option('-d, --devices', 'apicDevices')
-  .option('-i, --discovery', 'apicDiscovery', 'a', 'b')
+  .option('-i, --discovery', 'apicDiscovery')
   .option('-r, --reachability', 'apicReachability')
   .parse(process.argv);
 
