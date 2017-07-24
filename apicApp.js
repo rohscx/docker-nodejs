@@ -203,13 +203,13 @@ apicTicket.httpRequest()
 */
 
 let customHelp = () => {
-   return(  
+
   console.log('  Examples:');
   console.log('');
   console.log('    $ custom-help --help');
   console.log('    $ custom-help -h');
   console.log('');
-   )
+
 
 };
 
