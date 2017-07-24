@@ -13,13 +13,13 @@ const rl = require('readline');
 let prompts = rl.createInterface(process.stdin, process.stdout);
 let apicInterface = () => {
   return ({
-    menuFirstRun: "true",
-    firstTimeRan: "FJSLKFJDF:LKDJF",
-    menuRun: "asdf",
+    menuFirstRun: true,
+    firstTimeRan: false,
+    menuRun: false,
     greeting: "What would you like to do?",
     mainMenu: {
       one: "1 : Apic-EM Discovery",
-      two: "2 : PLACE HOLDER",
+      hard:"2 : PLACE HOLDER",
       three: "3 : Apic Device Search",
       four: "4 : Apic Device Reachability",
       nine: "9 : Clear the screen"
