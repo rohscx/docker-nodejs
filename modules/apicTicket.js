@@ -80,4 +80,4 @@ class apicTicket extends rest {
   }
 }
 
-module.exports = new apicTicket(method,uri,rejectCert,headers,body
+module.exports = new apicTicket(method,uri,rejectCert,headers,body)
