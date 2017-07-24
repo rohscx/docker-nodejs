@@ -239,14 +239,14 @@ program
   .usage('<keywords>')
   .option('-e, --reachability', 'apicReachability')
   .option('-i, --discovery', 'apicDiscovery [fileName][jobName]')
-  .option('-o, --collect', 'apicCollect')
+  .option('-o, --devices', 'apicDevices')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
  
 
 if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
-if (program.discovery) console.log('  - pineapple');
-if (program.collect) console.log('  - bbq');
-console.log('  - %s cheese', program.cheese);program.args
+if (program.discovery) console.log(apiccDiscovery(program.args));
+if (program.devices) console.log(apicDevices());
+console.log('  - %s cheese', program.cheese);
 console.log('  - %s cheese', program.args);
