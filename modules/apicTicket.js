@@ -26,29 +26,35 @@ let apicHeaders = {
 
 const method = 'POST';
 let uriFunc = () => {
+  let data = "";
   if (privateApicEm != false) {
-    return publicApicEm.uri+"/api/v1/ticket";
+    data = publicApicEm.uri+"/api/v1/ticket";
   } else {
-    return privateApicEm.uri+"/api/v1/ticket";
+    data = privateApicEm.uri+"/api/v1/ticket";
   }
+  return data;
 }
 let uri = uriFunc;
 const rejectCert = false;
 let uriBaseFunc = () => {
+  let data = "";
   if (privateApicEm != false) {
-    return publicApicEm.uri;
+    data = publicApicEm.uri;
   } else {
-    return privateApicEm.uri;
+    data = privateApicEm.uri;
   }
+  return data;
 }
 let uriBase = uriBaseFunc
 const headers = apicHeaders;
 let bodyFunc = () => {
+  let data = "";
   if (privateApicEm != false) {
-    return publicApicEm.body;
+    data = publicApicEm.body;
   } else {
-    return privateApicEm.body;
+    data = privateApicEm.body;
   }
+  return data;
 }
 let body = bodyFunc;
 console.log("body+>",body(),"URIBASE=>",uriBase(),"uri=>",uri())
