@@ -5,6 +5,7 @@ const apicReachability = require('./modules/apicReachability');
 const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
 const rl = require('readline');
+const files = require('./modules/files');
 
 
 
