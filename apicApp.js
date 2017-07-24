@@ -236,6 +236,7 @@ if (program.apicReachability) console.log(apiccReachability());
 
 program
   .version('0.1.0')
+  .usage('<keywords>')
   .option('-e, --reachability', 'apicReachability')
   .option('-i, --discovery', 'Add apicDiscovery')
   .option('-o, --collect', 'Add apicCollect')
