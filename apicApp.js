@@ -73,7 +73,7 @@ let apiccDevices = () => {
 };
 
 
-
+/*
 // Reads the value of a properly formated CSV file, processes it, and stores it.
 let apiccDiscovery = (dataBlob) => {
 
@@ -163,7 +163,7 @@ let apiccDiscovery = (dataBlob) => {
     })
   }
 }
-
+*/
 apiccDiscovery()
 
 /*
