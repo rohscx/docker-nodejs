@@ -207,11 +207,10 @@ program
   .option('-d, --devices', 'apicDevices')
   .option('-D, --discovery', 'apicDiscovery')
   .option('-r, --reachability', 'apicReachability')
-  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
 
 console.log('you ordered a pizza with:');
 if (program.apicDevices) console.log(apiccDevices());
 if (program.apicDiscovery) console.log(apiccDiscovery());
 if (program.apicReachability) console.log(apiccReachability());
-console.log('  - %s cheese', program.cheese);
+console.log(program.help);
