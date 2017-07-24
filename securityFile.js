@@ -1,7 +1,7 @@
 module.exports = {
   private:{
     apicEM:{
-      uName:"s",
+      uName: false,
       uPass:"d",
       uri:"f"
     }
