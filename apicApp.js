@@ -33,7 +33,7 @@ let mainMenu = () => {
   })
 };
 console.log(mainMenu())
-prompts.question(menu.greeting, (init)=>{
+prompts.question(apicMenu.greeting, (init)=>{
   let menu = (init) => {
     let clearScreen = () =>{
       return process.stdout.write('\033c');
