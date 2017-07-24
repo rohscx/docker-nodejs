@@ -15,7 +15,7 @@ let apicInterface = () => {
   return ({
     menuFirstRun: "true",
     firstTimeRan: "FJSLKFJDF:LKDJF",
-    menuRun: true,
+    menuRun: "asdf",
     greeting: "What would you like to do?",
     mainMenu: {
       one: "1 : Apic-EM Discovery",
