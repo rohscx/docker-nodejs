@@ -33,7 +33,7 @@ let mainMenu = () => {
   })
 };
 console.log(mainMenu())
-prompts.question(apicMenu.greeting, (number)=>{
+()=>{
   let menu = (number) => {
 
     let clearScreen = () =>{
