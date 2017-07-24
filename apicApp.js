@@ -214,6 +214,7 @@ if (program.apicReachability) console.log(apiccDiscovery(envValue1, envValue2));
 if (program.apicReachability) console.log(apiccReachability());
 */
 
+apiccDevices()
 
 /*
 program
