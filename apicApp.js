@@ -74,11 +74,34 @@ let apiccDevices = () => {
 
 
 
+let apiccDiscoveryFileCheck = (dataBlob) => {
+   let inputFile = dataBlob[0];
+   let jobName = dataBlob[1];
+  if (inputFile && jobName) {
+    let processSuccess = false;
+    return new Promise((resolve, reject) =>{
+      Promise.all([ipTools.setFile(inputFile),ipTools.readFile()])
+      .then((promiseReturn)=>{
+        console.log(promiseReturn);
+        return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.setBase(),ipTools.setSuperNet()])
+      })
+      .then((promiseReturn)=>{
+        console.log(promiseReturn);
+      })
+      .catch((reject) =>{
+        console.log(reject);
+      })
+    })  
+  }
+}
+
+
+
+
 // Reads the value of a properly formated CSV file, processes it, and stores it.
 let apiccDiscovery = (dataBlob) => {
    let inputFile = dataBlob[0];
    let jobName = dataBlob[1];
-   console.log("dataBlob",dataBlob)
   if (inputFile && jobName) {
     let processSuccess = false;
     return new Promise((resolve, reject) =>{
@@ -237,21 +260,20 @@ if (program.apicDevices) console.log(apiccDevices());
 if (program.apicCollect) console.log(apiccDiscovery(envValue1, envValue2));
 if (program.apicReachability) console.log(apiccReachability());
 */
-
+apiccDiscoveryCheckFile
 program
   .version('0.1.0')
   .usage('<keywords>')
   .option('-e, --reachability', 'apicReachability')
   .option('-i, --discovery', 'apicDiscovery [fileName][jobName]')
   .option('-o, --devices', 'apicDevices')
+  .option('-o, --discoveryCheck', 'apicDiscoveryFileCheck [fileName][jobName]')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
 
-let args = program.args;
 if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
 if (program.discovery) console.log(apiccDiscovery(program.args));
 if (program.devices) console.log(apiccDevices());
-console.log(typeof('program.arg'))
+if (program.discoveryCheck) console.log(apicDiscoveryFileCheck(program.args));
 console.log(program.args);
-console.log(args)
