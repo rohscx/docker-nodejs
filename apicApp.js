@@ -209,7 +209,7 @@ apicTicket.httpRequest()
 program
   .version('0.1.0')
   .option('-d, --devices', 'apicDevices')
-  .option('-i, --discovery', 'apicDiscovery')
+  .option('-i, --discovery', 'apicDiscovery', 'a', 'b')
   .option('-r, --reachability', 'apicReachability')
   .parse(process.argv);
 
@@ -217,4 +217,4 @@ program
 if (program.apicDevices) console.log(apiccDevices());
 if (program.apicDiscovery) console.log(apiccDiscovery());
 if (program.apicReachability) console.log(apiccReachability());
-console.log('%s ')
+console.log('%s %s')
