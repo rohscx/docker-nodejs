@@ -35,11 +35,11 @@ class apicReachability extends rest {
     typeof('returnData')
     console.log("asdfasdf",returnData[0].discoveryId)
 
-    returnData.map((data1,index) => {
-
-      for (let [key, value] of Object.entries(data2)) {
+    returnData.map((data,index) => {
+      let objectData = data[index]
+      for (let [key, value] of Object.entries(data)) {
         if (value != "Reachable") {
-          console.log("++>", data1[index])
+          console.log("++>", objectData)
         }
       }
     })
