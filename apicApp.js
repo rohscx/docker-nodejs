@@ -80,7 +80,7 @@ prompts.question(apicInterface.greeting, (init)=>{
       })
     };
   }
-  menu(init)
+
   let newMenu = () => {
     let prompts = rl.createInterface(process.stdin, process.stdout);
 
@@ -92,6 +92,8 @@ prompts.question(apicInterface.greeting, (init)=>{
       })
 
   }
+
+  menu(init)
 })
 
 
