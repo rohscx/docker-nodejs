@@ -250,7 +250,7 @@ program
 let args = program.args;
 if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
-if (program.discovery) console.log();
+if (program.discovery) console.log(apiccDiscovery(program.args));
 if (program.devices) console.log(apiccDevices());
 console.log(typeof('program.arg'))
 console.log(program.args);
