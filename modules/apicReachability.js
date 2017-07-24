@@ -33,6 +33,7 @@ class apicReachability extends rest {
   setUnreachable () {
     let returnData = this.returnData.response;
     typeof('returnData')
+    console.log(returnData)
     /*
     this.returnData.map((data) => {
       for (let [key, value] of Object.data.entries(obj)) {
