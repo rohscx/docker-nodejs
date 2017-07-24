@@ -213,7 +213,7 @@ program
   .option('-r, --reachability', 'apicReachability')
   .parse(process.argv);
 
-console.log('you ordered a pizza with:');
+
 if (program.apicDevices) console.log(apiccDevices());
 if (program.apicDiscovery) console.log(apiccDiscovery());
 if (program.apicReachability) console.log(apiccReachability());
