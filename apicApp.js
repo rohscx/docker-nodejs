@@ -246,13 +246,10 @@ program
   .parse(process.argv);
 
 let args = program.args;
-let args1 = args[1];
-let args2 = args[2];
 if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
 if (program.discovery) console.log();
 if (program.devices) console.log(apiccDevices());
 console.log(typeof('program.arg'))
-console.log('  - %s cheese', program.cheese);
-console.log('  - %s cats', program.args);
-console.log(program.args, 'asdfasdf');
+console.log(program.args);
+console.log(args)
