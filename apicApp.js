@@ -244,10 +244,11 @@ program
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
 
-
+let cats = program.args;
 if(!program.args.length) program.help();
 if (program.reachability) console.log(apiccReachability());
-if (program.discovery) console.log(apiccDiscovery(program.args));
+if (program.discovery) console.log(apiccDiscovery());
 if (program.devices) console.log(apiccDevices());
 console.log('  - %s cheese', program.cheese);
 console.log('  - %s cats', program.args);
+console.log(cats, 'asdfasdf');
