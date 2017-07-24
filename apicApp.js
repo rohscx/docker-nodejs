@@ -258,5 +258,5 @@ console.log(' range: %j..%j', program.range[0], program.range[1]);
 console.log(' list: %j', program.list);
 console.log(' collect: %j', program.collect);
 console.log(' verbosity: %j', program.verbose);
-console.log(' args: %j', program.args);
+console.log(' args: %j %j', program.args);
 program.args.map((data)=>{console.log(data)})
