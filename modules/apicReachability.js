@@ -32,13 +32,12 @@ class apicReachability extends rest {
 
   setUnreachable () {
     let returnData = this.returnData[0];
-    console.log(returnData.response)
-    /*
-    for (let [key, value] of Object.returnData.response[0].entries(obj)) {
+
+    for (let [key, value] of Object.returnData.response.entries(obj)) {
       if (value != "Reachable") {
         console.log("++>", obj)
       }
-    }*/
+    }
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
