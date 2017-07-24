@@ -26,7 +26,7 @@ let apicInterface = () => {
   })
 };
 let apicMenu = () => {
-  Object.keys(apicInterface.mainMenu).map(function(key, index) {
+  Object.keys(apicInterface()).map(function(key, index) {
     console.log(apicInterface.mainMenu[key]);
   })
 };
