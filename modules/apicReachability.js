@@ -35,6 +35,7 @@ class apicReachability extends rest {
     returnData.map((data,index) => {
       for (let [key, value] of Object.entries(data)) {
         if (value == "REACHABLE") {
+          console.log("asdfadfasdfasfddsafsa")
           this.unReachable.push(returnData[index])
         }
       }
