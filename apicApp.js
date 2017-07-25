@@ -244,9 +244,17 @@ program
   .alias('aRE')
   .description('apicReachability')
   .action(function(){
-    apiccReachability()
+   return new Promise((resolve, reject) =>{
+      let aaa = apiccReachability();
+      if (aaa) {
+      resolve(aaa)
+      } else {
+      reject(aaa)
+      }
+      
+   })
     .then((blah)=>{
-    consol.log(blah)})
+    console.log(blah)})
   });
    
 program
