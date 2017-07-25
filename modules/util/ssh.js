@@ -1,4 +1,4 @@
-var SSH2Shell = require ('ssh2shell-ssh2.connect-options'),
+const SSH2Shell = require ('ssh2shell-ssh2.connect-options');
 
 module.exports = class ssh {
   constructor (username,password,host){
