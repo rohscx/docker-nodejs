@@ -24,6 +24,5 @@ module.exports = class ssh {
           }
         }
       }).start();
-    }
    })
 }
