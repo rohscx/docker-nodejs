@@ -33,6 +33,8 @@ let apiccReachability= () => {
         apicReachability.setReturnData(devicesReturn)
         apicReachability.setUnreachable()
         console.log(apicReachability.getUnreachable())
+        ipTools.setSaveExtentions(".json")
+        ipTools.writeFile("TESTS",JSON.stringify(apicReachability.getUnreachable(), null, 2))
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
