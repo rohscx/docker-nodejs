@@ -58,8 +58,8 @@ conn.on('ready', function() {
                 ]
             }
 
-        },
-        connection:         require ('ssh2'),
+        }
+
     
 }
 });
