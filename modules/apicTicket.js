@@ -25,13 +25,11 @@ let apicHeaders = {
 };
 
 const method = 'POST';
-const uri = privateApicEm.body.username ? publicApicEm.uri+"/api/v1/ticket" : privateApicEm.uri+"/api/v1/ticket";
+const uri = privateApicEm.body.username ? privateApicEm.uri+"/api/v1/ticket" : publicApicEm.uri+"/api/v1/ticket";
 const rejectCert = false;
-const uriBase = publicApicEm.uri;
-const uriBasePrivate = privateApicEm.uri;
+const uriBase = privateApicEm.body.username ? privateApicEm.uri : publicApicEm.uri;
 const headers = apicHeaders;
-const body = publicApicEm.body;
-const bodyPrivate = privateApicEm.body;
+const body = privateApicEm.body.username ? privateApicEm.body : publicApicEm.body;
 
 class apicTicket extends rest {
   constructor (method,uri,rejectCert,headers,body){
