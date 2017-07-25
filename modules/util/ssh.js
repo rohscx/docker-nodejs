@@ -107,7 +107,24 @@ module.exports = class ssh {
       ]
       },
      },
-     commands:      [ "exit","exit","exit" ]
+     commands:      [ "exit","exit","exit" ],
+       msg: {
+         send: function( message ) {
+            console.log("message: " + message);
+         }
+      },
+      verbose: true,
+      debug: true,
+      idleTimeOut: 10000,
+      ["keyboard-interactive"]: function(name, instructions, instructionsLang, prompts, finish){
+         console.log('Connection :: keyboard-interactive');
+         console.log(prompts);
+         finish(["<password>"]);
+      },
+      onEnd: function( sessionText, sshObj ) {
+         sshObj.msg.send("--------- onEnd has ------------");
+         sshObj.msg.send(sessionText);
+      }
     };
 
       //Create a new instance passing in the host object
