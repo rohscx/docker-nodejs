@@ -84,9 +84,11 @@ let apiccDiscoveryFileCheck = (inputFile,jobName) => {
       Promise.all([ipTools.setFile(inputFile),ipTools.readFile()])
       .then((promiseReturn)=>{
         console.log(promiseReturn);
-        return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.setBase(),ipTools.setSuperNet(),apicDiscovery.setDiscoveryList(ipTools.getIpRange(),jobName)])
+        return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.setBase(),ipTools.setSuperNet()])
       })
       .then((promiseReturn)=>{
+        apicDiscovery.setDiscoveryList(ipTools.getIpRange(),jobName)
+        console.log(apicDiscovery.getDiscoveryList())
         console.log(promiseReturn);
       })
       .catch((reject) =>{
