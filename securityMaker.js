@@ -3,6 +3,7 @@ const securityFile = require('./modules/securityFile')
 
 const rl = require('readline');
 const program = require('commander');
+const colors = require('colors');
 
 
 /* These can be broken up into speperate .js files to accomplish a task
