@@ -24,27 +24,17 @@ let makeSecurityFile = () => {
 }
 
 
-program
-  .version('0.1.0')
-  .usage('<keywords>')
-  .option('-S, --securityFile', 'makeSecurityFile')
-  .parse(process.argv);
-
-if(!program.args.length) program.help();
-if (program.securityFile) console.log(makeSecurityFile());
-console.log(program.args);
-
 
 let appMenu = () => {
   program
     .version('0.1.0')
 
   program
-    .command('reachability')
-    .alias('aRE')
-    .description('apicReachability')
+    .command(makeSecurityFile())
+    .alias('mSE')
+    .description('makeSecurityFile')
     .action(function(){
-      apiccReachability();
+      makeSecurityFile();
     });
 
 
