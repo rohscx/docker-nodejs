@@ -38,8 +38,9 @@ conn.on('ready', function() {
   password: this.password,
   algorithms: {
     algorithms: {
-    serverHostKey: [ 'ssh-rsa', 'ssh-dss','aes256-cbc','hmac-sha1-160'],
+    serverHostKey: [ 'ssh-rsa', 'ssh-dss','aes256-cbc','hmac-sha1-160']
   }
+}
 });
 }
 }
