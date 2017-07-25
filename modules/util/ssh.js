@@ -5,35 +5,36 @@ module.exports = class ssh {
     this.host = host;
     this.username = username;
     this.password = password;
+    this.port = 22;
   }
 
   makeCon(){
-    let sshCon = new SSH({
-        host: this.host,
-        user: this.username,
-        pass: this.password
-    });
-    return new Promise((resolve, reject) =>{
-      sshCon.exec('echo $PATH', {
-        out: function(stdout) {
-          console.log(stdout);
-          if (stdout) {
-            resolve(stdout);
-          }
-        },
-        err: function(stderr) {
-          console.log(stderr);
-          if (stderr) {
-            reject(stderr);
-          }
-        },
-        exit: function(code) {
-          console.log(code);
-          if (code) {
-            reject(code);
-          }
-        }
-      }).start();
-   })
- }
+    var Client = require('ssh2').Client;
+ 
+var conn = new Client();
+conn.on('ready', function() {
+  console.log('Client :: ready');
+  conn.forwardOut('192.168.100.102', 8000, '127.0.0.1', 80, function(err, stream) {
+    if (err) throw err;
+    stream.on('close', function() {
+      console.log('TCP :: CLOSED');
+      conn.end();
+    }).on('data', function(data) {
+      console.log('TCP :: DATA: ' + data);
+    }).end([
+      'HEAD / HTTP/1.1',
+      'User-Agent: curl/7.27.0',
+      'Host: 127.0.0.1',
+      'Accept: */*',
+      'Connection: close',
+      '',
+      ''
+    ].join('\r\n'));
+  });
+}).connect({
+  host: this.host,
+  port: this.port,
+  username: this.username,
+  password: this.password
+});
 }
