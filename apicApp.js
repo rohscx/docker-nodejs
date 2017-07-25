@@ -34,7 +34,8 @@ let apiccReachability= () => {
         apicReachability.setUnreachable()
         //console.log(apicReachability.getUnreachable())
         ipTools.setSaveExtentions(".json")
-        ipTools.writeFile("TESTS",JSON.stringify(apicReachability.getUnreachable(), null, 2))
+        let rechName = "reachJob-"+Date.now();
+        ipTools.writeFile(rechName,JSON.stringify(apicReachability.getUnreachable(), null, 2))
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
