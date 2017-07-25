@@ -9,6 +9,7 @@ module.exports = class ssh {
   }
 
   makeCon(){
+    let host = {
         server:        {
           host: this.host,
           port: this.port,
