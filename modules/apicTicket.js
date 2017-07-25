@@ -25,8 +25,7 @@ let apicHeaders = {
 };
 
 const method = 'POST';
-const uriPublic = publicApicEm.uri+"/api/v1/ticket";
-const uriPrivate = privateApicEm.uri+"/api/v1/ticket";
+const uriPublic = privateApicEm ? publicApicEm.uri+"/api/v1/ticket" : privateApicEm.uri+"/api/v1/ticket";
 const rejectCert = false;
 const uriBasePublic = publicApicEm.uri;
 const uriBasePrivate = privateApicEm.uri;
@@ -35,11 +34,10 @@ const bodyPublic = publicApicEm.body;
 const bodyPrivate = privateApicEm.body;
 
 class apicTicket extends rest {
-  constructor (method,uriPublic,rejectCert,headers,bodyPublic){
-    super(method,uriPublic,rejectCert,headers,bodyPublic)
+  constructor (method,uri,rejectCert,headers,body){
+    super(method,uri,rejectCert,headers,body)
     this.ticket = "";
     this.uriBase = uriBasePublic;
-    this.
   }
 
   setTicketData (ticket) {
@@ -62,4 +60,4 @@ class apicTicket extends rest {
   }
 }
 
-module.exports = new apicTicket(method,uriPublic,rejectCert,headers,bodyPublic)
+module.exports = new apicTicket(method,uri,rejectCert,headers,body)
