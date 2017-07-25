@@ -88,7 +88,7 @@ let apiccDiscoveryFileCheck = (inputFile,jobName) => {
       })
       .then((promiseReturn)=>{
 
-        //console.log(apicDiscovery.getDiscoveryList())
+        console.log(apicDiscovery.getDiscoveryList())
         console.log(promiseReturn);
       })
       .catch((reject) =>{
