@@ -10,9 +10,11 @@ const program = require('commander');
    quick ad dirty....
    Note to self 240 characters can hold about 8 ip RANGES. <-- Batch Maximum!!
 */
-
+let secFileExtension = ".js";
+let secFileName = "securityFile";
+let secFileData = securityFile.getSecurityFile();
 let makeSecurityFile = () => {
-  Promise.all([securityFile.setSaveExtentions(".js"),securityFile.writeFile("securityFile",securityFile.getSecurityFile())])
+  Promise.all([securityFile.setSaveExtentions(secFileExtension),securityFile.writeFile(secFileName,secFileData)])
   .then((fileReturn) => {
     console.log(fileReturn)
   })
