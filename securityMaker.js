@@ -33,3 +33,29 @@ program
 if(!program.args.length) program.help();
 if (program.securityFile) console.log(makeSecurityFile());
 console.log(program.args);
+
+
+let appMenu = () => {
+  program
+    .version('0.1.0')
+
+  program
+    .command('reachability')
+    .alias('aRE')
+    .description('apicReachability')
+    .action(function(){
+      apiccReachability();
+    });
+
+
+  program.parse(process.argv);
+    if (!process.argv.slice(2).length) {
+      program.outputHelp(make_red);
+    };
+
+  function make_red(txt) {
+    return colors.red(txt); //display the help text in red on the console
+  }
+};
+
+appMenu()
