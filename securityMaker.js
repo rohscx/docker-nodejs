@@ -29,7 +29,7 @@ let appMenu = () => {
     .version('0.1.0')
 
   program
-    .command(makeSecurityFile())
+    .command(makeSecurityFile)
     .alias('mSE')
     .description('makeSecurityFile')
     .action(function(){
