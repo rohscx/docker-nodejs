@@ -244,8 +244,7 @@ program
   .alias('aRE')
   .description('apicReachability')
   .action(function(){
-   return new Promise((resolve, reject) =>{
-     apiccReachability();
+    apiccReachability();
   });
    
 program
