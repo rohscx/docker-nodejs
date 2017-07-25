@@ -131,7 +131,7 @@ if ( response.indexOf("Connecte") != -1 ){
 
   stream.write("\n");
 }
-
+}
 }
 
       //Create a new instance passing in the host object
