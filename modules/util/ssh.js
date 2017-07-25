@@ -3,15 +3,15 @@ var SSH = require('simple-ssh');
 module.exports = class ssh {
   constructor (username,password,host){
     this.host = host;
-    this.userName = username;
-    this.passWord = password;
+    this.username = username;
+    this.password = password;
   }
 
   makeCon(){
     let sshCon = new SSH({
         host: this.host,
-        user: this.userName,
-        pass: this.passWord
+        user: this.username,
+        pass: this.password
     });
     return new Promise((resolve, reject) =>{
       sshCon.exec('echo $PATH', {
