@@ -70,7 +70,7 @@ module.exports = class ssh {
 
 
     //Create a new instance
-        blad = new SSH(host);
+      let  blad = new SSH(host);
 
     //Start the process
     blad.connect();
