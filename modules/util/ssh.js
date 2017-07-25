@@ -107,7 +107,7 @@ module.exports = class ssh {
       ]
       },
      },
-     commands:      [ "show version" ]
+     commands:      [ "show version","exit" ]
     };
 
       //Create a new instance passing in the host object
