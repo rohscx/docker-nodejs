@@ -236,6 +236,7 @@ apicTicket.httpRequest()
 */
 
 
+
 let appMenu = () => {
   program
     .version('0.1.0')
@@ -255,6 +256,16 @@ let appMenu = () => {
     .action(function(){
       apiccDevices();
     });
+
+
+    program
+      .command('apicDiscoveryFileCheck')
+      .alias('aDI')
+      .arguments ('<cmd1> <cmd2>')
+      .description('apicDiscoveryFileCheck')
+      .action(function(cmd1,cmd2){
+        apiccDevices();
+      });
 
   program.parse(process.argv);
     if (!process.argv.slice(2).length) {
