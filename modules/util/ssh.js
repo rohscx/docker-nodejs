@@ -70,10 +70,9 @@ module.exports = class ssh {
 
 
     //Create a new instance
-    var SSH2Shell = require ('ssh2shell-ssh2.connect-options'),
-        SSH       = new SSH2Shell(host);
+        blad = new SSH(host);
 
     //Start the process
-    SSH.connect();
+    blad.connect();
   }
 }
