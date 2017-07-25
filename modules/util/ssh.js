@@ -56,7 +56,35 @@ conn.on('ready', function() {
         'aes256-gcm@openssh.com',
         'aes256-cbc'
     ]
-  }
+  },
+  commands:      [
+            "terminal length 0",
+            "show version",
+            "show ssh",
+            "show log"
+        ],
+        msg: {
+            send: function( message ) {
+                console.log("message: " + message);
+            }
+        },
+    verbose: true,
+    debug:               true,
+    idleTimeOut:         15000,
+    connectedMessage:    "connected",
+    readyMessage:        "ready",
+    closedMessage:       "closed",
+
+    onCommandComplete: function( command, response, sshObj ) {
+
+        console.log("------------- onCommandComplete ---------");
+        console.log(command + ": " + response);
+    },
+    onEnd: function( sessionText, sshObj ) {
+        console.log("--------- onEnd has ------------");
+        console.log(sessionText);
+    }
+
 });
 }
 }
