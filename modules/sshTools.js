@@ -32,7 +32,7 @@ class sshTools extends fileSystem {
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {
-    console.log("username: "+this.username,'\n',"password: "+this.password,'\n',"host: "+this.host,'\n')
+    console.log("username: "+this.userName,'\n',"password: "+this.passWord,'\n',"host: "+this.host,'\n')
   }
 }
 
