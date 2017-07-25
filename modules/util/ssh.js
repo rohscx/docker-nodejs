@@ -28,7 +28,7 @@ module.exports = class ssh {
           }
         },
         exit: function(code) {
-          console.log(code):
+          console.log(code);
           if (code) {
             reject(code);
           }
