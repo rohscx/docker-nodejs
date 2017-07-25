@@ -237,33 +237,33 @@ apicTicket.httpRequest()
 
 
 let appMenu = () => {
-program
-  .version('0.1.0')
+  program
+    .version('0.1.0')
 
-program
-  .command('reachability')
-  .alias('aRE')
-  .description('apicReachability')
-  .action(function(){
-    apiccReachability();
-  });
-   
-program
-  .command('apicDevices')
-  .alias('aDE')
-  .description('apicDevices')
-  .action(function(){
-    apiccDevices();
-  });
- 
-program.parse(process.argv);
-  if (!process.argv.slice(2).length) {
-    program.outputHelp(make_red);
+  program
+    .command('reachability')
+    .alias('aRE')
+    .description('apicReachability')
+    .action(function(){
+      apiccReachability();
+    });
+
+  program
+    .command('apicDevices')
+    .alias('aDE')
+    .description('apicDevices')
+    .action(function(){
+      apiccDevices();
+    });
+
+  program.parse(process.argv);
+    if (!process.argv.slice(2).length) {
+      program.outputHelp(make_red());
+    };
+
+  make_red = (txt) => {
+    return colors.red(txt); //display the help text in red on the console
   }
- 
-function make_red(txt) {
-  return colors.red(txt); //display the help text in red on the console 
-}
-}
+};
 
 appMenu()
