@@ -51,7 +51,7 @@ module.exports = class ssh {
             },
         verbose: true,
         debug:               true,
-        idleTimeOut:         15000,
+        idleTimeOut:         5000,
         connectedMessage:    "connected",
         readyMessage:        "ready",
         closedMessage:       "closed",
