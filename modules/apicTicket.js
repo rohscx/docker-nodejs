@@ -3,17 +3,16 @@ const securityFile = require('../securityFile')
 
 
 // Private Cisco ApicEM resource on the INTRAnet
-/*
-const ApicEm = {
+const privateApicEm = {
   body:{
     "username": securityFile.private.apicEM.uName,
     "password": securityFile.private.apicEM.uPass
   },
   uri: securityFile.private.apicEM.uri
 };
-*/
+
 // Public Cisco ApicEM resource on the INTERnet
-const ApicEm = {
+const publicApicEm = {
   body:{
     "username": securityFile.public.apicEM.uName,
     "password": securityFile.public.apicEM.uPass
@@ -26,17 +25,21 @@ let apicHeaders = {
 };
 
 const method = 'POST';
-const uri = ApicEm.uri+"/api/v1/ticket";
+const uriPublic = publicApicEm.uri+"/api/v1/ticket";
+const uriPrivate = privateApicEm.uri+"/api/v1/ticket";
 const rejectCert = false;
-const uriBase = ApicEm.uri;
+const uriBasePublic = publicApicEm.uri;
+const uriBasePrivate = privateApicEm.uri;
 const headers = apicHeaders;
-const body = ApicEm.body;
+const bodyPublic = publicApicEm.body;
+const bodyPrivate = privateApicEm.body;
 
 class apicTicket extends rest {
-  constructor (method,uri,rejectCert,headers,body){
-    super(method,uri,rejectCert,headers,body)
+  constructor (method,uriPublic,rejectCert,headers,bodyPublic){
+    super(method,uriPublic,rejectCert,headers,bodyPublic)
     this.ticket = "";
-    this.uriBase = uriBase;
+    this.uriBase = uriBasePublic;
+    this.
   }
 
   setTicketData (ticket) {
@@ -59,4 +62,4 @@ class apicTicket extends rest {
   }
 }
 
-module.exports = new apicTicket(method,uri,rejectCert,headers,body)
+module.exports = new apicTicket(method,uriPublic,rejectCert,headers,bodyPublic)
