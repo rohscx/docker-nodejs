@@ -244,7 +244,9 @@ program
   .alias('aRE')
   .description('apicReachability')
   .action(function(){
-    apiccReachability();
+    apiccReachability()
+    .then((blah)=>{
+    consol.log(blah)})
   });
    
 program
