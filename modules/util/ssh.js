@@ -125,16 +125,14 @@ module.exports = class ssh {
          sshObj.msg.send("--------- onEnd has ------------");
          sshObj.msg.send(sessionText);
       },
-      onCommandTimeout: function( command, response, stream, sshObj ) {
+      onCommandProcessing: function( command, response, sshObj, stream ){
 
-if (command === "" && response === "Connected to port 22." ) {
+if ( response.indexOf(“Connected”) != -1 ){
 
- stream.write('\n'); //to trigger the standard prompt on a new line
-}else{
+  stream.write(“\n”);
+}
 
- stream.end();
-}}
-    };
+}
 
       //Create a new instance passing in the host object
       let SSH = new SSH2Shell(host),
