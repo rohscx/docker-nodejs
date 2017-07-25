@@ -6,7 +6,7 @@ module.exports = class ssh {
     this.userName = userName;
     this.passWord = passWord;
   }
-/*
+
   makeCon(){
     let sshCon = new SSH({
         host: this.host,
@@ -24,5 +24,5 @@ module.exports = class ssh {
           }
         }
       }).start();
-   })*/
+   })
 }
