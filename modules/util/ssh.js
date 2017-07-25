@@ -6,7 +6,7 @@ module.exports = class fileSystem {
     this.userName = userName;
     this.passWord = passWord;
   }
-  var ssh = new SSH({
+  let ssh = new SSH({
       host: host,
       user: userName,
       pass: passWord
