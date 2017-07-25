@@ -9,7 +9,7 @@ const fileSystem = require('./util/fileSystem')
 class securityFile extends fileSystem {
   constructor (inputFile,outputFile){
     super(inputFile,outputFile)
-    this.defualtSecuirtyFile ="
+    this.defualtSecuirtyFile ='
      private:{
         apicEM:{
           uName: false,
@@ -19,12 +19,12 @@ class securityFile extends fileSystem {
       },
       public:{
         apicEM:{
-          uName:\"devnetuser\",
-          uPass:\"Cisco123!\",
-          uri:\"https://devnetapi.cisco.com/sandbox/apic_em\"
+          uName:"devnetuser",
+          uPass:"Cisco123!",
+          uri:"https://devnetapi.cisco.com/sandbox/apic_em"
         }
       };
-      "
+      '
   }
 
   setSecurityFile(securityFileData){
