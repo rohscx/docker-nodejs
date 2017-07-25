@@ -61,6 +61,7 @@ class securityFile extends fileSystem {
         return resolve(dataReturn);
         });
     })
+  }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {
