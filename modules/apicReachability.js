@@ -31,10 +31,11 @@ class apicReachability extends rest {
   }
   
   setUnreachable(){
-    let counter = 0;
+    
     let returnData = this.returnData.response;
     returnData.map((data,index) => {
       for (let [key, value] of Object.entries(data)) {
+        let counter = 0;
         if (value.toLowerCase() == "reachable" && counter == 0) {
         } else {
           counter = 1
