@@ -53,8 +53,8 @@ class securityFile extends fileSystem {
   writeFile (fileName,fileContent){
     return new Promise((resolve, reject) =>{
       let data ,dataPath, dataReturn
-      let newFileName = fileName+this.saveExtension;
-      let filePath = this.dataPath+newFileName;
+      let newFileName = "/"+fileName+this.saveExtension;
+      let filePath = this.dataPath+"/saved"+newFileName;
       fs.writeFile(filePath, fileContent, (err) => {
         if (err) return reject(err);
         dataReturn = "Saved! "+path.basename(filePath);
