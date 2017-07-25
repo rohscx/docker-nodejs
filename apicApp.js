@@ -22,6 +22,7 @@ let sshTest= (Uname,Upass) => {
     sshTools.setUname(Uname)
     sshTools.setUpass(Upass)
     sshTools.debug()
+    sshTools.makeCon()
     /*
     apicTicket.httpRequest()
       .then((ticketReturn) =>{
