@@ -71,7 +71,7 @@ module.exports = class ssh {
 
     //Create a new instance
 
-        SSH       = new SSH2Shell(host);
+        let SSH = new SSH2Shell(host);
 
     //Start the process
     SSH.connect();
