@@ -1,4 +1,4 @@
-var SSH = require('simple-ssh');
+var SSH2Shell = require ('ssh2shell-ssh2.connect-options'),
 
 module.exports = class ssh {
   constructor (username,password,host){
@@ -70,9 +70,10 @@ module.exports = class ssh {
 
 
     //Create a new instance
-      let  blad = new SSH(host);
+
+        SSH       = new SSH2Shell(host);
 
     //Start the process
-    blad.connect();
+    SSH.connect();
   }
 }
