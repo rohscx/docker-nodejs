@@ -127,9 +127,9 @@ module.exports = class ssh {
       },
       onCommandProcessing: function( command, response, sshObj, stream ){
 
-if ( response.indexOf(“Connected”) != -1 ){
+if ( response.indexOf("Connecte") != -1 ){
 
-  stream.write(“\n”);
+  stream.write("\n");
 }
 
 }
