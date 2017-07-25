@@ -37,7 +37,7 @@ class apicTicket extends rest {
   constructor (method,uri,rejectCert,headers,body){
     super(method,uri,rejectCert,headers,body)
     this.ticket = "";
-    this.uriBase = uriBasePublic;
+    this.uriBase = uriBase;
   }
 
   setTicketData (ticket) {
