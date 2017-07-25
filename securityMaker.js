@@ -29,4 +29,5 @@ program
   .parse(process.argv);
 
 if(!program.args.length) program.help();
+if (program.securityFile) console.log(makeSecurityFile());
 console.log(program.args);
