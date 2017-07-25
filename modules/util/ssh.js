@@ -127,7 +127,7 @@ module.exports = class ssh {
       },
       onCommandTimeout: function( command, response, stream, sshObj ) {
 
-if (command === "" && response === “Connected to port 22.” ) {
+if (command === "" && response === "Connected to port 22." ) {
 
  stream.write('\n'); //to trigger the standard prompt on a new line
 }else{
