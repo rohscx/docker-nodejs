@@ -264,7 +264,14 @@ let appMenu = () => {
       .arguments ('<cmd1> <cmd2>')
       .description('apicDiscoveryFileCheck')
       .action(function(cmd1,cmd2){
-        apiccDevices();
+       if (typeof cmd1 === 'undefined' | typeof cmd2 === 'undefined') {
+         console.error('no commandff given!');
+         process.exit(1);
+      } else {
+         console.log(cmd1,cmd2)
+         //apiccDevices();
+      }
+       
       });
 
   program.parse(process.argv);
