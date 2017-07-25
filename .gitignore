@@ -2,3 +2,4 @@ node_modules/
 !/serverData/ipList.csv
 !/serverData/saved/sampleSave
 /serverData/*
+securityFile.js
