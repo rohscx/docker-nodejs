@@ -11,9 +11,9 @@ const securityFile = require('../securityFile')
 
 // Private Cisco ApicEM resource on the INTRAnet
 const privateSsh = {
-  "username": private.sshUser.uName,
-  "password": private.sshUser.uPass,
-  "host": private.sshUser.host
+  "username": securityFile.private.sshUser.uName,
+  "password": securityFile.private.sshUser.uPass,
+  "host": securityFile.private.sshUser.host
 };
 
 const username = privateSsh.username ? privateSsh.username : "Please Set uName!!";
