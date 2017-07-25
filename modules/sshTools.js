@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const fileSystem = require('./util/ssh')
+const securityFile = require('../securityFile')
 //path.normalize(): example /opt/datafiles/about.html
 //path.dirname();  example /opt/datafiles
 //path.basename(); example about.html
