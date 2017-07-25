@@ -3,8 +3,8 @@ var SSH = require('simple-ssh');
 module.exports = class ssh {
   constructor (username,password,host){
     this.host = host;
-    this.userName = userName;
-    this.passWord = passWord;
+    this.userName = username;
+    this.passWord = password;
   }
 
   makeCon(){
