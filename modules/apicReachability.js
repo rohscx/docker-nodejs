@@ -29,16 +29,19 @@ class apicReachability extends rest {
   setReturnData (httpDataArray){
     this.returnData = httpDataArray;
   }
-
+  
   setUnreachable(){
+    let counter = 0;
     let returnData = this.returnData.response;
     returnData.map((data,index) => {
       for (let [key, value] of Object.entries(data)) {
-        if (value.toLowerCase() == "reachable") {
+        if (value.toLowerCase() == "reachable" && counter = 0) {
         } else {
+          counter = 1
           console.log("Key VAL  ",key," ", value,"  ",returnData[index] )
           this.unReachable.push("Key VAL  ",key," ", value,"  ",returnData[index])
         }
+        counter = 0;
       }
     })
   }
