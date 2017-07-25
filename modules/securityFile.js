@@ -6,6 +6,7 @@ const fileSystem = require('./util/fileSystem')
 //path.basename(); example about.html
 //path.extname(); example .html
 
+
 let defualtSecuirtyFile = `
 module.exports = {
   private:{
