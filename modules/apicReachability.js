@@ -37,7 +37,7 @@ class apicReachability extends rest {
         if (value.toLowerCase() == "reachable") {
         } else {
           console.log("Key VAL  ",key," ", value,"  ",returnData[index] )
-          this.unReachable.push(returnData[index])
+          this.unReachable.push("Key VAL  ",key," ", value,"  ",returnData[index])
         }
       }
     })
