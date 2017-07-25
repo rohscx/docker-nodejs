@@ -236,9 +236,7 @@ apicTicket.httpRequest()
 */
 
 
-
-() => {
-   return (program
+program
   .version('0.1.0')
 
 program
@@ -258,6 +256,4 @@ program
   });
  
 program.parse(process.argv);
-program.help();)
-
-}
+program.help();
