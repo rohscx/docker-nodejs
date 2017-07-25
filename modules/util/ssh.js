@@ -38,7 +38,7 @@ conn.on('ready', function() {
   password: this.password,
   algorithms: {
     algorithms: {
-    serverHostKey: [ 'ssh-rsa', 'ssh-dss','aes256-cbc','hmac-sha1-160','esp-3des', 'esp-md5-hmac']
+    serverHostKey: ['aes128-ctr','aes192-ctr','aes256-ctr','aes128-gcm','aes128-gcm@openssh.com','aes256-gcm','aes256-g']
   }
 }
 });
