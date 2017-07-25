@@ -18,6 +18,7 @@ const colors = require('colors');
 
 let sshTest= () => {
   return new Promise((resolve, reject) =>{
+    sshTools.setHost("10.64.32.230")
     sshTools.debug()
     /*
     apicTicket.httpRequest()
