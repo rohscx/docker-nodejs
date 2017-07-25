@@ -26,8 +26,16 @@ let defualtSecuirtyFile = `
 class securityFile extends fileSystem {
   constructor (inputFile,outputFile){
     super(inputFile,outputFile)
-    this.dataPath = "/home/node_dev/nodeProjects/docker-nodejs/serverData";
-    this.defualtSecuirtyFile = defualtSecuirtyFile
+    this.dataPath = "/home/node_dev/nodeProjects/docker-nodejs/";
+    this.defualtSecuirtyFile = defualtSecuirtyFile;
+  }
+
+  setSecurityFile(securityFileData){
+    this.defualtSecuirtyFile = securityFileData;
+  }
+
+  getSecurityFile(){
+    return this.defualtSecuirtyFile;
   }
 
   setFile (fileName){
@@ -42,14 +50,18 @@ class securityFile extends fileSystem {
     })
   }
 
-  setSecurityFile(securityFileData){
-    this.defualtSecuirtyFile = securityFileData;
+  writeFile (fileName,fileContent){
+    return new Promise((resolve, reject) =>{
+      let data ,dataPath, dataReturn
+      let newFileName = fileName+this.saveExtension;
+      let filePath = this.dataPath+newFileName;
+      fs.writeFile(filePath, fileContent, (err) => {
+        if (err) return reject(err);
+        dataReturn = "Saved! "+path.basename(filePath);
+        return resolve(dataReturn);
+        });
+    })
   }
-
-  getSecurityFile(){
-    return this.defualtSecuirtyFile;
-  }
-
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {
