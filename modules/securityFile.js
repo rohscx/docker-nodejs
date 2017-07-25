@@ -6,7 +6,7 @@ const fileSystem = require('./util/fileSystem')
 //path.basename(); example about.html
 //path.extname(); example .html
 
-let defualtSecuirtyFile = '
+let defualtSecuirtyFile = `
  private:{
     apicEM:{
       uName: false,
@@ -21,7 +21,7 @@ let defualtSecuirtyFile = '
       uri:"https://devnetapi.cisco.com/sandbox/apic_em"
     }
   };
-  '
+  `
 
 class securityFile extends fileSystem {
   constructor (inputFile,outputFile){
