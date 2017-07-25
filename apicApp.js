@@ -262,7 +262,7 @@ program
   .alias('aDE')
   .description('apicDevices')
   .action(function(){
-    console.log(apicDevices());
+    apiccDevices();
   });
  
 program.parse(process.argv);
