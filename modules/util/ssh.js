@@ -20,7 +20,7 @@ module.exports = class ssh {
           if (stdout) {
             resolve(stdout);
           }
-        }
+        },
         err: function(stderr) {
           console.log(stderr);
           if (stderr) {
