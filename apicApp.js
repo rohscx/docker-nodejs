@@ -88,7 +88,7 @@ let apiccDiscoveryFileCheck = (inputFile,jobName) => {
       })
       .then((promiseReturn)=>{
         apicDiscovery.setDiscoveryList(ipTools.getIpRange(),jobName)
-        console.log(apicDiscovery.getDiscoveryList())
+        //console.log(apicDiscovery.getDiscoveryList())
         console.log(promiseReturn);
       })
       .catch((reject) =>{
