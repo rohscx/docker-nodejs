@@ -77,9 +77,7 @@ let apiccDevices = () => {
 
 
 
-let apiccDiscoveryFileCheck = (dataBlob) => {
-   let inputFile = dataBlob[0];
-   let jobName = dataBlob[1];
+let apiccDiscoveryFileCheck = (inputFile,jobName) => {
   if (inputFile && jobName) {
     let processSuccess = false;
     return new Promise((resolve, reject) =>{
@@ -241,7 +239,7 @@ let appMenu = () => {
 
   program
     .command('reachability')
-    .alias('aRE')
+    .alias('aRe')
     .description('apicReachability')
     .action(function(){
       apiccReachability();
@@ -249,7 +247,7 @@ let appMenu = () => {
 
   program
     .command('apicDevices')
-    .alias('aDE')
+    .alias('aDe')
     .description('apicDevices')
     .action(function(){
       apiccDevices();
@@ -257,12 +255,21 @@ let appMenu = () => {
 
 
     program
+      .command('apicDiscovery')
+      .alias('aDi')
+      .arguments ('<inputFile> <jobName>')
+      .description('apicDiscovery')
+      .action(function(inputFile,jobName){
+         apiccDiscovery(inputFile,jobName);
+      });
+   
+       program
       .command('apicDiscoveryFileCheck')
-      .alias('aDI')
+      .alias('aDiF')
       .arguments ('<inputFile> <jobName>')
       .description('apicDiscoveryFileCheck')
       .action(function(inputFile,jobName){
-         apiccDiscovery(inputFile,jobName);
+         apiccDiscoveryFileCheck(inputFile,jobName);
       });
 
   program.parse(process.argv);
