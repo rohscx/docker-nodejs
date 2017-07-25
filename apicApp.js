@@ -214,9 +214,19 @@ let apiccDiscovery = (inputFile,jobName) => {
 
 
 
+
 let appMenu = () => {
   program
     .version('0.1.0')
+
+  program
+    .command('sshTest')
+    .alias('sSh')
+    .description('sshTest')
+    .action(function(){
+      sshTest();
+    });
+
 
   program
     .command('reachability')
