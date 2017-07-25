@@ -16,9 +16,11 @@ const colors = require('colors');
 */
 
 
-let sshTest= () => {
+let sshTest= (Uname,Upass) => {
   return new Promise((resolve, reject) =>{
     sshTools.setHost("10.64.32.230")
+    sshTools.setUname(Uname)
+    sshTools.setUpass(Upass)
     sshTools.debug()
     /*
     apicTicket.httpRequest()
@@ -223,9 +225,10 @@ let appMenu = () => {
   program
     .command('sshTest')
     .alias('sSh')
+    .arguments ('<uName> <Upass>')
     .description('sshTest')
-    .action(function(){
-      sshTest();
+    .action(function(uName,Upass){
+       sshTest(uName,Upass);
     });
 
 
