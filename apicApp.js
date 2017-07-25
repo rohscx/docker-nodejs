@@ -236,7 +236,7 @@ apicTicket.httpRequest()
 */
 
 
-let appMenu = () = {
+let appMenu = () => {
 program
   .version('0.1.0')
 
