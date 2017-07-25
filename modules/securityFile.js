@@ -30,14 +30,6 @@ class securityFile extends fileSystem {
     this.defualtSecuirtyFile = defualtSecuirtyFile
   }
 
-  setSecurityFile(securityFileData){
-    this.defualtSecuirtyFile = securityFileData;
-  }
-
-  getSecurityFile(){
-    return this.defualtSecuirtyFile;
-  }
-
   setFile (fileName){
     return new Promise((resolve, reject) =>{
       let data = fileName+this.loadExtension;
@@ -48,6 +40,14 @@ class securityFile extends fileSystem {
         reject();
       }
     })
+  }
+
+  setSecurityFile(securityFileData){
+    this.defualtSecuirtyFile = securityFileData;
+  }
+
+  getSecurityFile(){
+    return this.defualtSecuirtyFile;
   }
 
   writeFile (fileName,fileContent){
@@ -61,7 +61,6 @@ class securityFile extends fileSystem {
         return resolve(dataReturn);
         });
     })
-  }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {
