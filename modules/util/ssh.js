@@ -88,3 +88,75 @@ conn.on('ready', function() {
 });
 }
 }
+
+
+
+
+
+var host = {
+    server:        {  
+            host:           "<host IP>",
+            port:           "22",
+            userName:       "<username>",
+            password:       "<password>",
+            hashMethod:     "md5", //optional "md5" or "sha1" default is "md5"
+            //other ssh2.connect options
+            algorithms: {
+                kex: [
+                    'diffie-hellman-group1-sha1',
+                    'ecdh-sha2-nistp256',
+                    'ecdh-sha2-nistp384',
+                    'ecdh-sha2-nistp521',
+                    'diffie-hellman-group-exchange-sha256',
+                    'diffie-hellman-group14-sha1'],
+                cipher: [
+                    'aes128-ctr',
+                    'aes192-ctr',
+                    'aes256-ctr',
+                    'aes128-gcm',
+                    'aes128-gcm@openssh.com',
+                    'aes256-gcm',
+                    'aes256-gcm@openssh.com',
+                    'aes256-cbc'
+                ]
+            }
+
+        },
+        connection:         require ('ssh2'),
+        commands:      [
+            "terminal length 0",
+            "show version",
+            "show ssh",
+            "show log"
+        ],
+        msg: {
+            send: function( message ) {
+                console.log("message: " + message);
+            }
+        },
+    verbose: true,
+    debug:               true,
+    idleTimeOut:         15000,
+    connectedMessage:    "connected",
+    readyMessage:        "ready",
+    closedMessage:       "closed",
+
+    onCommandComplete: function( command, response, sshObj ) {
+
+        console.log("------------- onCommandComplete ---------");
+        console.log(command + ": " + response);
+    },
+    onEnd: function( sessionText, sshObj ) {
+        console.log("--------- onEnd has ------------");
+        console.log(sessionText);
+    }
+};
+
+
+
+//Create a new instance 
+var SSH2Shell = require ('ssh2shell-ssh2.connect-options'),
+    SSH       = new SSH2Shell(host);
+
+//Start the process 
+SSH.connect();
