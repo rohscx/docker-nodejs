@@ -236,6 +236,7 @@ apicTicket.httpRequest()
 */
 
 
+let appMenu = () = {
 program
   .version('0.1.0')
 
@@ -263,3 +264,6 @@ program.parse(process.argv);
 function make_red(txt) {
   return colors.red(txt); //display the help text in red on the console 
 }
+}
+
+appMenu()
