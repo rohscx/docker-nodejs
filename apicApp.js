@@ -234,49 +234,29 @@ apicTicket.httpRequest()
     console.log(httpReject);
   })
 */
-/*
-  .option('-d, --devices', 'apicDevices')
-  .option('-i, --discovery', 'apicDiscovery', 'a', 'b')
-  .option('-r, --reachability', 'apicReachability')
-  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
-if (program.apicDevices) console.log(apiccDevices());
-if (program.apicReachability) console.log(apiccDiscovery(envValue1, envValue2));
-if (program.apicReachability) console.log(apiccReachability());
-*/
 
 
-/*
-program
-  .version('0.0.1')
-  .usage('test')
-  .option('-d, --devices', 'apicDevices')
-  .option('-i, --discovery', 'apicDiscovery', 'a', 'b')
-  .option('-r, --reachability', apicCollect, [])
-  .option('-c, --collect [value]', 'A repeatable value', collect, [])
-  .option('-v, --verbose', 'A value that can be increased', increaseVerbosity, 0)
-  .parse(process.argv);
 
-
-console.log(' collect: %j', program.collect);
-console.log(' collect: %j[1]', program.collect);
-if (program.apicDevices) console.log(apiccDevices());
-if (program.apicCollect) console.log(apiccDiscovery(envValue1, envValue2));
-if (program.apicReachability) console.log(apiccReachability());
-*/
-
-
+() => {
 program
   .version('0.1.0')
-  .usage('<keywords>')
-  .option('-e, --reachability', 'apicReachability')
-  .option('-i, --discovery', 'apicDiscovery [fileName][jobName]' )
-  .option('-o, --devices', 'apicDevices')
-  .option('-c, --discoveryCheck', 'apicDiscoveryFileCheck [fileName][jobName]')
-  .option('-z, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
-  .parse(process.argv);
 
-if (program.reachability) console.log(apiccReachability());
-if (program.discovery) console.log(apiccDiscovery(program.args));
-if (program.devices) console.log(apiccDevices());
-if (program.discoveryCheck) console.log(apiccDiscoveryFileCheck(program.args));
-console.log(program.args);
+program
+  .command('reachability')
+  .alias('aRE')
+  .description('apicReachability')
+  .action(function(){
+    console.log(apiccReachability());
+  });
+   
+program
+  .command('apicDevices')
+  .alias('aDE')
+  .description('apicDevices')
+  .action(function(){
+    console.log(apicDevices());
+  });
+ 
+program.parse(process.argv);
+program.help();
+}
