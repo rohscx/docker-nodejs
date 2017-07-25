@@ -6,21 +6,24 @@ module.exports = class ssh {
     this.userName = userName;
     this.passWord = passWord;
   }
-  let sshCon = new SSH({
-      host: host,
-      user: userName,
-      pass: passWord
-  });
-   return new Promise((resolve, reject) =>{
-     sshCon.exec('echo $PATH', {
-         out: function(stdout) {
-             console.log(stdout);
-             if (stdout) {
-               resolve(stdout);
-             } else {
-               reject(stdout);
-             }
-         }
-     }).start();
+
+  makeCon(){
+    let sshCon = new SSH({
+        host: this.host,
+        user: this.userName,
+        pass: this.passWord
+    });
+    return new Promise((resolve, reject) =>{
+      sshCon.exec('echo $PATH', {
+        out: function(stdout) {
+          console.log(stdout);
+          if (stdout) {
+            resolve(stdout);
+          } else {
+            reject(stdout);
+          }
+        }
+      }).start();
+    }
    })
 }
