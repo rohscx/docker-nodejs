@@ -245,16 +245,7 @@ program
   .description('apicReachability')
   .action(function(){
    return new Promise((resolve, reject) =>{
-      let aaa = apiccReachability();
-      if (aaa) {
-      resolve(aaa)
-      } else {
-      reject(aaa)
-      }
-      
-   })
-    .then((blah)=>{
-    console.log(blah)})
+     apiccReachability();
   });
    
 program
