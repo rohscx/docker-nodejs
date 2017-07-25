@@ -19,8 +19,12 @@ module.exports = class ssh {
           console.log(stdout);
           if (stdout) {
             resolve(stdout);
-          } else {
-            reject(stdout);
+          }
+        }
+        err: function(stderr) {
+          console.log(stderr);
+          if (stderr) {
+            reject(stderr);
           }
         }
       }).start();
