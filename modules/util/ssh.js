@@ -35,7 +35,10 @@ conn.on('ready', function() {
   host: this.host,
   port: this.port,
   username: this.username,
-  password: this.password
+  password: this.password,
+  algorithms: {
+  hmac: ['hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1', 'hmac-sha1-96']
+}
 });
 }
 }
