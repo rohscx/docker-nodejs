@@ -10,15 +10,15 @@ const securityFile = require('../securityFile')
 
 
 // Private Cisco ApicEM resource on the INTRAnet
-const privateApicEm = {
-  "username": securityFile.private.sshUser.uName,
-  "password": securityFile.private.sshUser.uPass,
-  "host": securityFile.private.sshUser.localHost
+const privateSsh = {
+  "username": private.sshUser.uName,
+  "password": private.sshUser.uPass,
+  "host": private.sshUser.host
 };
 
-const username = privateApicEm.username ? privateApicEm.username : "Please Set uName!!";
-const password = privateApicEm.password ? privateApicEm.password : "Please Set uPass!!";
-const host = privateApicEm.username ? "localhost" : "localhost";
+const username = privateSsh.username ? privateSsh.username : "Please Set uName!!";
+const password = privateSsh.password ? privateSsh.password : "Please Set uPass!!";
+const host = privateSsh.host ? "localhost" : "localhost";
 
 
 class sshTools extends fileSystem {

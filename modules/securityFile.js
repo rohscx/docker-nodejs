@@ -18,7 +18,7 @@ module.exports = {
     sshUser:{
       uName: false,
       uPass: false,
-      localHost:"localhost"
+      host:"localhost"
     }
   },
   public:{
