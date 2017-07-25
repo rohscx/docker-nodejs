@@ -26,7 +26,20 @@ let defualtSecuirtyFile = `
 class securityFile extends fileSystem {
   constructor (inputFile,outputFile){
     super(inputFile,outputFile)
+    dataPath = "/home/node_dev/nodeProjects/docker-nodejs/";
     this.defualtSecuirtyFile = defualtSecuirtyFile
+  }
+
+  setFile (fileName){
+    return new Promise((resolve, reject) =>{
+      let data = fileName+this.loadExtension;
+      if (data){
+        this.inputFile = data;
+        resolve(data);
+      } else {
+        reject();
+      }
+    })
   }
 
   setSecurityFile(securityFileData){
