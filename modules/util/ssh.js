@@ -100,4 +100,6 @@ module.exports = class ssh {
     SSH.connect(callback);
   }
 
+
 //host configuration with connection settings and commands
+}
