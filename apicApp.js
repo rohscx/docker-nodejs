@@ -264,8 +264,6 @@ let appMenu = () => {
       .action(function(inputFile,jobName){
          console.log(inputFile,jobName)
          //apiccDevices();
-      }
-       
       });
 
   program.parse(process.argv);
