@@ -37,8 +37,9 @@ conn.on('ready', function() {
   username: this.username,
   password: this.password,
   algorithms: {
-  hmac: ['hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1', 'hmac-sha1-96']
-}
+    algorithms: {
+    serverHostKey: [ 'ssh-rsa', 'ssh-dss','aes256-cbc','hmac-sha1-160'],
+  }
 });
 }
 }
