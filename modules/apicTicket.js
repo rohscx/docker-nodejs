@@ -25,7 +25,7 @@ let apicHeaders = {
 };
 
 const method = 'POST';
-const uri = privateApicEm ? publicApicEm.uri+"/api/v1/ticket" : privateApicEm.uri+"/api/v1/ticket";
+const uri = privateApicEm.body.username ? publicApicEm.uri+"/api/v1/ticket" : privateApicEm.uri+"/api/v1/ticket";
 const rejectCert = false;
 const uriBase = publicApicEm.uri;
 const uriBasePrivate = privateApicEm.uri;
