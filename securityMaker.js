@@ -23,7 +23,7 @@ let makeSecurityFile = () => {
 }
 
 
-
+/*
 let appMenu = () => {
   program
     .version('0.1.0')
@@ -48,3 +48,4 @@ let appMenu = () => {
 };
 
 appMenu()
+*/
