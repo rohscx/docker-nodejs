@@ -115,23 +115,15 @@ module.exports = class ssh {
       },
       verbose: true,
       debug: true,
-      idleTimeOut: 10000,
-      ["keyboard-interactive"]: function(name, instructions, instructionsLang, prompts, finish){
-         console.log('Connection :: keyboard-interactive');
-         console.log(prompts);
-         finish(["<password>"]);
-      },
-      onEnd: function( sessionText, sshObj ) {
-         sshObj.msg.send("--------- onEnd has ------------");
-         sshObj.msg.send(sessionText);
-      },
-      onCommandProcessing: function( command, response, sshObj, stream ){
+      
+              onCommandProcessing:   function( command, response, sshObj, stream  ) {
 
-if ( response.indexOf("Connecte") != -1 ){
+            if (command === "" && response === "Connected to port 22.") {
+                stream.write("\r");
+                sshObj.msg.send("in 'onCommandProcessing' yes it matched. sending newline");
+            }
 
-  stream.write("\n");
-}
-}
+        } 
 }
 
       //Create a new instance passing in the host object
