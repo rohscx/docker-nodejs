@@ -116,7 +116,7 @@ module.exports = class ssh {
       verbose: true,
       debug: true,
       
-              onCommandProcessing:   function( command, response, sshObj, stream  ) {
+              onConnectionReady:   function( command, response, sshObj, stream  ) {
 
             if (command === "" && response === "Connected to port 22.") {
                 stream.write("\r");
