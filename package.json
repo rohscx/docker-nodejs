@@ -22,6 +22,7 @@
     "commander": "^2.11.0",
     "http": "0.0.0",
     "http-request": "^0.7.0",
+    "node-ssh":"^4.2.3",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
   }
