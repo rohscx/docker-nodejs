@@ -4,6 +4,7 @@ const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
 const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
+const sshTools = require('./modules/sshTools');
 const rl = require('readline');
 const program = require('commander');
 const colors = require('colors');

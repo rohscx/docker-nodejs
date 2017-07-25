@@ -1,13 +1,13 @@
 var SSH = require('simple-ssh');
 
 module.exports = class fileSystem {
-  constructor (localHost,userName,passWord){
-    this.localHost = localHost;
+  constructor (host,userName,passWord){
+    this.host = host;
     this.userName = userName;
     this.passWord = passWord;
   }
   var ssh = new SSH({
-      host: localHost,
+      host: host,
       user: userName,
       pass: passWord
   });
