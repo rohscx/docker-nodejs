@@ -262,8 +262,7 @@ let appMenu = () => {
       .arguments ('<inputFile> <jobName>')
       .description('apicDiscoveryFileCheck')
       .action(function(inputFile,jobName){
-         console.log(inputFile,jobName)
-         //apiccDevices();
+         apiccDevices(inputFile,jobName);
       });
 
   program.parse(process.argv);
