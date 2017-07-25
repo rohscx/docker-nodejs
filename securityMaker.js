@@ -12,7 +12,7 @@ const program = require('commander');
 */
 
 let makeSecurityFile = () => {
-  Promise.all([securityFile.setSaveExtentions(".js"),securityFile.writeFile("securityFile",securityFile.getSecurityFile)])
+  Promise.all([securityFile.setSaveExtentions(".js"),securityFile.writeFile("securityFile",securityFile.getSecurityFile())])
   .then((fileReturn) => {
     console.log(fileReturn)
   })
