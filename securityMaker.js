@@ -1,6 +1,3 @@
-
-const securityFile = require('./modules/securityFile')
-
 const rl = require('readline');
 const program = require('commander');
 const colors = require('colors');
