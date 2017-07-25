@@ -16,6 +16,24 @@ const colors = require('colors');
 */
 
 
+let sshTest= () => {
+  return new Promise((resolve, reject) =>{
+    sshTools.debug()
+    /*
+    apicTicket.httpRequest()
+      .then((ticketReturn) =>{
+        console.log(ticketReturn);
+        apicTicket.setTicketData(ticketReturn.response);
+        apicReachability.setHeaders(apicTicket.getTicketData())
+        apicReachability.setUriBase(apicTicket.getUriBase())
+        return apicReachability.httpRequest()
+      })
+      .catch((httpReject) =>{
+        console.log(httpReject);
+      })*/
+  })
+};
+
 
 let apiccReachability= () => {
   let processSuccess = false;

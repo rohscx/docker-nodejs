@@ -15,6 +15,11 @@ module.exports = class fileSystem {
      ssh.exec('echo $PATH', {
          out: function(stdout) {
              console.log(stdout);
+             if (stdout) {
+               resolve(stdout);
+             } else {
+               reject(stdout);
+             }
          }
      }).start();
    })
