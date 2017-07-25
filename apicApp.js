@@ -6,7 +6,7 @@ const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
 const rl = require('readline');
 const program = require('commander');
-
+const colors = require('colors');
 
 /* These can be broken up into speperate .js files to accomplish a task
    ultimately some user interaction front end should be build, but this is a
@@ -256,7 +256,10 @@ program
   });
  
 program.parse(process.argv);
-if (!process.argv.slice(2).length) {
-    //program.outputHelp(make_red);
-     program.help()
+  if (!process.argv.slice(2).length) {
+    program.outputHelp(make_red);
   }
+ 
+function make_red(txt) {
+  return colors.red(txt); //display the help text in red on the console 
+}
