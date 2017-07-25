@@ -102,9 +102,7 @@ let apiccDiscoveryFileCheck = (dataBlob) => {
 
 
 // Reads the value of a properly formated CSV file, processes it, and stores it.
-let apiccDiscovery = (dataBlob) => {
-   let inputFile = dataBlob[0];
-   let jobName = dataBlob[1];
+let apiccDiscovery = (inputFile,jobName) => {
   if (inputFile && jobName) {
     let processSuccess = false;
     return new Promise((resolve, reject) =>{
@@ -261,14 +259,10 @@ let appMenu = () => {
     program
       .command('apicDiscoveryFileCheck')
       .alias('aDI')
-      .arguments ('<cmd1> <cmd2>')
+      .arguments ('<inputFile> <jobName>')
       .description('apicDiscoveryFileCheck')
-      .action(function(cmd1,cmd2){
-       if (typeof cmd1 === 'undefined' | typeof cmd2 === 'undefined') {
-         console.error('no commandff given!');
-         process.exit(1);
-      } else {
-         console.log(cmd1,cmd2)
+      .action(function(inputFile,jobName){
+         console.log(inputFile,jobName)
          //apiccDevices();
       }
        
