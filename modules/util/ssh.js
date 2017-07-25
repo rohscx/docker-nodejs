@@ -1,21 +1,21 @@
 var SSH = require('simple-ssh');
- 
-var ssh = new SSH({
-    host: 'localhost',
-    user: 'username',
-    pass: 'password'
-});
- 
-ssh.exec('echo $PATH', {
-    out: function(stdout) {
-        console.log(stdout);
-    }
-}).start();
- 
-/*** Using the `args` options instead ***/
-ssh.exec('echo', {
-    args: ['$PATH'],
-    out: function(stdout) {
-        console.log(stdout);
-    }
-}).start();
+
+module.exports = class fileSystem {
+  constructor (localHost,userName,passWord){
+    this.localHost = localHost;
+    this.userName = userName;
+    this.passWord = passWord;
+  }
+  var ssh = new SSH({
+      host: localHost,
+      user: userName,
+      pass: passWord
+  });
+   return new Promise((resolve, reject) =>{
+     ssh.exec('echo $PATH', {
+         out: function(stdout) {
+             console.log(stdout);
+         }
+     }).start();
+   })
+}
