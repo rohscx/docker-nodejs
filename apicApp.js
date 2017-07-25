@@ -3,6 +3,7 @@ const apicDevices = require('./modules/apicDevices');
 const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
 const apicDiscovery = require('./modules/apicDiscovery');
+const securityFile = require('./modules/securityFile')
 const ipTools = require('./modules/ipTools');
 const rl = require('readline');
 const program = require('commander');
@@ -14,7 +15,15 @@ const program = require('commander');
    Note to self 240 characters can hold about 8 ip RANGES. <-- Batch Maximum!!
 */
 
-
+let makeSecurityFile = () => {
+  Promise.all([securityFile.setSaveExtentions(".js"),securityFile.writeFile("securityFile",securityFile.getSecurityFile)])
+  .then((fileReturn) => {
+    console.log(fileReturn)
+  })
+  .catch((httpReject) =>{
+    console.log(httpReject);
+  })
+}
 
 let apiccReachability= () => {
   let processSuccess = false;
@@ -267,6 +276,7 @@ if (program.apicReachability) console.log(apiccReachability());
 program
   .version('0.1.0')
   .usage('<keywords>')
+  .option('-S, --securityFile', 'makeSecurityFile')
   .option('-e, --reachability', 'apicReachability')
   .option('-i, --discovery', 'apicDiscovery [fileName][jobName]' )
   .option('-o, --devices', 'apicDevices')
@@ -275,6 +285,7 @@ program
   .parse(process.argv);
 
 if(!program.args.length) program.help();
+if (program.securityFile) console.log(makeSecurityFile());
 if (program.reachability) console.log(apiccReachability());
 if (program.discovery) console.log(apiccDiscovery(program.args));
 if (program.devices) console.log(apiccDevices());
