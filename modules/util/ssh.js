@@ -10,7 +10,7 @@ module.exports = class ssh {
 
   makeCon(){
     var Client = require('ssh2').Client;
- 
+
 var conn = new Client();
 conn.on('ready', function() {
   console.log('Client :: ready');
@@ -37,4 +37,5 @@ conn.on('ready', function() {
   username: this.username,
   password: this.password
 });
+}
 }
