@@ -39,11 +39,14 @@ ssh.connect({
 })
 .then(function() {
   // Command 
-        for (var i = 0; i < 2; i++) {
-        ssh.exec(testData[i]).then(function (std) {
-            console.log("output",std.stdout);
-        });
-    }
+  testData.map((data) => {
+        ssh.exec(data,{stream: 'stdout'}).then(function(std) {
+    let returnData = [];
+    returnData.push(std.stdout)
+    //returnData = returnData[0].replace(/\r\n|\n/, '')
+    console.log('STDOUT: ' + returnData)
+  })
+  })
 
 })
   }
