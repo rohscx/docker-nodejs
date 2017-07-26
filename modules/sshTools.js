@@ -63,16 +63,16 @@ module.exports = new class sshTools {
     let END_CONFIG = Patterns['RANGE STOP RUNNING-CONFIG'];
 
 
-    let expectly = new Expectly(settings);
+    let cliscocli = new ciscoCli(settings);
 
     // Show errors...
-    expectly.on('error', function(err){
+    cliscocli.on('error', function(err){
         console.log('Error', err)
     });
 
-    expectly.on('ready', function(session){
+    cliscocli.on('ready', function(session){
 
-        // At this point you should be logged in. The session object is an expectly-stream session.
+        // At this point you should be logged in. The session object is an cliscocli-stream session.
 
         // Here we execute a 'show run' command to see
 
@@ -87,10 +87,10 @@ module.exports = new class sshTools {
                 // Get the configuration from the sessions config letiable
                 let deviceConfig = session.get('config');
                 console.log(deviceConfig);
-                expectly.end();
+                cliscocli.end();
         })
     })
 
-    expectly.connect();
+    cliscocli.connect();
   }
 }
