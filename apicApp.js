@@ -234,7 +234,7 @@ let appMenu = () => {
       .arguments ('<deviceName>')
       .description('apicDevices management-into')
       .action(function(deviceName){
-         apiccDiscoveryFileCheck(deviceName);
+         apiccDevicesMgmtInfo(deviceName);
       });
 
 
