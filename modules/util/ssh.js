@@ -48,6 +48,10 @@ module.exports = class ssh {
         verbose: true,
         debug: true,
         idleTimeOut: 10000,
+                onError: function( sessionText, sshObj ) {
+           sshObj.msg.send("--------- onErrsDog has ------------");
+           sshObj.msg.send(sessionText);
+        },
         onEnd: function( sessionText, sshObj ) {
            sshObj.msg.send("--------- onEnd has ------------");
            sshObj.msg.send(sessionText);
@@ -57,10 +61,7 @@ module.exports = class ssh {
   host.standardPrompt =   ">$%#";
   //Create a new instance
   let SSH = new SSH2Shell(host);
-  SSH2Shell.on ("ready", function onReady() { 
-  //default: outputs primaryHost.readyMessage
-    console.log("READY FOUND");
-  });
+
   //Start the process
   SSH.connect();
   }
