@@ -39,7 +39,7 @@ ssh.connect({
 })
 .then(function() {
   // Command 
-  ssh.execCommand(testData[0],{stdin:testData[1]}).then(function(result) {
+  ssh.execCommand("show access-lists 99").then(function(result) {
     let returnData = [];
     returnData.push(result.stdout)
     returnData = returnData[0].replace(/\r\n|\n/, '')
