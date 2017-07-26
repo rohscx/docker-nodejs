@@ -69,6 +69,7 @@ module.exports = class ssh {
        this.emit('msg', "instructions: " + instructions);
        var str = JSON.stringify(prompts, null, 4);
        this.emit('msg', "Prompts object: " + str);
+       console.log("Cats on everything");
      }
      //The example presumes only the password is required 
      finish([this.sshObj.server.password] );
