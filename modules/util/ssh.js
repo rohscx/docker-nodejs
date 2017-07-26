@@ -25,7 +25,7 @@ module.exports = class ssh {
     var START_CONFIG = Patterns['a'];
     var END_CONFIG = Patterns['z'];
 
-    let tester = "terminal length 0 \n\n\n show ip int br\n exit\n"
+    let tester = "terminal length 0 show ip int br\n exit\n"
     var expectly = new Expectly(settings);
 expectly.on('connect', function(session) {
     // Use the connection object to listen for data.
