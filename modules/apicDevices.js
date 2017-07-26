@@ -24,6 +24,11 @@ class apicDevices extends rest {
     this.uri = newUri;
   }
 
+  setUriPath (uriBase, path){
+    const newUri = uriBase+path
+    this.uri = newUri;
+  }
+
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {
     console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"headers: "+JSON.stringify(this.headers),'\n',"body: "+JSON.stringify(this.body))

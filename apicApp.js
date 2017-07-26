@@ -83,7 +83,7 @@ let apiccDevices = () => {
         console.log(ticketReturn);
         apicTicket.setTicketData(ticketReturn.response);
         apicDevices.setHeaders(apicTicket.getTicketData())
-        apicDevices.setUriBase(apicTicket.getUriBase())
+        apicDevices.setUriPath(apicTicket.getUriBase(),"/api/v1/network-device")
         return apicDevices.httpRequest()
       })
       .then((devicesReturn) =>{
