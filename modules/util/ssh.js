@@ -1,7 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const node_ssh = require('node-ssh')
- const SshShell = require('ssh-shell');
+ const SshShell = require('ssh-shell')
+ const ToSSH = require('to-ssh');
 
 
 module.exports = class ssh {
@@ -13,24 +14,23 @@ module.exports = class ssh {
   }
 
   makeCon(){
-
- 
-const shell = new SshShell({
-    username: this.username,
-    password: this.password,
+   var ssh = new ToSSH({
     host: this.host,
+    username: this.username,
+    password: this.password
+    )
 });
- 
-shell.set('NAME', 'World');
-shell.exec('echo Hello $NAME')
-.then(result => {
-    var {code, io} = result;
-    if (code) {
-        throw new Error('Exit code is ' + code);
+   ssh.connect(function(error) {
+    if(!error) {
+        console.log("Connected!"); // -> "Connected!" 
     }
- 
-    console.log(io.toString()); // -> Hello World 
 });
+   ssh.addTask('whoami', function(stdout, stderr) {
+    if(!stderr) {
+        console.log(stdout); // -> "root" 
+    }
+});
+   ssh.disconnect()
   }
 
 }
