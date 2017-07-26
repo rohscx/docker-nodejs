@@ -3,6 +3,7 @@ const path = require('path')
 const node_ssh = require('node-ssh')
  const SshShell = require('ssh-shell')
  const ToSSH = require('to-ssh');
+var Client = require('s9s-ssh');
 
 
 module.exports = class ssh {
@@ -14,22 +15,32 @@ module.exports = class ssh {
   }
 
   makeCon(){
-   var ssh = new ToSSH({
-    host: this.host,
-    username: this.username,
-    password: this.password
-});
-   ssh.connect(function(error) {
-    if(!error) {
-        console.log("Connected!"); // -> "Connected!"
+    var ssh = new Client();
+   ssh
+    .connect({
+        host: this.host,
+        port: 22,
+        username: this.username,
+        password: this.password
+    })
+    .then(() => {
+        return ssh.exec('uptime');
+    })
+    .then(function (result) {
+        console.log(result);
     }
-});
-   ssh.addTask('whoami', function(stdout, stderr) {
-    if(!stderr) {
-        console.log(stdout); // -> "root"
-    }
-});
-   ssh.disconnect()
+    .then(() => {
+        return ssh.exec('whoami')
+    })
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.error(error);
+    })
+    .finally(() => {
+        ssh.end();
+    });
   }
 
 }
