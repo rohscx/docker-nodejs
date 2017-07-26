@@ -41,7 +41,7 @@ ssh.connect({
 })
 .then(function() {
   // Command 
-  ssh.execCommand(testData, {}).then(function(result) {
+  ssh.execCommand(testData).then(function(result) {
     console.log('STDOUT: ' + result.stdout)
     console.log('STDERR: ' + result.stderr)
   
