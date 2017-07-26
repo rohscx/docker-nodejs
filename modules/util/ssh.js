@@ -36,7 +36,6 @@ ssh.connect({
               'aes256-gcm@openssh.com',
               'aes256-cbc' ]
            }
-        }
 })
 
 .then(function() {
