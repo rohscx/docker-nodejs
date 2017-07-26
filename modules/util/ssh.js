@@ -9,8 +9,6 @@ module.exports = class ssh {
     this.port = 22;
   }
 
-  makeCon(){
-    const SSH2Shell = require ('ssh2shell')
 
 module.exports = class ssh {
   constructor (username,password,host){
@@ -44,13 +42,13 @@ module.exports = class ssh {
               'aes256-cbc' ]
            }
 });
- 
+
 ssh.exec('echo $PATH', {
     out: function(stdout) {
         console.log(stdout);
     }
 }).start();
- 
+
 /*** Using the `args` options instead ***/
 ssh.exec('echo', {
     args: ['$PATH'],
