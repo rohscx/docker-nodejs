@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const fileSystem = require('./util/fileSystem')
 const securityFile = require('../securityFile')
-let ciscoCli = require('ciscoCli');
+let ciscoCli = require('./util/ciscoCli');
 //path.normalize(): example /opt/datafiles/about.html
 //path.dirname();  example /opt/datafiles
 //path.basename(); example about.html
