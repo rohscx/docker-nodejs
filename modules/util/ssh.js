@@ -41,7 +41,7 @@ ssh.connect({
   // Command 
         for (var i = 1; i < 2; i++) {
         ssh.exec(testData[i]).then(function (std) {
-            console.log(std.stdout);
+            console.log("output",std.stdout);
         });
     }
 
