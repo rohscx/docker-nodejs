@@ -15,9 +15,7 @@ module.exports = class ssh {
     let testData = `
         conf t
 access-list 99 permit 10.16.2.96
-exit
-wr
-exit
+
 `;
  let ssh = new node_ssh()
 ssh.connect({
@@ -45,7 +43,11 @@ ssh.connect({
 })
 .then(function() {
   // Command 
-  ssh.execCommand(testData, {}).then(function(result) {
+  ssh.execCommand("conf t", {}).then(function(result) {
+    console.log('STDOUT: ' + result.stdout)
+    console.log('STDERR: ' + result.stderr)
+  }),
+  ssh.execCommand("access-list 99 permit 10.16.2.96", {}).then(function(result) {
     console.log('STDOUT: ' + result.stdout)
     console.log('STDERR: ' + result.stderr)
   })
