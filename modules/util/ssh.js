@@ -45,7 +45,7 @@ ssh.connect({
   ssh.execCommand("show flash:").then(function(result) {
     this.returnData = [result.stdout];
     console.log("adasfdsaf", typeof('this.returnData'),this.returnData)
-    console.log('STDOUT: ' + this.returnData)
+    console.log('STDOUT: ' , this.returnData)
     console.log('STDERR: ' + result.stderr)
   
   })
