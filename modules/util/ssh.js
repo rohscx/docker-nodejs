@@ -42,7 +42,7 @@ ssh.connect({
 .then(function() {
   // Command 
   ssh.execCommand("show flash:").then(function(result) {
-    console.log('STDOUT: ' + result.stdout.trim())
+    console.log('STDOUT: ' + result.stdout.replace(/\n$/, ''))
     console.log('STDERR: ' + result.stderr)
   
   })
