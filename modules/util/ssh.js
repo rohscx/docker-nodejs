@@ -43,7 +43,6 @@ module.exports = class ssh {
               'aes256-gcm@openssh.com',
               'aes256-cbc' ]
            }
-        }
 });
  
 ssh.exec('echo $PATH', {
