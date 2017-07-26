@@ -42,6 +42,7 @@ module.exports = class ssh {
            }
     })
     .then(() => {
+        ssh.exec('show ip int GigabitEthernet0/1')
         return ssh.exec('show access-list 99');
     })
     .then(function (result) {
