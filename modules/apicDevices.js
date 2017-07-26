@@ -35,7 +35,7 @@ class apicDevices extends rest {
   }
 
   getManagementInfo (){
-    let mgmtData = this.managementInfo.networkDeviceManagementInfo;
+    let mgmtData = this.managementInfo.response.networkDeviceManagementInfo;
     mgmtData.map((data) => {
       for (let [key, value] of Object.entries(data)) {
         console.log("KEY  +>   ", key,"  value  => ",value);
