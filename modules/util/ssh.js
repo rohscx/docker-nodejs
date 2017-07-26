@@ -41,8 +41,8 @@ ssh.connect({
 })
 .then(function() {
   // Command 
-  ssh.execCommand(testData).then(function(result) {
-    console.log('STDOUT: ' + result.stdout)
+  ssh.execCommand("show flash:").then(function(result) {
+    console.log('STDOUT: ' + result.stdout.trim())
     console.log('STDERR: ' + result.stderr)
   
   })
