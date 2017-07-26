@@ -46,7 +46,10 @@ module.exports = class ssh {
         // Here we execute a 'show run' command to see
 
         session.sync()
-            .send(tester)
+            .send(tester function(err, results, done) {
+                          session.set('config', results);
+            done();
+              })
             .end(function(err){
                 // Get the configuration from the sessions config variable
                 var deviceConfig = session.get('config');
