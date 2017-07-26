@@ -10,17 +10,6 @@ module.exports = class ssh {
   }
 
   makeCon(){
-    const SSH2Shell = require ('ssh2shell')
-
-module.exports = class ssh {
-  constructor (username,password,host){
-    this.host = host;
-    this.username = username;
-    this.password = password;
-    this.port = 22;
-  }
-
-  makeCon(){
    var ssh = new SSH({
     host: this.host,
     user: this.username,
