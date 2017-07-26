@@ -67,7 +67,7 @@ cliscocli.on('ready', function(session){
 })
 
 cliscocli.connect();
-}
+
 
 module.exports = new class sshTools {
   constructor (username,password,host){
