@@ -1,5 +1,4 @@
-const SSH = require('simple-ssh');
-const SSH2Shell = require ('ssh2shell'),
+const SSH2Shell = require ('ssh2shell')
 
 module.exports = class ssh {
   constructor (username,password,host){
@@ -12,10 +11,10 @@ module.exports = class ssh {
   makeCon(){
     let host = {
      server: {
-        host: "<hostname or IP>",
+        host: this.host,
         port: "22",
-        userName: "<username>",
-        password: "<password>",
+        userName: this.username,
+        password: this.password,
         hashMethod:     "md5",
         readyTimeout: 50000,
         tryKeyboard: true,
