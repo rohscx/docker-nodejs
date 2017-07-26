@@ -40,27 +40,32 @@ module.exports = class ssh {
         commands: [
            "show deviceport global",
            "show deviceport names" ],
-        msg: {
-           send: function( message ) {
-              console.log("message: " + message);
-           }
-        },
-          debug: false,
-  onCommandComplete:   function( command, response, sshObj ) {
-    //we are listing the dir so output it to the msg handler 
-    if(sshObj.debug){
-      this.emit("msg", this.sshObj.server.host + ": host.onCommandComplete host1, command: " + command);
-    }
-  },
-  onEnd:    function( sessionText, sshObj ) {
-    //show the full session output for all hosts. 
-    if(sshObj.debug){this.emit("msg", this.sshObj.server.host + ": primary host.onEnd all sessiontText");}  
-    this.emit ("msg", "\nAll Hosts SessiontText ---------------------------------------\n");
-    this.emit ("msg", sshObj.server.host + ":\n" + sessionText);
-    this.emit ("msg", "\nEnd sessiontText ---------------------------------------------\n");
+         onCommandComplete: function( command, response, sshObj ) {
+  //confirm it is the root home dir and change to root's .ssh folder 
+  if(sshObj.debug){
+    this.emit("msg", this.sshObj.server.host + ": host.onCommandComplete event, command: " + command);
   }
-  };
-  host.standardPrompt =   ">$%#";
+  if (command === "show deviceport global") {
+   //unshift will add the command as the next command, use push to add command as the last command 
+   sshObj.commands.unshift("msg:The command and response check worked. Added another cd command.");
+   sshObj.commands.unshift("cd .ssh");
+  }
+  //we are listing the dir so output it to the msg handler 
+  else if (command === "show deviceport names"){      
+   this.emit("msg", response);
+  }
+ },
+ 
+ onEnd: function( sessionText, sshObj ) {
+  //email the session text instead of outputting it to the console 
+  if(sshObj.debug){this.emit("msg", this.sshObj.server.host + ": host.onEnd event");}
+  
+  this.emit("msg", "Sending session response email");
+  
+  // if callback is provided, errors will be passed into it 
+  // else errors will be thrown 
+ }
+};
   //Create a new instance
   let SSH = new SSH2Shell(host);
   //Start the process
