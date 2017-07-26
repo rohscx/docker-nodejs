@@ -13,7 +13,8 @@ module.exports = class ssh {
    var ssh = new SSH({
     host: this.host,
     user: this.username,
-    pass: this.password
+    pass: this.password,
+     key: "diffie-hellman-group-exchange-sha256"
 });
  
 ssh.exec('echo $PATH', {
