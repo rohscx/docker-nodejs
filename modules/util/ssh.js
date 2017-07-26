@@ -41,7 +41,7 @@ module.exports = class ssh {
 
         session.sync()
             .send("show run\n")
-            .between(BEGIN_CONFIG, END_CONFIG, function(err, results, done) {
+            .between(START_CONFIG, END_CONFIG, function(err, results, done) {
                 // Store the configuration in the sessions config variable.
                 session.set('config', results);
                 done();
