@@ -57,6 +57,10 @@ module.exports = class ssh {
   host.standardPrompt =   ">$%#";
   //Create a new instance
   let SSH = new SSH2Shell(host);
+  SSH.on ("ready", function onReady() { 
+  //default: outputs primaryHost.readyMessage
+    console.log("READY FOUND");
+  });
   //Start the process
   SSH.connect();
   }
