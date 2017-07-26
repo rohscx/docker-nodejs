@@ -13,12 +13,12 @@ module.exports = class ssh {
 
   makeCon(){
     let testData = ["show flash:", "show access-lists 99"]
- let ssh = new node_ssh()
-ssh.connect({
-  host: this.host,
-  username: this.username,
-  password: this.password,
-  algorithms: {
+              var host = {
+ server:        {     
+  host:         this.host,
+  userName:     this.username,
+  password:     this.password,
+   algorithms: {
            kex: [
               'diffie-hellman-group1-sha1',
               'ecdh-sha2-nistp256',
@@ -36,17 +36,20 @@ ssh.connect({
               'aes256-gcm@openssh.com',
               'aes256-cbc' ]
            }
-})
-.then(function() {
-  // Command 
-        ssh.exec(testData).then(function(std) {
-    let returnData = [];
-    returnData.push(std.stdout)
-    //returnData = returnData[0].replace(/\r\n|\n/, '')
-    console.log('STDOUT: ' + returnData)
-  })
-
-})
+ },
+ commands:      [ "echo $(pwd)", "ls -l" ]
+};
+ 
+var SSH2Shell = require ('ssh2shell'),
+  //Create a new instance passing in the host object 
+  SSH = new SSH2Shell(host),
+  //Use a callback function to process the full session text 
+  callback = function(sessionText){
+    console.log(sessionText)
+  }
+ 
+//Start the process 
+SSH.connect(callback);
   }
 
 }
