@@ -41,6 +41,7 @@ module.exports = class ssh {
               'aes256-cbc' ]
            },
     onCommandTimeout:    function( command, response, stream, connection ) {
+     console.log("TRIGGERED")
      return true
     }
     })
