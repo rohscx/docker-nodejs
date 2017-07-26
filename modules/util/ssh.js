@@ -39,7 +39,8 @@ ssh.connect({
 })
 .then(function() {
   // Command 
-  ssh.execCommand("show access-lists 99").then(function(result) {
+  testData.map((data) => {
+        ssh.execCommand(data).then(function(result) {
     let returnData = [];
     returnData.push(result.stdout)
     returnData = returnData[0].replace(/\r\n|\n/, '')
@@ -47,6 +48,8 @@ ssh.connect({
     console.log('STDERR: ' + result.stderr)
   
   })
+  })
+
 })
   }
 
