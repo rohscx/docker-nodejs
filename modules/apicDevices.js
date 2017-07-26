@@ -10,6 +10,7 @@ const body = "";
 class apicDevices extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
+    this.managementInfo = "";
   }
 
   setHeaders(ticket){
@@ -27,6 +28,19 @@ class apicDevices extends rest {
   setUriPath (uriBase, path){
     const newUri = uriBase+path
     this.uri = newUri;
+  }
+
+  setManagementInfo (devicesObj){
+    this.managementInfo = devicesObj;
+  }
+
+  getManagementInfo (){
+    let mgmtData = this.managementInfo.networkDeviceManagementInfo;
+    mgmtData.map((data) => {
+      for (let [key, value] of Object.entries(data)) {
+        console.log("KEY  +>   ", key,"  value  => ",value);
+      }
+    })
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request

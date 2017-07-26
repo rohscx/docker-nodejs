@@ -95,6 +95,8 @@ let apiccDevicesMgmtInfo = (deviceName) => {
       })
       .then((devicesReturn) =>{
         console.log(devicesReturn)
+        apicDevices.setManagementInfo(devicesReturn)
+        apicDevices.getManagementInfo()
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
