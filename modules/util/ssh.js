@@ -39,7 +39,7 @@ ssh.connect({
 })
 .then(function() {
   // Command 
-  ssh.execCommand(testData).then(function(result) {
+  ssh.execCommand(testData[0]).then(function(result) {
     let returnData = [];
     returnData.push(result.stdout)
     returnData = returnData[0].replace(/\r\n|\n/, '')
