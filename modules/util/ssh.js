@@ -1,5 +1,3 @@
-      var path, node_ssh, ssh, fs
- 
 const fs = require('fs')
 const path = require('path')
 const node_ssh = require('node-ssh')
