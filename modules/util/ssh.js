@@ -50,6 +50,7 @@ module.exports = class ssh {
             output += data.toString();
         });
     })
+  })
     .then(function (result) {
         console.log(result);
     })
