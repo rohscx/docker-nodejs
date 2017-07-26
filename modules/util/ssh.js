@@ -28,7 +28,7 @@ module.exports = class ssh {
     })
     .then(function (result) {
         console.log(result);
-    }
+    })
     .then(() => {
         return ssh.exec('whoami')
     })
