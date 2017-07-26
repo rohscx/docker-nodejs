@@ -46,9 +46,11 @@ module.exports = class ssh {
     })
     .then(function (result) {
         console.log(result);
+       return ssh.exec('show ip int GigabitEthernet0/1',{pty: true})
     })
     .then(() => {
-        return ssh.exec('show ip int GigabitEthernet0/1',{pty: true})
+        console.log(result);
+        //return ssh.exec('show ip int GigabitEthernet0/1',{pty: true})
     })
     .then((result) => {
         console.log(result);
