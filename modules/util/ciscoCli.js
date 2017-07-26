@@ -134,5 +134,5 @@ CiscoCli.prototype.end = function end() {
 	this.connection.end();
 }
 
-module.exports.CiscoCli = CiscoCli;
+module.exports.ciscoCli = CiscoCli;
 module.exports.Patterns = CISCO_PATTERNS;
