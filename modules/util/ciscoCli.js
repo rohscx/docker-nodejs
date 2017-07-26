@@ -4,7 +4,7 @@
   , EventEmitter = require('events');
 
 let ssh = require('ssh2')
-  , ciscoclistream = require('./ciscocli-stream');
+  , ciscoclistream = require('./ciscoCli-stream');
 
 // Export these...
 let CISCO_PATTERNS = {
@@ -41,10 +41,10 @@ CiscoCli.prototype.connect = function connect() {
 	try {
 		self._options.protocol = self._options.protocol.toLowerCase();
 		if(['ssh', 'raw'].indexOf(self._options.protocol) == -1) {
-			return self.emit('error', new Error('The `protocol` option is required and can be `raw` or `ssh`.'));	
+			return self.emit('error', new Error('The `protocol` option is required and can be `raw` or `ssh`.'));
 		}
 	} catch (err) {
-		return self.emit('error', new Error('The `protocol` option is required and can be `raw` or `ssh`.'));	
+		return self.emit('error', new Error('The `protocol` option is required and can be `raw` or `ssh`.'));
 	}
 
 	function checkPromptAfterLogin(err, regexMatch, remaining) {
@@ -63,7 +63,7 @@ CiscoCli.prototype.connect = function connect() {
 			}
 
 		} else if(regexMatch[2] == '#') {
-			self.mode = 'priv';	
+			self.mode = 'priv';
 			self.emit('ready', self.ciscocli);
 		}
 	}
@@ -94,11 +94,11 @@ CiscoCli.prototype.connect = function connect() {
 			})
 
 			try {
-				conn.connect(self._options);	
+				conn.connect(self._options);
 			} catch(err) {
 				self.emit('error', err);
 			}
-			
+
 
 		} else if(self._options.protocol == 'raw') {
 
@@ -111,9 +111,9 @@ CiscoCli.prototype.connect = function connect() {
 
 				self.ciscocli.expect(/% (Login Failure|Authentication failed)/mi, function(err, remaining){
 					if(!err) {
-						self.connection.end()	
+						self.connection.end()
 					}
-					
+
 				})
 
 				self.ciscocli.respond(self.REGEX_USERNAME_PROMPT, self._options.username + "\n", doNothing);
@@ -125,7 +125,7 @@ CiscoCli.prototype.connect = function connect() {
 				self.emit('error', err);
 			})
 		}
-	
+
 	}
 	dns.lookup(self._options.host, dnsLookupCallback);
 }
