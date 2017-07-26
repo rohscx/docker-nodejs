@@ -9,134 +9,54 @@ module.exports = class ssh {
   }
 /*
   makeCon(){
-    let host = {
-        server:        {
-          host: this.host,
-          port: this.port,
-          userName: this.username,
-          password: this.password,
-          hashMethod: "md5", //optional "md5" or "sha1" default is "md5"
-          //other ssh2.connect options
-          algorithms: {
-          kex: [
-              'diffie-hellman-group1-sha1',
-              'ecdh-sha2-nistp256',
-              'ecdh-sha2-nistp384',
-              'ecdh-sha2-nistp521',
-              'diffie-hellman-group-exchange-sha256',
-              'diffie-hellman-group14-sha1'],
-          cipher: [
-              'aes128-ctr',
-              'aes192-ctr',
-              'aes256-ctr',
-              'aes128-gcm',
-              'aes128-gcm@openssh.com',
-              'aes256-gcm',
-              'aes256-gcm@openssh.com',
-              'aes256-cbc'
-          ]
-          }
-            },
-            connection:         require ('ssh2'),
-            commands:      [
-                "terminal length 0",
-                "show version",
-                "show ssh",
-                "show log"
-            ],
-            msg: {
-                send: function( message ) {
-                    console.log("message: " + message);
-                }
-            },
-        verbose: true,
-        debug:               true,
-        idleTimeOut:         5000,
-        connectedMessage:    "connected",
-        readyMessage:        "ready",
-        closedMessage:       "closed",
-
-        onCommandComplete: function( command, response, sshObj ) {
-
-            console.log("------------- onCommandComplete ---------");
-            console.log(command + ": " + response);
-        },
-        onEnd: function( sessionText, sshObj ) {
-            console.log("--------- onEnd has ------------");
-            console.log(sessionText);
-        }
-    };
-
-
-
-    //Create a new instance
-
-        let SSH = new SSH2Shell(host);
-
-    //Start the process
-    SSH.connect();
-  }
-}
-*/
-
-  makeCon(){
-    var host = {
-     server:        {
-      host: this.host,
-      userName: this.username,
-      password: this.password,
-      hashMethod: "md5", //optional "md5" or "sha1" default is "md5"
-      //other ssh2.connect options
-      algorithms: {
-      kex: [
-          'diffie-hellman-group1-sha1',
-          'ecdh-sha2-nistp256',
-          'ecdh-sha2-nistp384',
-          'ecdh-sha2-nistp521',
-          'diffie-hellman-group-exchange-sha256',
-          'diffie-hellman-group14-sha1'],
-      cipher: [
-          'aes128-ctr',
-          'aes192-ctr',
-          'aes256-ctr',
-          'aes128-gcm',
-          'aes128-gcm@openssh.com',
-          'aes256-gcm',
-          'aes256-gcm@openssh.com',
-          'aes256-cbc'
-      ]
-      },
-     },
-     commands:      [ "exit","exit","exit" ],
-       msg: {
-         send: function( message ) {
-            console.log("message: " + message);
-         }
-      },
-      verbose: true,
-      debug: true,
-      
-              onConnectionReady:   function( command, response, sshObj, stream  ) {
-
-            if (command === "" && response === "Connected to port 22.") {
-                stream.write("\r");
-                sshObj.msg.send("in 'onCommandProcessing' yes it matched. sending newline");
-            }
-
-        } 
+    }
 }
 
-      //Create a new instance passing in the host object
-      let SSH = new SSH2Shell(host),
-      //Use a callback function to process the full session text
-      callback = function(sessionText){
-        console.log(sessionText)
-      }
 
-    //Start the process
-    SSH.connect(callback);
-  }
-
-
-//host configuration with connection settings and commands
+var Expectly = require('expectly').Expectly;
+var Patterns = require('expectly').Patterns;
+ 
+var settings = {
+    host: 'switch1',
+    port: 22,
+    protocol: 'ssh',
+    username: 'cisco',
+    password: 'cisco',
+    autoEnable: true,
+    enablePassword: 'cisco'
 }
+ 
+// These regexs are used to grab the content between the begin and start of a config.
+var START_CONFIG = Patterns['RANGE START RUNNING-CONFIG'];
+var END_CONFIG = Patterns['RANGE STOP RUNNING-CONFIG'];
+ 
+ 
+var expectly = new Expectly(settings);
+ 
+// Show errors...
+expectly.on('error', function(err){
+    console.log('Error', err)
+});
+ 
+expectly.on('ready', function(session){
+ 
+    // At this point you should be logged in. The session object is an expectly-stream session.
+ 
+    // Here we execute a 'show run' command to see 
+ 
+    session.sync()
+        .send("show run\n")
+        .between(BEGIN_CONFIG, END_CONFIG, function(err, results, done) {
+            // Store the configuration in the sessions config variable.
+            session.set('config', results);
+            done();
+        })
+        .end(function(err){
+            // Get the configuration from the sessions config variable	
+            var deviceConfig = session.get('config');
+            console.log(deviceConfig);
+            expectly.end();
+    })
+})
+ 
+expectly.connect();
