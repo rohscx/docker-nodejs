@@ -52,6 +52,9 @@ ssh.connect({
   })
   })
 })
+      .catch((reject) =>{
+        console.log(reject);
+      })    
   }
 
 }
