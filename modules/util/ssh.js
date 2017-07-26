@@ -4,7 +4,7 @@ const node_ssh = require('node-ssh')
  const SshShell = require('ssh-shell')
  const ToSSH = require('to-ssh');
 var Client = require('s9s-ssh');
-
+       const Connection = require('ssh.js').Connection;
 
 module.exports = class ssh {
   constructor (username,password,host){
@@ -15,57 +15,32 @@ module.exports = class ssh {
   }
 
   makeCon(){
-    var ssh = new Client();
-   ssh
-    .connect({
-        host: this.host,
-        port: 22,
-        username: this.username,
-        password: this.password,
-      algorithms: {
-           kex: [
-              'diffie-hellman-group1-sha1',
-              'ecdh-sha2-nistp256',
-              'ecdh-sha2-nistp384',
-              'ecdh-sha2-nistp521',
-              'diffie-hellman-group-exchange-sha256',
-              'diffie-hellman-group14-sha1'],
-           cipher: [
-              'aes128-ctr',
-              'aes192-ctr',
-              'aes256-ctr',
-              'aes128-gcm',
-              'aes128-gcm@openssh.com',
-              'aes256-gcm',
-              'aes256-gcm@openssh.com',
-              'aes256-cbc' ]
-           }
-    })
-    .then(() => {
-        return ssh.exec('show access-list 99',{pty: true}, (asdf) =>{
-        return ssh.exec('show ip int GigabitEthernet0/1',{pty: true})
-         .then (()=> {
-          console.log(result);
-         })
-        })
-    })
-    .then(function (result) {
-        console.log(result);
-       return ssh.exec('show ip int GigabitEthernet0/1',{pty: true})
-    })
-    .then(() => {
-        console.log(result);
-        //return ssh.exec('show ip int GigabitEthernet0/1',{pty: true})
-    })
-    .then((result) => {
-        console.log(result);
-    })
-    .catch((error) => {
-        console.error(error);
-    })
-    .finally(() => {
-        ssh.end();
-    });
+
+ 
+const options = {
+   host: this.host,
+   username: this.username,
+   password: this.password
+};
+ 
+let connection = new Connection(options);
+ 
+try {
+ 
+   await connection.open();
+   console.log('Connection opened!');
+ 
+   let whoami = await connection.execute('show access-list 99');
+   console.log('whoami = ' + whoami);
+ 
+} catch (error) {
+   console.log('An error occured!');
+   console.log(error);
+ 
+} finally {
+   connection.close();
+   console.log('Connection closed!');
+}
   }
 
 }
