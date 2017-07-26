@@ -51,11 +51,6 @@ module.exports = class ssh {
       verbose: true,
       debug: true,
       idleTimeOut: 10000,
-      ["keyboard-interactive"]: function(name, instructions, instructionsLang, prompts, finish){
-         console.log('Connection :: keyboard-interactive');
-         console.log(prompts);
-         finish(["<password>"]);
-      },
       onEnd: function( sessionText, sshObj ) {
          sshObj.msg.send("--------- onEnd has ------------");
          sshObj.msg.send(sessionText);
