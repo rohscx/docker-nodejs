@@ -46,7 +46,8 @@ expectly.on('connect', function(session) {
         // Here we execute a 'show run' command to see
 
         session.sync()
-            .send("show run\n","exit run\n")
+            .send("show run\n")
+            .send("exit\n")
             .end(function(err){
                 // Get the configuration from the sessions config variable
                 var deviceConfig = session.get('config');
