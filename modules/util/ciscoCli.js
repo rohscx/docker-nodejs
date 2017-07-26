@@ -4,7 +4,7 @@
   , EventEmitter = require('events');
 
 let ssh = require('ssh2')
-  , ciscoclistream = require('./ciscoCli-Stream');
+  , ciscoclistream = require('./ciscoCliStream');
 
 // Export these...
 let CISCO_PATTERNS = {
