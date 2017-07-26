@@ -12,7 +12,7 @@ module.exports = class ssh {
   }
 
   makeCon(){
-    let testData = ["show flash:  \r\n\r\n show show access-lists 99"]
+    let testData = ["show flash:"]
  let ssh = new node_ssh()
 ssh.connect({
   host: this.host,
