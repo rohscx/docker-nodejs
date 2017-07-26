@@ -12,10 +12,7 @@ module.exports = class ssh {
   }
 
   makeCon(){
-    let testData = `
-        conf t
-access-list 99 permit 10.16.2.96
-
+    let testData = "   conf t" + "\r/n" + "access-list 99 permit 10.16.2.96"
 `;
  let ssh = new node_ssh()
 ssh.connect({
@@ -43,24 +40,13 @@ ssh.connect({
 })
 .then(function() {
   // Command 
-  ssh.execCommand("conf t", {}).then(function(result) {
+  ssh.execCommand(testData, {}).then(function(result) {
     console.log('STDOUT: ' + result.stdout)
     console.log('STDERR: ' + result.stderr)
-      ssh.execCommand("access-list 99 permit 10.16.2.96", {}).then(function(result) {
-    console.log('STDOUT: ' + result.stdout)
-    console.log('STDERR: ' + result.stderr)
+  
   })
-          .catch((reject) =>{
-        console.log(reject);
-      })    
-  })
-        .catch((reject) =>{
-        console.log(reject);
-      })    
 })
-      .catch((reject) =>{
-        console.log(reject);
-      })    
+
   }
 
 }
