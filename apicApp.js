@@ -4,7 +4,7 @@ const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
 const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
-const sshTools = require('./modules/sshTools');
+
 const rl = require('readline');
 const program = require('commander');
 const colors = require('colors');
@@ -16,27 +16,7 @@ const colors = require('colors');
 */
 
 
-let sshTest= (Uname,Upass) => {
-  return new Promise((resolve, reject) =>{
-    sshTools.setHost("10.64.32.230")
-    sshTools.setUname(Uname)
-    sshTools.setUpass(Upass)
-    sshTools.debug()
-    sshTools.makeCon()
-    /*
-    apicTicket.httpRequest()
-      .then((ticketReturn) =>{
-        console.log(ticketReturn);
-        apicTicket.setTicketData(ticketReturn.response);
-        apicReachability.setHeaders(apicTicket.getTicketData())
-        apicReachability.setUriBase(apicTicket.getUriBase())
-        return apicReachability.httpRequest()
-      })
-      .catch((httpReject) =>{
-        console.log(httpReject);
-      })*/
-  })
-};
+
 
 
 let apiccReachability= () => {
@@ -223,14 +203,7 @@ let appMenu = () => {
   program
     .version('0.1.0')
 
-  program
-    .command('sshTest')
-    .alias('sSh')
-    .arguments ('<uName> <Upass>')
-    .description('sshTest')
-    .action(function(uName,Upass){
-       sshTest(uName,Upass);
-    });
+
 
 
   program
