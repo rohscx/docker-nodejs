@@ -47,6 +47,16 @@ ssh.connect({
     console.log('STDERR: ' + result.stderr)
   
   })
+  .then((data) => {
+      ssh.execCommand(testData[0]).then(function(result) {
+    let returnData = [];
+    returnData.push(result.stdout)
+    returnData = returnData[0].replace(/\r\n|\n/, '')
+    console.log('STDOUT: ' + returnData)
+    console.log('STDERR: ' + result.stderr)
+  
+  })
+  })
 })
 
   }
