@@ -27,11 +27,11 @@ module.exports = class ssh {
 
     let tester = "terminal length 0 show ip int br\n exit\n"
     var expectly = new Expectly(settings);
-expectly.on('connect', function(session) {
+    /*expectly.on('connect', function(session) {
     // Use the connection object to listen for data.
     expectly.connection.on('data', function(data) {
         console.log('>>>', data.toString())
-    });
+    });*/
 });
 
     // Show errors...
