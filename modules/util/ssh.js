@@ -18,16 +18,15 @@ module.exports = class ssh {
     host: this.host,
     username: this.username,
     password: this.password
-    )
 });
    ssh.connect(function(error) {
     if(!error) {
-        console.log("Connected!"); // -> "Connected!" 
+        console.log("Connected!"); // -> "Connected!"
     }
 });
    ssh.addTask('whoami', function(stdout, stderr) {
     if(!stderr) {
-        console.log(stdout); // -> "root" 
+        console.log(stdout); // -> "root"
     }
 });
    ssh.disconnect()
