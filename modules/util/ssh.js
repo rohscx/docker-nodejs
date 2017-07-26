@@ -43,7 +43,7 @@ ssh.connect({
         ssh.exec(data).then(function(std) {
     let returnData = [];
     returnData.push(std.stdout)
-    returnData = returnData[0].replace(/\r\n|\n/, '')
+    //returnData = returnData[0].replace(/\r\n|\n/, '')
     console.log('STDOUT: ' + returnData)
   })
   })
