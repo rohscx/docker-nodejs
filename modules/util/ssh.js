@@ -48,7 +48,7 @@ module.exports = class ssh {
         console.log(result);
     })
     .then(() => {
-        return ssh.exec('show ip int GigabitEthernet0/1',{pty: true})
+        return ssh.shell('show ip int GigabitEthernet0/1',{pty: true})
     })
     .then((result) => {
         console.log(result);
