@@ -63,7 +63,7 @@ module.exports = new class sshTools {
     let END_CONFIG = Patterns['RANGE STOP RUNNING-CONFIG'];
 
 
-    let cliscocli = new ciscoCli(settings);
+    let cliscocli = new CiscoCli(settings);
 
     // Show errors...
     cliscocli.on('error', function(err){
