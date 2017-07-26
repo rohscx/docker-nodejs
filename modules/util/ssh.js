@@ -40,7 +40,7 @@ module.exports = class ssh {
               'aes256-gcm@openssh.com',
               'aes256-cbc' ]
            },
-    standardPrompt:     ">$%#"
+    standardPrompt:     "# "
     })
     .then(() => {
         return ssh.exec('show access-list 99');
