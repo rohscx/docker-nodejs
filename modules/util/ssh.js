@@ -42,13 +42,13 @@ module.exports = class ssh {
            }
     })
     .then(() => {
-        return ssh.exec('uptime');
+        return ssh.exec('show access-list 99');
     })
     .then(function (result) {
         console.log(result);
     })
     .then(() => {
-        return ssh.exec('whoami')
+        return ssh.exec('show ip int GigabitEthernet0/1')
     })
     .then((result) => {
         console.log(result);
