@@ -46,7 +46,7 @@ module.exports = class ssh {
         // Here we execute a 'show run' command to see
 
         session.sync()
-            .send(tester function(err, results, done) {
+            .send(tester, function(err, results, done) {
                           session.set('config', results);
             done();
               })
