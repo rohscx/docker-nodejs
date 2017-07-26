@@ -43,27 +43,23 @@ module.exports = class ssh {
             "show ssh",
             "show log"
         ],
-        msg: {
-            send: function( message ) {
-                console.log("message: " + message);
-            }
-        },
-    verbose: true,
-    debug:               true,
-    idleTimeOut:         15000,
-    connectedMessage:    "connected",
-    readyMessage:        "ready",
-    closedMessage:       "closed",
-
-    onCommandComplete: function( command, response, sshObj ) {
-
-        console.log("------------- onCommandComplete ---------");
-        console.log(command + ": " + response);
-    },
-    onEnd: function( sessionText, sshObj ) {
-        console.log("--------- onEnd has ------------");
-        console.log(sessionText);
-    }
+         msg: {
+         send: function( message ) {
+            console.log("message: " + message);
+         }
+      },
+      verbose: true,
+      debug: true,
+      idleTimeOut: 10000,
+      ["keyboard-interactive"]: function(name, instructions, instructionsLang, prompts, finish){
+         console.log('Connection :: keyboard-interactive');
+         console.log(prompts);
+         finish(["<password>"]);
+      },
+      onEnd: function( sessionText, sshObj ) {
+         sshObj.msg.send("--------- onEnd has ------------");
+         sshObj.msg.send(sessionText);
+      }
 };
   //Create a new instance
   let SSH = new SSH2Shell(host);
