@@ -22,8 +22,8 @@ module.exports = class ssh {
     }
 
     // These regexs are used to grab the content between the begin and start of a config.
-    var START_CONFIG = Patterns['RANGE START RUNNING-CONFIG'];
-    var END_CONFIG = Patterns['RANGE STOP RUNNING-CONFIG'];
+    var START_CONFIG = Patterns['a'];
+    var END_CONFIG = Patterns['z'];
 
 
     var expectly = new Expectly(settings);
