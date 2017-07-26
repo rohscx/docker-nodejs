@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const node_ssh = require('node-ssh')
+ const SshShell = require('ssh-shell');
 
 
 module.exports = class ssh {
@@ -12,44 +13,24 @@ module.exports = class ssh {
   }
 
   makeCon(){
-    let testData = ["show flash:", "show access-lists 99"]
-              var host = {
- server:        {     
-  host:         this.host,
-  userName:     this.username,
-  password:     this.password,
-   algorithms: {
-           kex: [
-              'diffie-hellman-group1-sha1',
-              'ecdh-sha2-nistp256',
-              'ecdh-sha2-nistp384',
-              'ecdh-sha2-nistp521',
-              'diffie-hellman-group-exchange-sha256',
-              'diffie-hellman-group14-sha1'],
-           cipher: [
-              'aes128-ctr',
-              'aes192-ctr',
-              'aes256-ctr',
-              'aes128-gcm',
-              'aes128-gcm@openssh.com',
-              'aes256-gcm',
-              'aes256-gcm@openssh.com',
-              'aes256-cbc' ]
-           }
- },
- commands:      [ "echo $(pwd)", "ls -l" ]
-};
+
  
-var SSH2Shell = require ('ssh2shell'),
-  //Create a new instance passing in the host object 
-  SSH = new SSH2Shell(host),
-  //Use a callback function to process the full session text 
-  callback = function(sessionText){
-    console.log(sessionText)
-  }
+const shell = new SshShell({
+    username: this.username,
+    password: this.password,
+    host: this.host,
+});
  
-//Start the process 
-SSH.connect(callback);
+shell.set('NAME', 'World');
+shell.exec('echo Hello $NAME')
+.then(result => {
+    var {code, io} = result;
+    if (code) {
+        throw new Error('Exit code is ' + code);
+    }
+ 
+    console.log(io.toString()); // -> Hello World 
+});
   }
 
 }
