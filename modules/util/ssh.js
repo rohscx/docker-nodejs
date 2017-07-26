@@ -44,6 +44,7 @@ module.exports = class ssh {
     //response is the full response from the host for the last command 
     //sshObj is the current host object. 
       this.emit("msg", response)
+      ssh.end();
   },
     })
     .then(() => {
