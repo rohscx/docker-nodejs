@@ -45,8 +45,7 @@ ssh.connect({
     let returnData = [];
     returnData.push(result.stdout)
     returnData = returnData[0].replace(/\r\n|\n/, '')
-    console.log("adasfdsaf", typeof('returnData'),returnData)
-    console.log('STDOUT: ' , this.returnData)
+    console.log('STDOUT: ' + returnData)
     console.log('STDERR: ' + result.stderr)
   
   })
