@@ -39,7 +39,7 @@ ssh.connect({
 })
 .then(function() {
   // Command 
-        for (var i = 1; i < 2; i++) {
+        for (var i = 0; i < 2; i++) {
         ssh.exec(testData[i]).then(function (std) {
             console.log("output",std.stdout);
         });
