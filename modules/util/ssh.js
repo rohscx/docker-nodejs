@@ -37,35 +37,33 @@ module.exports = class ssh {
               'aes256-cbc' ]
            }
         },
-        commands: [
-           "show deviceport global",
-           "show deviceport names" ],
-        standardPrompt: "#",
-         onCommandComplete: function( command, response, sshObj ) {
-  //confirm it is the root home dir and change to root's .ssh folder 
-  if(sshObj.debug){
-    this.emit("msg", this.sshObj.server.host + ": host.onCommandComplete event, command: " + command);
-  }
-  if (command === "show deviceport global") {
-   //unshift will add the command as the next command, use push to add command as the last command 
-   sshObj.commands.unshift("msg:The command and response check worked. Added another cd command.");
-   sshObj.commands.unshift("cd .ssh");
-  }
-  //we are listing the dir so output it to the msg handler 
-  else if (command === "show deviceport names"){      
-   this.emit("msg", response);
-  }
- },
- 
- onEnd: function( sessionText, sshObj ) {
-  //email the session text instead of outputting it to the console 
-  if(sshObj.debug){this.emit("msg", this.sshObj.server.host + ": host.onEnd event");}
-  
-  this.emit("msg", "Sending session response email");
-  
-  // if callback is provided, errors will be passed into it 
-  // else errors will be thrown 
- }
+       commands:      [
+            "terminal length 0",
+            "show version",
+            "show ssh",
+            "show log"
+        ],
+        msg: {
+            send: function( message ) {
+                console.log("message: " + message);
+            }
+        },
+    verbose: true,
+    debug:               true,
+    idleTimeOut:         15000,
+    connectedMessage:    "connected",
+    readyMessage:        "ready",
+    closedMessage:       "closed",
+
+    onCommandComplete: function( command, response, sshObj ) {
+
+        console.log("------------- onCommandComplete ---------");
+        console.log(command + ": " + response);
+    },
+    onEnd: function( sessionText, sshObj ) {
+        console.log("--------- onEnd has ------------");
+        console.log(sessionText);
+    }
 };
   //Create a new instance
   let SSH = new SSH2Shell(host);
