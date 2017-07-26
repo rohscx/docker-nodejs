@@ -40,9 +40,9 @@ ssh.connect({
 .then(function() {
   // Command 
   testData.map((data) => {
-        ssh.exec(data).then(function(result) {
+        ssh.exec(data).then(function(std) {
     let returnData = [];
-    returnData.push(result.stdout)
+    returnData.push(std.stdout)
     returnData = returnData[0].replace(/\r\n|\n/, '')
     console.log('STDOUT: ' + returnData)
   })
