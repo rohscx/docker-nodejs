@@ -22,7 +22,7 @@ const shell = new SshShell({
 });
  
 shell.set('NAME', 'show access-list 99');
-shell.exec('$NAME')
+shell.exec('echo Hello $NAME')
 .then(result => {
     var {code, io} = result;
     if (code) {
