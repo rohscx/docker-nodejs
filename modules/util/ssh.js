@@ -9,6 +9,7 @@ module.exports = class ssh {
     this.username = username;
     this.password = password;
     this.port = 22;
+    this.returnData = [];
   }
 
   makeCon(){
@@ -42,9 +43,9 @@ ssh.connect({
 .then(function() {
   // Command 
   ssh.execCommand("show flash:").then(function(result) {
-    let outPut = [result.stdout];
-
-    console.log('STDOUT: ' + outPut)
+    this.returnData = [result.stdout];
+    console.log("adasfdsaf", typeof('this.returnData'),this.returnData)
+    console.log('STDOUT: ' + this.returnData)
     console.log('STDERR: ' + result.stderr)
   
   })
