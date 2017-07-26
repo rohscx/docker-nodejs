@@ -47,21 +47,32 @@ module.exports = class ssh {
         },
         verbose: true,
         debug: true,
-        idleTimeOut: 10000,
-                onError: function( sessionText, sshObj ) {
-           sshObj.msg.send("--------- onErrsDog has ------------");
-           sshObj.msg.send(sessionText);
-        },
-        onEnd: function( sessionText, sshObj ) {
-           sshObj.msg.send("--------- onEnd has ------------");
-           sshObj.msg.send(sessionText);
-        }
+        idleTimeOut: 10000
 
   };
   host.standardPrompt =   ">$%#";
   //Create a new instance
   let SSH = new SSH2Shell(host);
-
+  SSH.on ('commandTimeout',function( command, response, stream, connection ){
+  if(sshObj.debug){this.emit("msg", this.sshObj.server.host + ": instance.onCommandTimeout");}
+  //first test should only pass once to stop a response loop 
+  if (command === "atp-get install node" 
+     && response.indexOf("[Y/n]?") != -1 
+     && this.sshObj.nodePrompt != true) {
+    this.sshObj.nodePrompt = true;
+    stream.write('y\n');
+    return true;
+  }
+  this.sshObj.sessionText += response;
+  this.emit("error", this.sshObj.server.host + ": Command `" + command + "` timed out after " 
+    + (this._idleTime / 1000) + " seconds. command: " + command, "Command Timeout", true);
+});
+ 
+SSH.on ('end', function( sessionText, sshObj ) {
+  //show the full session output. This could be emailed or saved to a log file. 
+  if(sshObj.debug){this.emit("msg", this.sshObj.server.host + ": instance.onEnd");}
+  this.emit("msg","\nSession text for " + sshObj.server.host + ":\n" + sessionText);
+ });
   //Start the process
   SSH.connect();
   }
