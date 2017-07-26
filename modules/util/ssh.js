@@ -40,7 +40,7 @@ ssh.connect({
 
 .then(function() {
   // Command 
-  ssh.execCommand('show ip int GigabitEthernet0/1', { cwd:'/var/www' }).then(function(result) {
+  ssh.execCommand('show ip int GigabitEthernet0/1', {}).then(function(result) {
     console.log('STDOUT: ' + result.stdout)
     console.log('STDERR: ' + result.stderr)
   })
