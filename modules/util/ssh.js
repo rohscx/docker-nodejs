@@ -62,7 +62,17 @@ module.exports = class ssh {
 
   //Create a new instance
   let SSH = new SSH2Shell(host);
-
+  SSH.on ('keyboard-interactive', function(name, instructions, instructionsLang, prompts, finish){
+     if (this.sshObj.debug) {this.emit('msg', this.sshObj.server.host + ": Keyboard-interactive");}
+     if (this.sshObj.verbose){
+       this.emit('msg', "name: " + name);
+       this.emit('msg', "instructions: " + instructions);
+       var str = JSON.stringify(prompts, null, 4);
+       this.emit('msg', "Prompts object: " + str);
+     }
+     //The example presumes only the password is required 
+     finish([this.sshObj.server.password] );
+  });
   //Start the process
   SSH.connect();
   }
