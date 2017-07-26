@@ -81,7 +81,32 @@ let apiccDevices = () => {
   })
 };
 
-
+let apiccDevicesMgmtInfo = (deviceName) => {
+  let processSuccess = false;
+  return new Promise((resolve, reject) =>{
+    apicTicket.debug()
+    apicTicket.httpRequest()
+      .then((ticketReturn) =>{
+        console.log(ticketReturn);
+        apicTicket.setTicketData(ticketReturn.response);
+        apicDevices.setHeaders(apicTicket.getTicketData())
+        apicDevices.setUriPath(apicTicket.getUriBase(),"/api/v1/network-device/management-info")
+        return apicDevices.httpRequest()
+      })
+      .then((devicesReturn) =>{
+        console.log(devicesReturn)
+        processSuccess = true;
+        if (processSuccess) {
+          resolve (devicesReturn)
+        } else {
+          reject("Something went wrong")
+        };
+      })
+      .catch((httpReject) =>{
+        console.log(httpReject);
+      })
+  })
+};
 
 let apiccDiscoveryFileCheck = (inputFile,jobName) => {
   if (inputFile && jobName) {
@@ -203,7 +228,14 @@ let appMenu = () => {
   program
     .version('0.1.0')
 
-
+    program
+      .command('apicDevices-Management-Info')
+      .alias('aDeMI')
+      .arguments ('<deviceName>')
+      .description('apicDevices management-into')
+      .action(function(deviceName){
+         apiccDiscoveryFileCheck(deviceName);
+      });
 
 
   program
