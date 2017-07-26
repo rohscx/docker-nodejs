@@ -17,7 +17,7 @@ module.exports = class ssh {
         password: this.password,
         hashMethod:     "md5",
         readyTimeout: 50000,
-        tryKeyboard: true,
+        tryKeyboard: false,
         algorithms: {
            kex: [
               'diffie-hellman-group1-sha1',
