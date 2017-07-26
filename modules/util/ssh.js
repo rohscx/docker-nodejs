@@ -40,7 +40,11 @@ module.exports = class ssh {
               'aes256-gcm@openssh.com',
               'aes256-cbc' ]
            },
-    standardPrompt:     "# "
+     onCommandComplete:   function( command, response, sshObj ) {
+    //response is the full response from the host for the last command 
+    //sshObj is the current host object. 
+      this.emit("msg", response)
+  },
     })
     .then(() => {
         return ssh.exec('show access-list 99');
