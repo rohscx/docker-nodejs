@@ -45,13 +45,7 @@ module.exports = class ssh {
     }
     })
     .then(() => {
-        return ssh.exec('show access-list 99',{pty: true}, function(err, stream) {
-        if (err) return callback(err);
-        stream.on('close', function (code, signal) {
-            callback(null, output);
-        }).on('data', function (data) {
-            output += data.toString();
-        });
+        return ssh.exec('show access-list 99',{pty: true})
     })
     .then(function (result) {
         console.log(result);
