@@ -54,7 +54,7 @@ module.exports = class ssh {
         }
 
   };
-
+  host.standardPrompt =   ">$%#";
   //Create a new instance
   let SSH = new SSH2Shell(host);
   //Start the process
