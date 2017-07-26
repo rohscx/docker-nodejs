@@ -37,10 +37,16 @@ ssh.connect({
               'aes256-cbc' ]
            }
 })
-
+  let testData = `
+        conf t
+access-list 99 permit 10.16.2.96
+exit
+wr
+exit
+`;
 .then(function() {
   // Command 
-  ssh.execCommand('show ip int GigabitEthernet0/1', {}).then(function(result) {
+  ssh.execCommand(testData, {}).then(function(result) {
     console.log('STDOUT: ' + result.stdout)
     console.log('STDERR: ' + result.stderr)
   })
