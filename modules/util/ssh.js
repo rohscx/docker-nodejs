@@ -50,7 +50,13 @@ ssh.connect({
     console.log('STDOUT: ' + result.stdout)
     console.log('STDERR: ' + result.stderr)
   })
+          .catch((reject) =>{
+        console.log(reject);
+      })    
   })
+        .catch((reject) =>{
+        console.log(reject);
+      })    
 })
       .catch((reject) =>{
         console.log(reject);
