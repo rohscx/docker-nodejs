@@ -1,4 +1,5 @@
-var SSH = require('simple-ssh');
+const SSH = require('simple-ssh');
+const SSH2Shell = require ('ssh2shell'),
 
 module.exports = class ssh {
   constructor (username,password,host){
@@ -9,33 +10,61 @@ module.exports = class ssh {
   }
 
   makeCon(){
-    var Client = require('ssh2').Client;
+    let host = {
+     server: {
+        host: "<hostname or IP>",
+        port: "22",
+        userName: "<username>",
+        password: "<password>",
+        hashMethod:     "md5",
+        readyTimeout: 50000,
+        tryKeyboard: true,
+        algorithms: {
+           kex: [
+              'diffie-hellman-group1-sha1',
+              'ecdh-sha2-nistp256',
+              'ecdh-sha2-nistp384',
+              'ecdh-sha2-nistp521',
+              'diffie-hellman-group-exchange-sha256',
+              'diffie-hellman-group14-sha1'],
+           cipher: [
+              'aes128-ctr',
+              'aes192-ctr',
+              'aes256-ctr',
+              'aes128-gcm',
+              'aes128-gcm@openssh.com',
+              'aes256-gcm',
+              'aes256-gcm@openssh.com',
+              'aes256-cbc' ]
+           }
+        },
+        commands: [
+           "show deviceport global",
+           "show deviceport names" ],
+        msg: {
+           send: function( message ) {
+              console.log("message: " + message);
+           }
+        },
+        verbose: true,
+        debug: true,
+        idleTimeOut: 10000,
+        ["keyboard-interactive"]: function(name, instructions, instructionsLang, prompts, finish){
+           console.log('Connection :: keyboard-interactive');
+           console.log(prompts);
+           finish(["<password>"]);
+        },
+        onEnd: function( sessionText, sshObj ) {
+           sshObj.msg.send("--------- onEnd has ------------");
+           sshObj.msg.send(sessionText);
+        }
 
-var conn = new Client();
-conn.on('ready', function() {
-  console.log('Client :: ready');
-  conn.forwardOut('192.168.100.102', 8000, '127.0.0.1', 80, function(err, stream) {
-    if (err) throw err;
-    stream.on('close', function() {
-      console.log('TCP :: CLOSED');
-      conn.end();
-    }).on('data', function(data) {
-      console.log('TCP :: DATA: ' + data);
-    }).end([
-      'HEAD / HTTP/1.1',
-      'User-Agent: curl/7.27.0',
-      'Host: 127.0.0.1',
-      'Accept: */*',
-      'Connection: close',
-      '',
-      ''
-    ].join('\r\n'));
-  });
-}).connect({
-  host: this.host,
-  port: this.port,
-  username: this.username,
-  password: this.password
-});
-}
+  };
+
+  //Create a new instance
+  SSH = new SSH2Shell(host);
+
+  //Start the process
+  SSH.connect();
+  }
 }
