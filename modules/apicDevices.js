@@ -35,15 +35,20 @@ class apicDevices extends rest {
   }
 
   getManagementInfo (searchCriteria){
-    let search = "/"+searchCriteria+"/"+"gi";
-    let mgmtData = this.managementInfo.response.networkDeviceManagementInfo;
+    let search = new RegExp(searchCriteria.toLowerCase(),"gi");
+    let mgmtData = this.managementInfo.response;
+	let count = 0;
     mgmtData.map((data,index) => {
+	//console.log(search)
       for (let [key, value] of Object.entries(data)) {
-        data.hostname
-        if (data.hostname.match(search)){
-          console.log("MATCH ",data)
+       	//console.log(data.hostname) 
+        if (data.hostname.match(search)&& count == 0){
+          //console.log("MATCH ",data)
+	  count = 1;
+	  console.log("\n\n\n\n\n"+data.hostname,"\n",data.platformId,"\n",data.managementIpAddress,"\n",data.reachabilityStatus,"\n",data.upTime,"\n",data.lastUpdated,"\n",data.reachabilityFailureReason)
         }
       }
+	count = 0;
     })
   }
 

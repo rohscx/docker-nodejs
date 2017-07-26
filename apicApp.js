@@ -90,11 +90,11 @@ let apiccDevicesMgmtInfo = (deviceName) => {
         console.log(ticketReturn);
         apicTicket.setTicketData(ticketReturn.response);
         apicDevices.setHeaders(apicTicket.getTicketData())
-        apicDevices.setUriPath(apicTicket.getUriBase(),"/api/v1/network-device/management-info")
+        apicDevices.setUriPath(apicTicket.getUriBase(),"/api/v1/network-device")
         return apicDevices.httpRequest()
       })
       .then((devicesReturn) =>{
-        console.log(devicesReturn)
+        //console.log(devicesReturn)
         apicDevices.setManagementInfo(devicesReturn)
         apicDevices.getManagementInfo(deviceName)
         processSuccess = true;
@@ -281,7 +281,7 @@ let appMenu = () => {
     };
 
   function make_red(txt) {
-    return colors.red(txt); //display the help text in red on the console
+    return colors.green(txt); //display the help text in red on the console
   }
 };
 
