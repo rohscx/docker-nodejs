@@ -12,9 +12,7 @@ module.exports = class ssh {
   }
 
   makeCon(){
-    let testData = 
-        `conf t 
-          access-list 99 permit 10.16.2.96`;
+    let testData = ["show flash:  /\r\n\r\n show show access-lists 99"]
  let ssh = new node_ssh()
 ssh.connect({
   host: this.host,
@@ -41,7 +39,7 @@ ssh.connect({
 })
 .then(function() {
   // Command 
-  ssh.execCommand("show flash:").then(function(result) {
+  ssh.execCommand(testData).then(function(result) {
     let returnData = [];
     returnData.push(result.stdout)
     returnData = returnData[0].replace(/\r\n|\n/, '')
