@@ -46,10 +46,10 @@ ssh.connect({
   ssh.execCommand("conf t", {}).then(function(result) {
     console.log('STDOUT: ' + result.stdout)
     console.log('STDERR: ' + result.stderr)
-  }),
-  ssh.execCommand("access-list 99 permit 10.16.2.96", {}).then(function(result) {
+      ssh.execCommand("access-list 99 permit 10.16.2.96", {}).then(function(result) {
     console.log('STDOUT: ' + result.stdout)
     console.log('STDERR: ' + result.stderr)
+  })
   })
 })
   }
