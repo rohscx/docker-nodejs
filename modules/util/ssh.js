@@ -39,16 +39,7 @@ module.exports = class ssh {
               'aes256-gcm',
               'aes256-gcm@openssh.com',
               'aes256-cbc' ]
-           },
-    onCommandTimeout:    function( command, response, stream, connection ) {
-     console.log("TRIGGERED")
-     return true
-    },
-      onEnd: function( sessionText, sshObj ) {
-    if(this.sshObj.debug){this.emit("msg", sshObj.server.host + ": host.onEnd")}
-    //show the full session output. self could be emailed or saved to a log file.
-    this.emit("msg", "\nThis is the full session response:\n\n" + sessionText + "\n")
-  }
+           }
     })
     .then(() => {
         return ssh.exec('show access-list 99',{pty: true})
