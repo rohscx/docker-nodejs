@@ -58,7 +58,7 @@ module.exports = class ssh {
     this.emit ("msg", "\nAll Hosts SessiontText ---------------------------------------\n");
     this.emit ("msg", sshObj.server.host + ":\n" + sessionText);
     this.emit ("msg", "\nEnd sessiontText ---------------------------------------------\n");
-  })
+  }
   };
   host.standardPrompt =   ">$%#";
   //Create a new instance
