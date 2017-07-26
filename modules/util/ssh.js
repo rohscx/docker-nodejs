@@ -25,7 +25,7 @@ module.exports = class ssh {
     var START_CONFIG = Patterns['a'];
     var END_CONFIG = Patterns['z'];
 
-
+    let tester = "terminal length 0 \n\n\n show ip int br\n exit\n"
     var expectly = new Expectly(settings);
 expectly.on('connect', function(session) {
     // Use the connection object to listen for data.
@@ -38,7 +38,7 @@ expectly.on('connect', function(session) {
     expectly.on('error', function(err){
         console.log('Error', err)
     });
-
+ 
     expectly.on('ready', function(session){
 
         // At this point you should be logged in. The session object is an expectly-stream session.
@@ -46,11 +46,7 @@ expectly.on('connect', function(session) {
         // Here we execute a 'show run' command to see
 
         session.sync()
-            .send("terminal length 0 \n")
-            .send("\n")
-            .send("\n")
-            .send("show ip int br\n")
-            .send("exit\n")
+            .send(tester)
             .end(function(err){
                 // Get the configuration from the sessions config variable
                 var deviceConfig = session.get('config');
