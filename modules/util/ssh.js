@@ -21,7 +21,7 @@ const shell = new SshShell({
     host: this.host,
 });
  
-shell.set('NAME', 'show access-list 99');
+shell.set('NAME', 'World');
 shell.exec('echo Hello $NAME')
 .then(result => {
     var {code, io} = result;
