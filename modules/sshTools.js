@@ -21,7 +21,7 @@ const password = privateSsh.password ? privateSsh.password : "Please Set uPass!!
 const host = privateSsh.host ? "localhost" : "localhost";
 
 
-class sshTools extends fileSystem {
+class sshTools extends ssh {
   constructor (username,password,host){
     super(username,password,host)
   }
