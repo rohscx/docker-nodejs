@@ -39,13 +39,7 @@ module.exports = class ssh {
               'aes256-gcm',
               'aes256-gcm@openssh.com',
               'aes256-cbc' ]
-           },
-     onCommandComplete:   function( command, response, sshObj ) {
-    //response is the full response from the host for the last command 
-    //sshObj is the current host object. 
-      this.emit("msg", response)
-      ssh.end();
-  },
+           }
     })
     .then(() => {
         return ssh.exec('show access-list 99');
@@ -54,7 +48,7 @@ module.exports = class ssh {
         console.log(result);
     })
     .then(() => {
-        return ssh.exec('show ip int GigabitEthernet0/1')
+        return ssh.exec('show ip int GigabitEthernet0/1',{pty: true})
     })
     .then((result) => {
         console.log(result);
