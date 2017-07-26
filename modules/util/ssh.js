@@ -1,4 +1,5 @@
 const SSH2Shell = require ('ssh2shell')
+const SSH = require('simple-ssh');
 
 module.exports = class ssh {
   constructor (username,password,host){
@@ -9,16 +10,22 @@ module.exports = class ssh {
   }
 
   makeCon(){
-    let host = {
-     server: {
-        host: this.host,
-        port: "22",
-        userName: this.username,
-        password: this.password,
-        hashMethod:     "md5",
-        readyTimeout: 50000,
-        tryKeyboard: false,
-        algorithms: {
+    const SSH2Shell = require ('ssh2shell')
+
+module.exports = class ssh {
+  constructor (username,password,host){
+    this.host = host;
+    this.username = username;
+    this.password = password;
+    this.port = 22;
+  }
+
+  makeCon(){
+   var ssh = new SSH({
+    host: this.host,
+    user: this.username,
+    pass: this.password,
+     algorithms: {
            kex: [
               'diffie-hellman-group1-sha1',
               'ecdh-sha2-nistp256',
@@ -36,29 +43,22 @@ module.exports = class ssh {
               'aes256-gcm@openssh.com',
               'aes256-cbc' ]
            }
-        },
-       commands:      [
-            "terminal length 0",
-            "show version",
-            "show ssh",
-            "show log"
-        ],
-         msg: {
-         send: function( message ) {
-            console.log("message: " + message);
-         }
-      },
-      verbose: true,
-      debug: true,
-      idleTimeOut: 10000,
-      onEnd: function( sessionText, sshObj ) {
-         sshObj.msg.send("--------- onEnd has ------------");
-         sshObj.msg.send(sessionText);
-      }
-};
-  //Create a new instance
-  let SSH = new SSH2Shell(host);
-  //Start the process
-  SSH.connect();
-  }
+        }
+});
+ 
+ssh.exec('echo $PATH', {
+    out: function(stdout) {
+        console.log(stdout);
+    }
+}).start();
+ 
+/*** Using the `args` options instead ***/
+ssh.exec('echo', {
+    args: ['$PATH'],
+    out: function(stdout) {
+        console.log(stdout);
+    }
+}).start();
+}
+
 }
