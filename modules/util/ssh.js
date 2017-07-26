@@ -12,8 +12,7 @@ module.exports = class ssh {
   }
 
   makeCon(){
-    let testData = "   conf t" + "\r/n" + "access-list 99 permit 10.16.2.96"
-`;
+    let testData = "   conf t" + "\r/n" + "access-list 99 permit 10.16.2.96";
  let ssh = new node_ssh()
 ssh.connect({
   host: this.host,
