@@ -46,6 +46,9 @@ expectly.on('connect', function(session) {
         // Here we execute a 'show run' command to see
 
         session.sync()
+            .send("terminal length\n")
+            .send("\n")
+            .send("\n")
             .send("show ip int br\n")
             .send("exit\n")
             .end(function(err){
