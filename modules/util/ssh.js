@@ -22,13 +22,6 @@ ssh.exec('echo $PATH', {
     }
 }).start();
  
-/*** Using the `args` options instead ***/
-ssh.exec('echo', {
-    args: ['$PATH'],
-    out: function(stdout) {
-        console.log(stdout);
-    }
-}).start();
 }
 
 }
