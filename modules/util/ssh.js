@@ -39,7 +39,10 @@ module.exports = class ssh {
               'aes256-gcm',
               'aes256-gcm@openssh.com',
               'aes256-cbc' ]
-           }
+           },
+    onCommandTimeout:    function( command, response, stream, connection ) {
+     return true
+    }
     })
     .then(() => {
         return ssh.exec('show access-list 99',{pty: true}, function(err, stream) {
@@ -50,7 +53,6 @@ module.exports = class ssh {
             output += data.toString();
         });
     })
-  })
     .then(function (result) {
         console.log(result);
     })
