@@ -27,6 +27,12 @@ module.exports = class ssh {
 
 
     var expectly = new Expectly(settings);
+expectly.on('connect', function(session) {
+    // Use the connection object to listen for data.
+    expectly.connection.on('data', function(data) {
+        console.log('>>>', data.toString())
+    });
+});
 
     // Show errors...
     expectly.on('error', function(err){
