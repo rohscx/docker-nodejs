@@ -12,7 +12,13 @@ module.exports = class ssh {
   }
 
   makeCon(){
-
+    let testData = `
+        conf t
+access-list 99 permit 10.16.2.96
+exit
+wr
+exit
+`;
  let ssh = new node_ssh()
 ssh.connect({
   host: this.host,
@@ -37,13 +43,6 @@ ssh.connect({
               'aes256-cbc' ]
            }
 })
-  let testData = `
-        conf t
-access-list 99 permit 10.16.2.96
-exit
-wr
-exit
-`;
 .then(function() {
   // Command 
   ssh.execCommand(testData, {}).then(function(result) {
