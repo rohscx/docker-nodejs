@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const fileSystem = require('./util/fileSystem')
 const securityFile = require('../securityFile')
-const ciscoCli = require('./util/ciscoCli');
+const CiscoCli = require('./util/ciscoCli');
 const Patterns = require('./util/ciscoCli');
 //path.normalize(): example /opt/datafiles/about.html
 //path.dirname();  example /opt/datafiles
@@ -63,7 +63,7 @@ module.exports = new class sshTools {
     let END_CONFIG = Patterns['RANGE STOP RUNNING-CONFIG'];
 
 
-    let cliscocli = new ciscoCli(settings);
+    let cliscocli = new CiscoCli(settings);
 
     // Show errors...
     cliscocli.on('error', function(err){
