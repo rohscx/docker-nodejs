@@ -40,6 +40,7 @@ module.exports = class ssh {
         commands: [
            "show deviceport global",
            "show deviceport names" ],
+        standardPrompt: "#",
          onCommandComplete: function( command, response, sshObj ) {
   //confirm it is the root home dir and change to root's .ssh folder 
   if(sshObj.debug){
