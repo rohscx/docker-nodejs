@@ -39,9 +39,10 @@ class apicDevices extends rest {
     let mgmtData = this.managementInfo.response.networkDeviceManagementInfo;
     mgmtData.map((data,index) => {
       for (let [key, value] of Object.entries(data)) {
+        data.hostname
         if (data.hostname.match(search)){
           console.log("MATCH ",data)
-        }        
+        }
       }
     })
   }
