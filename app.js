@@ -36,6 +36,7 @@ let iseTest = () =>{
   })
   .then((iseReturn) =>{
     console.log("JSON  " , iseReturn)
+    console.log("next Page  " , iseReturn.resources)
   })
   .catch((httpReject) =>{
     console.log(httpReject);
