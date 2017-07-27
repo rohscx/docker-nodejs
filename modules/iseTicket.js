@@ -13,7 +13,7 @@ const privateIse = {
 
 
 baseConvert64 = (uName,Upass) => {
-  let data = uname +":"+upass;
+  let data = uName +":"+uPass;
   return parseInt(data, 64)
 }
 
