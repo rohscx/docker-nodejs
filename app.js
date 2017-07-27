@@ -25,7 +25,8 @@ let iseTest2 = (inputFile) => {
     return new Promise((resolve, reject) =>{
       Promise.all([ipTools.setJsonFile(inputFile),ipTools.readJsonFile()])
       .then((promiseReturn)=>{
-        console.log(promiseReturn);
+        //console.log(promiseReturn);
+        console.log(ipTools.getData())
       })
       .catch((reject) =>{
         console.log(reject);
