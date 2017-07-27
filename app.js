@@ -31,7 +31,7 @@ let iseTest = () =>{
   // debug raw XML return
   //console.log(iseReturn)
   iseNetDevices.setDeviceList(iseReturn)
-  iseNetDevices.getDeviceListJson()
+  iseNetDevices.getDeviceListJson(iseReturn)
   })
   .then((iseReturn) =>{
     //console.log(iseNetDevices.getReturnMetadata())
