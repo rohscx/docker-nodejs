@@ -39,35 +39,30 @@ let iseTest = () =>{
     //console.log("asdf2  " , iseReturn.resources[0].resource[0]['$'].id)
     //console.log("arrayyy ",iseNetDevices.getDeviceJsonArray())
     //console.log("page count  ", iseNetDevices.getPageCount())
-    return new Promise((resolve, reject) =>{
-      for (let i = 1; i < iseNetDevices.getPageCount(); i++) {
-        console.log(i)
-        iseNetDevices.setDeviceList("")
-        iseNetDevices.setReturnPage(i + 1);
-        console.log(iseNetDevices.getReturnPage());
-        iseNetDevices.setUri(iseNetDevices.getReturnPage())
-        iseNetDevices.debug()
-        iseNetDevices.httpRequest()
-        .then((iseReturn)=>{
-          iseNetDevices.setDeviceList(iseReturn)
+    for (let i = 1; i < iseNetDevices.getPageCount(); i++) {
+      console.log(i)
+      iseNetDevices.setDeviceList("")
+      iseNetDevices.setReturnPage(i + 1);
+      console.log(iseNetDevices.getReturnPage());
+      iseNetDevices.setUri(iseNetDevices.getReturnPage())
+      iseNetDevices.debug()
+      iseNetDevices.httpRequest()
+      .then((iseReturn)=>{
+        iseNetDevices.setDeviceList(iseReturn)
+        //console.log(iseReturn)
+        iseNetDevices.getDeviceListJson()
+        .then((iseReturn) =>{
           //console.log(iseReturn)
-          iseNetDevices.getDeviceListJson()
-          .then((iseReturn) =>{
-            //console.log(iseReturn)
-            console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
-          })
-          .catch((httpReject) =>{
-            console.log(httpReject);
-          })
+          console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
         })
         .catch((httpReject) =>{
           console.log(httpReject);
         })
+      })
+      .catch((httpReject) =>{
+        console.log(httpReject);
+      })
       }
-      resolve("Complete")
-    })
-    .then((iseReturn) =>{
-      console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
     })
     .catch((httpReject) =>{
     console.log(httpReject);
