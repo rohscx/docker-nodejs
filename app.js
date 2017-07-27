@@ -28,7 +28,7 @@ let iseTest2 = (inputFile) => {
         //console.log(promiseReturn);
         ipTools.getData()
         .then((ipGetData) =>{
-          console.log(ipGetData.dataString)
+          console.log(ipGetData.dataString[0])
         })
         .catch((reject) =>{
           console.log(reject);
