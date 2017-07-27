@@ -73,6 +73,7 @@ class iseNetDevices extends rest {
            reject(err);
          }
       })
+      console.log(this.deviceJsonArray)
     })
   }
 

@@ -59,7 +59,7 @@ let iseTest = () =>{
     let tempData = iseNetDevices.getDeviceJsonArray()
     tempData.map((data)=>{
       for (let [key, value] of Object.entries(data)) {
-        console.log("keEEY ",key,"  VALUE",value)
+        //console.log("keEEY ",key,"  VALUE",value)
       }
     })
   })
