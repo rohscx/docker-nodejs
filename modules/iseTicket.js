@@ -14,8 +14,8 @@ const privateIse = {
 
 baseConvert64 = (uName,uPass) => {
   let data = uName +":"+uPass;
-  console.log(new Buffer(data).toString('base64'))
-  return new Buffer(data).toString('base64')
+  let newData = "Basic " + new Buffer(data).toString('base64');
+  return newData;
 }
 
 let iseHeaders = {
