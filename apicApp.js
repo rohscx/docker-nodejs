@@ -51,7 +51,7 @@ let apiccReachability= () => {
       .then((writeReturn) =>{
         console.log(writeReturn)
         apicReachability.setUnreachableBrief()
-        ipTools.setSaveExtentions(".json")
+        ipTools.setSaveExtentions(".csv")
         let reachNameBrief = "reachJobBrief-"+Date.now()
         return ipTools.writeFile(reachNameBrief,JSON.stringify(apicReachability.getUnreachableBrief(), null, 2))
       })
