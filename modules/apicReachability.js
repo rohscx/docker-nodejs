@@ -61,7 +61,7 @@ class apicReachability extends rest {
         if (data.mgmtIp && counter == 0) {
           counter = 1;
           let dataBrief= [data.mgmtIp,data.reachabilityFailureReason];
-          newArray.push(dataBrief);
+          unReachableArray.push(dataBrief);
         }
       }
       counter = 0;
