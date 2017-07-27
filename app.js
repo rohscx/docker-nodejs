@@ -50,7 +50,9 @@ let iseTest = () =>{
         console.log(temp)
         //iseNetDevices.setDeviceList(temp)
         iseNetDevices.getDeviceListJson(temp)
-        console.log("dasfdasdfafadfasdfa s",i)
+        if (i == iseNetDevices.getPageCount()){
+          console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
+        }
       })
       //console.log(iseReturn)
     }
