@@ -39,13 +39,21 @@ let iseTest = () =>{
     console.log("asdf2  " , iseReturn.resources[0].resource[0]['$'].id)
     console.log("arrayyy ",iseNetDevices.getDeviceJsonArray())
     console.log("page count  ", iseNetDevices.getPageCount())
+
     for (let i = 1; i < iseNetDevices.getPageCount(); i++) {
       console.log(i)
       iseNetDevices.setReturnPage(2);
       console.log(iseNetDevices.getReturnPage());
-      Promise.all([iseNetDevices.setUri(iseNetDevices.getReturnPage()),iseNetDevices.debug(),iseNetDevices.httpRequest(),iseNetDevices.setDeviceList(iseReturn),iseNetDevices.getDeviceListJson()])
+      iseNetDevices.setUri(iseNetDevices.getReturnPage())
+      iseNetDevices.debug()
+      Promise.all([iseNetDevices.httpRequest()])
       .then((returnAll) =>{
+        iseNetDevices.setDeviceList(iseReturn)
         console.log(returnAll)
+        iseNetDevices.getDeviceListJson()
+      })
+      .then((returnData) =>{
+        console.log(returnData)
       })
       .catch((httpReject) =>{
         console.log(httpReject);
