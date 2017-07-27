@@ -27,7 +27,6 @@ class iseNetDevices extends rest {
 
   setDeviceList(data) {
     this.deviceList = data;
-    this.returnMetadata = data
   }
 
   getReturnMetadata() {
@@ -43,6 +42,7 @@ class iseNetDevices extends rest {
       let data = this.deviceList;
       parseString(data, (err,result) =>{
          if (result){
+           this.returnMetadata = result['ns3:searchResult']['$']
            resolve(result['ns3:searchResult']);
          } else {
            reject(err);
