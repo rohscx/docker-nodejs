@@ -12,6 +12,7 @@ class apicReachability extends rest {
     super(method,uri,headers,body)
     this.returnData = [];
     this.unReachable = [];
+    this.unReachableBrif = [];
   }
 
   setHeaders(ticket){
@@ -29,9 +30,9 @@ class apicReachability extends rest {
   setReturnData (httpDataArray){
     this.returnData = httpDataArray;
   }
-  
+
   setUnreachable(){
-    
+
     let returnData = this.returnData.response;
     returnData.map((data,index) => {
       for (let [key, value] of Object.entries(data)) {
@@ -45,6 +46,20 @@ class apicReachability extends rest {
 
   getUnreachable(){
     return this.unReachable;
+  }
+
+  getUnreachableBrief(){
+    return this.unReachableBrief;
+  }
+
+  setUnreachableBrief(){
+    let unReachable = this.unReachable;
+    unReachable.map((data) =>{
+      for (let [key, value] of Object.entries(data)) {
+        dataBrief= {mgmtIp:data.mgmtIp,reachabilityFailureReason:data.reachabilityFailureReason};
+        this.unReachableBrief.push(dataBrief);
+      }
+    })
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
