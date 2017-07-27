@@ -29,6 +29,14 @@ let iseTest2 = (inputFile) => {
         ipTools.getData()
         .then((ipGetData) =>{
           console.log(ipGetData.dataString[0])
+          iseTicket.debug()
+          iseNetDevices.setHeaders(iseTicket.getHeaders())
+          iseNetDevices.setUriBase(iseTicket.getUri())
+          iseNetDevices.setUri()
+          iseNetDevices.debug()
+          ipGetData.dataString.map((data) =>{
+            console.log(data.id);
+          })
         })
         .catch((reject) =>{
           console.log(reject);
