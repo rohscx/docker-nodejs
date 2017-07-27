@@ -30,9 +30,34 @@ module.exports = class fileSystem {
     })
   }
 
+  setLoadExtentions (extension){
+    return new Promise((resolve, reject) =>{
+      let data = extension;
+      let message = "Extention changed to: "+ data;
+      if (data){
+        this.saveLoadExtension = data;
+        resolve(message);
+      } else {
+        reject();
+      }
+    })
+  }
+
   setFile (fileName){
     return new Promise((resolve, reject) =>{
       let data = "/"+fileName+this.loadExtension;
+      if (data){
+        this.inputFile = data;
+        resolve(data);
+      } else {
+        reject();
+      }
+    })
+  }
+
+  setJsonFile (fileName){
+    return new Promise((resolve, reject) =>{
+      let data = "/"+fileName;
       if (data){
         this.inputFile = data;
         resolve(data);

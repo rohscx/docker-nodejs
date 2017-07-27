@@ -23,7 +23,7 @@ let iseTest2 = (inputFile) => {
   if (inputFile) {
     let processSuccess = false;
     return new Promise((resolve, reject) =>{
-      Promise.all([ipTools.setFile(inputFile),ipTools.readJsonFile()])
+      Promise.all([ipTools.setJsonFile(inputFile),ipTools.readJsonFile()])
       .then((promiseReturn)=>{
         console.log(promiseReturn);
       })
@@ -326,7 +326,7 @@ let appMenu = () => {
 
     program
       .command('iseTest2')
-      .alias('aRe2')
+      .alias('iRe2')
       .arguments ('<inputFile>')
       .description('iseLoadJson')
       .action(function(inputFile){
