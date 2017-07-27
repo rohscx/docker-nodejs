@@ -35,8 +35,9 @@ let iseTest2 = (inputFile) => {
           iseNetDevices.debug()
           let uriBase = iseNetDevices.setUri(iseTicket.getUri())+":9060/ers/config/networkdevice";
           ipGetData.dataString.map((data) =>{
+            let newUri = uriBase + "/"+data.id;
             console.log(data.id);
-            console.log(uriBase)
+            console.log(newUri)
           })
         })
         .catch((reject) =>{
