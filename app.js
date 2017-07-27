@@ -47,6 +47,7 @@ let iseTest = () =>{
       iseNetDevices.debug()
       Promise.all([iseNetDevices.httpRequest()])
       .then((temp)=>{
+        console.log(temp)
         iseNetDevices.setDeviceList(temp)
         iseNetDevices.getDeviceListJson()
       })
