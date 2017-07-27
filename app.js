@@ -47,14 +47,22 @@ let iseTest = () =>{
       iseNetDevices.setUri(iseNetDevices.getReturnPage())
       iseNetDevices.debug()
       Promise.all([iseNetDevices.httpRequest()])
-      .then((temp)=>{
+      .then((netDevicesList1)=>{
         //iseNetDevices.setDeviceList(temp)
 
         if (i + 1 == finalTotal){
-          console.log("asdfasdfa sdf asdf adsf asdf asd fa s",i, finalTotal)
           console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
+          ipTools.setSaveExtentions(".json")
+          let fileName = "iseDevices-"+Date.now()
+          return ipTools.writeFile(fileName,iseNetDevices.getDeviceJsonArray())
+          .then((writeReturn) =>{
+            console.log(writeReturn)
+          })
+          .catch((httpReject) =>{
+            console.log(httpReject);
+          })
         }
-        iseNetDevices.getDeviceListJson(temp)
+        iseNetDevices.getDeviceListJson(netDevicesList1)
         .catch((httpReject) =>{
         console.log(httpReject);
         })
