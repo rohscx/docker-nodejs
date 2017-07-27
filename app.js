@@ -42,13 +42,13 @@ let iseTest = () =>{
     console.log("page count  ", iseNetDevices.getPageCount())
     for (let i = 1; i < iseNetDevices.getPageCount(); i++) {
       console.log(i)
+      iseNetDevices.setReturnPage(i+1);
+      console.log(iseNetDevices.getReturnPage());
 
     }
   })
   .catch((httpReject) =>{
     console.log(httpReject);
-    iseNetDevices.setReturnPage(i+1);
-    console.log(iseNetDevices.getReturnPage());
   })
 }
 
