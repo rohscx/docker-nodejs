@@ -56,7 +56,7 @@ class apicReachability extends rest {
     let unReachable = this.unReachable;
     unReachable.map((data) =>{
       for (let [key, value] of Object.entries(data)) {
-        dataBrief= {mgmtIp:data.mgmtIp,reachabilityFailureReason:data.reachabilityFailureReason};
+        let dataBrief= {mgmtIp:data.mgmtIp,reachabilityFailureReason:data.reachabilityFailureReason};
         this.unReachableBrief.push(dataBrief);
       }
     })
