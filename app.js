@@ -48,20 +48,20 @@ let iseTest = () =>{
         iseNetDevices.setUri(iseNetDevices.getReturnPage())
         iseNetDevices.debug()
         iseNetDevices.httpRequest()
-        .then((iseReturn)=>{
-          iseNetDevices.setDeviceList(iseReturn)
+        .then((iseReturn1)=>{
+          iseNetDevices.setDeviceList(iseReturn1)
           //console.log(iseReturn)
           iseNetDevices.getDeviceListJson()
-          .then((iseReturn) =>{
+          .then((iseReturn2) =>{
             //console.log(iseReturn)
             console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
           })
-          .catch((httpReject) =>{
-            console.log(httpReject);
+          .catch((httpReject1) =>{
+            console.log(httpReject1);
           })
         })
-        .catch((httpReject) =>{
-          console.log(httpReject);
+        .catch((httpReject2) =>{
+          console.log(httpReject2);
         })
       }
       resolve("Complete")
@@ -69,12 +69,12 @@ let iseTest = () =>{
     .then((iseReturn) =>{
       console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
     })
-    .catch((httpReject) =>{
-    console.log(httpReject);
+    .catch((httpReject3) =>{
+    console.log(httpReject3);
     })
   })
-  .catch((httpReject) =>{
-  console.log(httpReject);
+  .catch((httpReject4) =>{
+  console.log(httpReject4);
   })
 }
 
