@@ -46,14 +46,11 @@ let iseTest = () =>{
       console.log(iseNetDevices.getReturnPage());
       iseNetDevices.setUri(iseNetDevices.getReturnPage())
       iseNetDevices.debug()
-      Promise.all([iseNetDevices.httpRequest()])
-      .then((returnAll) =>{
+      iseNetDevices.httpRequest()
+      .then((returnAll)=>{
         iseNetDevices.setDeviceList(iseReturn)
         console.log(returnAll)
         iseNetDevices.getDeviceListJson()
-      })
-      .then((returnData) =>{
-        console.log(returnData)
       })
       .catch((httpReject) =>{
         console.log(httpReject);
