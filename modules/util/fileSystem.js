@@ -76,7 +76,7 @@ module.exports = class fileSystem {
       let filePath = this.dataPath+"/saved"+newFileName;
       fs.writeFile(filePath, fileContent, (err) => {
         if (err) return reject(err);
-        dataReturn = "Saved! "+path.basename(filePath) + "file path: "+ path.dirname(filePath);
+        dataReturn = "Saved! "+path.basename(filePath) +"   file path: "+ path.dirname(filePath);
         return resolve(dataReturn);
         });
     })
