@@ -39,6 +39,7 @@ let iseTest = () =>{
     //console.log("asdf2  " , iseReturn.resources[0].resource[0]['$'].id)
     //console.log("arrayyy ",iseNetDevices.getDeviceJsonArray())
     //console.log("page count  ", iseNetDevices.getPageCount())
+    let finalTotal = iseNetDevices.getPageCount();
     for (let i = 1; i < iseNetDevices.getPageCount(); i++) {
       console.log(i)
       iseNetDevices.setReturnPage(i + 1);
@@ -49,7 +50,7 @@ let iseTest = () =>{
       .then((temp)=>{
         //iseNetDevices.setDeviceList(temp)
         iseNetDevices.getDeviceListJson(temp)
-        if (i == iseNetDevices.getPageCount()){
+        if (i == finalTotal){
           console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
         }
       })
