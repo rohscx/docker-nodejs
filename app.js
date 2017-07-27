@@ -68,6 +68,7 @@ let iseTest = () =>{
     })
     .then((iseReturn) =>{
       console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
+      console.log("length ",iseNetDevices.getDeviceJsonArray().lenth())
     })
     .catch((httpReject) =>{
     console.log(httpReject);
