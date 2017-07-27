@@ -33,7 +33,8 @@ let apiccReachability= () => {
         return apicReachability.httpRequest()
       })
       .then((devicesReturn) =>{
-        console.log(devicesReturn)
+        // debug
+        //console.log(devicesReturn)
         apicReachability.setReturnData(devicesReturn)
         apicReachability.setUnreachable()
         //console.log(apicReachability.getUnreachable())
