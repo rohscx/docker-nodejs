@@ -19,6 +19,21 @@ const colors = require('colors');
 */
 
 
+let iseTest2 = (inputFile) => {
+  if (inputFile) {
+    let processSuccess = false;
+    return new Promise((resolve, reject) =>{
+      Promise.all([ipTools.setFile(inputFile),ipTools.readJsonFile()])
+      .then((promiseReturn)=>{
+        console.log(promiseReturn);
+      })
+      .catch((reject) =>{
+        console.log(reject);
+      })
+    })
+  }
+}
+
 
 let iseTest = () =>{
   iseTicket.debug()
@@ -308,6 +323,16 @@ let apiccDiscovery = (inputFile,jobName) => {
 let appMenu = () => {
   program
     .version('0.1.0')
+
+    program
+      .command('iseTest2')
+      .alias('aRe2')
+      .arguments ('<inputFile>')
+      .description('iseLoadJson')
+      .action(function(inputFile){
+         iseTest2(inputFile);
+      });
+
 
   program
     .command('iseTest')

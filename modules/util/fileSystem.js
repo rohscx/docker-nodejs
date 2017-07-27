@@ -69,6 +69,24 @@ module.exports = class fileSystem {
     })
   }
 
+
+  readJsonFile(){
+    return new Promise((resolve, reject) =>{
+      let filePath = this.dataPath+this.inputFile;
+      fs.readFile(filePath, (err, 'utf8',data)=>{
+        if (err){
+          return reject(err);
+        } else {
+          fileObj = JSON.parse(data);
+
+          this.fileData = {dataString: fileObj};
+          console.log("DLATA LLOADED   ",this.fileData);
+          return resolve(fileObj);
+        }
+      })
+    })
+  }
+
   writeFile (fileName,fileContent){
     return new Promise((resolve, reject) =>{
       let data ,dataPath, dataReturn
