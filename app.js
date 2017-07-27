@@ -41,7 +41,6 @@ let iseTest = () =>{
     //console.log("page count  ", iseNetDevices.getPageCount())
     for (let i = 1; i < iseNetDevices.getPageCount(); i++) {
       console.log(i)
-      iseNetDevices.setDeviceList("")
       iseNetDevices.setReturnPage(i + 1);
       console.log(iseNetDevices.getReturnPage());
       iseNetDevices.setUri(iseNetDevices.getReturnPage())
@@ -55,12 +54,13 @@ let iseTest = () =>{
       //console.log(iseReturn)
 
     }
+    /*
     console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
     let tempData = iseNetDevices.getDeviceJsonArray()
     tempData.map((data)=>{
       for (let [key, value] of Object.entries(data)) {
         //console.log("keEEY ",key,"  VALUE",value)
-      }
+      }*/
     })
   })
   .catch((httpReject) =>{
