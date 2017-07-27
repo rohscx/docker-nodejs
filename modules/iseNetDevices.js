@@ -59,7 +59,7 @@ class iseNetDevices extends rest {
       let data = oldData;
       parseString(data, (err,result) =>{
          if (result){
-           let nextPage = result['ns3:searchResult'].nextPage[0]['$'] ? result['ns3:searchResult'].nextPage[0]['$'] : "End"
+           let nextPage = result['ns3:searchResult'].nextPage[0] ? result['ns3:searchResult'].nextPage[0]['$'] : "End"
            let metaData = [result['ns3:searchResult']['$'],nextPage]
            this.returnMetadata = metaData;
            // debug
