@@ -11,7 +11,7 @@ class apicDevices extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
     this.managementInfo = {
-      responose:[],
+      devicesObj:[],
       devices:[],
     };
   }
@@ -34,12 +34,12 @@ class apicDevices extends rest {
   }
 
   setManagementInfo (devicesObj){
-    this.managementInfo.responose = devicesObj.response;
+    this.managementInfo.devicesObj = devicesObj;
   }
 
   getManagementInfo (searchCriteria){
     let search = new RegExp(searchCriteria.toLowerCase(),"gi");
-    let mgmtData = this.managementInfo.response;
+    let mgmtData = this.managementInfo.devicesObj.response;
 	  let count = 0;
     let tempDataArray = [];
     mgmtData.map((data,index) => {
