@@ -75,8 +75,12 @@ class iseNetDevices extends rest {
     })
   }
 
-  setUri(){
-    this.uri = this.uriBase+":9060/ers/config/networkdevice?size=100";
+  setUri(data){
+    if (data){
+      this.uri = data;
+    } else {
+      this.uri = this.uriBase+":9060/ers/config/networkdevice?size=100";
+    }
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
