@@ -10,10 +10,7 @@ const body = "";
 class apicDevices extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
-    this.managementInfo = {
-      responose:[],
-      devices:[],
-    };
+    this.managementInfo.devices = [];
   }
 
   setHeaders(ticket){
