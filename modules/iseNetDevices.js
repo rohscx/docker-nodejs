@@ -12,6 +12,7 @@ class iseNetDevices extends rest {
     this.deviceList = "";
     this.deviceJsonArray = [];
     this.returnMetadata = "";
+    this.returnReturnPage="";
   }
 
   setHeaders(headers){
@@ -19,7 +20,7 @@ class iseNetDevices extends rest {
   }
 
   setReturnPage(pageNumber){
-    this.uri = "&page="+pageNumber;
+    this.returnReturnPage = this.uri+"&page="+pageNumber;
   }
 
   setUriBase (uriBase){
@@ -28,6 +29,10 @@ class iseNetDevices extends rest {
 
   setDeviceList(data) {
     this.deviceList = data;
+  }
+
+  getReturnPage(pageNumber){
+    return this.returnReturnPage
   }
 
   getDeviceJsonArray() {
