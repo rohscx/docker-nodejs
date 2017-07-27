@@ -30,16 +30,16 @@ let iseTest2 = (inputFile) => {
         .then((ipGetData) =>{
           console.log(ipGetData.dataString[0])
           ipGetData.dataString.map((data) =>{
-            iseTicket.debug()
-            iseNetDevices.setHeaders(iseTicket.getHeaders())
-            let uriBase = iseTicket.getUri();
-            uriBase += ":9060/ers/config/networkdevice";
-            let newUri = uriBase + "/"+data.id;
-            // debug
-            //console.log(newUri)
-            iseNetDevices.setUri(newUri)
-            iseNetDevices.debug()
             setTimeout(() =>{
+              iseTicket.debug()
+              iseNetDevices.setHeaders(iseTicket.getHeaders())
+              let uriBase = iseTicket.getUri();
+              uriBase += ":9060/ers/config/networkdevice";
+              let newUri = uriBase + "/"+data.id;
+              // debug
+              //console.log(newUri)
+              iseNetDevices.setUri(newUri)
+              iseNetDevices.debug()
               iseNetDevices.httpRequest()
               .then((deviceRequestData) =>{
                 parseString(deviceRequestData, (err,result) =>{
