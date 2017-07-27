@@ -19,6 +19,11 @@ module.exports = {
       uName: false,
       uPass: false,
       host:"localhost"
+    },
+    ise:{
+      uName: false,
+      uPass: false,
+      uri: false
     }
   },
   public:{
