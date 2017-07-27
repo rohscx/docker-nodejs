@@ -28,11 +28,14 @@ let iseTest = () =>{
   iseNetDevices.debug()
   return iseNetDevices.httpRequest()
   .then((iseReturn) =>{
-    // debug raw XML return
-    //console.log(iseReturn)
-    iseNetDevices.setDeviceList(iseReturn)
+  // debug raw XML return
+  //console.log(iseReturn)
+  iseNetDevices.setDeviceList(iseReturn)
 
-    console.log("JSONE TEST RESPONSE ",iseNetDevices.getDeviceListJson())
+  return iseNetDevices.getDeviceListJson()
+  })
+  .then((iseReturn) =>{
+    console.log("JSON  " , iseReturn)
   })
   .catch((httpReject) =>{
     console.log(httpReject);
