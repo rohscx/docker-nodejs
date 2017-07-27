@@ -21,7 +21,7 @@ const publicIse = {
 };
 
 baseConvert64 = (uName,Upass) => {
-  let data = uname +":"upass;
+  let data = uname +":"+upass;
   return parseInt(data, 64)
 }
 
