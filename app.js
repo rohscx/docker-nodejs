@@ -54,7 +54,7 @@ let iseTest = () =>{
           console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
           ipTools.setSaveExtentions(".json")
           let fileName = "iseDevices-"+Date.now()
-          return ipTools.writeFile(fileName,iseNetDevices.getDeviceJsonArray())
+          return ipTools.writeFile(fileName,JSON.stringify(iseNetDevices.getDeviceJsonArray()))
           .then((writeReturn) =>{
             console.log(writeReturn)
           })
