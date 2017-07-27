@@ -60,11 +60,6 @@ let iseTest = () =>{
         console.log(httpReject);
       })
     }
-  })
-  .catch((httpReject) =>{
-  console.log(httpReject);
-  })
-  .then(()=>{
     console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
     let tempData = iseNetDevices.getDeviceJsonArray()
     tempData.map((data)=>{
