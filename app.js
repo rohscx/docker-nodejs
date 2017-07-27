@@ -51,7 +51,8 @@ let iseTest = () =>{
         //iseNetDevices.setDeviceList(temp)
 
         if (i + 1 == finalTotal){
-          console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
+          //debug
+          //console.log(iseNetDevices.getDeviceJsonArray())
           ipTools.setSaveExtentions(".json")
           let fileName = "iseDevices-"+Date.now()
           return ipTools.writeFile(fileName,JSON.stringify(iseNetDevices.getDeviceJsonArray()))
