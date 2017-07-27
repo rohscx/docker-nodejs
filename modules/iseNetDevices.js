@@ -27,7 +27,7 @@ class iseNetDevices extends rest {
 
   setDeviceList(data) {
     this.deviceList = data;
-    this.returnMetadata = data['ns3:searchResult']['$']
+    this.returnMetadata = data['ns3:searchResult']
   }
 
   getReturnMetadata() {
