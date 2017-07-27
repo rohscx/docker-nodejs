@@ -53,7 +53,7 @@ class iseNetDevices extends rest {
            //console.log(result['ns3:searchResult'].resources[0])
            result['ns3:searchResult'].resources[0].resource.map((data) => {
              console.log(data['$'].name)
-             deviceInfo = {name: data['$'].name, id: data['$'].id};
+             let deviceInfo = {name: data['$'].name, id: data['$'].id};
              this.deviceJsonArray.push(deviceInfo);
            })
            resolve(result['ns3:searchResult']);
