@@ -35,7 +35,7 @@ class iseNetDevices extends rest {
   }
 
   getPageCount() {
-    data = this.returnMetadata[0].total
+    let data = this.returnMetadata[0].total
     return data / 100;
   }
 
