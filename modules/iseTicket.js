@@ -30,7 +30,7 @@ let iseHeaders = {
 };
 
 const method = 'GET';
-const uri = privateIse.body.username ? privateIse.uri+"/api/v1/ticket" : "Check Security File";
+const uri = privateIse.body.username ? privateIse.uri : "Check Security File";
 const rejectCert = false;
 const uriBase = privateIse.body.username ? privateIse.uri : "Check Security File";
 const headers = iseHeaders;

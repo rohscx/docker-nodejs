@@ -5,6 +5,7 @@ const apicReachability = require('./modules/apicReachability');
 const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
 const cliTools = require('./modules/cliTools');
+const iseTicket = require('./modules/iseTicket');
 
 const rl = require('readline');
 const program = require('commander');
