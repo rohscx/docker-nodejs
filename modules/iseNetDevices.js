@@ -56,7 +56,7 @@ class iseNetDevices extends rest {
 
   getDeviceListJson(oldData) {
     return new Promise((resolve, reject) =>{
-      let data = OldData;
+      let data = oldData;
       console.log(data)
       parseString(data, (err,result) =>{
          if (result){
