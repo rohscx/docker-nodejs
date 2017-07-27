@@ -47,18 +47,9 @@ let iseTest = () =>{
       iseNetDevices.setUri(iseNetDevices.getReturnPage())
       iseNetDevices.debug()
       iseNetDevices.httpRequest()
-      .then((iseReturn1)=>{
         iseNetDevices.setDeviceList(iseReturn1)
         //console.log(iseReturn)
         iseNetDevices.getDeviceListJson()
-      })
-      .then((iseReturn2) =>{
-        //console.log(iseReturn)
-        //console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
-      })
-      .catch((httpReject) =>{
-        console.log(httpReject);
-      })
     }
     console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
     let tempData = iseNetDevices.getDeviceJsonArray()
