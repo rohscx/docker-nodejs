@@ -54,7 +54,7 @@ let iseTest = () =>{
       })
       .then((iseReturn2) =>{
         //console.log(iseReturn)
-        console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
+        //console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
       })
       .catch((httpReject) =>{
         console.log(httpReject);
