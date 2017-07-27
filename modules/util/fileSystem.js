@@ -73,7 +73,7 @@ module.exports = class fileSystem {
   readJsonFile(){
     return new Promise((resolve, reject) =>{
       let filePath = this.dataPath+this.inputFile;
-      fs.readFile(filePath, (err, 'utf8',data)=>{
+      fs.readFile(filePath,'utf8',(err,data)=>{
         if (err){
           return reject(err);
         } else {
