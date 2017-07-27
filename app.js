@@ -39,6 +39,7 @@ let iseTest2 = (inputFile) => {
             let newUri = uriBase + "/"+data.id;
             // debug
             //console.log(newUri)
+            iseNetDevices.setUri(newUri)
             iseNetDevices.httpRequest()
             .then((deviceRequestData) =>{
               parseString(deviceRequestData, (err,result) =>{
