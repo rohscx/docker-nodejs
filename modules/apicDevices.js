@@ -48,7 +48,7 @@ class apicDevices extends rest {
         if (data.hostname.match(search)&& count == 0){
           //console.log("MATCH ",data)
 	        count = 1;
-          deviceObj = {
+          let deviceObj = {
             hostName: data.hostname,
             platFormId: data.platformId,
             managementIpAddress: data.managementIpAddress,
