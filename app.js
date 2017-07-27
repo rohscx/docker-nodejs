@@ -6,6 +6,7 @@ const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
 const cliTools = require('./modules/cliTools');
 const iseTicket = require('./modules/iseTicket');
+const iseNetDevices = require('./modules/iseNetDevices');
 
 const rl = require('readline');
 const program = require('commander');
@@ -21,6 +22,13 @@ const colors = require('colors');
 
 let iseTest = () =>{
   iseTicket.debug()
+  iseNetDevices.setHeaders(iseTicket.getHeaders())
+  iseNetDevices.setUriBase(iseTicket.getUriBase())
+  iseNetDevices.setUri()
+  return iseNetDevices.httpRequest()
+  .then((iseReturn) =>{
+    console.log(iseReturn)
+  })
 }
 
 let apiccReachability= () => {
