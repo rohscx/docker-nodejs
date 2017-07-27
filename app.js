@@ -49,10 +49,13 @@ let iseTest = () =>{
       Promise.all([iseNetDevices.httpRequest()])
       .then((temp)=>{
         //iseNetDevices.setDeviceList(temp)
-        iseNetDevices.getDeviceListJson(temp)
         if (i == finalTotal){
           console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
         }
+        iseNetDevices.getDeviceListJson(temp)
+        .catch((httpReject) =>{
+        console.log(httpReject);
+        })
       })
       //console.log(iseReturn)
     }
