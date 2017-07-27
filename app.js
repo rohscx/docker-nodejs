@@ -45,17 +45,9 @@ let iseTest = () =>{
       console.log(iseNetDevices.getReturnPage());
       iseNetDevices.setUri(iseNetDevices.getReturnPage())
       iseNetDevices.debug()
-      return iseNetDevices.httpRequest()
-      .then((iseReturn) =>{
-        iseNetDevices.setDeviceList(iseReturn)
-        return iseNetDevices.getDeviceListJson()
-      })
-      .then((iseReturn)=>{
-
-      })
-      .catch((httpReject) =>{
-        console.log(httpReject);
-      })
+      iseNetDevices.httpRequest()
+      iseNetDevices.setDeviceList(iseReturn)
+      iseNetDevices.getDeviceListJson()
     }
     console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
   })
