@@ -106,7 +106,7 @@ module.exports = class fileSystem {
 
           this.fileData = {dataString: fileObj};
           console.log("DLATA LLOADED   ",this.fileData);
-          return resolve(fileObj);
+          return resolve(this.fileData);
         }
       })
     })
