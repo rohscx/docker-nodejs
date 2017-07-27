@@ -50,9 +50,9 @@ let iseTest = () =>{
         console.log(temp)
         //iseNetDevices.setDeviceList(temp)
         iseNetDevices.getDeviceListJson(temp)
+        console.log("dasfdasdfafadfasdfa s",i)
       })
       //console.log(iseReturn)
-
     }
     /*
     console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
