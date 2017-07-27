@@ -20,7 +20,7 @@ class iseNetDevices extends rest {
   }
 
   setReturnPage(pageNumber){
-    this.returnReturnPage = this.uri+"&page="+pageNumber;
+    this.returnReturnPage = this.uriBase+"&page="+pageNumber;
   }
 
   setUriBase (uriBase){
