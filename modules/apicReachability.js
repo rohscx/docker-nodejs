@@ -12,7 +12,7 @@ class apicReachability extends rest {
     super(method,uri,headers,body)
     this.returnData = [];
     this.unReachable = [];
-    this.unReachableBrif = [];
+    this.unReachableBrief = [];
   }
 
   setHeaders(ticket){
