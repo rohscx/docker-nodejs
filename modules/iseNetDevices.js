@@ -10,6 +10,7 @@ class iseNetDevices extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
     this.deviceList = "";
+    this.returnMetadata = "";
   }
 
   setHeaders(headers){
@@ -26,6 +27,11 @@ class iseNetDevices extends rest {
 
   setDeviceList(data) {
     this.deviceList = data;
+    this.returnMetadata = data['ns3:searchResult']['$']
+  }
+
+  getReturnMetadata() {
+    return this.returnMetadata
   }
 
   getDeviceListXml() {

@@ -35,7 +35,7 @@ let iseTest = () =>{
   return iseNetDevices.getDeviceListJson()
   })
   .then((iseReturn) =>{
-    console.log("JSON  " , iseReturn)
+    console.log(iseNetDevices.getReturnMetadata())
     console.log("adsf1 " , iseReturn.resources[0].resource[0]['$'].name)
     console.log("asdf2  " , iseReturn.resources[0].resource[0]['$'].id)
   })
