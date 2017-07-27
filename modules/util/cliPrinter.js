@@ -10,10 +10,12 @@ module.exports = class cliPrinter {
   }
 
   cliPrint(){
-    let data = this.inputFile;
-    for (let [key, value] of Object.entries(data)) {
-      console.log("\n\n",colors.green(key)," :: ", value);
-    }
+    let inputFile = this.inputFile;
+    inputFile.map((data) =>{
+      for (let [key, value] of Object.entries(data)) {
+        console.log("\n\n",colors.green(key)," :: ", value);
+      }
+    })
   }
 
 }
