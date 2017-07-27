@@ -10,8 +10,10 @@ const body = "";
 class apicDevices extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
-    this.managementInfo = {responose:[]}
-    ;
+    this.managementInfo = {
+      responose:[],
+      devices:[]
+    };
   }
 
   setHeaders(ticket){
@@ -45,8 +47,18 @@ class apicDevices extends rest {
        	//console.log(data.hostname)
         if (data.hostname.match(search)&& count == 0){
           //console.log("MATCH ",data)
-	  count = 1;
-	  console.log("\n\n\n\n\n"+data.hostname,"\n",data.platformId,"\n",data.managementIpAddress,"\n",data.reachabilityStatus,"\n",data.upTime,"\n",data.lastUpdated,"\n",data.reachabilityFailureReason)
+	        count = 1;
+          deviceObj = {
+            hostName: data.hostname,
+            platFormId: data.platformId,
+            managementIpAddress: data.managementIpAddress,
+            reachablityStatus: data.reachabilityStatus,
+            upTime: data.upTime,
+            lastUpdated: data.lastUpdated,
+            reachabilityFailureReason: data.reachabilityFailureReason
+          }
+          this.managementInfo.devices.push(deviceObj);
+	        //console.log("\n\n\n\n\n"+data.hostname,"\n",data.platformId,"\n",data.managementIpAddress,"\n",data.reachabilityStatus,"\n",data.upTime,"\n",data.lastUpdated,"\n",data.reachabilityFailureReason)
         }
       }
 	count = 0;
