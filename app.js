@@ -49,8 +49,9 @@ let iseTest = () =>{
       Promise.all([iseNetDevices.httpRequest()])
       .then((temp)=>{
         //iseNetDevices.setDeviceList(temp)
-        console.log("asdfasdfa sdf asdf adsf asdf asd fa s",i)
+
         if (i + 1 == finalTotal){
+          console.log("asdfasdfa sdf asdf adsf asdf asd fa s",i)
           console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
         }
         iseNetDevices.getDeviceListJson(temp)
