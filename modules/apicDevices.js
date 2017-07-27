@@ -64,7 +64,6 @@ class apicDevices extends rest {
       }
 	count = 0;
     })
-    this.managementInfo.devices.push(tempDataArray)
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
