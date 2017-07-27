@@ -1,4 +1,5 @@
 const rest = require('./api/rest');
+const parseString = require('xml2js').parseString;
 
 const method = 'GET';
 const uri = "";
@@ -8,7 +9,7 @@ const body = "";
 class iseNetDevices extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
-    this.deviceId = "";
+    this.deviceList = "";
   }
 
   setHeaders(headers){
@@ -21,6 +22,21 @@ class iseNetDevices extends rest {
 
   setUriBase (uriBase){
     this.uriBase = uriBase;
+  }
+
+  setDeviceList(data) {
+    this.deviceList = data;
+  }
+
+  getDeviceListXml() {
+    return this.deviceList;
+  }
+
+  getDeviceListJson() {
+    let data = this.deviceList;
+    parseString(data, (err,result) =>{
+      console.log(result)
+    })
   }
 
   setUri(){

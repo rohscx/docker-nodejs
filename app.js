@@ -29,6 +29,9 @@ let iseTest = () =>{
   return iseNetDevices.httpRequest()
   .then((iseReturn) =>{
     console.log(iseReturn)
+    iseNetDevices.setDeviceList(iseReturn)
+
+    console.log(iseNetDevices.getDeviceListJson())
   })
   .catch((httpReject) =>{
     console.log(httpReject);
