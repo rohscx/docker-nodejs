@@ -47,17 +47,14 @@ let iseTest = () =>{
       iseNetDevices.setUri(iseNetDevices.getReturnPage())
       iseNetDevices.debug()
       iseNetDevices.httpRequest()
-      .then((iseReturn)=>{
-        iseNetDevices.setDeviceList(iseReturn)
+      .then((iseReturn1)=>{
+        iseNetDevices.setDeviceList(iseReturn1)
         //console.log(iseReturn)
         iseNetDevices.getDeviceListJson()
-        .then((iseReturn) =>{
-          //console.log(iseReturn)
-          console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
-        })
-        .catch((httpReject) =>{
-          console.log(httpReject);
-        })
+      })
+      .then((iseReturn2) =>{
+        //console.log(iseReturn)
+        console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
       })
       .catch((httpReject) =>{
         console.log(httpReject);
