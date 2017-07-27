@@ -53,18 +53,20 @@ class apicReachability extends rest {
   }
 
   setUnreachableBrief(){
-    let unReachable = this.unReachable;
+    let unReachable = this.unReachable;;
+    let unReachableArray = []
     let counter = 0;
     unReachable.map((data) =>{
       for (let [key, value] of Object.entries(data)) {
         if (data.mgmtIp && counter == 0) {
           counter = 1;
-          let dataBrief= {mgmtIp:data.mgmtIp,reachabilityFailureReason:data.reachabilityFailureReason};
-          this.unReachableBrief.push(dataBrief);
+          let dataBrief= [data.mgmtIp,data.reachabilityFailureReason];
+          newArray.push(dataBrief);
         }
       }
       counter = 0;
     })
+    this.unReachableBrief = unReachableArray.join();
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
