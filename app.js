@@ -38,6 +38,7 @@ let iseTest = () =>{
     console.log(iseNetDevices.getReturnMetadata())
     console.log("adsf1 " , iseReturn.resources[0].resource[0]['$'].name)
     console.log("asdf2  " , iseReturn.resources[0].resource[0]['$'].id)
+    console.log("arrayyy ",iseNetDevices.getDeviceJsonArray())
   })
   .catch((httpReject) =>{
     console.log(httpReject);
