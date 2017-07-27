@@ -35,6 +35,10 @@ class apicTicket extends rest {
     super(method,uri,rejectCert,headers,body)
   }
 
+  getHeaders (){
+    return this.headers;
+  }
+
   getUriBase (){
     return this.uriBase;
   }
