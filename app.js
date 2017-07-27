@@ -48,8 +48,8 @@ let iseTest = () =>{
       Promise.all([iseNetDevices.httpRequest()])
       .then((temp)=>{
         console.log(temp)
-        iseNetDevices.setDeviceList(temp)
-        iseNetDevices.getDeviceListJson()
+        //iseNetDevices.setDeviceList(temp)
+        iseNetDevices.getDeviceListJson(temp)
       })
       //console.log(iseReturn)
 
