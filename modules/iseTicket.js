@@ -14,8 +14,8 @@ const privateIse = {
 
 baseConvert64 = (uName,uPass) => {
   let data = uName +":"+uPass;
-  console.log(atob(data))
-  return atob(data)
+  console.log(btoa(data))
+  return btoa(data)
 }
 
 let iseHeaders = {
