@@ -55,9 +55,9 @@ class apicDevices extends rest {
         };
        	//console.log(data.hostname)
         if (data.hostname.match(search)&& count == 0){
-          //console.log("MATCH ",data)
+          console.log("MATCH ",deviceObj)
 	        count = 1;
-          this.managementInfo.devices.push(deviceObj);
+          //this.managementInfo.devices.push(deviceObj);
 	        //console.log("\n\n\n\n\n"+data.hostname,"\n",data.platformId,"\n",data.managementIpAddress,"\n",data.reachabilityStatus,"\n",data.upTime,"\n",data.lastUpdated,"\n",data.reachabilityFailureReason)
         }
       }
