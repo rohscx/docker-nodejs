@@ -54,11 +54,16 @@ class apicReachability extends rest {
 
   setUnreachableBrief(){
     let unReachable = this.unReachable;
+    let counter = 0;
     unReachable.map((data) =>{
       for (let [key, value] of Object.entries(data)) {
-        let dataBrief= {mgmtIp:data.mgmtIp,reachabilityFailureReason:data.reachabilityFailureReason};
-        this.unReachableBrief.push(dataBrief);
+        if (data.mgmtIp && counter == 0) {
+          counter = 1;
+          let dataBrief= {mgmtIp:data.mgmtIp,reachabilityFailureReason:data.reachabilityFailureReason};
+          this.unReachableBrief.push(dataBrief);
+        }
       }
+      counter = 0;
     })
   }
 
