@@ -28,7 +28,8 @@ let iseTest = () =>{
   iseNetDevices.debug()
   return iseNetDevices.httpRequest()
   .then((iseReturn) =>{
-    console.log(iseReturn)
+    // debug raw XML return
+    //console.log(iseReturn)
     iseNetDevices.setDeviceList(iseReturn)
 
     console.log(iseNetDevices.getDeviceListJson())
