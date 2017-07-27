@@ -11,7 +11,7 @@ const iseNetDevices = require('./modules/iseNetDevices');
 const rl = require('readline');
 const program = require('commander');
 const colors = require('colors');
-
+const parseString = require('xml2js').parseString;
 /* These can be broken up into speperate .js files to accomplish a task
    ultimately some user interaction front end should be build, but this is a
    quick ad dirty....
@@ -37,7 +37,17 @@ let iseTest2 = (inputFile) => {
           uriBase += ":9060/ers/config/networkdevice";
           ipGetData.dataString.map((data) =>{
             let newUri = uriBase + "/"+data.id;
-            console.log(newUri)
+            // debug
+            //console.log(newUri)
+            iseNetDevices.httpRequest()
+            .then((deviceRequestData) =>{
+              parseString(deviceRequestData, (err,result) =>{
+                console.log(result)
+              })
+            })
+            .catch((reject) =>{
+              console.log(reject);
+            })
           })
         })
         .catch((reject) =>{
