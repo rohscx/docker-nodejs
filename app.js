@@ -74,6 +74,7 @@ let iseTest = () =>{
 })
 .catch((httpReject) =>{
   console.log(httpReject);
+})
 }
 
 let apiccReachability= () => {
