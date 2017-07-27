@@ -31,9 +31,9 @@ let iseTest2 = (inputFile) => {
           console.log(ipGetData.dataString[0])
           iseTicket.debug()
           iseNetDevices.setHeaders(iseTicket.getHeaders())
-          iseNetDevices.setUri(iseTicket.getUri())
+
           iseNetDevices.debug()
-          let uriBase = iseNetDevices.getUriBase()
+          let uriBase = iseNetDevices.setUri(iseTicket.getUri())+
           ipGetData.dataString.map((data) =>{
             console.log(data.id);
           })
