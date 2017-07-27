@@ -40,7 +40,7 @@ let iseTest = () =>{
     console.log("asdf2  " , iseReturn.resources[0].resource[0]['$'].id)
     console.log("arrayyy ",iseNetDevices.getDeviceJsonArray())
     console.log("page count  ", iseNetDevices.getPageCount())
-    for (let i = 2; i < iseNetDevices.getPageCount(); i++) {
+    for (let i = 1; i < iseNetDevices.getPageCount(); i++) {
       console.log(i)
     }
   })
