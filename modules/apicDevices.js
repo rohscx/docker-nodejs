@@ -13,11 +13,6 @@ class apicDevices extends rest {
     this.managementInfo = {
       responose:[],
       devices:[],
-      addElem: function addElem(elem) {
-        // obj.length is automatically incremented
-        // every time an element is added.
-        [].push.call(this, elem);
-      }
     };
   }
 
@@ -69,6 +64,7 @@ class apicDevices extends rest {
       }
 	count = 0;
     })
+    this.managementInfo.devices.push(tempDataArray)
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
