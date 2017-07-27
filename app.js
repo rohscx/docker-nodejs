@@ -34,11 +34,11 @@ let iseTest = () =>{
   return iseNetDevices.getDeviceListJson()
   })
   .then((iseReturn) =>{
-    console.log(iseNetDevices.getReturnMetadata())
-    console.log("adsf1 " , iseReturn.resources[0].resource[0]['$'].name)
-    console.log("asdf2  " , iseReturn.resources[0].resource[0]['$'].id)
-    console.log("arrayyy ",iseNetDevices.getDeviceJsonArray())
-    console.log("page count  ", iseNetDevices.getPageCount())
+    //console.log(iseNetDevices.getReturnMetadata())
+    //console.log("adsf1 " , iseReturn.resources[0].resource[0]['$'].name)
+    //console.log("asdf2  " , iseReturn.resources[0].resource[0]['$'].id)
+    //console.log("arrayyy ",iseNetDevices.getDeviceJsonArray())
+    //console.log("page count  ", iseNetDevices.getPageCount())
     return new Promise((resolve, reject) =>{
       for (let i = 1; i < iseNetDevices.getPageCount(); i++) {
         console.log(i)
@@ -50,10 +50,10 @@ let iseTest = () =>{
         iseNetDevices.httpRequest()
         .then((iseReturn)=>{
           iseNetDevices.setDeviceList(iseReturn)
-          console.log(iseReturn)
+          //console.log(iseReturn)
           iseNetDevices.getDeviceListJson()
           .then((iseReturn) =>{
-            console.log(iseReturn)
+            //console.log(iseReturn)
           })
           .catch((httpReject) =>{
             console.log(httpReject);
@@ -67,14 +67,14 @@ let iseTest = () =>{
     })
     .then((iseReturn) =>{
       console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
+    })
+    .catch((httpReject) =>{
+    console.log(httpReject);
+    })
   })
   .catch((httpReject) =>{
-    console.log(httpReject);
-  })
-})
-.catch((httpReject) =>{
   console.log(httpReject);
-})
+  })
 }
 
 let apiccReachability= () => {
