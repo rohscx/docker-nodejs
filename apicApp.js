@@ -40,13 +40,16 @@ let apiccReachability= () => {
         //console.log(apicReachability.getUnreachable())
         ipTools.setSaveExtentions(".json")
         let rechName = "reachJob-"+Date.now();
-        ipTools.writeFile(rechName,JSON.stringify(apicReachability.getUnreachable(), null, 2))
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
         } else {
           reject("Something went wrong")
         };
+        return ipTools.writeFile(rechName,JSON.stringify(apicReachability.getUnreachable(), null, 2))
+      })
+      .then((writeReturn) =>{
+        console.log(writeReturn)
       })
       .catch((httpReject) =>{
         console.log(httpReject);
