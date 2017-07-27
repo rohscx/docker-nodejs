@@ -44,6 +44,7 @@ let iseTest = () =>{
       iseNetDevices.setReturnPage(i+1);
       console.log(iseNetDevices.getReturnPage());
       iseNetDevices.setUri(iseNetDevices.getReturnPage())
+      iseNetDevices.debug()
       return iseNetDevices.httpRequest()
       .then((iseReturn) =>{
         iseNetDevices.setDeviceList(iseReturn)
