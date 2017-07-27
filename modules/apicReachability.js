@@ -61,12 +61,13 @@ class apicReachability extends rest {
         if (data.mgmtIp && counter == 0) {
           counter = 1;
           let dataBrief= [data.mgmtIp,data.reachabilityFailureReason];
+          dataBrief.join();
           unReachableArray.push(dataBrief);
         }
       }
       counter = 0;
     })
-    this.unReachableBrief = unReachableArray.join();
+    this.unReachableBrief = unReachableArray.join(" ");
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
