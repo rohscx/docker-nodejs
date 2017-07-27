@@ -47,13 +47,13 @@ let iseTest = () =>{
       iseNetDevices.setUri(iseNetDevices.getReturnPage())
       iseNetDevices.debug()
       iseNetDevices.httpRequest()
-      .then(()=>{
+      .then((temp)=>{
         iseNetDevices.setDeviceList(temp)
         iseNetDevices.getDeviceListJson()
       })
 
       //console.log(iseReturn)
-      
+
     }
     console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
     let tempData = iseNetDevices.getDeviceJsonArray()
