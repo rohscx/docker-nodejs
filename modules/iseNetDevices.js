@@ -50,8 +50,9 @@ class iseNetDevices extends rest {
            let metaData = [result['ns3:searchResult']['$'],result['ns3:searchResult'].nextPage[0]['$']]
            this.returnMetadata = metaData;
            result['ns3:searchResult'][0].resource.map((data) => {
-             deviceInfo = {name: data['$'].name, data['$'].id};
-             this.deviceJsonArray.push(deviceInfo);
+             console.log(data['$'].name)
+             //deviceInfo = {name: data['$'].name, data['$'].id};
+             //this.deviceJsonArray.push(deviceInfo);
 
            })
            resolve(result['ns3:searchResult']);
