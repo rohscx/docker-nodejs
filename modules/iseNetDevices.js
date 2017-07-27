@@ -37,7 +37,7 @@ class iseNetDevices extends rest {
       let data = this.deviceList;
       parseString(data, (err,result) =>{
          if (result){
-           resolve(result['ns3:searchResult']);
+           resolve(result['ns3:searchResult']['$']);
          } else {
            reject(err);
          }
