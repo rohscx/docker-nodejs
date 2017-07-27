@@ -30,7 +30,7 @@ const uriBase = privateIse.body.username ? privateIse.uri : "Check Security File
 const headers = iseHeaders;
 const body = "";
 
-class apicTicket extends rest {
+class iseTicket extends rest {
   constructor (method,uri,rejectCert,headers,body){
     super(method,uri,rejectCert,headers,body)
   }
@@ -49,4 +49,4 @@ class apicTicket extends rest {
   }
 }
 
-module.exports = new apicTicket(method,uri,rejectCert,headers,body)
+module.exports = new iseTicket(method,uri,rejectCert,headers,body)

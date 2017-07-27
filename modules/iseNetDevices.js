@@ -33,4 +33,4 @@ class iseNetDevices extends rest {
   }
 }
 
-module.exports = new apicConfig(method,uri,headers,body)
+module.exports = new iseNetDevices(method,uri,headers,body)
