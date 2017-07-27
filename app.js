@@ -30,7 +30,7 @@ let iseTest = () =>{
   .then((iseReturn) =>{
   // debug raw XML return
   //console.log(iseReturn)
-  iseNetDevices.setDeviceList(iseReturn)
+  //iseNetDevices.setDeviceList(iseReturn)
   iseNetDevices.getDeviceListJson(iseReturn)
   })
   .then((iseReturn) =>{

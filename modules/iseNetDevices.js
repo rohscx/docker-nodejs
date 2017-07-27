@@ -57,6 +57,7 @@ class iseNetDevices extends rest {
   getDeviceListJson(oldData) {
     return new Promise((resolve, reject) =>{
       let data = OldData;
+      console.log(data)
       parseString(data, (err,result) =>{
          if (result){
            let metaData = [result['ns3:searchResult']['$'],result['ns3:searchResult'].nextPage[0]['$']]
