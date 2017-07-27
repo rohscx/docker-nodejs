@@ -27,7 +27,7 @@ class iseNetDevices extends rest {
 
   setDeviceList(data) {
     this.deviceList = data;
-    this.returnMetadata = data['$']
+    this.returnMetadata = data
   }
 
   getReturnMetadata() {
