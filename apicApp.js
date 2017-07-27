@@ -98,7 +98,8 @@ let apiccDevicesMgmtInfo = (deviceName) => {
         //console.log(devicesReturn)
         apicDevices.setManagementInfo(devicesReturn)
         apicDevices.getManagementInfo(deviceName)
-        console.log(apicDevices.getSearchResult())
+        // debug
+        //console.log(apicDevices.getSearchResult())
         cliTools.setInputFile(apicDevices.getSearchResult())
         cliTools.cliPrint()
         processSuccess = true;
