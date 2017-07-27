@@ -19,7 +19,9 @@ const colors = require('colors');
 
 
 
-
+let iseTest = () =>{
+  iseTicket.debug()
+}
 
 let apiccReachability= () => {
   let processSuccess = false;
@@ -247,15 +249,22 @@ let appMenu = () => {
   program
     .version('0.1.0')
 
-    program
-      .command('apicDevices-Management-Info')
-      .alias('aDeMI')
-      .arguments ('<deviceName>')
-      .description('apicDevices management-into')
-      .action(function(deviceName){
-         apiccDevicesMgmtInfo(deviceName);
-      });
+  program
+    .command('iseTest')
+    .alias('iRe')
+    .description('iseTest')
+    .action(function(){
+      iseTest();
+    });
 
+  program
+    .command('apicDevices-Management-Info')
+    .alias('aDeMI')
+    .arguments ('<deviceName>')
+    .description('apicDevices management-into')
+    .action(function(deviceName){
+       apiccDevicesMgmtInfo(deviceName);
+    });
 
   program
     .command('reachability')
