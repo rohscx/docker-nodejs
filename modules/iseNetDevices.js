@@ -35,7 +35,7 @@ class iseNetDevices extends rest {
   getDeviceListJson() {
     let data = this.deviceList;
     parseString(data, (err,result) =>{
-      console.log(result)
+      return result;
     })
   }
 
