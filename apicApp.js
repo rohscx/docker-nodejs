@@ -37,11 +37,9 @@ let apiccReachability= () => {
         //console.log(devicesReturn)
         apicReachability.setReturnData(devicesReturn)
         apicReachability.setUnreachable()
-        apicReachability.setUnreachableBrief()
         //console.log(apicReachability.getUnreachable())
         ipTools.setSaveExtentions(".json")
         let rechName = "reachJob-"+Date.now();
-        let reachNameBrief = "reachJobBrief-"+Date.now()
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
@@ -52,6 +50,9 @@ let apiccReachability= () => {
       })
       .then((writeReturn) =>{
         console.log(writeReturn)
+        apicReachability.setUnreachableBrief()
+        ipTools.setSaveExtentions(".json")
+        let reachNameBrief = "reachJobBrief-"+Date.now()
         return ipTools.writeFile(reachNameBrief,JSON.stringify(apicReachability.getUnreachableBrief(), null, 2))
       })
       .then((writeReturn) =>{
