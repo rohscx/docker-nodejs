@@ -3,10 +3,8 @@ const cliPrinter = require('./util/cliPrinter');
 
 
 class cliTools extends cliPrinter {
-  constructor (method,uri,rejectCert,headers,body){
-    super(method,uri,rejectCert,headers,body)
-    this.ticket = "";
-    this.uriBase = uriBase;
+  constructor (){
+    super()
   }
 
 
