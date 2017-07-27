@@ -62,7 +62,6 @@ let iseTest = () =>{
         //console.log("keEEY ",key,"  VALUE",value)
       }*/
     })
-  })
   .catch((httpReject) =>{
   console.log(httpReject);
   })
