@@ -45,7 +45,8 @@ class apicDevices extends rest {
   getManagementInfo (searchCriteria){
     let search = new RegExp(searchCriteria.toLowerCase(),"gi");
     let mgmtData = this.managementInfo.response;
-	let count = 0;
+	  let count = 0;
+    let tempDataArray = [];
     mgmtData.map((data,index) => {
 	//console.log(search)
       for (let [key, value] of Object.entries(data)) {
@@ -62,7 +63,7 @@ class apicDevices extends rest {
         if (data.hostname.match(search)&& count == 0){
           console.log("MATCH ",deviceObj)
 	        count = 1;
-          this.managementInfo.addElem(deviceObj);
+          tempDataArray.push(deviceObj);
 	        //console.log("\n\n\n\n\n"+data.hostname,"\n",data.platformId,"\n",data.managementIpAddress,"\n",data.reachabilityStatus,"\n",data.upTime,"\n",data.lastUpdated,"\n",data.reachabilityFailureReason)
         }
       }
