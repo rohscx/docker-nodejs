@@ -41,7 +41,7 @@ class iseNetDevices extends rest {
   }
 
   getPageCount() {
-    let data = this.returnMetadata[0].total ? this.returnMetadata[0].total : 9999999
+    let data = this.returnMetadata[0].total
     let newData = data / 100;
     return Math.ceil(newData);
   }
@@ -59,7 +59,8 @@ class iseNetDevices extends rest {
       let data = oldData;
       parseString(data, (err,result) =>{
          if (result){
-           let metaData = [result['ns3:searchResult']['$'],result['ns3:searchResult'].nextPage[0]['$']]
+           let nextPage = result['ns3:searchResult'].nextPage[0]['$'] ? result['ns3:searchResult'].nextPage[0]['$'] : "End"
+           let metaData = [result['ns3:searchResult']['$'],nextPage]
            this.returnMetadata = metaData;
            // debug
            //console.log(result['ns3:searchResult'].resources[0])
