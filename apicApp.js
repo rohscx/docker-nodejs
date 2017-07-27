@@ -4,6 +4,7 @@ const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
 const apicDiscovery = require('./modules/apicDiscovery');
 const ipTools = require('./modules/ipTools');
+const cliTools = require('./modules/cliTools');
 
 const rl = require('readline');
 const program = require('commander');
@@ -98,6 +99,8 @@ let apiccDevicesMgmtInfo = (deviceName) => {
         apicDevices.setManagementInfo(devicesReturn)
         apicDevices.getManagementInfo(deviceName)
         console.log(apicDevices.getSearchResult())
+        cliTools.setInputFile(apicDevices.getSearchResult())
+        cliTools.cliPrint()
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
