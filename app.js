@@ -51,7 +51,7 @@ let iseTest = () =>{
         //iseNetDevices.setDeviceList(temp)
 
         if (i + 1 == finalTotal){
-          console.log("asdfasdfa sdf asdf adsf asdf asd fa s",i)
+          console.log("asdfasdfa sdf asdf adsf asdf asd fa s",i, finalTotal)
           console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
         }
         iseNetDevices.getDeviceListJson(temp)
