@@ -31,7 +31,6 @@ let iseTest = () =>{
   // debug raw XML return
   //console.log(iseReturn)
   iseNetDevices.setDeviceList(iseReturn)
-
   return iseNetDevices.getDeviceListJson()
   })
   .then((iseReturn) =>{
@@ -44,8 +43,16 @@ let iseTest = () =>{
       console.log(i)
       iseNetDevices.setReturnPage(i+1);
       console.log(iseNetDevices.getReturnPage());
-
+      return iseNetDevices.httpRequest()
+      .then((iseReturn) =>{
+        iseNetDevices.setDeviceList(iseReturn)
+        return iseNetDevices.getDeviceListJson()
+      })
+      .catch((httpReject) =>{
+        console.log(httpReject);
+      })
     }
+    console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
   })
   .catch((httpReject) =>{
     console.log(httpReject);
