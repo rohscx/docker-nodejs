@@ -14,8 +14,8 @@ const privateIse = {
 
 baseConvert64 = (uName,uPass) => {
   let data = uName +":"+uPass;
-  console.log(parseInt(data, 64))
-  return parseInt(data, 64)
+  console.log(atob(data))
+  return atob(data)
 }
 
 let iseHeaders = {
