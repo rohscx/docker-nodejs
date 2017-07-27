@@ -23,7 +23,7 @@ const colors = require('colors');
 let iseTest = () =>{
   iseTicket.debug()
   iseNetDevices.setHeaders(iseTicket.getHeaders())
-  iseNetDevices.setUriBase(iseTicket.getUriBase())
+  iseNetDevices.setUriBase(iseTicket.getUri())
   iseNetDevices.setUri()
   iseNetDevices.debug()
   return iseNetDevices.httpRequest()
