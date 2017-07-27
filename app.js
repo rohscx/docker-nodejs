@@ -25,6 +25,7 @@ let iseTest = () =>{
   iseNetDevices.setHeaders(iseTicket.getHeaders())
   iseNetDevices.setUriBase(iseTicket.getUriBase())
   iseNetDevices.setUri()
+  iseNetDevices.debug()
   return iseNetDevices.httpRequest()
   .then((iseReturn) =>{
     console.log(iseReturn)
