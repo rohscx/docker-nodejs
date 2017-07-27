@@ -47,12 +47,12 @@ let iseTest = () =>{
       iseNetDevices.setUri(iseNetDevices.getReturnPage())
       iseNetDevices.debug()
       iseNetDevices.httpRequest()
-      .then((returnAll)=>{
+      .then((iseReturn)=>{
         iseNetDevices.setDeviceList(iseReturn)
         console.log(returnAll)
         iseNetDevices.getDeviceListJson()
-        .then((returnAll) =>{
-          console.log(returnAll)
+        .then((iseReturn) =>{
+          console.log(iseReturn)
         })
         .catch((httpReject) =>{
           console.log(httpReject);
