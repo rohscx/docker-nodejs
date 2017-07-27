@@ -2,7 +2,7 @@ const rest = require('./api/rest');
 const securityFile = require('../securityFile')
 
 
-// Private Cisco ApicEM resource on the INTRAnet
+// Private Cisco ISE resource on the INTRAnet
 const privateIse = {
   body:{
     "username": securityFile.private.ise.uName,
@@ -11,14 +11,6 @@ const privateIse = {
   uri: securityFile.private.ise.uri
 };
 
-// Public Cisco ApicEM resource on the INTERnet
-const publicIse = {
-  body:{
-    "username": securityFile.public.ise.uName,
-    "password": securityFile.public.ise.uPass
-  },
-  uri: securityFile.public.ise.uri
-};
 
 baseConvert64 = (uName,Upass) => {
   let data = uname +":"+upass;
