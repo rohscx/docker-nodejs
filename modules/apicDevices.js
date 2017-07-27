@@ -12,7 +12,7 @@ class apicDevices extends rest {
     super(method,uri,headers,body)
     this.managementInfo = {
       devicesObj:{},
-      devicesArray:[],
+      searchResult:[],
     };
   }
 
@@ -37,6 +37,10 @@ class apicDevices extends rest {
     this.managementInfo.devicesObj = devicesObj;
   }
 
+  getSearchResult (){
+    return this.managementInfo.searchResult;
+  }
+
   getManagementInfo (searchCriteria){
     let search = new RegExp(searchCriteria.toLowerCase(),"gi");
     let mgmtData = this.managementInfo.devicesObj.response;
@@ -55,9 +59,9 @@ class apicDevices extends rest {
         };
        	//console.log(data.hostname)
         if (data.hostname.match(search)&& count == 0){
-          console.log("MATCH ",statusObj)
+          //console.log("MATCH ",statusObj)
 	        count = 1;
-          this.managementInfo.devicesArray.push(statusObj);
+          this.managementInfo.searchResult.push(statusObj);
 	        //console.log("\n\n\n\n\n"+data.hostname,"\n",data.platformId,"\n",data.managementIpAddress,"\n",data.reachabilityStatus,"\n",data.upTime,"\n",data.lastUpdated,"\n",data.reachabilityFailureReason)
         }
       }
