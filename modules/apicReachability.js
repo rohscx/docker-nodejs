@@ -67,7 +67,7 @@ class apicReachability extends rest {
       }
       counter = 0;
     })
-    this.unReachableBrief = unReachableArray.join(" ");
+    this.unReachableBrief = unReachableArray.join('\n');
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
