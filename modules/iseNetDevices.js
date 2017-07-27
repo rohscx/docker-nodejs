@@ -20,7 +20,7 @@ class iseNetDevices extends rest {
   }
 
   setReturnPage(pageNumber){
-    this.returnReturnPage = this.uri+"&page="+pageNumber;
+    this.returnReturnPage = this.uriBase+":9060/ers/config/networkdevice?size=100&page="+pageNumber;
   }
 
   setUriBase (uriBase){
