@@ -63,6 +63,8 @@ let iseTest = () =>{
         console.log(httpReject);
       })
     }
+  })
+  .then((iseReturn) =>{
     console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
   })
   .catch((httpReject) =>{
