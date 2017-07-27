@@ -10,7 +10,8 @@ const body = "";
 class apicDevices extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
-    this.managementInfo = "";
+    this.managementInfo = responose:[],
+    ;
   }
 
   setHeaders(ticket){
@@ -41,7 +42,7 @@ class apicDevices extends rest {
     mgmtData.map((data,index) => {
 	//console.log(search)
       for (let [key, value] of Object.entries(data)) {
-       	//console.log(data.hostname) 
+       	//console.log(data.hostname)
         if (data.hostname.match(search)&& count == 0){
           //console.log("MATCH ",data)
 	  count = 1;
