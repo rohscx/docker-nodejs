@@ -1,4 +1,4 @@
-const rest = require('./util/cliPrinter');
+const cliPrinter = require('./util/cliPrinter');
 
 
 
