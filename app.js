@@ -43,11 +43,13 @@ let iseTest = () =>{
       console.log(i)
       iseNetDevices.setReturnPage(i+1);
       console.log(iseNetDevices.getReturnPage());
-      iseNetDevices.setUri(iseNetDevices.getReturnPage())
-      iseNetDevices.debug()
-      iseNetDevices.httpRequest()
-      iseNetDevices.setDeviceList(iseReturn)
-      iseNetDevices.getDeviceListJson()
+      Promise.all([iseNetDevices.setUri(iseNetDevices.getReturnPage()),iseNetDevices.debug(),iseNetDevices.httpRequest(),iseNetDevices.setDeviceList(iseReturn),iseNetDevices.getDeviceListJson()])
+      .then((returnAll) =>{
+        console.log(returnAll)
+      })
+      .catch((httpReject) =>{
+        console.log(httpReject);
+      })
     }
     console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
   })
