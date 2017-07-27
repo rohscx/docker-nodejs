@@ -10,6 +10,7 @@ class iseNetDevices extends rest {
   constructor (method,uri,headers,body){
     super(method,uri,headers,body)
     this.deviceList = "";
+    this.deviceListJson = [];
     this.returnMetadata = "";
   }
 
@@ -29,6 +30,11 @@ class iseNetDevices extends rest {
     this.deviceList = data;
   }
 
+  pushDeviceListJson(data) {
+
+    this.deviceListJson.push(data);
+  }
+
   getReturnMetadata() {
     return this.returnMetadata
   }
@@ -44,6 +50,11 @@ class iseNetDevices extends rest {
          if (result){
            let metaData = [result['ns3:searchResult']['$'],result['ns3:searchResult'].nextPage[0]['$']]
            this.returnMetadata = metaData;
+           result['ns3:searchResult'][0].resource.map((data) => {
+             deviceInfo = {name: data['$'].name, data['$'].id};
+             this.deviceListJson.push(deviceInfo);
+
+           })
            resolve(result['ns3:searchResult']);
          } else {
            reject(err);
