@@ -29,14 +29,13 @@ let iseTest2 = (inputFile) => {
         ipTools.getData()
         .then((ipGetData) =>{
           console.log(ipGetData.dataString[0])
-          iseTicket.debug()
-          iseNetDevices.setHeaders(iseTicket.getHeaders())
-
-          iseNetDevices.debug()
-          let uriBase = iseTicket.getUri();
-          uriBase += ":9060/ers/config/networkdevice";
           ipGetData.dataString.map((data) =>{
             setTimeout(() =>{
+              iseTicket.debug()
+              iseNetDevices.setHeaders(iseTicket.getHeaders())
+              iseNetDevices.debug()
+              let uriBase = iseTicket.getUri();
+              uriBase += ":9060/ers/config/networkdevice";
               let newUri = uriBase + "/"+data.id;
               // debug
               //console.log(newUri)
