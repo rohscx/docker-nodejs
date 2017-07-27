@@ -42,7 +42,7 @@ class iseNetDevices extends rest {
       let data = this.deviceList;
       parseString(data, (err,result) =>{
          if (result){
-           let metaData = [result['ns3:searchResult']['$'],result['ns3:searchResult']['nextPage']
+           let metaData = [result['ns3:searchResult']['$'],result['ns3:searchResult'].nextPage]
            this.returnMetadata = metaData;
            resolve(result['ns3:searchResult']);
          } else {
