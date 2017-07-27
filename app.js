@@ -43,6 +43,7 @@ let iseTest = () =>{
       console.log(i)
       iseNetDevices.setReturnPage(i+1);
       console.log(iseNetDevices.getReturnPage());
+      iseNetDevices.setUri(iseNetDevices.getReturnPage())
       return iseNetDevices.httpRequest()
       .then((iseReturn) =>{
         iseNetDevices.setDeviceList(iseReturn)
