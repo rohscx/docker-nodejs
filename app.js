@@ -40,7 +40,7 @@ let iseTest = () =>{
     console.log("arrayyy ",iseNetDevices.getDeviceJsonArray())
     console.log("page count  ", iseNetDevices.getPageCount())
 
-    for (let i = 0; i < iseNetDevices.getPageCount(); i++) {
+    for (let i = 1; i < iseNetDevices.getPageCount(); i++) {
       console.log(i)
       iseNetDevices.setReturnPage(i + 1);
       console.log(iseNetDevices.getReturnPage());
