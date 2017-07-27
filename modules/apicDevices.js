@@ -35,6 +35,7 @@ class apicDevices extends rest {
 
   setManagementInfo (devicesObj){
     this.managementInfo.devicesObj = devicesObj;
+    this.managementInfo.devicesArray = [];
   }
 
   getManagementInfo (searchCriteria){
