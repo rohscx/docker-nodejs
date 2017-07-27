@@ -44,19 +44,19 @@ class apicDevices extends rest {
     mgmtData.map((data,index) => {
 	//console.log(search)
       for (let [key, value] of Object.entries(data)) {
+        let deviceObj = {
+          hostName: data.hostname,
+          platFormId: data.platformId,
+          managementIpAddress: data.managementIpAddress,
+          reachablityStatus: data.reachabilityStatus,
+          upTime: data.upTime,
+          lastUpdated: data.lastUpdated,
+          reachabilityFailureReason: data.reachabilityFailureReason
+        };
        	//console.log(data.hostname)
         if (data.hostname.match(search)&& count == 0){
           //console.log("MATCH ",data)
 	        count = 1;
-          let deviceObj = {
-            hostName: data.hostname,
-            platFormId: data.platformId,
-            managementIpAddress: data.managementIpAddress,
-            reachablityStatus: data.reachabilityStatus,
-            upTime: data.upTime,
-            lastUpdated: data.lastUpdated,
-            reachabilityFailureReason: data.reachabilityFailureReason
-          }
           this.managementInfo.devices.push(deviceObj);
 	        //console.log("\n\n\n\n\n"+data.hostname,"\n",data.platformId,"\n",data.managementIpAddress,"\n",data.reachabilityStatus,"\n",data.upTime,"\n",data.lastUpdated,"\n",data.reachabilityFailureReason)
         }
