@@ -32,7 +32,7 @@ let iseTest = () =>{
     //console.log(iseReturn)
     iseNetDevices.setDeviceList(iseReturn)
 
-    console.log(iseNetDevices.getDeviceListJson())
+    console.log("JSONE TEST RESPONSE ",iseNetDevices.getDeviceListJson())
   })
   .catch((httpReject) =>{
     console.log(httpReject);
