@@ -42,7 +42,7 @@ let iseTest = () =>{
 
     for (let i = 5; i < iseNetDevices.getPageCount(); i++) {
       console.log(i)
-      iseNetDevices.setReturnPage(2);
+      iseNetDevices.setReturnPage(i);
       console.log(iseNetDevices.getReturnPage());
       iseNetDevices.setUri(iseNetDevices.getReturnPage())
       iseNetDevices.debug()
