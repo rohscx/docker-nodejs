@@ -39,6 +39,7 @@ let iseTest = () =>{
     console.log("adsf1 " , iseReturn.resources[0].resource[0]['$'].name)
     console.log("asdf2  " , iseReturn.resources[0].resource[0]['$'].id)
     console.log("arrayyy ",iseNetDevices.getDeviceJsonArray())
+    console.log("page count  ", iseNetDevices.getPageCount())
   })
   .catch((httpReject) =>{
     console.log(httpReject);

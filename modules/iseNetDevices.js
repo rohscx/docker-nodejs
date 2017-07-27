@@ -34,6 +34,11 @@ class iseNetDevices extends rest {
     return this.deviceJsonArray;
   }
 
+  getPageCount() {
+    data = this.returnMetadata[0].total
+    return data / 100;
+  }
+
   getReturnMetadata() {
     return this.returnMetadata
   }
