@@ -20,6 +20,7 @@ baseConvert64 = (uName,uPass) => {
 
 let iseHeaders = {
   "Authorization": baseConvert64(securityFile.private.ise.uName,securityFile.private.ise.uPass)
+  "Accept": application/vnd.com.cisco.ise.network.networkdevice.1.1+xml
 };
 
 const method = 'GET';
