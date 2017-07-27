@@ -49,7 +49,7 @@ let iseTest = () =>{
       iseNetDevices.httpRequest()
       .then((iseReturn)=>{
         iseNetDevices.setDeviceList(iseReturn)
-        console.log(returnAll)
+        console.log(iseReturn)
         iseNetDevices.getDeviceListJson()
         .then((iseReturn) =>{
           console.log(iseReturn)
