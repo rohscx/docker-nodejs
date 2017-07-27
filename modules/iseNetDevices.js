@@ -49,12 +49,12 @@ class iseNetDevices extends rest {
          if (result){
            let metaData = [result['ns3:searchResult']['$'],result['ns3:searchResult'].nextPage[0]['$']]
            this.returnMetadata = metaData;
-           console.log(result['ns3:searchResult'].resources[0])
+           // debug
+           //console.log(result['ns3:searchResult'].resources[0])
            result['ns3:searchResult'].resources[0].resource.map((data) => {
              console.log(data['$'].name)
-             //deviceInfo = {name: data['$'].name, data['$'].id};
-             //this.deviceJsonArray.push(deviceInfo);
-
+             deviceInfo = {name: data['$'].name, id: data['$'].id};
+             this.deviceJsonArray.push(deviceInfo);
            })
            resolve(result['ns3:searchResult']);
          } else {
