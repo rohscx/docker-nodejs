@@ -40,15 +40,19 @@ let iseTest2 = (inputFile) => {
             // debug
             //console.log(newUri)
             iseNetDevices.setUri(newUri)
-            iseNetDevices.httpRequest()
-            .then((deviceRequestData) =>{
-              parseString(deviceRequestData, (err,result) =>{
-                console.log(result)
+
+            setTimeout(() =>{
+              iseNetDevices.httpRequest()
+              .then((deviceRequestData) =>{
+                parseString(deviceRequestData, (err,result) =>{
+                  console.log(result)
+                })
               })
-            })
-            .catch((reject) =>{
-              console.log(reject);
-            })
+              .catch((reject) =>{
+                console.log(reject);
+              })
+            }, 1000)
+
           })
         })
         .catch((reject) =>{
