@@ -36,7 +36,7 @@ class iseNetDevices extends rest {
   }
 
   getDeviceJsonArray() {
-    console.log("Length ++>>> ", this.deviceJsonArray.length())
+    console.log("Length ++>>> ", this.deviceJsonArray.length
     return this.deviceJsonArray;
   }
 
