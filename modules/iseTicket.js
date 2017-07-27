@@ -12,7 +12,7 @@ const privateIse = {
 };
 
 
-baseConvert64 = (uName,Upass) => {
+baseConvert64 = (uName,uPass) => {
   let data = uName +":"+uPass;
   return parseInt(data, 64)
 }
