@@ -1,6 +1,6 @@
 const colors = require('colors');
 
-module.exports = {
+module.exports = class cliPrinter {
   constructor (){
     this.inputFile = {};
   }
