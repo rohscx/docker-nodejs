@@ -41,7 +41,7 @@ let iseTest = () =>{
     console.log("page count  ", iseNetDevices.getPageCount())
     for (let i = 1; i < iseNetDevices.getPageCount(); i++) {
       console.log(i)
-      iseNetDevices.setReturnPage(i+1);
+      iseNetDevices.setReturnPage(2);
       console.log(iseNetDevices.getReturnPage());
       Promise.all([iseNetDevices.setUri(iseNetDevices.getReturnPage()),iseNetDevices.debug(),iseNetDevices.httpRequest(),iseNetDevices.setDeviceList(iseReturn),iseNetDevices.getDeviceListJson()])
       .then((returnAll) =>{
