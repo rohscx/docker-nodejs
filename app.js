@@ -39,13 +39,13 @@ let iseTest2 = (inputFile) => {
             //console.log(newUri)
             iseNetDevices.setUri(newUri)
             iseNetDevices.debug()
-            setTimeout(()=>{
-              iseNetDevices.httpRequest()
-              .then((deviceRequestData) =>{
-                parseString(deviceRequestData, (err,result) =>{
-                  let newResult = result
-                  console.log(result)
-                })
+            iseNetDevices.httpRequest()
+            .then((deviceRequestData) =>{
+              parseString(deviceRequestData, (err,result) =>{
+                let newResult1 = result['ns4:networkdevice']['$'].name
+                let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
+                console.log(newResult1)
+                console.log(newResult2)
               })
               .catch((reject) =>{
                 console.log(reject);
