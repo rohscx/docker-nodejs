@@ -1,4 +1,5 @@
-const request = require('request-promise') ;
+const request = require('request-promise');
+const request = require('request');
 const formData = require('form-data');
 
 //
@@ -9,6 +10,21 @@ module.exports = class rest {
     this.rejectCert = rejectCert;
     this.headers = headers;
     this.body = body;
+  }
+
+  httpRequestSynchronous(){
+    var options = {
+      url: this.uri,
+      headers: this.headers
+    };
+
+    function callback(error, response, body) {
+      if (!error && response.statusCode == 200) {
+        //var info = JSON.parse(body);
+        console.log(body);
+      }
+    }
+    request(options, callback);
   }
 
   httpRequest(){
