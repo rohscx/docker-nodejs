@@ -30,7 +30,7 @@ let iseTest2 = (inputFile) => {
         .then((ipGetData) =>{
           // debug
           //console.log(ipGetData.dataString[0])
-          GetData.dataString.map(setTimeout(() =>{(data) =>{
+          ipGetData.dataString.map(setTimeout(() =>{(data) =>{
             iseNetDevices.setHeaders(iseTicket.getHeaders())
             iseTicket.debug()
             let uriBase = iseTicket.getUri();
