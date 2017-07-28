@@ -52,7 +52,7 @@ let iseTest2 = (inputFile) => {
             .catch((reject) =>{
               console.log(reject);
             })
-          }}, 2000)))
+          }}, 2000))
         })
         .catch((reject) =>{
           console.log(reject);
