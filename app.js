@@ -42,6 +42,7 @@ let iseTest2 = (inputFile) => {
             iseNetDevices.httpRequest()
             .then((deviceRequestData) =>{
               parseString(deviceRequestData, (err,result) =>{
+                let newResult = result
                 console.log(result)
               })
             })
