@@ -16,11 +16,11 @@ module.exports = class rest {
       const options = {
         method: this.method,
         uri: this.uri,
+        timeout:120000,
         rejectUnauthorized: this.rejectCert,
         headers: this.headers,
         body: this.body,
-        json: true,
-        timeout:120000
+        json: true
       // JSON stringifies the body automatically
       }
       request(options)
