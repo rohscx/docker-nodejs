@@ -43,7 +43,7 @@ let iseTest2 = (inputFile) => {
             .then((deviceRequestData) =>{
               parseString(deviceRequestData, (err,result) =>{
                 let newResult1 = result['ns4:networkdevice']['$'].name
-                let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].ipaddress
+                let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0]
                 console.log(newResult1)
                 console.log(newResult2)
               })
