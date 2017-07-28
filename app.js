@@ -30,12 +30,9 @@ let iseTest2 = (inputFile) => {
         .then((ipGetData) =>{
           // debug
           //console.log(ipGetData.dataString[0])
-            function fibonacci(num) {
-            if (num <= 1) return 1;
-            return fibonacci(num - 1) + fibonacci(num - 2);
-            };
+
           ipGetData.dataString.map((data) =>{
-             fibonacci(34);
+
             iseNetDevices.setHeaders(iseTicket.getHeaders())
             iseTicket.debug()
             let uriBase = iseTicket.getUri();
@@ -85,11 +82,6 @@ let iseTest = () =>{
   iseNetDevices.getDeviceListJson(iseReturn)
   })
   .then((iseReturn) =>{
-    //console.log(iseNetDevices.getReturnMetadata())
-    //console.log("adsf1 " , iseReturn.resources[0].resource[0]['$'].name)
-    //console.log("asdf2  " , iseReturn.resources[0].resource[0]['$'].id)
-    //console.log("arrayyy ",iseNetDevices.getDeviceJsonArray())
-    //console.log("page count  ", iseNetDevices.getPageCount())
     let finalTotal = iseNetDevices.getPageCount();
     for (let i = 1; i < finalTotal; i++) {
       console.log(i)
@@ -100,7 +92,6 @@ let iseTest = () =>{
       Promise.all([iseNetDevices.httpRequest()])
       .then((netDevicesList1)=>{
         //iseNetDevices.setDeviceList(temp)
-
         if (i + 1 == finalTotal){
           //debug
           //console.log(iseNetDevices.getDeviceJsonArray())
@@ -119,16 +110,8 @@ let iseTest = () =>{
         console.log(httpReject);
         })
       })
-      //console.log(iseReturn)
     }
-    /*
-    console.log("AGAINNNN ",iseNetDevices.getDeviceJsonArray())
-    let tempData = iseNetDevices.getDeviceJsonArray()
-    tempData.map((data)=>{
-      for (let [key, value] of Object.entries(data)) {
-        //console.log("keEEY ",key,"  VALUE",value)
-      }*/
-    })
+  })
   .catch((httpReject) =>{
   console.log(httpReject);
   })
