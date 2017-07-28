@@ -20,7 +20,7 @@ module.exports = class rest {
         headers: this.headers,
         body: this.body,
         json: true,
-        timeout:1200
+        timeout:120000
       // JSON stringifies the body automatically
       }
       request(options)
