@@ -30,31 +30,29 @@ let iseTest2 = (inputFile) => {
         .then((ipGetData) =>{
           // debug
           //console.log(ipGetData.dataString[0])
-          ipGetData.dataString.map((data) =>{
-            setTimeout(()=>{
-              iseNetDevices.setHeaders(iseTicket.getHeaders())
-              iseTicket.debug()
-              let uriBase = iseTicket.getUri();
-              uriBase += ":9060/ers/config/networkdevice";
-              let newUri = uriBase + "/"+data.id;
-              // debug
-              //console.log(newUri)
-              iseNetDevices.setUri(newUri)
-              iseNetDevices.debug()
-              iseNetDevices.httpRequest()
-              .then((deviceRequestData) =>{
-                parseString(deviceRequestData, (err,result) =>{
-                  let newResult1 = result['ns4:networkdevice']['$'].name
-                  let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
-                  console.log(newResult1)
-                  console.log(newResult2)
-                })
+          GetData.dataString.map(setTimeout(() =>{(data) =>{
+            iseNetDevices.setHeaders(iseTicket.getHeaders())
+            iseTicket.debug()
+            let uriBase = iseTicket.getUri();
+            uriBase += ":9060/ers/config/networkdevice";
+            let newUri = uriBase + "/"+data.id;
+            // debug
+            //console.log(newUri)
+            iseNetDevices.setUri(newUri)
+            iseNetDevices.debug()
+            iseNetDevices.httpRequest()
+            .then((deviceRequestData) =>{
+              parseString(deviceRequestData, (err,result) =>{
+                let newResult1 = result['ns4:networkdevice']['$'].name
+                let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
+                console.log(newResult1)
+                console.log(newResult2)
               })
-              .catch((reject) =>{
-                console.log(reject);
-              })
-            }, 2000)
-          })
+            })
+            .catch((reject) =>{
+              console.log(reject);
+            })
+          }}, 2000)))
         })
         .catch((reject) =>{
           console.log(reject);
