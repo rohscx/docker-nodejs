@@ -30,7 +30,7 @@ let iseTest2 = (inputFile) => {
         .then((ipGetData) =>{
           // debug
           //console.log(ipGetData.dataString[0])
-          let randomTime = Math.floor(Math.random() * 100000 - 1000) + 1000;
+          let randomTime = Math.floor(Math.random() * 10000 - 1000) + 1000;
           ipGetData.dataString.map((data) =>{
             setTimeout(()=>{
               iseNetDevices.setHeaders(iseTicket.getHeaders())
