@@ -10,6 +10,11 @@ module.exports = class rest {
     this.rejectCert = rejectCert;
     this.headers = headers;
     this.body = body;
+    this.returnData = "";
+  }
+
+  getreturnData(){
+    return this.returnData
   }
 
   httpRequestSynchronous(){
@@ -21,6 +26,7 @@ module.exports = class rest {
     function callback(error, response, body) {
       if (!error && response.statusCode == 200) {
         //var info = JSON.parse(body);
+        this.returnData = body;
         console.log(body);
       }
     }
