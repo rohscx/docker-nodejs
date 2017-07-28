@@ -30,8 +30,12 @@ let iseTest2 = (inputFile) => {
         .then((ipGetData) =>{
           // debug
           //console.log(ipGetData.dataString[0])
-
+            function fibonacci(num) {
+            if (num <= 1) return 1;
+            return fibonacci(num - 1) + fibonacci(num - 2);
+            };
           ipGetData.dataString.map((data) =>{
+             fibonacci(30);
             iseNetDevices.setHeaders(iseTicket.getHeaders())
             iseTicket.debug()
             let uriBase = iseTicket.getUri();
