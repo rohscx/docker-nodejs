@@ -28,7 +28,8 @@ let iseTest2 = (inputFile) => {
         //console.log(promiseReturn);
         ipTools.getData()
         .then((ipGetData) =>{
-          console.log(ipGetData.dataString[0])
+          // debug
+          //console.log(ipGetData.dataString[0])
           ipGetData.dataString.map((data) =>{
             setTimeout(()=>{
               iseNetDevices.setHeaders(iseTicket.getHeaders())
