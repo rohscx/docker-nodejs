@@ -34,12 +34,13 @@ let iseTest2 = (inputFile) => {
             iseNetDevices.setHeaders(iseTicket.getHeaders())
             let uriBase = iseTicket.getUri();
             uriBase += ":9060/ers/config/networkdevice";
-            let newUri = uriBase + "/"+data.id;
-            // debug
-            //console.log(newUri)
-            iseNetDevices.setUri(newUri)
-            iseNetDevices.debug()
+
             setTimeout(()=>{
+              let newUri = uriBase + "/"+data.id;
+              // debug
+              //console.log(newUri)
+              iseNetDevices.setUri(newUri)
+              iseNetDevices.debug()
               iseNetDevices.httpRequest()
               .then((deviceRequestData) =>{
                 parseString(deviceRequestData, (err,result) =>{
