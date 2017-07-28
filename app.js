@@ -39,16 +39,18 @@ let iseTest2 = (inputFile) => {
             //console.log(newUri)
             iseNetDevices.setUri(newUri)
             iseNetDevices.debug()
-            iseNetDevices.httpRequest()
-            .then((deviceRequestData) =>{
-              parseString(deviceRequestData, (err,result) =>{
-                let newResult = result
-                console.log(result)
+            setTimeout(()=>{
+              iseNetDevices.httpRequest()
+              .then((deviceRequestData) =>{
+                parseString(deviceRequestData, (err,result) =>{
+                  let newResult = result
+                  console.log(result)
+                })
               })
-            })
-            .catch((reject) =>{
-              console.log(reject);
-            })
+              .catch((reject) =>{
+                console.log(reject);
+              })
+            },2000)
           })
         })
         .catch((reject) =>{
