@@ -14,7 +14,7 @@ module.exports = class cliPrinter {
     let vColor = valueColor ? valueColor : "black";
 
     colors.setTheme({
-      key: kColor
+      key: kColor,
       value: vColor
     });
     let inputFile = this.inputFile;
