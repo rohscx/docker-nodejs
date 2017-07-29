@@ -173,8 +173,9 @@ let apiccDevices = () => {
         // debug
         console.log(devicesReturn)
         devicesReturn.response.map((data) =>{
-          cliTools.setInputFile(data)
-          cliTools.cliPrint()
+          //cliTools.setInputFile(data)
+          //cliTools.cliPrint()
+          console.log(data)
         })
         processSuccess = true;
         if (processSuccess) {
