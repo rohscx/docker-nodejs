@@ -12,7 +12,7 @@ module.exports = class cliPrinter {
   cliPrint(keyColor,valueColor){
     let kColor = keyColor ? keyColor : "red";
     let vColor = valueColor ? valueColor : "black";
-    let new
+
     colors.setTheme({
       key: kColor
       value: vColor
