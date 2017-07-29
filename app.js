@@ -182,7 +182,7 @@ let apiccDevices = () => {
         console.log(devicesReturn)
         // sets the color of key
         cliTools.setInputFile(devicesReturn.response)
-        cliTools.cliPrint("red")
+        cliTools.cliPrint("green","blue")
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
