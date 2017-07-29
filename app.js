@@ -24,6 +24,7 @@ let synchotest = ()=>{
   return new Promise((resolve, reject) =>{
     apicTicket.debug()
     apicTicket.httpRequest()
+  }
 }
 
 let iseTest2 = (inputFile) => {
