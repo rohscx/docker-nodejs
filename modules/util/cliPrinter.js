@@ -9,14 +9,15 @@ module.exports = class cliPrinter {
     this.inputFile = data;
   }
 
-  cliPrint(color){
+  cliPrint(keyColor,valueColor){
     colors.setTheme({
-      data: color
+      key: keyColor
+      value: valueColor ? valueColor : "black"
     });
     let inputFile = this.inputFile;
     inputFile.map((data) =>{
       for (let [key, value] of Object.entries(data)) {
-        console.log(colors.data(key)," :: ", value);
+        console.log(keyColor.data(key)," :: ",valueColor.data(value));
       }
       console.log("\n\n")
     })
