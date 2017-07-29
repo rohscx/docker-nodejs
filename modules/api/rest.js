@@ -1,5 +1,5 @@
 const request = require('request-promise');
-const request = require('request');
+const requestSynchronous = require('request');
 const formData = require('form-data');
 
 //
@@ -30,7 +30,7 @@ module.exports = class rest {
         console.log(body);
       }
     }
-    request(options, callback);
+    requestSynchronous(options, callback);
   }
 
   httpRequest(){
