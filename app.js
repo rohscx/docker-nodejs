@@ -170,7 +170,12 @@ let apiccDevices = () => {
         return apicDevices.httpRequest()
       })
       .then((devicesReturn) =>{
+        // debug
         console.log(devicesReturn)
+        devicesReturn.response.map((data) =>{
+          cliTools.setInputFile(data)
+          cliTools.cliPrint()
+        })
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
