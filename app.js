@@ -19,6 +19,13 @@ const parseString = require('xml2js').parseString;
 */
 
 
+let synchotest = ()=>{
+  let processSuccess = false;
+  return new Promise((resolve, reject) =>{
+    apicTicket.debug()
+    apicTicket.httpRequest()
+}
+
 let iseTest2 = (inputFile) => {
   if (inputFile) {
     let processSuccess = false;
@@ -173,7 +180,7 @@ let apiccDevices = () => {
         // debug
         console.log(devicesReturn)
         cliTools.setInputFile(devicesReturn.response)
-        cliTools.cliPrint()
+        cliTools.cliPrint("red")
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
