@@ -23,7 +23,8 @@ let synchotest = ()=>{
   let processSuccess = false;
   apicTicket.debug()
   apicTicket.httpRequestSynchronous()
-  apicTicket.getreturnData()
+  cliTools.setInputFile(apicTicket.getreturnData().response)
+  cliTools.cliPrint("green","blue")
 }
 
 let iseTest2 = (inputFile) => {
@@ -179,7 +180,7 @@ let apiccDevices = () => {
       .then((devicesReturn) =>{
         // debug
         console.log(devicesReturn)
-        // sets the color of key
+        // sets the color of key value pair
         cliTools.setInputFile(devicesReturn.response)
         cliTools.cliPrint("green","blue")
         processSuccess = true;
