@@ -27,7 +27,8 @@ module.exports = class rest {
       if (!error && response.statusCode == 200) {
         //var info = JSON.parse(body);
         this.returnData = body;
-        console.log(body);
+        // debug
+        //console.log(body);
       }
     }
     requestSynchronous(options, callback);

@@ -21,10 +21,9 @@ const parseString = require('xml2js').parseString;
 
 let synchotest = ()=>{
   let processSuccess = false;
-  return new Promise((resolve, reject) =>{
-    apicTicket.debug()
-    apicTicket.httpRequestSynchronous()
-  })
+  apicTicket.debug()
+  apicTicket.httpRequestSynchronous()
+  apicTicket.getreturnData()
 }
 
 let iseTest2 = (inputFile) => {
@@ -175,7 +174,7 @@ let apiccDevices = () => {
         apicTicket.setTicketData(ticketReturn.response);
         apicDevices.setHeaders(apicTicket.getTicketData())
         apicDevices.setUriPath(apicTicket.getUriBase(),"/api/v1/network-device")
-        return apicDevices.httpRequestSynchronous()
+        return apicDevices.httpRequest()
       })
       .then((devicesReturn) =>{
         // debug
@@ -349,6 +348,14 @@ let apiccDiscovery = (inputFile,jobName) => {
 let appMenu = () => {
   program
     .version('0.1.0')
+
+    program
+      .command('synchotest')
+      .alias('sNcT')
+      .description('iseTest')
+      .action(function(){
+        synchotest();
+      });
 
     program
       .command('iseTest2')
