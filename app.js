@@ -19,16 +19,6 @@ const parseString = require('xml2js').parseString;
 */
 
 
-let synchotest = ()=>{
-  let processSuccess = false;
-  apicTicket.debug()
-  apicTicket.httpRequestSynchronous()
-  let data = apicTicket.getreturnData();
-  console.log("datatadsf",data);
-  //cliTools.setInputFile(data.response)
-  //cliTools.cliPrint("green","blue")
-}
-
 let iseTest2 = (inputFile) => {
   if (inputFile) {
     let processSuccess = false;
@@ -352,22 +342,14 @@ let appMenu = () => {
   program
     .version('0.1.0')
 
-    program
-      .command('synchotest')
-      .alias('sNcT')
-      .description('iseTest')
-      .action(function(){
-        synchotest();
-      });
-
-    program
-      .command('iseTest2')
-      .alias('iRe2')
-      .arguments ('<inputFile>')
-      .description('iseLoadJson')
-      .action(function(inputFile){
-         iseTest2(inputFile);
-      });
+  program
+    .command('iseTest2')
+    .alias('iRe2')
+    .arguments ('<inputFile>')
+    .description('iseLoadJson')
+    .action(function(inputFile){
+      iseTest2(inputFile);
+    });
 
 
   program
