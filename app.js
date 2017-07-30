@@ -3,7 +3,7 @@ const apicDevices = require('./modules/apicDevices');
 const apicConfig = require('./modules/apicConfig');
 const apicReachability = require('./modules/apicReachability');
 const apicDiscovery = require('./modules/apicDiscovery');
-const ipTools = require('./modules/ipTools');
+const dataTools = require('./modules/dataTools');
 const cliTools = require('./modules/cliTools');
 const iseTicket = require('./modules/iseTicket');
 const iseNetDevices = require('./modules/iseNetDevices');
@@ -23,10 +23,10 @@ let iseTest2 = (inputFile) => {
   if (inputFile) {
     let processSuccess = false;
     return new Promise((resolve, reject) =>{
-      Promise.all([ipTools.setJsonFile(inputFile),ipTools.readJsonFile()])
+      Promise.all([dataTools.setJsonFile(inputFile),dataTools.readJsonFile()])
       .then((promiseReturn)=>{
         //console.log(promiseReturn);
-        ipTools.getData()
+        dataTools.getData()
         .then((ipGetData) =>{
           // debug
           //console.log(ipGetData.dataString[0])
@@ -89,9 +89,9 @@ let iseTest = () =>{
         if (i + 1 == finalTotal){
           //debug
           //console.log(iseNetDevices.getDeviceJsonArray())
-          ipTools.setSaveExtentions(".json")
+          dataTools.setSaveExtentions(".json")
           let fileName = "iseDevices-"+Date.now()
-          return ipTools.writeFile(fileName,JSON.stringify(iseNetDevices.getDeviceJsonArray()))
+          return dataTools.writeFile(fileName,JSON.stringify(iseNetDevices.getDeviceJsonArray()))
           .then((writeReturn) =>{
             console.log(writeReturn)
           })
@@ -129,7 +129,7 @@ let apiccReachability= () => {
         apicReachability.setReturnData(devicesReturn)
         apicReachability.setUnreachable()
         //console.log(apicReachability.getUnreachable())
-        ipTools.setSaveExtentions(".json")
+        dataTools.setSaveExtentions(".json")
         let rechName = "reachJob-"+Date.now();
         processSuccess = true;
         if (processSuccess) {
@@ -137,14 +137,14 @@ let apiccReachability= () => {
         } else {
           reject("Something went wrong")
         };
-        return ipTools.writeFile(rechName,JSON.stringify(apicReachability.getUnreachable(), null, 2))
+        return dataTools.writeFile(rechName,JSON.stringify(apicReachability.getUnreachable(), null, 2))
       })
       .then((writeReturn) =>{
         console.log(writeReturn)
         apicReachability.setUnreachableBrief()
-        ipTools.setSaveExtentions(".csv")
+        dataTools.setSaveExtentions(".csv")
         let reachNameBrief = "reachJobBrief-"+Date.now()
-        return ipTools.writeFile(reachNameBrief,apicReachability.getUnreachableBrief())
+        return dataTools.writeFile(reachNameBrief,apicReachability.getUnreachableBrief())
       })
       .then((writeReturn) =>{
         console.log(writeReturn)
@@ -226,13 +226,13 @@ let apiccDiscoveryFileCheck = (inputFile,jobName) => {
   if (inputFile && jobName) {
     let processSuccess = false;
     return new Promise((resolve, reject) =>{
-      Promise.all([ipTools.setFile(inputFile),ipTools.readFile()])
+      Promise.all([dataTools.setFile(inputFile),dataTools.readFile()])
       .then((promiseReturn)=>{
         console.log(promiseReturn);
-        return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.setBase(),ipTools.setSuperNet()])
+        return Promise.all([dataTools.cleanData(),dataTools.sortData(),dataTools.setBase(),dataTools.setSuperNet()])
       })
       .then((promiseReturn)=>{
-        apicDiscovery.setDiscoveryList(ipTools.getIpRange(),jobName)
+        apicDiscovery.setDiscoveryList(dataTools.getIpRange(),jobName)
         console.log(apicDiscovery.getDiscoveryList())
         console.log(promiseReturn);
       })
@@ -251,10 +251,10 @@ let apiccDiscovery = (inputFile,jobName) => {
   if (inputFile && jobName) {
     let processSuccess = false;
     return new Promise((resolve, reject) =>{
-      Promise.all([ipTools.setFile(inputFile),ipTools.readFile()])
+      Promise.all([dataTools.setFile(inputFile),dataTools.readFile()])
       .then((promiseReturn)=>{
         console.log(promiseReturn);
-        return Promise.all([ipTools.cleanData(),ipTools.sortData(),ipTools.setBase(),ipTools.setSuperNet()])
+        return Promise.all([dataTools.cleanData(),dataTools.sortData(),dataTools.setBase(),dataTools.setSuperNet()])
       })
       .then((promiseReturn)=>{
         console.log(promiseReturn);
@@ -272,7 +272,7 @@ let apiccDiscovery = (inputFile,jobName) => {
           apicDiscovery.setHeaders(apicTicket.getTicketData());
           apicDiscovery.setUriBase(apicTicket.getUriBase());
           // Uses IP list to generate array with IP range and Job name objects
-          apicDiscovery.setDiscoveryList(ipTools.getIpRange(),jobName);
+          apicDiscovery.setDiscoveryList(dataTools.getIpRange(),jobName);
           console.log(apicDiscovery.getDiscoveryList())
           let discoveryList = apicDiscovery.getDiscoveryList();
           return new Promise((resolve, reject) =>{
@@ -309,8 +309,8 @@ let apiccDiscovery = (inputFile,jobName) => {
               return apicDiscovery.httpRequest()
               .then((status) =>{
                 console.log(status);
-                ipTools.setSaveExtentions(".json")
-                return ipTools.writeFile(status.response.rootId,JSON.stringify(status, null, 2))
+                dataTools.setSaveExtentions(".json")
+                return dataTools.writeFile(status.response.rootId,JSON.stringify(status, null, 2))
                 .then((writeReturn) => {
                   console.log(writeReturn)
                   processSuccess = true;

@@ -6,7 +6,7 @@ const fileSystem = require('./util/fileSystem')
 //path.basename(); example about.html
 //path.extname(); example .html
 
-class ipTools extends fileSystem {
+class dataTools extends fileSystem {
   constructor (inputFile,outputFile){
     super(inputFile,outputFile)
     this.cleanedData = "";
@@ -201,10 +201,20 @@ class ipTools extends fileSystem {
       }
     })
   }
+
+  getChunks(data){
+    let toChunk = data;
+    toChunk.map((toChunk)=>{
+      for (let i = 0; i < 10; i++) {
+        console.log(i)
+      }
+    })
+  }
+
   // Adds a Debugs for the contest of the Ticket POST HTTP request
   debug() {
     console.log("inputFile: "+this.inputFile,'\n',"outputFile: "+outputFile.uri,'\n')
   }
 }
 
-module.exports = new ipTools()
+module.exports = new dataTools()
