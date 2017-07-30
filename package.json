@@ -22,7 +22,6 @@
     "commander": "^2.11.0",
     "http": "0.0.0",
     "http-request": "^0.7.0",
-    "request": "^2.81.0",
     "request-promise": "^4.2.1",
     "xml2js": "^0.4.17"
   }

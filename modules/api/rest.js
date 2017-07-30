@@ -1,5 +1,4 @@
 const request = require('request-promise');
-const requestSynchronous = require('request');
 const formData = require('form-data');
 
 //
@@ -15,26 +14,6 @@ module.exports = class rest {
 
   getreturnData(){
     return this.returnData
-  }
-
-  httpRequestSynchronous(){
-    var options = {
-      method: this.method,
-      url: this.uri,
-      headers: this.headers,
-      body: this.body,
-      json: true
-    };
-
-    function callback(error, response, body) {
-      if (!error && response.statusCode == 200) {
-        //var info = JSON.parse(body);
-        this.returnData = body;
-        // debug
-        console.log(body);
-      }
-    }
-    requestSynchronous(options, callback);
   }
 
   httpRequest(){
