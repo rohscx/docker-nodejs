@@ -23,7 +23,7 @@ let synchotest = ()=>{
   let processSuccess = false;
   return new Promise((resolve, reject) =>{
     apicTicket.debug()
-    apicTicket.httpRequest()
+    apicTicket.httpRequestSynchronous()
   })
 }
 
@@ -175,7 +175,7 @@ let apiccDevices = () => {
         apicTicket.setTicketData(ticketReturn.response);
         apicDevices.setHeaders(apicTicket.getTicketData())
         apicDevices.setUriPath(apicTicket.getUriBase(),"/api/v1/network-device")
-        return apicDevices.httpRequest()
+        return apicDevices.httpRequestSynchronous()
       })
       .then((devicesReturn) =>{
         // debug
@@ -214,8 +214,9 @@ let apiccDevicesMgmtInfo = (deviceName) => {
         apicDevices.getManagementInfo(deviceName)
         // debug
         //console.log(apicDevices.getSearchResult())
+        // sets the color of key
         cliTools.setInputFile(apicDevices.getSearchResult())
-        cliTools.cliPrint()
+        cliTools.cliPrint("green","blue")
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
