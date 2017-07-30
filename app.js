@@ -23,7 +23,8 @@ let synchotest = ()=>{
   let processSuccess = false;
   apicTicket.debug()
   apicTicket.httpRequestSynchronous()
-  cliTools.setInputFile(apicTicket.getreturnData().response)
+  let data = apicTicket.getreturnData();
+  cliTools.setInputFile(data.response)
   cliTools.cliPrint("green","blue")
 }
 
