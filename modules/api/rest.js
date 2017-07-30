@@ -28,7 +28,7 @@ module.exports = class rest {
         //var info = JSON.parse(body);
         this.returnData = body;
         // debug
-        //console.log(body);
+        console.log(body);
       }
     }
     requestSynchronous(options, callback);
