@@ -25,8 +25,8 @@ let synchotest = ()=>{
   apicTicket.httpRequestSynchronous()
   let data = apicTicket.getreturnData();
   console.log(data);
-  //cliTools.setInputFile(data.response)
-  //cliTools.cliPrint("green","blue")
+  cliTools.setInputFile(data.response)
+  cliTools.cliPrint("green","blue")
 }
 
 let iseTest2 = (inputFile) => {
