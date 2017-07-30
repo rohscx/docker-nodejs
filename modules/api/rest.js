@@ -19,8 +19,11 @@ module.exports = class rest {
 
   httpRequestSynchronous(){
     var options = {
+      method: this.method,
       url: this.uri,
-      headers: this.headers
+      headers: this.headers,
+      body: this.body,
+      json: true
     };
 
     function callback(error, response, body) {
@@ -39,7 +42,6 @@ module.exports = class rest {
       const options = {
         method: this.method,
         uri: this.uri,
-        timeout:120000,
         rejectUnauthorized: this.rejectCert,
         headers: this.headers,
         body: this.body,
