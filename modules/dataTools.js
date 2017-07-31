@@ -89,22 +89,22 @@ class dataTools extends fileSystem {
   getChunks(inputData){
     let toChunk = inputData;
     //console.log("Chunk DATA", toChunk)
-    let chunk = Math.ceil(toChunk.length * .05);
+    let chunkMax = Math.ceil(toChunk.length * .05);
     //console.log("CHUNK...",chunk);
+    let chunk = [];
     let chunkArray = [];
-    let chunkArray1 = [];
     let counter = 1;
     toChunk.map((data, index)=>{
-      if ( counter <= chunk){
+      if ( counter <= chunkMax){
         counter ++
-        console.log(chunk)
+        console.log(chunkMax)
         console.log(counter)
-        chunkArray.push(data)
+        chunk.push(data)
       } else {
         chunkArray.push(data)
-        console.log(chunk)
+        console.log(chunkMax)
         console.log(counter)
-        chunkArray1.push(chunkArray)
+        chun.push(chunkArray)
         chunkArray = [];
         counter = 1;
       }
