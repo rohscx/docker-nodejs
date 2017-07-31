@@ -89,6 +89,8 @@ class dataTools extends fileSystem {
   getChunks(inputData){
     let toChunk = inputData;
     console.log("Chunk DATA", toChunk)
+    let chunk = Math.ceil(toChunk.length * 5%);
+    console.log("CHUNK...",chunk);
     toChunk.map((data, index)=>{
       console.log(index)
     })
