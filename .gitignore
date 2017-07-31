@@ -1,5 +1,6 @@
 node_modules/
 !/serverData/ipList.csv
+!/serverData/iseResource.json
 !/serverData/saved/sampleSave
 /serverData/*
 securityFile.js
