@@ -91,7 +91,7 @@ class dataTools extends fileSystem {
     //console.log("Chunk DATA", toChunk)
     let chunkMax = Math.ceil(toChunk.length * .05);
     //console.log("CHUNK...",chunk);
-    let chunk = [];
+    let chunkData = [];
     let chunkArray = [];
     let counter = 1;
     toChunk.map((data, index)=>{
@@ -99,13 +99,13 @@ class dataTools extends fileSystem {
         counter ++
         console.log(chunkMax)
         console.log(counter)
-        chunk.push(data)
+        chunkData.push(data)
       } else {
-        chunk.push(data)
+        chunkData.push(data)
         console.log(chunkMax)
         console.log(counter)
-        chunkArray.push(chunk)
-        chunkArray = [];
+        chunkArray.push(chunkData)
+        chunkData = [];
         counter = 1;
       }
       //console.log(index)
