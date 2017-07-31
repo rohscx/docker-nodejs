@@ -101,10 +101,10 @@ class dataTools extends fileSystem {
         console.log(counter)
         chunk.push(data)
       } else {
-        chunkArray.push(data)
+        chunk.push(data)
         console.log(chunkMax)
         console.log(counter)
-        chunk.push(chunkArray)
+        chunkArray.push(chunk)
         chunkArray = [];
         counter = 1;
       }
