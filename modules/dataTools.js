@@ -90,7 +90,7 @@ class dataTools extends fileSystem {
     let toChunk = inputData;
     console.log("Chunk DATA", toChunk)
     toChunk.map((data, index)=>{
-      consol.log(index)
+      console.log(index)
     })
   }
 
