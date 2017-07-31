@@ -89,13 +89,24 @@ class dataTools extends fileSystem {
   getChunks(inputData){
     let toChunk = inputData;
     console.log("Chunk DATA", toChunk)
-    let chunk1 = toChunk.length * .05;
     let chunk = Math.ceil(toChunk.length * .05);
     console.log("CHUNK1...",chunk1);
     console.log("CHUNK...",chunk);
+    let chunkArray = [];
+    let counter = 0;
+    let arrayNum = 0;
     toChunk.map((data, index)=>{
+      if (chunk < counter){
+        counter ++
+        chunkArray[arrayNum].push(data)
+      } else {
+        chunkArray[arrayNum].push(data)
+        arrayNum ++
+        counter = 0;
+      }
       console.log(index)
     })
+    console.log(chunkArray)
   }
 
   setSuperNet () {
