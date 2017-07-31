@@ -27,8 +27,10 @@ let iseTest2 = (inputFile) => {
       .then((promiseReturn)=>{
         //console.log(promiseReturn);
         dataTools.getData()
-        .then(())
-        console.log(dataTools.getData())
+        .then((readData)=>{
+          console.log(readData)
+        })
+        //console.log(dataTools.getData())
         //dataTools.getChunks()
         /*
         .then((ipGetData) =>{
