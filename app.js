@@ -29,9 +29,9 @@ let iseTest2 = (inputFile) => {
         dataTools.getData()
         .then((readData)=>{
           console.log("dataTest",readData)
+          dataTools.getChunks(readData)
         })
         //console.log(dataTools.getData())
-        //dataTools.getChunks()
         /*
         .then((ipGetData) =>{
           // debug
