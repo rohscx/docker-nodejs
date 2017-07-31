@@ -102,10 +102,11 @@ class dataTools extends fileSystem {
         chunkArray.push(data)
         chunkArray1.push(chunkArray)
         counter = 0;
+        chunkArray = [];
       }
       console.log(index)
     })
-    console.log(chunkArray)
+    console.log(chunkArray1)
   }
 
   setSuperNet () {
