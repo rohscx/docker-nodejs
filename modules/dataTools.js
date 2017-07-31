@@ -110,7 +110,7 @@ class dataTools extends fileSystem {
       }
       //console.log(index)
     })
-    console.log(chunkArray1)
+    console.log(chunkArray)
   }
 
   setSuperNet () {
