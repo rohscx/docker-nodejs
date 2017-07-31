@@ -50,8 +50,8 @@ let iseTest2 = (inputFile) => {
               console.log(newResult1)
               console.log(newResult2)
             })
-          })
-        })*/
+          })*/
+        })
         .catch((reject) =>{
           console.log(reject);
         })
