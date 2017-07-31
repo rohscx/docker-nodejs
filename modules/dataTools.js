@@ -22,6 +22,79 @@ class dataTools extends fileSystem {
     this.compare.dataSet1 = dataSet2;
   }
 
+  // changes the base of a number, by default base 10 to base 2
+  setBase (){
+    return new Promise((resolve, reject) =>{
+      let newArray = [];
+      let ipList = this.sortedData;
+      ipList.map((data) =>{
+        let temp1 = [];
+        let octants = data.split(".");
+        octants.map((data1) =>{
+          let temp = parseInt(data1,10)
+          temp1.push(temp.toString(2))
+        })
+        newArray.push(temp1);
+      })
+      if (newArray){
+        this.ipBase2 = newArray;
+        resolve(newArray)
+      } else {
+        reject("Nothing to See")
+      }
+    })
+  }
+
+  // return ip range. This is raw and uncleaned
+  getIpRange (){
+    return this.ipRange;
+  }
+
+  // attempts to clean the ip list. remove leading spaces, trailling spaces and empty lines
+  cleanData (){
+    return new Promise((resolve, reject) =>{
+      let cleanedData =[];
+      let newData = this.fileData.dataString.split("\n");
+      newData = newData.filter(Boolean);
+      newData.map((data) => {
+        cleanedData.push(data.trim())
+      })
+      if (cleanedData){
+        this.cleanedData = cleanedData;
+        resolve(cleanedData);
+      } else {
+        reject("Error Cleaning");
+      }
+    })
+  }
+
+  // sorts cleaned IP address list by lowest to highest. data should be base 10
+  sortData (){
+    return new Promise((resolve, reject) =>{
+      let sortedData = this.cleanedData.sort((a,b)=>{
+	      let aa = a.split(".");
+	      var bb = b.split(".");
+        return ( aa[0]*0x1000000 + aa[1]*0x10000 + aa[2]*0x100 + aa[3]*1 )
+             - ( bb[0]*0x1000000 + bb[1]*0x10000 + bb[2]*0x100 + bb[3]*1 );
+           })
+      if (sortedData){
+        this.sortedData = sortedData;
+        resolve(sortedData)
+      } else {
+        reject("Error Sorting");
+      }
+    })
+  }
+
+  getChunks(data){
+    let toChunk = data;
+    toChunk.map((toChunk)=>{
+      for (let i = 0; i < 10; i++) {
+        console.log(i)
+      }
+    })
+  }
+
   setSuperNet () {
     return new Promise((resolve, reject) =>{
       let firstIp,lastIp,nextPredict,superNet,count;
@@ -136,78 +209,10 @@ class dataTools extends fileSystem {
         this.ipRange = superNet;
         resolve(superNet)
       } else {
+        // catches final error
         reject("Something is wrong with the dataset")
       }
 
-    })
-  }
-  // changes the base of a number, by default base 10 to base 2
-  setBase (){
-    return new Promise((resolve, reject) =>{
-      let newArray = [];
-      let ipList = this.sortedData;
-      ipList.map((data) =>{
-        let temp1 = [];
-        let octants = data.split(".");
-        octants.map((data1) =>{
-          let temp = parseInt(data1,10)
-          temp1.push(temp.toString(2))
-        })
-        newArray.push(temp1);
-      })
-      if (newArray){
-        this.ipBase2 = newArray;
-        resolve(newArray)
-      } else {
-        reject("Nothing to See")
-      }
-    })
-  }
-  // return ip range. This is raw and uncleaned
-  getIpRange (){
-    return this.ipRange;
-  }
-  // attempts to clean the ip list. remove leading spaces, trailling spaces and empty lines
-  cleanData (){
-    return new Promise((resolve, reject) =>{
-      let cleanedData =[];
-      let newData = this.fileData.dataString.split("\n");
-      newData = newData.filter(Boolean);
-      newData.map((data) => {
-        cleanedData.push(data.trim())
-      })
-      if (cleanedData){
-        this.cleanedData = cleanedData;
-        resolve(cleanedData);
-      } else {
-        reject("Error Cleaning");
-      }
-    })
-  }
-  // sorts cleaned IP address list by lowest to highest. data should be base 10
-  sortData (){
-    return new Promise((resolve, reject) =>{
-      let sortedData = this.cleanedData.sort((a,b)=>{
-	      let aa = a.split(".");
-	      var bb = b.split(".");
-        return ( aa[0]*0x1000000 + aa[1]*0x10000 + aa[2]*0x100 + aa[3]*1 )
-             - ( bb[0]*0x1000000 + bb[1]*0x10000 + bb[2]*0x100 + bb[3]*1 );
-           })
-      if (sortedData){
-        this.sortedData = sortedData;
-        resolve(sortedData)
-      } else {
-        reject("Error Sorting");
-      }
-    })
-  }
-
-  getChunks(data){
-    let toChunk = data;
-    toChunk.map((toChunk)=>{
-      for (let i = 0; i < 10; i++) {
-        console.log(i)
-      }
     })
   }
 
