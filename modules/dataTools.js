@@ -90,8 +90,9 @@ class dataTools extends fileSystem {
     let toChunk = inputData;
     console.log("Chunk DATA", toChunk)
     let chunk1 = toChunk.length * .05;
-    let chunk = Math.ceil();
-    console.log("CHUNK...",chunk1);
+    let chunk = Math.ceil(toChunk.length * .05);
+    console.log("CHUNK1...",chunk1);
+    console.log("CHUNK...",chunk);
     toChunk.map((data, index)=>{
       console.log(index)
     })
