@@ -97,20 +97,18 @@ class dataTools extends fileSystem {
     toChunk.map((data, index)=>{
       if ( counter <= chunkMax){
         counter ++
-        console.log(chunkMax)
-        console.log(counter)
         chunkData.push(data)
       } else {
         chunkData.push(data)
-        console.log(chunkMax)
-        console.log(counter)
         chunkArray.push(chunkData)
         chunkData = [];
         counter = 1;
       }
       //console.log(index)
     })
+    // debug
     console.log(chunkArray)
+    return chunkArray;
   }
 
   setSuperNet () {
