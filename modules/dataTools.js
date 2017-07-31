@@ -100,6 +100,7 @@ class dataTools extends fileSystem {
         console.log(counter)
         chunkArray.push(data)
       } else {
+        console.log(counter)
         chunkArray.push(data)
         chunkArray1.push(chunkArray)
         counter = 0;
