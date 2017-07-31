@@ -69,7 +69,7 @@ module.exports = class fileSystem {
 
   getData() {
     return new Promise((resolve, reject) =>{
-      let data = this.fileData;
+      let data = this.fileData.contents;
       if (data){
         resolve(data);
       } else {
@@ -86,8 +86,8 @@ module.exports = class fileSystem {
         if (err){
           return reject(err);
         } else {
-          this.fileData = {dataString: data.toString()};
-          console.log("DLATA LLOADED   ",this.fileData);
+          this.fileData = {contents: data.toString()};
+          console.log("DATA LOADED..   ",this.fileData);
           return resolve(data.toString());
         }
       })
