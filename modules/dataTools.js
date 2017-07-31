@@ -91,10 +91,10 @@ class dataTools extends fileSystem {
     //console.log("Chunk DATA", toChunk)
     let chunk = Math.ceil(toChunk.length * .05);
     //console.log("CHUNK...",chunk);
-    let chunkArray = [];
     let chunkArray1 = [];
     let counter = 0;
     toChunk.map((data, index)=>{
+      let chunkArray = [];
       if (chunk >= counter){
         counter ++
         console.log(chunk)
@@ -105,7 +105,6 @@ class dataTools extends fileSystem {
         console.log(counter)
         chunkArray1.push(chunkArray)
         counter = 0;
-        chunkArray = [];
       }
       //console.log(index)
     })
