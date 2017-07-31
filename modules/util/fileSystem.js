@@ -105,7 +105,7 @@ module.exports = class fileSystem {
           let fileObj = JSON.parse(data);
 
           this.fileData = {contents: fileObj};
-          console.log("DLATA LLOADED   ",this.fileData);
+          console.log("JSON DATA LOADED..   ",this.fileData);
           return resolve(this.fileData);
         }
       })
