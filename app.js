@@ -26,8 +26,8 @@ let iseTest2 = (inputFile) => {
       Promise.all([dataTools.setJsonFile(inputFile),dataTools.readJsonFile()])
       .then((promiseReturn)=>{
         console.log(promiseReturn);
-        dataTools.getData()
-        dataTools.getChunks(dataTools.getData())
+        console.log(dataTools.getData())
+        //dataTools.getChunks(dataTools.getData())
         /*
         .then((ipGetData) =>{
           // debug
