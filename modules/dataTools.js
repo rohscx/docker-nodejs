@@ -105,7 +105,7 @@ class dataTools extends fileSystem {
         counter = 0;
         chunkArray = [];
       }
-      console.log(index)
+      //console.log(index)
     })
     console.log(chunkArray1)
   }
