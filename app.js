@@ -31,6 +31,9 @@ let iseTest2 = (inputFile) => {
           console.log("dataTest",readData)
           dataTools.getChunks(readData)
         })
+        .catch((reject) =>{
+          console.log(reject);
+        })
         //console.log(dataTools.getData())
         /*
         .then((ipGetData) =>{
