@@ -29,7 +29,7 @@ let iseTest2 = (inputFile) => {
         dataTools.getData()
         .then((readData)=>{
           console.log("dataTest",readData)
-          console.log("ChunkData", dataTools.getChunks(readData))
+          console.log("ChunkData", dataTools.getChunks(readData).length)
         })
         .catch((reject) =>{
           console.log(reject);
