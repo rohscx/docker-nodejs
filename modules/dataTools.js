@@ -97,6 +97,7 @@ class dataTools extends fileSystem {
     toChunk.map((data, index)=>{
       if (chunk < counter){
         counter ++
+        console.log(counter)
         chunkArray.push(data)
       } else {
         chunkArray.push(data)
