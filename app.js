@@ -28,7 +28,7 @@ let iseTest2 = (inputFile) => {
         //console.log(promiseReturn);
         dataTools.getData()
         .then((readData)=>{
-          console.log(readData)
+          console.log("dataTest",readData)
         })
         //console.log(dataTools.getData())
         //dataTools.getChunks()
