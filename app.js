@@ -29,7 +29,8 @@ let iseTest2 = (inputFile) => {
         dataTools.getData()
         .then((readData)=>{
           console.log("dataTest",readData)
-          console.log("ChunkData", dataTools.getChunks(readData).length)
+          let chunkCount = dataTools.getChunks(readData).length
+          console.log("ChunkData", chunkCount)
         })
         .catch((reject) =>{
           console.log(reject);
