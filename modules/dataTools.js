@@ -89,11 +89,11 @@ class dataTools extends fileSystem {
   getChunks(inputData){
     let toChunk = inputData;
     console.log("Chunk DATA", toChunk)
-    /*toChunk.map((data)=>{
+    toChunk.map((data)=>{
       for (let i = 0; i < 10; i++) {
         console.log(i)
       }
-    })*/
+    })
   }
 
   setSuperNet () {
