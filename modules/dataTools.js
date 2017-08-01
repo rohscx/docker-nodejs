@@ -17,11 +17,14 @@ class dataTools extends fileSystem {
   }
 
 
-  setDelay (delay){
-    let maxDelay = delay;
-    let counter = 0;
-    let time = setInterval(() =>{ counter++; console.log("Interval",counter) }, 1000)
-    if (maxDelay == counter){clearInterval(time); };
+  setSleep (time,callback){
+    (time, callback) => {
+      let stop = new Date().getTime();
+      while(new Date().getTime() < stop + time) {
+        ;
+      }
+      callback();
+    }
   }
 
   setCompare (dataSet1,dataSet2){
