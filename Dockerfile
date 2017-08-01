@@ -22,15 +22,9 @@ ENV NODE_ENV development
 # Install Utilities
 RUN apk update
 
-RUN apk add curl
-
 RUN apk add bash-completion
 
-RUN apk add python
-
-RUN apk add make
-
-RUN apk add gcc
+RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++
 
 RUN apk add --update nodejs nodejs-npm -g
 
