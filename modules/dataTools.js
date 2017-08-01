@@ -16,17 +16,6 @@ class dataTools extends fileSystem {
     this.compare = {dataSet1:{},dataSet2:{}}
   }
 
-
-  setSleep (time,callback){
-    (time, callback) => {
-      let stop = new Date().getTime();
-      while(new Date().getTime() < stop + time) {
-        ;
-      }
-      callback();
-    }
-  }
-
   setCompare (dataSet1,dataSet2){
     this.compare.dataSet1 = dataSet1;
     this.compare.dataSet1 = dataSet2;
