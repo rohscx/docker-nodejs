@@ -26,7 +26,7 @@ RUN apk add curl
 
 RUN apk add bash-completion
 
-RUN apk add nodejs
+RUN apk add --update nodejs nodejs-npm && npm install npm@latest
 
 RUN apk add git
 
