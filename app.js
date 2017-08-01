@@ -31,8 +31,9 @@ let iseTest2 = (inputFile) => {
           let chunkCount = dataTools.getChunks(readData).length
           let chunks = dataTools.getChunks(readData);
           chunks.map((data) =>{
+            dataTools.setDelay(10)
+            console.log("HIT")
             data.map((data)=>{
-              dataTools.setDelay(10)
               console.log(data)
             })
           })
