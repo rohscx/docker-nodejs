@@ -26,6 +26,8 @@ RUN apk add curl
 
 RUN apk add bash-completion
 
+RUN apk add python
+
 RUN apk add --update nodejs nodejs-npm -g
 
 RUN apk add git
