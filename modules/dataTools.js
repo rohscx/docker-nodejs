@@ -17,6 +17,12 @@ class dataTools extends fileSystem {
   }
 
 
+  setDelay (delay){
+    set maxDelay = delay;
+    set counter = 0;
+    setInterval(() =>{ if (maxDelay == counter){clearInterval()} }, 1000)
+  }
+
   setCompare (dataSet1,dataSet2){
     this.compare.dataSet1 = dataSet1;
     this.compare.dataSet1 = dataSet2;

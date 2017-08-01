@@ -31,11 +31,10 @@ let iseTest2 = (inputFile) => {
           let chunkCount = dataTools.getChunks(readData).length
           let chunks = dataTools.getChunks(readData);
           chunks.map((data) =>{
-            setTimeout(() => {
-              data.map((data)=>{
-                console.log(data)
-              })
-            },5000)
+            data.map((data)=>{
+              dataTools.setDelay(10)
+              console.log(data)
+            })
           })
         })
         .catch((reject) =>{
