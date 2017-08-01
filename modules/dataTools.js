@@ -20,7 +20,7 @@ class dataTools extends fileSystem {
   setDelay (delay){
     let maxDelay = delay;
     let counter = 0;
-    let time = setInterval(() =>{ counter++; console.log("Interval") }, 1000)
+    let time = setInterval(() =>{ counter++; console.log("Interval",counter) }, 1000)
     if (maxDelay == counter){clearInterval(time); };
   }
 
