@@ -37,47 +37,38 @@ let iseTest2 = (inputFile) => {
             }
             callback();
           }
+          iseNetDevices.setHeaders(iseTicket.getHeaders())
+          let uriBase = iseTicket.getUri();
+          uriBase += ":9060/ers/config/networkdevice";
           chunks.map((data) =>{
             console.log("HIT")
             sleep(1000, function() {
                // executes after one second, and blocks the thread
                data.map((data)=>{
                  console.log(data)
-               })
+                 /*
+                 let newUri = uriBase + "/"+data.id;
+                 iseNetDevices.setUri(newUri)
+                 iseNetDevices.debug()
+                 iseNetDevices.httpRequest()
+                 .then((httpResponse) => {
+                   parseString(iseNetDevices.getreturnData(), (err,result) =>{
+                     let newResult1 = result['ns4:networkdevice']['$'].name
+                     let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
+                     console.log(newResult1)
+                     console.log(newResult2)
+                   })
+                 });
+                 .catch((reject) =>{
+                   console.log(reject);
+                 })*/
+               });
             });
-          })
+          });
         })
         .catch((reject) =>{
           console.log(reject);
         })
-        //console.log(dataTools.getData())
-        /*
-        .then((ipGetData) =>{
-          // debug
-          //console.log(ipGetData.dataString[0])
-          ipGetData.dataString.map((data) =>{
-            iseNetDevices.setHeaders(iseTicket.getHeaders())
-            iseTicket.debug()
-            let uriBase = iseTicket.getUri();
-            uriBase += ":9060/ers/config/networkdevice";
-            let newUri = uriBase + "/"+data.id;
-            // debug
-            //console.log(newUri)
-            iseNetDevices.setUri(newUri)
-            iseNetDevices.debug()
-            iseNetDevices.httpRequestSynchronous()
-            console.log(iseNetDevices.getreturnData())
-            parseString(iseNetDevices.getreturnData(), (err,result) =>{
-              let newResult1 = result['ns4:networkdevice']['$'].name
-              let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
-              console.log(newResult1)
-              console.log(newResult2)
-            })
-          })
-        })
-        .catch((reject) =>{
-          console.log(reject);
-        })*/
       })
       .catch((reject) =>{
         console.log(reject);
