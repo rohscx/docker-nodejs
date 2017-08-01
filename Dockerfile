@@ -28,6 +28,10 @@ RUN apk add bash-completion
 
 RUN apk add python
 
+RUN apk add make
+
+RUN apk add gcc
+
 RUN apk add --update nodejs nodejs-npm -g
 
 RUN apk add git
