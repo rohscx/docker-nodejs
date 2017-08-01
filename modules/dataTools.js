@@ -18,8 +18,8 @@ class dataTools extends fileSystem {
 
 
   setDelay (delay){
-    set maxDelay = delay;
-    set counter = 0;
+    let maxDelay = delay;
+    let counter = 0;
     setInterval(() =>{ if (maxDelay == counter){clearInterval()} }, 1000)
   }
 
