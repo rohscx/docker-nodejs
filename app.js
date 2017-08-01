@@ -31,7 +31,6 @@ let iseTest2 = (inputFile) => {
           let chunkCount = dataTools.getChunks(readData).length
           let chunks = dataTools.getChunks(readData);
           chunks.map((data) =>{
-            dataTools.setDelay(10)
             console.log("HIT")
             setSleep(1000, function() {
                // executes after one second, and blocks the thread
