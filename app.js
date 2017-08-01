@@ -28,12 +28,9 @@ let iseTest2 = (inputFile) => {
         //console.log(promiseReturn);
         dataTools.getData()
         .then((readData)=>{
-          console.log("dataTest",readData)
           let chunkCount = dataTools.getChunks(readData).length
           let chunks = dataTools.getChunks(readData);
-          console.log("ChunkData", chunkCount)
           chunks.map((data) =>{
-            console.log(data)
             data.map((data)=>{
               console.log(data)
             })
