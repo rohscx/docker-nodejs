@@ -19,10 +19,6 @@ const parseString = require('xml2js').parseString;
 */
 
 
-function spin(t) {
-    var start = Date.now();
-    while (Date.now() < start + t) {}
-}
 
 
 let iseTest2 = (inputFile) => {
@@ -48,11 +44,15 @@ let iseTest2 = (inputFile) => {
           uriBase += ":9060/ers/config/networkdevice";
           chunks.map((data) =>{
             console.log("HIT")
-            sleep(1000, function() {
                // executes after one second, and blocks the thread
+               function spin(t) {
+                   var start = Date.now();
+                   while (Date.now() < start + t) {}
+               }
                data.map((data)=>{
+                 spin(2000)
                  console.log(data)
-                 
+
                  let newUri = uriBase + "/"+data.id;
                  iseNetDevices.setUri(newUri)
                  iseNetDevices.debug()
@@ -72,7 +72,6 @@ let iseTest2 = (inputFile) => {
                  console.log(reject);
                  })
                })
-            })
           })
         })
         .catch((reject) =>{
