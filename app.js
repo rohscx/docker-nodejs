@@ -58,6 +58,8 @@ let iseTest2 = (inputFile) => {
                    console.log(newResult2)
                    //console.log(result)
                    console.log(err)
+                   let blob = [newResult1,newResult2]
+                   dataTools.setArrayPush(blob)
                   })
                 })
                .catch((reject) =>{
