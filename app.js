@@ -58,11 +58,12 @@ let iseTest2 = (inputFile) => {
                      console.log(newResult1)
                      console.log(newResult2)
                      //console.log(result)
+                     console.log(err)
                    })
-                   .catch((reject) =>{
-                   console.log(reject);
-                 });
 
+                 });
+                 .catch((reject) =>{
+                 console.log(reject);
                  })
                });
             });
