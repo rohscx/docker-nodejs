@@ -45,7 +45,7 @@ let iseTest2 = (inputFile) => {
           iseNetDevices.setHeaders(iseTicket.getHeaders())
           let uriBase = iseTicket.getUri();
           uriBase += ":9060/ers/config/networkdevice";
-           var limiter = new RateLimiter(1, 4000);
+           var limiter = new RateLimiter(1, 8000);
           chunks.map((data) =>{
             console.log("HIT")
                // executes after one second, and blocks the thread
