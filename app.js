@@ -61,7 +61,7 @@ let iseTest2 = (inputFile) => {
                    console.log(dataTools.getDataSet1())
                    dataTools.setSaveExtentions(".json")
                    let fileName = "iseDevicesIP"
-                   return dataTools.writeFile(fileName,JSON.stringify(dataTools.getDataSet1()))
+                   return dataTools.writeFile(fileName,JSON.stringify(dataTools.getDataSet1(),null,2))
                    .then((writeReturn) =>{
                      console.log(writeReturn)
                    })
