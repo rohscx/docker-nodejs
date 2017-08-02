@@ -57,7 +57,7 @@ let iseTest2 = (inputFile) => {
                      let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
                      console.log(newResult1)
                      console.log(newResult2)
-                      console.log(result)
+                     //console.log(result)
                    })
                    .catch((reject) =>{
                    console.log(reject);
