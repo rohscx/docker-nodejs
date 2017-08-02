@@ -1,5 +1,6 @@
 const request = require('request-promise');
 const formData = require('form-data');
+const RateLimiter = require('limiter').RateLimiter;
 
 //
 module.exports = class rest {
@@ -17,7 +18,9 @@ module.exports = class rest {
   }
 
   httpRequest(){
-    return new Promise((resolve, reject) =>{
+    let limiter = new RateLimiter(1, 250);
+    limiter.removeTokens(1, function() {
+        return new Promise((resolve, reject) =>{
       const options = {
         method: this.method,
         uri: this.uri,
@@ -37,6 +40,7 @@ module.exports = class rest {
           reject(err);
         })
       })
+    });
     }
 
   get(){
