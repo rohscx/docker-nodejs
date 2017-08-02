@@ -60,7 +60,7 @@ let iseTest2 = (inputFile) => {
 
                  let newUri = uriBase + "/"+data.id;
                  iseNetDevices.setUri(newUri)
-                 iseNetDevices.debug()
+                 //iseNetDevices.debug()
                  iseNetDevices.httpRequest()
                  .then((httpResponse) => {
                    parseString(httpResponse, (err,result) =>{
