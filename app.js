@@ -224,7 +224,7 @@ let apiccDevicesMgmtInfo = (deviceName) => {
         //console.log(apicDevices.getSearchResult())
         // sets the color of key
         cliTools.setInputFile(apicDevices.getSearchResult())
-        cliTools.cliPrint("green","blue")
+        cliTools.cliPrint("green","white")
         processSuccess = true;
         if (processSuccess) {
           resolve (devicesReturn)
