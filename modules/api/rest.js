@@ -18,7 +18,7 @@ module.exports = class rest {
   }
 
   httpRequest(){
-    let limiter = new RateLimiter(1, 250);
+    let limiter = new RateLimiter(5, 250);
   
         return new Promise((resolve, reject) =>{
       const options = {
