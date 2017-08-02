@@ -13,7 +13,7 @@ class dataTools extends fileSystem {
     this.sortedData = "";
     this.ipRange = "";
     this.ipBase2 = "";
-    this.compare = {dataSet1:[],dataSet2:{}}
+    this.compare = {dataSet1:{},dataSet2:{}}
   }
 
   setCompare (dataSet1,dataSet2){
@@ -21,12 +21,12 @@ class dataTools extends fileSystem {
     this.compare.dataSet1 = dataSet2;
   }
 
-  setArrayPush(dataSet){
-    this.compare.dataSet1.push(dataSet)
+  setDataSet1(name,data){
+    this.compare.dataSet1.name: data
     console.log("PUSHED",this.compare.dataSet1)
   }
 
-  getArrayPush(){
+  getDataSet1(){
     return this.compare.dataSet1;
   }
 

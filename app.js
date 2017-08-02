@@ -57,9 +57,7 @@ let iseTest2 = (inputFile) => {
                    console.log(newResult1)
                    console.log(newResult2)
                    //console.log(result)
-                   console.log(err)
-                   let blob = [newResult1,newResult2]
-                   dataTools.setArrayPush(blob)
+                   dataTools.setDataSet1(newResult1,newResult2)
                   })
                 })
                .catch((reject) =>{
@@ -68,10 +66,10 @@ let iseTest2 = (inputFile) => {
               })
             });
           })
-          console.log(dataTools.getArrayPush())
-          dataTools.setSaveExtentions(".csv")
+          console.log(dataTools.getDataSet1())
+          dataTools.setSaveExtentions(".json")
           let fileName = "iseDevicesIP-"+Date.now()
-          return dataTools.writeFile(fileName,dataTools.getArrayPush())
+          return dataTools.writeFile(fileName,JSON.stringify(dataTools.getDataSet1(),null,2))
           .then((writeReturn) =>{
             console.log(writeReturn)
           })
