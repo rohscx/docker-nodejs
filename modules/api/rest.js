@@ -18,8 +18,7 @@ module.exports = class rest {
   }
 
   httpRequest(){
-
-        return new Promise((resolve, reject) =>{
+    return new Promise((resolve, reject) =>{
       const options = {
         method: this.method,
         uri: this.uri,
@@ -31,15 +30,15 @@ module.exports = class rest {
         timeout: 120000
       }
       request(options)
-        .then((response) =>{
-          resolve(response);
-        })
-        .catch((err) =>{
-          // Deal with the error
-          reject(err);
-        })
+      .then((response) =>{
+        resolve(response);
       })
-    }
+      .catch((err) =>{
+        // Deal with the error
+        reject(err);
+      })
+    })
+  }
 
   get(){
     return (
