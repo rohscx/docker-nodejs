@@ -19,7 +19,7 @@ module.exports = class rest {
 
   httpRequest(){
     let limiter = new RateLimiter(1, 250);
-   return limiter.removeTokens(1, function() {
+  
         return new Promise((resolve, reject) =>{
       const options = {
         method: this.method,
@@ -31,6 +31,7 @@ module.exports = class rest {
       // JSON stringifies the body automatically
         timeout: 120000
       }
+       limiter.removeTokens(1, function() {
       request(options)
         .then((response) =>{
           resolve(response);
@@ -39,8 +40,8 @@ module.exports = class rest {
           // Deal with the error
           reject(err);
         })
+             });
       })
-    });
     }
 
   get(){
