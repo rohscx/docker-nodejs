@@ -53,10 +53,11 @@ let iseTest2 = (inputFile) => {
                  iseNetDevices.httpRequest()
                  .then((httpResponse) => {
                    parseString(iseNetDevices.getreturnData(), (err,result) =>{
-                     let newResult1 = result['ns4:networkdevice']['$'].name
-                     let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
-                     console.log(newResult1)
-                     console.log(newResult2)
+                     //let newResult1 = result['ns4:networkdevice']['$'].name
+                     //let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
+                     //console.log(newResult1)
+                     //console.log(newResult2)
+                      console.log(httpResponse)
                    })
                    .catch((reject) =>{
                    console.log(reject);
