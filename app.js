@@ -50,7 +50,6 @@ let iseTest2 = (inputFile) => {
                    while (Date.now() < start + t) {}
                }
                data.map((data)=>{
-                 spin(2000)
                  console.log(data)
 
                  let newUri = uriBase + "/"+data.id;
@@ -72,6 +71,7 @@ let iseTest2 = (inputFile) => {
                  console.log(reject);
                  })
                })
+               spin(2000)
           })
         })
         .catch((reject) =>{
