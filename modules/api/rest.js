@@ -1,6 +1,6 @@
 const request = require('request-promise');
 const formData = require('form-data');
-const RateLimiter = require('limiter').RateLimiter;
+
 
 //
 module.exports = class rest {
