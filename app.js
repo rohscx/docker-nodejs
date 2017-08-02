@@ -52,7 +52,7 @@ let iseTest2 = (inputFile) => {
                  iseNetDevices.debug()
                  iseNetDevices.httpRequest()
                  .then((httpResponse) => {
-                   parseString(iseNetDevices.getreturnData(), (err,result) =>{
+                   parseString(httpResponse, (err,result) =>{
                      //let newResult1 = result['ns4:networkdevice']['$'].name
                      //let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
                      //console.log(newResult1)
