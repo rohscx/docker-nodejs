@@ -19,7 +19,7 @@ module.exports = class rest {
 
   httpRequest(){
     let limiter = new RateLimiter(1, 250);
-    limiter.removeTokens(1, function() {
+   return limiter.removeTokens(1, function() {
         return new Promise((resolve, reject) =>{
       const options = {
         method: this.method,
