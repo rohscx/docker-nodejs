@@ -46,7 +46,7 @@ let iseTest2 = (inputFile) => {
                // executes after one second, and blocks the thread
                data.map((data)=>{
                  console.log(data)
-                 /*
+                 
                  let newUri = uriBase + "/"+data.id;
                  iseNetDevices.setUri(newUri)
                  iseNetDevices.debug()
@@ -61,7 +61,7 @@ let iseTest2 = (inputFile) => {
                  });
                  .catch((reject) =>{
                    console.log(reject);
-                 })*/
+                 })
                });
             });
           });
