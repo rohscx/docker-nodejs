@@ -69,7 +69,7 @@ let iseTest2 = (inputFile) => {
             });
           })
           console.log(dataTools.getArrayPush())
-          dataTools.setSaveExtentions(".json")
+          dataTools.setSaveExtentions(".csv")
           let fileName = "iseDevicesIP-"+Date.now()
           return dataTools.writeFile(fileName,dataTools.getArrayPush())
           .then((writeReturn) =>{
