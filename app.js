@@ -35,49 +35,36 @@ let iseTest2 = (inputFile) => {
         .then((readData)=>{
           let chunkCount = dataTools.getChunks(readData).length
           let chunks = dataTools.getChunks(readData);
-          function sleep(time, callback) {
-            var stop = new Date().getTime();
-            while(new Date().getTime() < stop + time) {
-              ;
-            }
-            callback();
-          }
           iseNetDevices.setHeaders(iseTicket.getHeaders())
           let uriBase = iseTicket.getUri();
           uriBase += ":9060/ers/config/networkdevice";
-           var limiter = new RateLimiter(1, 8000);
+          // limits return to one every 8 seconds
+          let limiter = new RateLimiter(1, 8000);
           chunks.map((data) =>{
             console.log("HIT")
-               // executes after one second, and blocks the thread
-               function spin(t) {
-                   var start = Date.now();
-                   while (Date.now() < start + t) {}
-               }
-
-             limiter.removeTokens(1, function() {
-               data.map((data)=>{
-                 console.log(data)
-
-                 let newUri = uriBase + "/"+data.id;
-                 iseNetDevices.setUri(newUri)
-                 //iseNetDevices.debug()
-                 iseNetDevices.httpRequest()
-                 .then((httpResponse) => {
-                   parseString(httpResponse, (err,result) =>{
-                     let newResult1 = result['ns4:networkdevice']['$'].name
-                     let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
-                     console.log(newResult1)
-                     console.log(newResult2)
-                     //console.log(result)
-                     console.log(err)
-                   })
-                 })
-                 .catch((reject) =>{
-                 console.log(reject);
-                 })
+            // limit enforcer
+            limiter.removeTokens(1, function() {
+              data.map((data)=>{
+               console.log(data)
+               let newUri = uriBase + "/"+data.id;
+               iseNetDevices.setUri(newUri)
+               //iseNetDevices.debug()
+               iseNetDevices.httpRequest()
+               .then((httpResponse) => {
+                 parseString(httpResponse, (err,result) =>{
+                   let newResult1 = result['ns4:networkdevice']['$'].name
+                   let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
+                   console.log(newResult1)
+                   console.log(newResult2)
+                   //console.log(result)
+                   console.log(err)
+                  })
+                })
+               .catch((reject) =>{
+               console.log(reject);
                })
-               });
-               //spin(500)
+              })
+            });
           })
         })
         .catch((reject) =>{
