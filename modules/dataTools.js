@@ -17,8 +17,8 @@ class dataTools extends fileSystem {
   }
 
   setCompare (dataSet1,dataSet2){
-    this.compare.dataSet1 = dataSet1;
-    this.compare.dataSet1 = dataSet2;
+    //this.compare.dataSet1 = dataSet1;
+    //this.compare.dataSet1 = dataSet2;
   }
 
   setDataSet1(name,data){
