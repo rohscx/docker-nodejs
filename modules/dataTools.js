@@ -88,7 +88,7 @@ class dataTools extends fileSystem {
   getChunks(inputData){
     let toChunk = inputData;
     //console.log("Chunk DATA", toChunk)
-    let chunkMax = Math.ceil(toChunk.length * .03);
+    let chunkMax = Math.ceil(toChunk.length * .02);
     //console.log("CHUNK...",chunk);
     let chunkData = [];
     let chunkArray = [];
