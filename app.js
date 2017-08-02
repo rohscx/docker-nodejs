@@ -42,7 +42,7 @@ let iseTest2 = (inputFile) => {
           uriBase += ":9060/ers/config/networkdevice";
           chunks.map((data) =>{
             console.log("HIT")
-            sleep(1000, function() {
+            sleep(3000, function() {
                // executes after one second, and blocks the thread
                data.map((data)=>{
                  console.log(data)
@@ -53,10 +53,10 @@ let iseTest2 = (inputFile) => {
                  iseNetDevices.httpRequest()
                  .then((httpResponse) => {
                    parseString(httpResponse, (err,result) =>{
-                     //let newResult1 = result['ns4:networkdevice']['$'].name
-                     //let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
-                     //console.log(newResult1)
-                     //console.log(newResult2)
+                     let newResult1 = result['ns4:networkdevice']['$'].name
+                     let newResult2 = result['ns4:networkdevice'].NetworkDeviceIPList[0].NetworkDeviceIP[0].ipaddress[0]
+                     console.log(newResult1)
+                     console.log(newResult2)
                       console.log(result)
                    })
                    .catch((reject) =>{
