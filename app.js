@@ -42,7 +42,7 @@ let iseTest2 = (inputFile) => {
           uriBase += ":9060/ers/config/networkdevice";
           chunks.map((data) =>{
             console.log("HIT")
-            sleep(3000, function() {
+            sleep(500, function() {
                // executes after one second, and blocks the thread
                data.map((data)=>{
                  console.log(data)
