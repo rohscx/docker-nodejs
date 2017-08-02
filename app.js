@@ -66,8 +66,17 @@ let iseTest2 = (inputFile) => {
                console.log(reject);
                })
               })
-              console.log(dataTools.getArrayPush())
             });
+          })
+          console.log(dataTools.getArrayPush())
+          dataTools.setSaveExtentions(".json")
+          let fileName = "iseDevicesIP-"+Date.now()
+          return dataTools.writeFile(fileName,dataTools.getArrayPush())
+          .then((writeReturn) =>{
+            console.log(writeReturn)
+          })
+          .catch((httpReject) =>{
+            console.log(httpReject);
           })
         })
         .catch((reject) =>{
