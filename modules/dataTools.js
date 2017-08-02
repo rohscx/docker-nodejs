@@ -13,12 +13,12 @@ class dataTools extends fileSystem {
     this.sortedData = "";
     this.ipRange = "";
     this.ipBase2 = "";
-    this.compare = {dataSet1:[],dataSet2:[]
+    this.compare = {dataSet1:{},dataSet2:[]}
   }
 
   setCompare (dataSet1,dataSet2){
-    //this.compare.dataSet1 = dataSet1;
-    //this.compare.dataSet1 = dataSet2;
+    this.compare.dataSet1 = dataSet1;
+    this.compare.dataSet1 = dataSet2;
   }
 
   setDataSet1(name,data){
