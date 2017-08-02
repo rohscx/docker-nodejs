@@ -71,7 +71,7 @@ let iseTest2 = (inputFile) => {
                  console.log(reject);
                  })
                })
-               spin(2000)
+               spin(500)
           })
         })
         .catch((reject) =>{
