@@ -8,7 +8,7 @@ const rejectCert = false;
 const headers = "";
 const body = {
   "name": "string",
-  "protocolOrder": "ssh",
+  "protocolOrder": "ssh,telnet",
   "snmpVersion": "v2",
   "ipAddressList": "string",
   "discoveryType": "multi range",
