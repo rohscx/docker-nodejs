@@ -53,7 +53,7 @@ let iseTest2 = (inputFile) => {
                    var start = Date.now();
                    while (Date.now() < start + t) {}
                }
-               
+
              limiter.removeTokens(1, function() {
                data.map((data)=>{
                  console.log(data)
@@ -71,13 +71,12 @@ let iseTest2 = (inputFile) => {
                      //console.log(result)
                      console.log(err)
                    })
-
                  })
-                  });
                  .catch((reject) =>{
                  console.log(reject);
                  })
                })
+               });
                //spin(500)
           })
         })
