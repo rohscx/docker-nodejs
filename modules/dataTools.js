@@ -22,7 +22,7 @@ class dataTools extends fileSystem {
   }
 
   setDataSet1(name,data){
-    this.compare.dataSet1.name: data
+    this.compare.dataSet1[name]: data
     console.log("PUSHED",this.compare.dataSet1)
   }
 
