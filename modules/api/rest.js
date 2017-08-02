@@ -24,8 +24,9 @@ module.exports = class rest {
         rejectUnauthorized: this.rejectCert,
         headers: this.headers,
         body: this.body,
-        json: true
+        json: true,
       // JSON stringifies the body automatically
+        timeout: 120000
       }
       request(options)
         .then((response) =>{
