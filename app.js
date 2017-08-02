@@ -58,7 +58,16 @@ let iseTest2 = (inputFile) => {
                    console.log(newResult2)
                    //console.log(result)
                    dataTools.setDataSet1(newResult1,newResult2)
-                   console.log("adfasdfafasdf",dataTools.getDataSet1())
+                   console.log(dataTools.getDataSet1())
+                   dataTools.setSaveExtentions(".json")
+                   let fileName = "iseDevicesIP"
+                   return dataTools.writeFile(fileName,JSON.stringify(dataTools.getDataSet1(),null,2))
+                   .then((writeReturn) =>{
+                     console.log(writeReturn)
+                   })
+                   .catch((httpReject) =>{
+                     console.log(httpReject);
+                   })
                   })
                 })
                .catch((reject) =>{
@@ -66,16 +75,6 @@ let iseTest2 = (inputFile) => {
                })
               })
             });
-          })
-          console.log(dataTools.getDataSet1())
-          dataTools.setSaveExtentions(".json")
-          let fileName = "iseDevicesIP-"+Date.now()
-          return dataTools.writeFile(fileName,JSON.stringify(dataTools.getDataSet1(),null,2))
-          .then((writeReturn) =>{
-            console.log(writeReturn)
-          })
-          .catch((httpReject) =>{
-            console.log(httpReject);
           })
         })
         .catch((reject) =>{
