@@ -58,6 +58,7 @@ let iseTest2 = (inputFile) => {
                    console.log(newResult2)
                    //console.log(result)
                    dataTools.setDataSet1(newResult1,newResult2)
+                   console.log("adfasdfafasdf",dataTools.getDataSet1())
                   })
                 })
                .catch((reject) =>{
