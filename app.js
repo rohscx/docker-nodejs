@@ -66,6 +66,7 @@ let iseTest2 = (inputFile) => {
                console.log(reject);
                })
               })
+              console.log(dataTools.getArrayPush())
             });
           })
         })

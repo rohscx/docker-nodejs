@@ -26,6 +26,10 @@ class dataTools extends fileSystem {
     console.log("PUSHED",this.compare.dataSet1)
   }
 
+  getArrayPush(){
+    return this.compare.dataSet1;
+  }
+
   // changes the base of a number, by default base 10 to base 2
   setBase (){
     return new Promise((resolve, reject) =>{
