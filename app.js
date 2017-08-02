@@ -61,13 +61,13 @@ let iseTest2 = (inputFile) => {
                      console.log(err)
                    })
 
-                 });
+                 })
                  .catch((reject) =>{
                  console.log(reject);
                  })
-               });
-            });
-          });
+               })
+            })
+          })
         })
         .catch((reject) =>{
           console.log(reject);
