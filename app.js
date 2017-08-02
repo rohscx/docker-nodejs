@@ -7,6 +7,9 @@ const dataTools = require('./modules/dataTools');
 const cliTools = require('./modules/cliTools');
 const iseTicket = require('./modules/iseTicket');
 const iseNetDevices = require('./modules/iseNetDevices');
+const RateLimiter = require('limiter').RateLimiter;
+
+const RateLimiter = require('limiter').RateLimiter;
 
 const rl = require('readline');
 const program = require('commander');
@@ -42,6 +45,7 @@ let iseTest2 = (inputFile) => {
           iseNetDevices.setHeaders(iseTicket.getHeaders())
           let uriBase = iseTicket.getUri();
           uriBase += ":9060/ers/config/networkdevice";
+           var limiter = new RateLimiter(1, 500);
           chunks.map((data) =>{
             console.log("HIT")
                // executes after one second, and blocks the thread
@@ -49,6 +53,8 @@ let iseTest2 = (inputFile) => {
                    var start = Date.now();
                    while (Date.now() < start + t) {}
                }
+               
+             limiter.removeTokens(1, function() {
                data.map((data)=>{
                  console.log(data)
 
@@ -67,6 +73,7 @@ let iseTest2 = (inputFile) => {
                    })
 
                  })
+                  });
                  .catch((reject) =>{
                  console.log(reject);
                  })
