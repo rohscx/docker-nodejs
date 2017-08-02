@@ -19,6 +19,12 @@ const parseString = require('xml2js').parseString;
 */
 
 
+function spin(t) {
+    var start = Date.now();
+    while (Date.now() < start + t) {}
+}
+
+
 let iseTest2 = (inputFile) => {
   if (inputFile) {
     let processSuccess = false;
