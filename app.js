@@ -7,7 +7,7 @@ const dataTools = require('./modules/dataTools');
 const cliTools = require('./modules/cliTools');
 const iseTicket = require('./modules/iseTicket');
 const iseNetDevices = require('./modules/iseNetDevices');
-const RateLimiter = require('limiter').RateLimiter;
+
 
 const RateLimiter = require('limiter').RateLimiter;
 
