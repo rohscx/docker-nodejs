@@ -55,8 +55,8 @@ class prtgDevices extends rest {
           group: data.group,
           device: data.device,
           sensor: data.sensor,
-          objId: data.objid,
           status: data.status,
+          objId: data.objid,
           lastValue: data.lastvalue
         };
         //console.log(data.hostname)
