@@ -38,8 +38,8 @@ class prtgDevices extends rest {
   }
 
   setGraph(uriBase,uCreds){
-    let newUri = uriBase+"/api/table.json?content=sensors&output=json&columns=objid,probe,group,device,sensor,status,message,lastvalue,priority,favorite"+uCreds;
     let newResult = this.managementInfo.searchResult.map((data)=>{
+      let newUri = uriBase+"/chart.png?type=graph&graphid=0&width=925&height=300&id="+data.objId+uCreds;
       data.graph = newUri;
     })
   }
