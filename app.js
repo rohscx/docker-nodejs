@@ -8,6 +8,9 @@ const cliTools = require('./modules/cliTools');
 const iseTicket = require('./modules/iseTicket');
 const iseNetDevices = require('./modules/iseNetDevices');
 
+const prtgTicket = require('./modules/prtgTicket');
+const prtgDevices = require('./modules/prtgDevices');
+
 
 const RateLimiter = require('limiter').RateLimiter;
 
