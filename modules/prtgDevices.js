@@ -40,11 +40,11 @@ class prtgDevices extends rest {
   getManagementInfo (searchCriteria){
     let search = new RegExp(searchCriteria.toLowerCase(),"gi");
     let mgmtData = this.managementInfo.devicesObj.sensors;
-    console.log(mgmtData)
     let count = 0;
     mgmtData.map((data,index) => {
   //console.log(search)
       for (let [key, value] of Object.entries(data)) {
+        console.log("DATAAAA",data)
         let statusObj = {
           objId: data.objid,
           sensor: data.sensor,
