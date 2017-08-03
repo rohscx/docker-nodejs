@@ -48,7 +48,7 @@ class prtgDevices extends rest {
         let statusObj = {
           objId: data.objid,
           sensor: data.sensor,
-          status: status,
+          status: data.status,
           lastValue: data.lastvalue,
           device: data.device
         };
