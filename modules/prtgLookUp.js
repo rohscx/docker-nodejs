@@ -24,13 +24,9 @@ class prtgLookUp extends rest {
     this.deviceId = "/"+deviceId;
   }
 
-  setUriBase (uriBase){
-    const newUri = uriBase+"/api/v1/network-device"
+  setUri(uriBase){
+    let newUri = uriBase+"/api/table.json?content=sensors&output=json&columns=objid,probe,group,device,sensor,status,message,lastvalue,priority,favorite"
     this.uri = newUri;
-  }
-
-  setUri(){
-    this.uri = this.uri+this.deviceId+"/config";
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
