@@ -19,7 +19,7 @@ baseConvert64 = (uName,uPass) => {
 }
 
 let prtgHeaders = {
-  ""
+  "content-type": "application/json"
 };
 
 const method = 'GET';
