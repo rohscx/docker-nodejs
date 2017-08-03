@@ -37,7 +37,7 @@ class prtgDevices extends rest {
     this.uri = newUri;
   }
 
-  getGraph(uriBase,uCreds){
+  setGraph(uriBase,uCreds){
     let newUri = uriBase+"/api/table.json?content=sensors&output=json&columns=objid,probe,group,device,sensor,status,message,lastvalue,priority,favorite"+uCreds;
     let newResult = this.managementInfo.searchResult.map((data)=>{
       data.graph = newUri;
