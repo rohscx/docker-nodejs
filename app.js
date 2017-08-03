@@ -36,6 +36,7 @@ let prtggDevices = (deviceName) => {
       // console.log(devicesReturn)
       prtgDevices.setManagementInfo(devicesReturn)
       prtgDevices.getManagementInfo(deviceName)
+      prtgDevices.getGraph(prtgTicket.getUri(),prtgTicket.getPrtgCred())
       // debug
       //console.log(apicDevices.getSearchResult())
       // sets the color of key

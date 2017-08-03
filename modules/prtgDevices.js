@@ -37,6 +37,14 @@ class prtgDevices extends rest {
     this.uri = newUri;
   }
 
+  getGraph(uriBase,uCreds){
+    let newUri = uriBase+"/api/table.json?content=sensors&output=json&columns=objid,probe,group,device,sensor,status,message,lastvalue,priority,favorite"+uCreds;
+    let newResult = this.managementInfo.searchResult.map((data)=>{
+      data.graph = newUri;
+    })
+    console.log(newResult);
+  }
+
   getManagementInfo (searchCriteria){
     let search = new RegExp(searchCriteria.toLowerCase(),"gi");
     let mgmtData = this.managementInfo.devicesObj.sensors;
@@ -45,11 +53,12 @@ class prtgDevices extends rest {
   //console.log(search)
       for (let [key, value] of Object.entries(data)) {
         let statusObj = {
-          objId: data.objid,
+          group: data.group,
+          device: data.device,
           sensor: data.sensor,
+          objId: data.objid,
           status: data.status,
-          lastValue: data.lastvalue,
-          device: data.device
+          lastValue: data.lastvalue
         };
         //console.log(data.hostname)
         if (data.device.match(search)&& count == 0){
