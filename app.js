@@ -25,7 +25,7 @@ const parseString = require('xml2js').parseString;
 */
 
 
-let prtgDevices = (deviceName) => {
+let prtggDevices = (deviceName) => {
   let processSuccess = false;
   return new Promise((resolve, reject) =>{
     prtgTicket.debug()
@@ -406,7 +406,7 @@ let appMenu = () => {
     .arguments ('<deviceName>')
     .description('prtg device-into')
     .action(function(deviceName){
-       prtgDevices(deviceName);
+       prtggDevices(deviceName);
     });
 
   program
