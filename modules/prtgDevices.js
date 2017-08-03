@@ -39,19 +39,17 @@ class prtgDevices extends rest {
 
   getManagementInfo (searchCriteria){
     let search = new RegExp(searchCriteria.toLowerCase(),"gi");
-    let mgmtData = this.managementInfo.devicesObj.response;
+    let mgmtData = this.managementInfo.devicesObj.sensors;
     let count = 0;
     mgmtData.map((data,index) => {
   //console.log(search)
       for (let [key, value] of Object.entries(data)) {
         let statusObj = {
-          hostName: data.hostname,
-          platFormId: data.platformId,
-          managementIpAddress: data.managementIpAddress,
-          reachablityStatus: data.reachabilityStatus,
-          upTime: data.upTime,
-          lastUpdated: data.lastUpdated,
-          reachabilityFailureReason: data.reachabilityFailureReason
+          objId: data.objid,
+          sensor: data.sensor,
+          status: status,
+          lastValue: data.lastvalue,
+          device: data.device
         };
         //console.log(data.hostname)
         if (data.hostname.match(search)&& count == 0){

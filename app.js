@@ -33,14 +33,14 @@ let prtggDevices = (deviceName) => {
     prtgDevices.httpRequest()
     .then((devicesReturn) =>{
       // debug
-      console.log(devicesReturn)
-      //prtgDevices.setManagementInfo(devicesReturn)
-      //prtgDevices.getManagementInfo(deviceName)
+      // console.log(devicesReturn)
+      prtgDevices.setManagementInfo(devicesReturn)
+      prtgDevices.getManagementInfo(deviceName)
       // debug
       //console.log(apicDevices.getSearchResult())
       // sets the color of key
-      //cliTools.setInputFile(prtgDevices.getSearchResult())
-      //cliTools.cliPrint("green","white")
+      cliTools.setInputFile(prtgDevices.getSearchResult())
+      cliTools.cliPrint("green","white")
       processSuccess = true;
       if (processSuccess) {
         resolve (devicesReturn)
