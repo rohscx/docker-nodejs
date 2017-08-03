@@ -396,6 +396,16 @@ let appMenu = () => {
   program
     .version('0.1.0')
 
+
+  program
+    .command('prgtDevices')
+    .alias('pDe')
+    .arguments ('<deviceName>')
+    .description('prtg device-into')
+    .action(function(deviceName){
+       prtgDevices(deviceName);
+    });
+
   program
     .command('iseTest2')
     .alias('iRe2')
