@@ -44,7 +44,7 @@ class prtgDevices extends rest {
     mgmtData.map((data,index) => {
   //console.log(search)
       for (let [key, value] of Object.entries(data)) {
-        console.log("DATAAAA",data)
+        console.log("DATAAAA",value)
         let statusObj = {
           objId: data.objid,
           sensor: data.sensor,
