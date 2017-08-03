@@ -22,7 +22,34 @@ const parseString = require('xml2js').parseString;
 */
 
 
-
+let prtgDevices = (deviceName) => {
+  let processSuccess = false;
+  return new Promise((resolve, reject) =>{
+    prtgTicket.debug()
+    prtgDevices.setUri(prtgTicket.getUri(),prtgTicket.getPrtgCred())
+    prtgDevices.httpRequest()
+    .then((devicesReturn) =>{
+      // debug
+      console.log(devicesReturn)
+      //prtgDevices.setManagementInfo(devicesReturn)
+      //prtgDevices.getManagementInfo(deviceName)
+      // debug
+      //console.log(apicDevices.getSearchResult())
+      // sets the color of key
+      //cliTools.setInputFile(prtgDevices.getSearchResult())
+      //cliTools.cliPrint("green","white")
+      processSuccess = true;
+      if (processSuccess) {
+        resolve (devicesReturn)
+      } else {
+        reject("Something went wrong")
+      };
+    })
+    .catch((httpReject) =>{
+      console.log(httpReject);
+    })
+  })
+};
 
 let iseTest2 = (inputFile) => {
   if (inputFile) {

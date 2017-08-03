@@ -1,0 +1,74 @@
+const rest = require('./api/rest');
+const securityFile = require('../securityFile')
+
+
+const method = 'GET';
+const uri = "";
+const headers = "";
+const body = "";
+
+class prtgDevices extends rest {
+  constructor (method,uri,headers,body){
+    super(method,uri,headers,body)
+    this.deviceId = "";
+    this.managementInfo = {
+      devicesObj:{},
+      searchResult:[],
+    };
+  }
+
+  setHeaders(ticket){
+    this.headers = {
+        "content-type": "application/json",
+        "x-auth-token": ticket,
+      };
+  }
+
+  setDeviceId(deviceId){
+    this.deviceId = "/"+deviceId;
+  }
+
+  setManagementInfo (devicesObj){
+    this.managementInfo.devicesObj = devicesObj;
+  }
+
+  setUri(uriBase,uCreds){
+    let newUri = uriBase+"/api/table.json?content=sensors&output=json&columns=objid,probe,group,device,sensor,status,message,lastvalue,priority,favorite"+uCreds;
+    this.uri = newUri;
+  }
+
+  getManagementInfo (searchCriteria){
+    let search = new RegExp(searchCriteria.toLowerCase(),"gi");
+    let mgmtData = this.managementInfo.devicesObj.response;
+    let count = 0;
+    mgmtData.map((data,index) => {
+  //console.log(search)
+      for (let [key, value] of Object.entries(data)) {
+        let statusObj = {
+          hostName: data.hostname,
+          platFormId: data.platformId,
+          managementIpAddress: data.managementIpAddress,
+          reachablityStatus: data.reachabilityStatus,
+          upTime: data.upTime,
+          lastUpdated: data.lastUpdated,
+          reachabilityFailureReason: data.reachabilityFailureReason
+        };
+        //console.log(data.hostname)
+        if (data.hostname.match(search)&& count == 0){
+          //console.log("MATCH ",statusObj)
+          count = 1;
+          this.managementInfo.searchResult.push(statusObj);
+          //console.log("\n\n\n\n\n"+data.hostname,"\n",data.platformId,"\n",data.managementIpAddress,"\n",data.reachabilityStatus,"\n",data.upTime,"\n",data.lastUpdated,"\n",data.reachabilityFailureReason)
+        }
+      }
+  count = 0;
+    })
+  }
+
+  // Adds a Debugs for the contest of the Ticket POST HTTP request
+  debug() {
+    console.log("method: "+this.method,'\n',"uri: "+this.uri,'\n',"headers: "+JSON.stringify(this.headers),'\n',"body: "+JSON.stringify(this.body))
+  }
+}
+
+module.exports = new prtgDevices(method,uri,headers,body)

@@ -32,7 +32,7 @@ const body = "";
 class prtgTicket extends rest {
   constructor (method,uri,rejectCert,headers,body){
     super(method,uri,rejectCert,headers,body)
-    this.prtgCred = privatePrtg.body.username + "&passhash="+privatePrtg.body.password;
+    this.prtgCred = "&"+ privatePrtg.body.username + "&passhash="+privatePrtg.body.password;
   }
 
   getHeaders (){
