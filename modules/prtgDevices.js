@@ -42,7 +42,6 @@ class prtgDevices extends rest {
     let newResult = this.managementInfo.searchResult.map((data)=>{
       data.graph = newUri;
     })
-    console.log(newResult);
   }
 
   getManagementInfo (searchCriteria){
