@@ -53,7 +53,7 @@ class prtgDevices extends rest {
           device: data.device
         };
         //console.log(data.hostname)
-        if (data.hostname.match(search)&& count == 0){
+        if (data.device.match(search)&& count == 0){
           //console.log("MATCH ",statusObj)
           count = 1;
           this.managementInfo.searchResult.push(statusObj);
