@@ -53,10 +53,10 @@ class prtgDevices extends rest {
       for (let [key, value] of Object.entries(data)) {
         let statusObj = {
           group: data.group,
-          device: data.device,
-          sensor: data.sensor,
-          status: data.status,
           objId: data.objid,
+          device: data.device,
+          status: data.status,
+          sensor: data.sensor,
           lastValue: data.lastvalue
         };
         //console.log(data.hostname)
