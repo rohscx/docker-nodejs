@@ -44,7 +44,6 @@ class prtgDevices extends rest {
     mgmtData.map((data,index) => {
   //console.log(search)
       for (let [key, value] of Object.entries(data)) {
-        console.log("DATAAAA",value)
         let statusObj = {
           objId: data.objid,
           sensor: data.sensor,
@@ -62,6 +61,10 @@ class prtgDevices extends rest {
       }
   count = 0;
     })
+  }
+
+  getSearchResult (){
+    return this.managementInfo.searchResult;
   }
 
   // Adds a Debugs for the contest of the Ticket POST HTTP request
