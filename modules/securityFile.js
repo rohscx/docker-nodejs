@@ -24,6 +24,11 @@ module.exports = {
       uName: false,
       uPass: false,
       uri: false
+    },
+    prtg:{
+      uName: false,
+      uPass: false,
+      uri: false
     }
   },
   public:{
