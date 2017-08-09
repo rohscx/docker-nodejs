@@ -43,7 +43,7 @@ let csvToJson = (inputFile) => {
             tempArray.push(data);
           } else{
             tempArray.push(data);
-            dataArray.push(,tempArray);
+            dataArray.push(tempArray);
             count = 0;
             tempArray = [];
           }
