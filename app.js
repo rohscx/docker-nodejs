@@ -47,11 +47,11 @@ let csvToJson = (inputFile) => {
           } else{
             // debug
             //console.log(tempArray);
-            count = 0;
-            tempArray = [];
             tempArray.push(data);
             // debug
             dataArray.push("Push!!! => ",tempArray);
+            count = 0;  
+            tempArray = [];
           }
 
         })
