@@ -32,7 +32,9 @@ let csvToJson = (inputFile) => {
     return new Promise((resolve, reject) =>{
       Promise.all([dataTools.setFile(inputFile),dataTools.readFile()])
       .then((promiseReturn)=>{
-        let tempData = dataTools.splitData(promiseReturn);
+        let tempData = promiseReturn.replace("/n",",")
+        tempData = dataTools.splitData(tempData);
+        tempData = str.replace("/n",",")
         let dataArray = []
         let count = 0;
         let tempArray = [];
