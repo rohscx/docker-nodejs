@@ -41,10 +41,10 @@ let csvToJson = (inputFile) => {
           if (count <= 26){
             console.log("DATA => ",data);
             tempArray.push(data);
-            console.log("Array => ",tempArray);
+            console.log("IF Array => ",tempArray);
           } else{
             console.log(tempArray);
-            dataArray.push("Array => ",tempArray);
+            dataArray.push("ELSE Array => ",tempArray);
             tempArray = [];
             count = 0;
           }
