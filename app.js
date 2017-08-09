@@ -38,7 +38,7 @@ let csvToJson = (inputFile) => {
         let tempArray = [];
         tempData.map((data)=>{
           count++;
-          if (count <= 9){
+          if (count <= 8){
             // debug
             //console.log("DATA => ",data);
             tempArray.push(data);
@@ -51,8 +51,6 @@ let csvToJson = (inputFile) => {
             tempArray = [];
             tempArray.push(data);
             dataArray.push("ELSE Array => ",tempArray);
-
-
           }
 
         })
