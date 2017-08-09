@@ -47,9 +47,12 @@ let csvToJson = (inputFile) => {
           } else{
             // debug
             //console.log(tempArray);
-            dataArray.push("ELSE Array => ",tempArray);
-            tempArray = [];
             count = 0;
+            tempArray = [];
+            tempArray.push(data);
+            dataArray.push("ELSE Array => ",tempArray);
+
+
           }
 
         })
