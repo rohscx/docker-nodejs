@@ -38,7 +38,7 @@ let csvToJson = (inputFile) => {
         let tempArray = [];
         tempData.map((data)=>{
           count++;
-          if (count <= 26){
+          if (count <= 15){
             // debug
             //console.log("DATA => ",data);
             tempArray.push(data);
@@ -54,7 +54,7 @@ let csvToJson = (inputFile) => {
 
         })
 
-        console.log(dataArray);
+        console.log(tempData);
         /*
         let dataObj = {
           aca:tempData[0],
