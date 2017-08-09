@@ -63,11 +63,12 @@ let csvToJson = (inputFile) => {
                 iSpeedUp:data[ii],
                 iSpeedDown:data[ii],
               };
+              dataObj.push(dataObjTemplate);
           };
         });
       };
 
-        console.log(dataArray);
+        //console.log(dataArray);
         console.log(dataObj)
 
         //console.log(promiseReturn);
