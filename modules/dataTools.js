@@ -62,7 +62,7 @@ class dataTools extends fileSystem {
   }
 
   splitData(){
-    let newData = this.fileData.contents.split(",");
+    let newData = this.fileData.contents.split(",|\n");
     return newData;
   }
 
