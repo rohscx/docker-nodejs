@@ -55,9 +55,8 @@ let csvToJson = (inputFile) => {
 
         })
 
-        let temp = promiseReturn;
         console.log(dataArray);
-        console.log(temp.replace('/n',','))
+        console.log(promiseReturn)
         /*
         let dataObj = {
           aca:tempData[0],
