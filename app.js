@@ -25,6 +25,28 @@ const parseString = require('xml2js').parseString;
 */
 
 
+
+let csvToJson = (inputFile) => {
+  if (inputFile) {
+    let processSuccess = false;
+    return new Promise((resolve, reject) =>{
+      Promise.all([dataTools.setFile(inputFile),dataTools.readFile()])
+      .then((promiseReturn)=>{
+        console.log(promiseReturn);
+        //return Promise.all([dataTools.cleanData(),dataTools.sortData(),dataTools.setBase(),dataTools.setSuperNet()])
+      })
+      //.then((promiseReturn)=>{
+        //apicDiscovery.setDiscoveryList(dataTools.getIpRange(),jobName)
+        //console.log(apicDiscovery.getDiscoveryList())
+        //console.log(promiseReturn);
+      //})
+      .catch((reject) =>{
+        console.log(reject);
+      })
+    })
+  }
+}
+
 let prtggDevices = (deviceName) => {
   let processSuccess = false;
   return new Promise((resolve, reject) =>{
@@ -400,6 +422,15 @@ let appMenu = () => {
   program
     .version('0.1.0')
 
+
+  program
+    .command('csvToJson')
+    .alias('cTj')
+    .arguments ('<inputFile>')
+    .description('csvToJson')
+    .action(function(inputFile){
+       csvToJson(inputFile);
+    });
 
   program
     .command('prgtDevices')
