@@ -49,24 +49,20 @@ let csvToJson = (inputFile) => {
           }
         })
 
-        for (let i = 0; i < dataArray.length; i++){
-          dataArray.map((data,value)=>{
-            for (let ii = 0; ii < data.length; ii++){
-              let dataObjTemplate = {
-                aca:data[ii],
-                branch:data[ii],
-                server:data[ii],
-                wPortType:data[ii],
-                wPortSpeed:data[ii],
-                iCarrier:data[ii],
-                iPortType:data[ii],
-                iSpeedUp:data[ii],
-                iSpeedDown:data[ii],
-              };
-              dataObj.push(dataObjTemplate);
+        dataArray.map((data,value)=>{
+          let dataObjTemplate = {
+            aca:data[0],
+            branch:data[1],
+            server:data[2],
+            wPortType:data[3],
+            wPortSpeed:data[4],
+            iCarrier:data[5],
+            iPortType:data[6],
+            iSpeedUp:data[7],
+            iSpeedDown:data[8],
           };
-        });
-      };
+          dataObj.push(dataObjTemplate)
+        })
 
         //console.log(dataArray);
         console.log(dataObj)
