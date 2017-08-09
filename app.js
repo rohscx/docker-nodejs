@@ -36,55 +36,38 @@ let csvToJson = (inputFile) => {
         let dataArray = []
         let count = 0;
         let tempArray = [];
+        let dataObj = [];
         tempData.map((data)=>{
           count++;
           if (count <= 8){
-            // debug
-            //console.log("DATA => ",data);
             tempArray.push(data);
-            // debug
-            //console.log("IF Array => ",tempArray);
           } else{
-            // debug
-            //console.log(tempArray);
             tempArray.push(data);
-            // debug
-            dataArray.push("Push!!! => ",tempArray);
-            count = 0;  
+            dataArray.push(,tempArray);
+            count = 0;
             tempArray = [];
           }
-
         })
 
+        for (let i = 0; i < dataArray.length; i++){
+          dataArray.map((data,value)=>{
+            for (let ii = 0; ii < data.length; ii++){
+              let dataObjTemplate = {
+                aca:data[ii],
+                branch:data[ii],
+                server:data[ii],
+                wPortType:data[ii],
+                wPortSpeed:data[ii],
+                iCarrier:data[ii],
+                iPortType:data[ii],
+                iSpeedUp:data[ii],
+                iSpeedDown:data[ii],
+              };
+          });
+        };
+
         console.log(dataArray);
-        /*
-        let dataObj = {
-          aca:tempData[0],
-          branch:tempData[1],
-          alias:tempData[2],
-          address:tempData[3],
-          phone:tempData[4],
-          server:tempData[5],
-          note:tempData[6],
-          asn:tempData[7],
-          vpnId:tempData[8],
-          localExchange:tempData[9],
-          encapsulation:tempData[10],
-          circuitId:tempData[11],
-          portType:tempData[12],
-          portSpeed:tempData[13],
-          wCeIp:tempData[14],
-          wPeIp:tempData[15],
-          wanNote:tempData[16],
-          iIsp:tempData[17],
-          acctNumber:tempData[18],
-          circuitType:tempData[19],
-          iSpeedUp:tempData[20],
-          iSpeedDown:"",
-          iCeIp:tempData[21],
-          iCeMask:tempData[22],
-          iCeGateWay:tempData[23]
-        };*/
+        console.log(dataObj)
 
         //console.log(promiseReturn);
         //JSON.stringify(promiseReturn)
