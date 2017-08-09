@@ -64,7 +64,7 @@ let csvToJson = (inputFile) => {
                 iSpeedDown:data[ii],
               };
           };
-        };
+        });
       };
 
         console.log(dataArray);
