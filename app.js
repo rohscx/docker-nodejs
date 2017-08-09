@@ -32,7 +32,49 @@ let csvToJson = (inputFile) => {
     return new Promise((resolve, reject) =>{
       Promise.all([dataTools.setFile(inputFile),dataTools.readFile()])
       .then((promiseReturn)=>{
-        console.log(dataTools.splitData(promiseReturn))
+        let tempData = dataTools.splitData(promiseReturn);
+        let dataArray = []
+        let count = 0;
+        tempData.map((data)=>{
+          count++;
+          let tempArray = [];
+          if (count <= 23){
+            tempArray.push(data)
+          } else{
+            dataArray.push(tempArray);
+            count = 0;
+          }
+          console.log(dataArray);
+        })
+
+        /*
+        let dataObj = {
+          aca:tempData[0],
+          branch:tempData[1],
+          alias:tempData[2],
+          address:tempData[3],
+          phone:tempData[4],
+          server:tempData[5],
+          note:tempData[6],
+          asn:tempData[7],
+          vpnId:tempData[8],
+          localExchange:tempData[9],
+          encapsulation:tempData[10],
+          circuitId:tempData[11],
+          portType:tempData[12],
+          portSpeed:tempData[13],
+          wCeIp:tempData[14],
+          wPeIp:tempData[15],
+          wanNote:tempData[16],
+          iIsp:tempData[17],
+          acctNumber:tempData[18],
+          circuitType:tempData[19],
+          portSpeed:tempData[20],
+          iCeIp:tempData[21],
+          iCeMask:tempData[22],
+          iCeGateWay:tempData[23]
+        };*/
+
         //console.log(promiseReturn);
         //JSON.stringify(promiseReturn)
         //return Promise.all([dataTools.cleanData(),dataTools.sortData(),dataTools.setBase(),dataTools.setSuperNet()])
