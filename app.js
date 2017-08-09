@@ -35,9 +35,9 @@ let csvToJson = (inputFile) => {
         let tempData = dataTools.splitData(promiseReturn);
         let dataArray = []
         let count = 0;
+        let tempArray = [];
         tempData.map((data)=>{
           count++;
-          let tempArray = [];
           if (count <= 26){
             console.log("DATA => ",data);
             tempArray.push(data);
