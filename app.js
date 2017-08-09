@@ -28,7 +28,6 @@ const parseString = require('xml2js').parseString;
 
 let csvToJson = (inputFile) => {
   if (inputFile) {
-    let processSuccess = false;
     return new Promise((resolve, reject) =>{
       Promise.all([dataTools.setFile(inputFile),dataTools.readFile()])
       .then((promiseReturn)=>{
@@ -41,14 +40,13 @@ let csvToJson = (inputFile) => {
           count++;
           if (count <= 8){
             tempArray.push(data);
-          } else{
+          } else {
             tempArray.push(data);
             dataArray.push(tempArray);
             count = 0;
             tempArray = [];
-          }
-        })
-
+          };
+        });
         dataArray.map((data,value)=>{
           let dataObjTemplate = {
             aca:data[0],
@@ -61,15 +59,14 @@ let csvToJson = (inputFile) => {
             iSpeedUp:data[7],
             iSpeedDown:data[8],
           };
-          dataObj.push(dataObjTemplate)
-        })
-
-        //console.log(dataArray);
-        console.log(dataObj)
-
-        //console.log(promiseReturn);
-        //JSON.stringify(promiseReturn)
-        //return Promise.all([dataTools.cleanData(),dataTools.sortData(),dataTools.setBase(),dataTools.setSuperNet()])
+          dataObj.push(dataObjTemplate);
+        });
+        dataTools.setSaveExtentions(".json")
+        let fileName = "siteBandwidthInfo-"+Date.now()
+        return dataTools.writeFile(fileName,JSON.stringify(iseNetDevices.getDeviceJsonArray()))
+      })
+      .then((writeReturn) =>{
+        console.log(writeReturn)
       })
       //.then((promiseReturn)=>{
         //apicDiscovery.setDiscoveryList(dataTools.getIpRange(),jobName)
