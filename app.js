@@ -38,13 +38,14 @@ let csvToJson = (inputFile) => {
         tempData.map((data)=>{
           count++;
           let tempArray = [];
-          if (count <= 23){
+          if (count <= 26){
             tempArray.push(data)
           } else{
             dataArray.push(tempArray);
             count = 0;
           }
           console.log(dataArray);
+          console.log(tempData[0])
         })
 
         /*
@@ -69,7 +70,8 @@ let csvToJson = (inputFile) => {
           iIsp:tempData[17],
           acctNumber:tempData[18],
           circuitType:tempData[19],
-          portSpeed:tempData[20],
+          iSpeedUp:tempData[20],
+          iSpeedDown:"",
           iCeIp:tempData[21],
           iCeMask:tempData[22],
           iCeGateWay:tempData[23]
