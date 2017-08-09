@@ -42,12 +42,13 @@ let csvToJson = (inputFile) => {
             tempArray.push(data)
           } else{
             dataArray.push(tempArray);
+            tempArray = [];
             count = 0;
           }
-          console.log(dataArray);
-          console.log(tempData[0])
-        })
 
+        })
+        console.log(dataArray);
+        console.log(tempData[0])
         /*
         let dataObj = {
           aca:tempData[0],
