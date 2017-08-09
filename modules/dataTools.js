@@ -61,6 +61,11 @@ class dataTools extends fileSystem {
     return this.ipRange;
   }
 
+  splitData(){
+    let newData = this.fileData.contents.split("\n");
+    return newData;
+  }
+
   // attempts to clean the ip list. remove leading spaces, trailling spaces and empty lines
   cleanData (){
     return new Promise((resolve, reject) =>{

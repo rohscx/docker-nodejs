@@ -32,8 +32,9 @@ let csvToJson = (inputFile) => {
     return new Promise((resolve, reject) =>{
       Promise.all([dataTools.setFile(inputFile),dataTools.readFile()])
       .then((promiseReturn)=>{
+        console.log(dataTools.splitData(promiseReturn))
         //console.log(promiseReturn);
-        JSON.stringify(promiseReturn)
+        //JSON.stringify(promiseReturn)
         //return Promise.all([dataTools.cleanData(),dataTools.sortData(),dataTools.setBase(),dataTools.setSuperNet()])
       })
       //.then((promiseReturn)=>{
