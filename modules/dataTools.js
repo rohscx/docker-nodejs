@@ -70,7 +70,7 @@ class dataTools extends fileSystem {
   cleanData (){
     return new Promise((resolve, reject) =>{
       let cleanedData =[];
-      let newData = this.fileData.contents.split("\n|,");
+      let newData = this.fileData.contents.split("\n||,");
       newData = newData.filter(Boolean);
       newData.map((data) => {
         cleanedData.push(data.trim())
