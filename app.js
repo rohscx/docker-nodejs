@@ -63,7 +63,7 @@ let csvToJson = (inputFile) => {
         });
         dataTools.setSaveExtentions(".json")
         let fileName = "siteBandwidthInfo-"+Date.now()
-        return dataTools.writeFile(fileName,JSON.stringify(iseNetDevices.getDeviceJsonArray()))
+        return dataTools.writeFile(fileName,JSON.stringify(dataObj))
       })
       .then((writeReturn) =>{
         console.log(writeReturn)
