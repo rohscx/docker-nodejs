@@ -26,9 +26,9 @@ const dns = require('dns');
 */
 
 let dnsLookup = (dnsName) =>{
-  dns.lookup(dnsName), (err,address,family)=>{
+  dns.lookup(dnsName, (err,address,family)=>{
     console.log('address: %j faminly: IPv%s', address,family);
-  }
+  })
 }
 
 let csvToJson = (inputFile) => {
