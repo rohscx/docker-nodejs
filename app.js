@@ -18,13 +18,18 @@ const rl = require('readline');
 const program = require('commander');
 const colors = require('colors');
 const parseString = require('xml2js').parseString;
+const dns = require('dns');
 /* These can be broken up into speperate .js files to accomplish a task
    ultimately some user interaction front end should be build, but this is a
    quick ad dirty....
    Note to self 240 characters can hold about 8 ip RANGES. <-- Batch Maximum!!
 */
 
-
+let dnsLookup = (dnsName) =>{
+  dns.lookup(dnsName), (err,address,family)=>{
+    console.log('address: %j faminly: IPv%s', address,family);
+  }
+}
 
 let csvToJson = (inputFile) => {
   if (inputFile) {
@@ -454,6 +459,15 @@ let apiccDiscovery = (inputFile,jobName) => {
 let appMenu = () => {
   program
     .version('0.1.0')
+
+    program
+      .command('dnsLookup')
+      .alias('dns')
+      .arguments ('<dns name>')
+      .description('dnslookup')
+      .action(function(dnsName){
+         dnsLookup(dnsName);
+      });
 
 
   program
